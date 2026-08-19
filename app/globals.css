@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  /* Palette Un Degré */
+  --color-paper: #f4efe6;
+  --color-sand: #ede6da;
+  --color-line: #d8cfc0;
+  --color-ink: #15171c;
+  --color-muted: #5a5d66;
+  --color-blue: #1f3bd8;
+
+  /* Typo */
+  --font-display: var(--font-anton);
+  --font-sans: var(--font-archivo);
+  --font-serif: var(--font-instrument);
+  --font-hand: var(--font-caveat);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  /* clip (et non hidden) : hidden créerait un conteneur de scroll et casserait le sticky */
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--color-blue);
+  color: var(--color-paper);
+}
+
+section[id] {
+  scroll-margin-top: 76px;
+}
+
+/* Conteneur horizontal commun (6vw dans la maquette) */
+.u-pad {
+  padding-left: 6vw;
+  padding-right: 6vw;
+}
+
+/* Titres display */
+.u-display {
+  font-family: var(--font-display), Impact, sans-serif;
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+
+.u-serif {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.u-hand {
+  font-family: var(--font-hand), cursive;
+}
+
+.u-num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Le motif : un degré d'inclinaison, une fois par section */
+.u-tilt {
+  transform: rotate(1deg);
+}
+
+/* Carrousel d'observations */
+.u-scroller {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line) transparent;
+}
+.u-scroller::-webkit-scrollbar {
+  height: 6px;
+}
+.u-scroller::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+}
+
+/* Apparition au scroll */
+.u-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.u-reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .u-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
