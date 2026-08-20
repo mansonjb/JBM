@@ -43,12 +43,17 @@ Les emplacements affichent leur brief tant que la photo n'est pas posée. Pour e
 remplir un : déposer le fichier dans `public/` et ajouter `src="/…"` sur le
 `<ImageSlot>` concerné.
 
-1. Plan large, lieu de travail réel, regard objectif, l'air interrompu (hero)
-2. Portrait vertical, cadrage serré, lumière douce (section origine)
-3. Noir et blanc, en action : il annote, il montre du doigt (bloc de rupture)
-4. Médaillon, décontracté, instantané (pied de page)
-5. Les mains sur un carnet, un écran, un plan (preuves)
-6. Six observations pour le journal (photos téléphone)
+| # | Section | Format | Sujet |
+| --- | --- | --- | --- |
+| 1 | Héros | paysage très large, 2400 px mini | Plan large dans un lieu de travail réel, regard objectif, l'air interrompu |
+| 2 | L'idée | vertical 4:5 | Un coffre d'outils ou un établi rangé au millimètre, vu du dessus, lumière rasante |
+| 3 | Le cas CB Sols | paysage 4:3 | Un chantier terminé, un sol posé, lumière naturelle |
+| 4 | Pourquoi moi (bloc bleu) | vertical 4:5 | Noir et blanc, en action : il annote, il montre du doigt |
+| 5 | Pourquoi moi (suite) | vertical 3:4 | Portrait, cadrage serré, lumière douce, expression calme |
+| 6 | Journal | paysage 4:3 | La caisse d'un magasin bio, photo téléphone |
+| 7 | Journal | paysage 4:3 | Une devanture, photo téléphone |
+| 8 | Journal | paysage 4:3 | Un stand ou un étalage, photo téléphone |
+| 9 | Pied de page | vertical, petit | Médaillon, décontracté, instantané |
 
 ## À compléter avant mise en ligne
 

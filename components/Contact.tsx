@@ -57,9 +57,13 @@ export default function Contact() {
           <h2 className="u-display m-0 mb-7 text-[clamp(38px,5.6vw,96px)]">
             Réserver le diagnostic.
           </h2>
-          <p className="m-0 max-w-[40ch] text-base leading-[1.65] text-paper/80">
-            Une semaine. Deux rendez-vous. Le diagnostic est déduit de la mission
-            si elle a lieu.
+          <p className="m-0 max-w-[42ch] text-base leading-[1.65] text-paper/80">
+            Une semaine. Deux rendez-vous de votre côté, pas un de plus. Vous
+            repartez avec la carte de votre activité et un point de départ
+            chiffré, que la suite se fasse avec moi ou sans moi.
+          </p>
+          <p className="m-0 mt-6 text-[13px] text-paper/70">
+            Le diagnostic est déduit de la mission si elle a lieu.
           </p>
         </div>
 

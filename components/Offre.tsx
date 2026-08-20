@@ -1,4 +1,4 @@
-import { offres } from "@/lib/site";
+import { aidePublique, offreIntro, offres } from "@/lib/site";
 
 export default function Offre() {
   return (
@@ -6,9 +6,16 @@ export default function Offre() {
       id="offre"
       className="border-b border-line bg-sand px-[6vw] py-[110px] lg:py-[130px]"
     >
-      <h2 className="u-display m-0 mb-14 text-[clamp(44px,8vw,150px)] leading-[0.88] tracking-[-0.03em] lg:mb-[70px]">
-        L&apos;offre.
+      <div className="mb-14 text-[12px] tracking-[0.1em] text-muted uppercase">
+        06 · L&apos;offre
+      </div>
+
+      <h2 className="u-display m-0 mb-6 text-[clamp(44px,8vw,150px)] leading-[0.88] tracking-[-0.03em]">
+        Ce qu&apos;on peut faire.
       </h2>
+      <p className="mt-0 mb-14 max-w-[52ch] text-[15px] leading-[1.6] text-muted">
+        {offreIntro}
+      </p>
 
       <div className="border-t border-line">
         {offres.map((offre, i) => (
@@ -42,11 +49,7 @@ export default function Offre() {
       </div>
 
       <div className="u-tilt mt-12 max-w-[66ch] border border-line px-7 py-6">
-        <p className="m-0 text-sm leading-[1.65] text-muted">
-          Selon votre région, une aide publique peut financer 30 à 70 % de cette
-          mission. La demande se dépose avant signature, jamais après. Je
-          m&apos;en occupe.
-        </p>
+        <p className="m-0 text-sm leading-[1.65] text-muted">{aidePublique}</p>
       </div>
     </section>
   );

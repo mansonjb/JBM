@@ -1,5 +1,5 @@
 import ImageSlot from "./ImageSlot";
-import { site } from "@/lib/site";
+import { hero, site } from "@/lib/site";
 
 export default function Hero() {
   return (
@@ -10,7 +10,7 @@ export default function Hero() {
     >
       <div className="absolute inset-0">
         <ImageSlot
-          brief="PHOTO 1 — plan large, lieu de travail réel, regard objectif, l'air interrompu"
+          brief="PHOTO 1 · plan large, lieu de travail réel, regard objectif, l'air interrompu"
           priority
         />
       </div>
@@ -19,16 +19,18 @@ export default function Hero() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(21,23,28,0.30) 0%, rgba(21,23,28,0.62) 100%)",
+            "linear-gradient(180deg, rgba(21,23,28,0.28) 0%, rgba(21,23,28,0.66) 100%)",
         }}
       />
       <div className="pointer-events-none relative w-full px-[6vw] pb-[7vh]">
-        <h1 className="u-display m-0 mb-6 max-w-[20ch] text-paper text-balance [font-size:clamp(46px,7.4vw,124px)]">
-          {site.baseline}
+        <div className="mb-6 text-[12px] tracking-[0.14em] text-paper/75 uppercase">
+          {hero.kicker}
+        </div>
+        <h1 className="u-display m-0 mb-6 max-w-[18ch] text-balance text-paper [font-size:clamp(46px,7.4vw,124px)]">
+          {hero.title}
         </h1>
-        <p className="m-0 mb-8 max-w-[56ch] leading-[1.5] text-paper [font-size:clamp(15px,1.25vw,19px)]">
-          Je trouve, dans ce que vous avez déjà, le degré qui change tout. Puis
-          je le corrige moi-même.
+        <p className="m-0 mb-8 max-w-[54ch] leading-[1.5] text-paper [font-size:clamp(15px,1.25vw,19px)]">
+          {hero.lead}
         </p>
         <a
           href="#contact"
@@ -36,6 +38,7 @@ export default function Hero() {
         >
           {site.ctaPrimary}
         </a>
+        <p className="m-0 mt-4 text-[13px] text-paper/70">{site.ctaMicro}</p>
       </div>
     </section>
   );

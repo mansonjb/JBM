@@ -9,9 +9,14 @@ export default function Objections() {
   return (
     <section className="border-b border-line px-[6vw] py-[110px] lg:py-[130px]">
       <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-[clamp(40px,6vw,100px)]">
-        <h2 className="u-display m-0 text-[clamp(38px,5.4vw,92px)]">
-          Les objections.
-        </h2>
+        <div>
+          <div className="mb-8 text-[12px] tracking-[0.1em] text-muted uppercase">
+            07 · Les objections
+          </div>
+          <h2 className="u-display m-0 text-[clamp(38px,5.4vw,92px)]">
+            Ce que vous vous dites là, maintenant.
+          </h2>
+        </div>
 
         <div className="border-t border-line">
           {objections.map((objection, i) => {

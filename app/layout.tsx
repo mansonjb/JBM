@@ -35,11 +35,11 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
   title: {
-    default: `${site.name} — le degré qui change la trajectoire`,
+    default: `${site.name} · ce qu\u2019il vous manque est déjà chez vous`,
     template: `%s · ${site.name}`,
   },
   description:
-    "Consultant indépendant : je trouve, dans ce que vous avez déjà, le degré qui change tout. Puis je le corrige moi-même, diagnostic et exécution compris.",
+    "Consultant indépendant pour artisans, commerces et PME. Je trouve où votre activité perd de la valeur, puis je le corrige moi-même. Diagnostic en une semaine, exécution comprise.",
   keywords: [
     "consultant indépendant",
     "optimisation d'activité",
@@ -55,9 +55,9 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: site.domain,
     siteName: site.name,
-    title: `${site.name} — ${site.baseline}`,
+    title: `${site.name} · ${site.baseline}`,
     description:
-      "Le consultant recommande. L'agence exécute. Je relie les deux. Le diagnostic est déduit de la mission.",
+      "Ce qu'il vous manque est déjà chez vous, mal placé. Le consultant recommande, l'agence exécute : je relie les deux.",
   },
   robots: { index: true, follow: true },
 };

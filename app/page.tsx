@@ -2,16 +2,15 @@ import DivergingLines from "@/components/DivergingLines";
 import Reveal from "@/components/Reveal";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import ProofBar from "@/components/ProofBar";
-import Observations from "@/components/Observations";
-import Origine from "@/components/Origine";
+import TrustLine from "@/components/TrustLine";
+import Constat from "@/components/Constat";
+import Idee from "@/components/Idee";
 import Methode from "@/components/Methode";
-import Rupture from "@/components/Rupture";
-import Preuves from "@/components/Preuves";
+import Cas from "@/components/Cas";
+import Guide from "@/components/Guide";
 import Offre from "@/components/Offre";
 import Objections from "@/components/Objections";
 import Journal from "@/components/Journal";
-import LeNom from "@/components/LeNom";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { site } from "@/lib/site";
@@ -55,16 +54,15 @@ export default function Home() {
         <Nav />
         <main>
           <Hero />
-          <ProofBar />
-          <Observations />
-          <Origine />
+          <TrustLine />
+          <Constat />
+          <Idee />
           <Methode />
-          <Rupture />
-          <Preuves />
+          <Cas />
+          <Guide />
           <Offre />
           <Objections />
           <Journal />
-          <LeNom />
           <Contact />
         </main>
         <Footer />
