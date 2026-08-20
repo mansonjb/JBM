@@ -6,10 +6,10 @@ export default function Guide() {
     <>
       <section className="bg-blue px-[6vw] py-[100px] text-paper lg:py-[120px]">
         <div className="mb-14 text-[12px] tracking-[0.1em] text-paper/70 uppercase">
-          05 · {guide.kicker}
+          04 · {guide.kicker}
         </div>
 
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-[clamp(40px,5vw,90px)]">
+        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-[clamp(40px,5vw,90px)]">
           <div className="u-reveal">
             <h2 className="u-display m-0 mb-10 text-[clamp(38px,6vw,104px)]">
               {guide.title}
@@ -20,7 +20,24 @@ export default function Guide() {
             <p className="m-0 max-w-[62ch] text-[clamp(16px,1.35vw,20px)] leading-[1.6] text-paper/85">
               {guide.agence}
             </p>
+
+            <div className="mt-12 border-t border-paper/30 pt-8">
+              <div className="mb-5 text-[11px] tracking-[0.12em] text-paper/70 uppercase">
+                Ce que je fais moi-même
+              </div>
+              <ul className="m-0 grid list-none grid-cols-1 gap-x-10 gap-y-3 p-0 sm:grid-cols-2">
+                {guide.competences.map((competence) => (
+                  <li
+                    key={competence}
+                    className="border-b border-paper/20 pb-3 text-[15px] leading-[1.4]"
+                  >
+                    {competence}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
+
           <div className="u-tilt relative aspect-3/2 lg:mt-6">
             <ImageSlot
               brief="PHOTO 4 · noir et blanc, en action : il annote, il montre du doigt"
@@ -63,6 +80,7 @@ export default function Guide() {
                 brief="PHOTO 5 · portrait vertical, cadrage serré, lumière douce"
                 src="/portrait.jpg"
                 alt="Portrait de Jean-Baptiste Manson"
+                sizes="380px"
               />
             </div>
           </div>

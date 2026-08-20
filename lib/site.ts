@@ -6,110 +6,128 @@ export const site = {
   phone: "+33 6 00 00 00 00",
   phoneHref: "+33600000000",
   author: "Jean-Baptiste Manson · consultant indépendant",
-  ctaPrimary: "Réservez votre diagnostic",
-  ctaSecondary: "Réserver mon diagnostic",
-  ctaMicro: "Une semaine. Deux rendez-vous de votre côté. Déduit de la mission si elle a lieu.",
+  ctaPrimary: "Réservez votre audit",
+  ctaSecondary: "Réserver mon audit",
+  ctaMicro: "Une semaine sur place. Deux rendez-vous de votre côté.",
 };
 
 export const nav = [
-  { href: "#probleme", label: "Le constat" },
   { href: "#methode", label: "Méthode" },
-  { href: "#preuve", label: "Preuve" },
+  { href: "#resultats", label: "Résultats" },
   { href: "#offre", label: "Offre" },
+  { href: "#questions", label: "Questions" },
   { href: "#contact", label: "Contact" },
 ];
 
+/* 01 — Le héros doit dire le métier en une ligne : audit, puis optimisation. */
 export const hero = {
-  kicker: "PME et entreprises de service · optimisation d'activité et acquisition client",
-  title: "Il vous manque des clients. Pas des moyens.",
-  lead: "Je viens dans votre entreprise et je passe le temps qu'il faut à comprendre comment la machine tourne, avant de proposer quoi que ce soit. Ensuite on corrige ce qui vous coûte le plus cher : du temps gagné, de la marge gagnée, du confort au quotidien. On l'exécute ensemble, avec le bon acteur pour chaque sujet. Vous n'avez qu'un interlocuteur.",
+  kicker: "Audit et optimisation d'entreprise · PME et entreprises de service",
+  title: "J'audite votre entreprise. Puis je la règle.",
+  lead: "Une semaine sur place, chiffres en main, à comprendre comment votre machine tourne. J'en ressors avec ce qui vous fait perdre du temps, de la marge et des clients, classé par ordre de priorité. Ensuite on corrige, avec le bon prestataire pour chaque sujet et un seul interlocuteur : moi.",
 };
 
-/** Bande de confiance sous le héros : la crédibilité en une ligne, pas en quatre chiffres. */
-export const trustLine = [
-  "Quatre ans en agence · plus de 500 projets livrés",
-  "Louis Vuitton · Netflix · Ford · Hugo Boss",
-  "ce niveau d'exigence, appliqué aux PME",
+/* Bande de chiffres, tous vérifiables. */
+export const stats = [
+  {
+    value: "1 semaine",
+    label: "d'audit sur place avant la moindre recommandation",
+    accent: false,
+  },
+  {
+    value: "0 → 13",
+    label: "demandes de devis en trois mois chez un client qui était à zéro depuis trois ans",
+    accent: true,
+  },
+  {
+    value: "8 jours",
+    label: "de travail pour reconstruire toute son acquisition",
+    accent: false,
+  },
+  {
+    value: "500+",
+    label: "projets livrés en quatre ans d'agence, pour Louis Vuitton, Netflix ou Ford",
+    accent: false,
+  },
 ];
 
-/* 02 · Le constat : le lecteur se reconnaît avant qu'on lui parle de nous. */
-export const symptomes = [
-  {
-    n: "01",
-    text: "Vous payez de la publicité tous les mois. Vous seriez incapable de dire ce qu'elle vous a rapporté.",
-  },
-  {
-    n: "02",
-    text: "Vos meilleurs clients arrivent par le bouche-à-oreille. Personne chez vous ne sait comment le déclencher.",
-  },
-  {
-    n: "03",
-    text: "Vos équipes n'arrêtent pas. Personne ne sait quelle part de ce travail rapporte vraiment de l'argent.",
-  },
-];
-
-export const constat = {
-  title: "Rien n'est cassé. C'est ça, le problème.",
-  chute:
-    "Il ne vous manque ni budget, ni talent, ni marché. La valeur, vous la produisez déjà. Elle se perd entre l'endroit où elle se fabrique et celui où elle se vend.",
-};
-
-/* 03 · L'idée : la grande idée du site, démontrée en trois temps. */
-export const idee = {
-  kicker: "L'idée",
-  title: "Rien ajouté. Tout déplacé.",
-  paragraphes: [
-    "Deux entreprises du même métier, avec le même budget et la même équipe, ne font pas le même chiffre. L'écart vient rarement des moyens. Il vient de l'ordre des choses : ce qu'on met en avant, devant qui, et à quel moment de la décision.",
-    "Une offre placée au bon moment du parcours se vend seule. La même offre, trois clics plus loin, ne se vend pas. Personne n'a touché ni au produit, ni au prix, ni à l'équipe commerciale.",
-    "C'est vrai de votre catalogue, de vos devis, de vos pages, du temps de vos équipes et de chaque euro de publicité. Tout est déjà là. Ce qui change le résultat, c'est la disposition.",
-    "Obtenir le maximum de résultat avec le minimum d'effort, à l'école on appelait ça de la paresse. J'en ai fait une méthode.",
+/* 02 — Le problème, formulé comme ce que l'audit trouve à tous les coups. */
+export const fuites = {
+  kicker: "Le constat",
+  title: "Ce que je trouve, à chaque fois.",
+  intro:
+    "Trois fuites reviennent dans presque toutes les entreprises que j'ouvre. Aucune ne se voit de l'intérieur : elles ressemblent trop à la façon dont on a toujours fait.",
+  items: [
+    {
+      n: "01",
+      titre: "De l'argent qui sort sans preuve qu'il rentre",
+      text: "Une campagne, un abonnement, un prestataire reconduit chaque année. Personne dans l'entreprise ne sait dire ce que cette dépense a rapporté le mois dernier.",
+    },
+    {
+      n: "02",
+      titre: "Une offre rangée comme vous la pensez",
+      text: "Vous vendez un métier. Vos clients, eux, cherchent la réponse à un problème précis, à un moment précis, dans une ville précise. Entre les deux, la demande passe à côté de vous.",
+    },
+    {
+      n: "03",
+      titre: "Du temps d'équipe avalé par l'habitude",
+      text: "Des tâches que plus personne ne remet en question. Elles étaient utiles il y a cinq ans. Elles occupent aujourd'hui les gens dont vous avez le plus besoin ailleurs.",
+    },
   ],
-  citation:
-    "Un degré d'écart ne se voit pas au départ. Cent kilomètres plus loin, on n'arrive pas au même endroit.",
-  note: "C'est pour ça que chaque section de ce site penche d'un degré. Vous l'avez senti sans le voir.",
+  chute:
+    "Ces trois fuites ont un point commun : rien n'est cassé. Tout fonctionne, un peu à côté. C'est précisément ce qui les rend invisibles, et coûteuses.",
 };
 
-/* 04 · La méthode : le plan, avec ce que vous recevez à chaque marche. */
+/* 03 — La méthode, cinq étapes, celles du tableau. */
 export const marches = [
   {
     n: "01",
-    title: "Voir",
-    text: "Je viens sur place et je passe du temps dans votre machine avant de proposer quoi que ce soit. Je regarde l'activité entière, jamais le symptôme seul : l'offre, les prix, le parcours d'achat, les canaux d'acquisition, les processus internes, ce que vivent vos équipes et ce que vivent vos clients.",
-    question: "Où se crée réellement la valeur ici ?",
-    livrable: "La carte de votre activité telle qu'elle fonctionne vraiment.",
+    title: "Analyse",
+    text: "Je viens sur place et je regarde l'activité entière : l'offre, les prix, le parcours d'achat, les canaux, les processus, ce que vivent vos équipes et ce que vivent vos clients.",
+    question: "Comment cette entreprise gagne-t-elle vraiment sa vie ?",
+    livrable: "La carte de votre entreprise telle qu'elle tourne, pas telle qu'on la raconte.",
   },
   {
     n: "02",
-    title: "Trouver",
-    text: "On met les chiffres côte à côte : la marge par prestation, le coût d'acquisition par canal, la part du bouche-à-oreille, le temps passé pour chaque euro produit.",
+    title: "Diagnostic",
+    text: "On met les chiffres côte à côte : d'où viennent les clients, ce que coûte chaque canal, ce que rapporte chaque ligne, le temps passé pour chaque euro produit.",
     question: "Qu'est-ce qui rapporte, et qu'est-ce qui en donne l'illusion ?",
     livrable: "Les chiffres que personne n'avait encore rapprochés.",
   },
   {
     n: "03",
-    title: "Choisir",
-    text: "On descend jusqu'au point de blocage précis, celui qui retient tout le reste. Et on calcule ce qu'il vous coûte chaque mois.",
-    question: "Par quoi commence-t-on ?",
-    livrable: "Un point de départ chiffré, et l'ordre des priorités.",
+    title: "Priorisation",
+    text: "On descend jusqu'au point de blocage, celui qui tient tous les autres. On calcule ce qu'il vous coûte chaque mois, et on décide par quoi commencer.",
+    question: "Que fait-on lundi prochain ?",
+    livrable: "Un point de départ chiffré et l'ordre des priorités.",
   },
   {
     n: "04",
-    title: "Faire",
-    text: "Je ne rends pas un rapport avant de disparaître. Je pilote la mise en œuvre avec vos équipes : ce que je sais faire, je le fais ; pour le reste, je vais chercher le bon prestataire, je le choisis et je le dirige. C'est la marche que les consultants ne montent pas.",
+    title: "Mise en œuvre",
+    text: "Ce que je sais faire, je le fais. Pour le reste, je vais chercher le bon prestataire, je le choisis et je le dirige. Vous n'avez qu'un interlocuteur et personne à qui réexpliquer votre entreprise.",
     question: null,
     livrable: "Le système en place, mesurable, entre vos mains.",
   },
+  {
+    n: "05",
+    title: "Optimisation",
+    text: "On mesure tous les mois, on corrige, on arbitre. Un système qu'on ne règle plus finit toujours par se dérégler.",
+    question: null,
+    livrable: "Des décisions prises sur des chiffres plutôt que sur des impressions.",
+  },
 ];
 
-/* Ce que ça produit, en trois mots. */
+export const methodeIntro =
+  "La même séquence à chaque fois, quel que soit le métier. Les trois premières étapes prennent le temps qu'il faut. Les deux suivantes vont vite, parce que la décision est déjà prise.";
+
+/* 04 — Ce que le dirigeant constate dans sa semaine. */
 export const gains = [
   {
     titre: "Du temps",
-    text: "Les tâches qui ne rapportent rien sortent de la semaine de vos équipes. Vous récupérez des journées, pas des minutes.",
+    text: "Les tâches qui ne produisaient rien sortent du planning. Vous récupérez des journées, pas des minutes.",
   },
   {
-    titre: "De l'argent",
-    text: "La même activité, mieux disposée, dégage plus de marge. Sans un euro de publicité en plus.",
+    titre: "De la marge",
+    text: "La même activité, mieux disposée, rapporte davantage. Sans un euro de publicité en plus.",
   },
   {
     titre: "Du confort",
@@ -117,44 +135,34 @@ export const gains = [
   },
 ];
 
-/* 05 · La preuve : une histoire en quatre temps, les chiffres dedans. */
-export const cas = {
-  kicker: "Un cas, en entier",
-  client: "CB Sols",
-  sousTitre: "Artisan poseur de sols, La Rochelle",
-  temps: [
-    {
-      label: "Avant",
-      text: "Trois ans de publicité payée. Zéro demande entrante. Le carnet de commandes tenait sur le bouche-à-oreille, et sur rien d'autre.",
-    },
-    {
-      label: "Ce que j'ai vu",
-      text: "L'offre était rangée par métier. Or personne ne cherche un poseur de sols : on cherche un sol de cuisine, une terrasse ou une salle de bains, dans sa ville. Le travail était irréprochable, et invisible à l'endroit exact où la demande se forme.",
-    },
-    {
-      label: "Ce que j'ai fait",
-      text: "Huit jours de travail. L'offre redécoupée par besoin et par ville. Les chantiers déjà réalisés remis au travail comme preuve, un point de contact sur chaque page, et la mesure installée pour arbitrer la suite.",
-    },
-    {
-      label: "Après",
-      text: "Trois mois plus tard : treize demandes entrantes, et un trafic organique 3,6 fois supérieur au trafic payant. L'acquisition ne dépend plus du budget publicitaire.",
-    },
+/* 05 — Le nom, expliqué là où il devient une méthode de travail. */
+export const manifeste = {
+  kicker: "Le nom",
+  title: "Un degré, pas un virage.",
+  paragraphes: [
+    "Je ne propose jamais de tout refaire. Refondre coûte cher, prend un an, et fait perdre en route ce qui marchait déjà.",
+    "Un audit sérieux aboutit presque toujours à une poignée de corrections précises : une offre redécoupée, une page remise à sa place, une dépense arrêtée, une tâche supprimée. Prises une par une, elles paraissent minces. Mises ensemble, elles changent la direction de l'entreprise.",
+    "C'est de là que vient le nom.",
   ],
-  chiffres: [
-    { value: "0 → 13", label: "demandes entrantes, en trois mois" },
-    { value: "8", label: "jours de travail" },
-    { value: "× 3,6", label: "organique contre payant" },
-  ],
-  chute: "Attendre trois ans a coûté plus cher que les huit jours qu'il a fallu pour corriger.",
+  citation:
+    "Un degré d'écart ne se voit pas au départ. Cent kilomètres plus loin, on n'arrive pas au même endroit.",
+  note: "Chaque section de ce site penche d'un degré. Vous l'avez senti sans le voir.",
 };
 
-/* 06 · Pourquoi moi : autorité et posture, au même endroit. */
+/* 06 — Qui je suis, et à quoi je sers. */
 export const guide = {
-  kicker: "Pourquoi moi",
+  kicker: "Qui je suis",
   title: "Je reste jusqu'à ce que ça tourne.",
-  lead: "Le consultant recommande, l'agence exécute, et entre les deux le projet s'arrête. Je fais les deux : ce que je sais faire, je le fais ; pour le reste, je vais chercher le bon prestataire, je le choisis et je le dirige. Vous n'avez qu'un interlocuteur, du premier rendez-vous jusqu'au résultat, et personne à qui réexpliquer votre entreprise.",
+  lead: "Jean-Baptiste Manson, consultant indépendant. Je fais les deux métiers que le marché sépare : celui qui regarde et celui qui exécute. Le consultant rend un rapport, l'agence attend des consignes, et entre les deux le projet s'arrête pendant six mois.",
   agence:
-    "Avant ça, quatre ans en agence de réalité augmentée : plus de 500 projets créatifs livrés pour Louis Vuitton, Netflix, Ford ou Hugo Boss. Ce ne sont pas mes clients d'aujourd'hui. C'est le niveau d'exigence auquel j'ai appris à produire, et c'est celui que j'apporte chez vous.",
+    "Quatre ans en agence de réalité augmentée, plus de 500 projets livrés pour Louis Vuitton, Yves Saint Laurent, Netflix, Ford, Hugo Boss ou La Banque Postale. Ce ne sont pas mes clients d'aujourd'hui. C'est le niveau d'exigence que j'apporte chez vous.",
+  competences: [
+    "Audit d'activité et lecture de chiffres",
+    "Acquisition et demande de longue traîne",
+    "Conversion et parcours d'achat",
+    "Production augmentée par l'intelligence artificielle",
+    "Mesure et arbitrage mensuel",
+  ],
   vagues: [
     { annee: "2017", text: "Le live streaming, quand personne n'y croyait encore." },
     { annee: "2019", text: "L'influence, avant que ce soit un métier." },
@@ -179,24 +187,56 @@ export const clients = [
   "Dufour",
 ];
 
-/* 07 · L'offre : ce qu'on peut faire ensemble, sans montant affiché. */
+/* 07 — Le cas, raconté comme une histoire. */
+export const cas = {
+  kicker: "Un audit, en entier",
+  client: "CB Sols",
+  sousTitre: "Artisan poseur de sols, La Rochelle",
+  temps: [
+    {
+      label: "Avant",
+      text: "Trois ans de publicité payée. Aucune demande entrante. Le site existait, le téléphone ne sonnait pas, et le carnet de commandes tenait sur le bouche-à-oreille.",
+    },
+    {
+      label: "Ce que l'audit a montré",
+      text: "L'offre était rangée par métier. Or personne ne cherche un poseur de sols : on cherche un sol de cuisine, une terrasse, une salle de bains, dans sa ville. Le travail était irréprochable, il n'apparaissait nulle part où la demande se forme.",
+    },
+    {
+      label: "Ce qu'on a corrigé",
+      text: "Huit jours de travail. L'offre redécoupée par besoin, par contexte et par territoire. Les chantiers déjà réalisés remis au travail comme preuve. Une demande de devis possible depuis chaque page, et la mesure installée pour arbitrer la suite.",
+    },
+    {
+      label: "Après",
+      text: "Trois mois plus tard : treize demandes entrantes, un trafic organique 3,6 fois supérieur au trafic payant. L'acquisition ne dépend plus du budget publicitaire.",
+    },
+  ],
+  chiffres: [
+    { value: "0 → 13", label: "demandes en trois mois" },
+    { value: "8", label: "jours de travail" },
+    { value: "× 3,6", label: "organique sur payant" },
+  ],
+  chute:
+    "Attendre trois ans a coûté plus cher que les huit jours qu'il a fallu pour corriger.",
+};
+
+/* 08 — L'offre, sans montant affiché. */
 export const offreIntro =
-  "Tout commence par le diagnostic. La suite dépend de ce qu'il montre. Rien n'est engagé avant.";
+  "Tout commence par l'audit. La suite dépend de ce qu'il montre. Rien n'est engagé avant.";
 
 export const offres = [
   {
-    title: "Le Diagnostic",
-    text: "Les trois premières marches. Vous repartez avec la carte de votre activité, le point de blocage chiffré et l'ordre des priorités. Que la suite se fasse avec moi ou sans moi.",
-    cta: "Réserver le diagnostic",
+    title: "L'Audit",
+    text: "Une semaine sur place, les trois premières étapes. Vous repartez avec la carte de votre entreprise, le point de blocage chiffré et l'ordre des priorités. Que la suite se fasse avec moi ou sans moi.",
+    cta: "Réserver l'audit",
     note: "déduit de la mission si elle a lieu",
     accent: true,
     delay: "1 semaine",
   },
   {
     title: "Le Système d'acquisition",
-    text: "Votre offre redécoupée par besoin, par contexte et par territoire. Des contenus qui captent la demande là où elle se formule. Vos réalisations transformées en preuves. Un point de contact sur chaque page, et la mesure pour arbitrer la suite.",
+    text: "Votre offre redécoupée par besoin, par contexte et par territoire. Des contenus qui captent la demande là où elle se formule. Vos réalisations transformées en preuves. Un point de contact sur chaque page, et la mesure pour arbitrer.",
     cta: "Demander une proposition",
-    note: "périmètre défini au diagnostic",
+    note: "périmètre défini à l'audit",
     accent: false,
     delay: "8 jours sur 4 à 6 semaines",
   },
@@ -209,8 +249,8 @@ export const offres = [
     delay: "selon périmètre",
   },
   {
-    title: "Le Suivi",
-    text: "Mesure tous les mois, corrections, arbitrages. Un système qu'on ne règle plus finit toujours par se dérégler.",
+    title: "L'Optimisation continue",
+    text: "Mesure tous les mois, corrections, arbitrages. On garde ce qui produit, on arrête ce qui dort, on déplace le reste.",
     cta: "En discuter",
     note: "engagement de six mois",
     accent: false,
@@ -221,53 +261,57 @@ export const offres = [
 export const aidePublique =
   "Selon votre région, une aide publique peut financer 30 à 70 % de la mission. La demande se dépose avant la signature, jamais après. Je m'en occupe.";
 
-/* 08 · Les objections, dans l'ordre où elles viennent vraiment. */
-export const objections = [
+/* 09 — Les questions qu'on me pose avant de signer. */
+export const questions = [
   {
-    q: "C'est cher.",
-    a: "Comparez au bon repère. Chez CB Sols, trois ans de publicité n'avaient produit aucune demande, et huit jours de travail en ont produit treize en trois mois. La question n'est pas ce que ça coûte, c'est ce que l'attente vous coûte déjà.",
+    q: "Combien de temps prend l'audit ?",
+    a: "Une semaine. Deux rendez-vous de votre côté : un pour ouvrir les chiffres, un pour la restitution. Le reste se passe sans mobiliser vos équipes.",
   },
   {
-    q: "On n'a pas le temps.",
-    a: "Huit jours de travail, les miens. Deux rendez-vous du vôtre, et quelques validations en cours de route. Le reste avance sans mobiliser vos équipes.",
+    q: "Qu'est-ce que je reçois, concrètement ?",
+    a: "La carte de votre activité telle qu'elle tourne, les chiffres rapprochés, le point de blocage principal avec ce qu'il vous coûte chaque mois, et l'ordre dans lequel traiter la suite. C'est à vous, que vous continuiez avec moi ou non.",
+  },
+  {
+    q: "Combien coûte la mission ?",
+    a: "Le montant dépend du périmètre, et il se fixe après l'audit, jamais avant. Il est toujours mis en face de ce que le blocage vous coûte chaque mois. Chez CB Sols, la mission a coûté moins qu'un trimestre de publicité sans retour, et une aide régionale peut en financer une bonne partie.",
   },
   {
     q: "Vous ne connaissez pas mon métier.",
-    a: "Exact, et c'est l'intérêt. Vous le connaissez trop bien pour voir encore ce qui est sous vos yeux. Je ne connaissais rien aux sols avant CB Sols : c'est précisément pour ça que j'ai vu ce qui manquait.",
+    a: "Exact, et c'est précisément pour ça que je vois ce qui manque. Vous connaissez votre métier mieux que quiconque, donc vous ne voyez plus ce qui est sous vos yeux. Je ne connaissais rien aux sols ni aux bateaux avant d'y travailler.",
   },
   {
     q: "Optimiser, ça veut dire couper des coûts ?",
-    a: "Non. Ça veut dire mettre chaque chose au bon endroit. Sur mes dernières missions, rien n'a été supprimé : ce qui existait déjà a été mis à travailler.",
+    a: "Non. Ça veut dire mettre chaque chose au bon endroit. Sur mes dernières missions, rien n'a été supprimé : ce qui existait a été remis à travailler.",
   },
   {
-    q: "On le fera en interne.",
-    a: "Vous pouvez. Mais ce n'est ni urgent, ni votre métier, et c'est sur la liste depuis trois ans. C'est exactement pour ça qu'on m'appelle.",
+    q: "On peut le faire en interne ?",
+    a: "Vous pouvez. Vous ne le ferez pas, parce que ce n'est ni urgent, ni votre métier, et que c'est sur la liste depuis trois ans. C'est exactement pour ça qu'on m'appelle.",
   },
 ];
 
-/* 09 · Le journal : la preuve du regard, une fois par semaine. */
+/* 10 — Le journal : la preuve du regard, chaque semaine. */
 export const journalIntro =
-  "Une observation par semaine, prise sur le vif : ce que je vois, ce que je changerais. C'est le même regard, appliqué pendant une semaine à une activité entière.";
+  "Une observation par semaine. Une situation prise sur le vif dans un commerce, ce que j'y vois, ce que je changerais. C'est le même regard, appliqué pendant une semaine entière à une entreprise.";
 
 export const journal = [
   {
     date: "14 · 03",
     title: "La caisse d'un magasin bio",
-    text: "En zone de caisse, pas un seul produit à petit prix. L'achat d'impulsion suppose une décision prise sans réfléchir : au-delà d'un certain montant, elle n'arrive jamais. L'emplacement le plus regardé du magasin ne vendait rien.",
+    text: "En zone de caisse, uniquement des produits chers. L'achat d'impulsion suppose une décision prise sans réfléchir : au-delà d'un certain prix, elle n'arrive jamais. L'emplacement le plus vu du magasin ne vendait rien.",
     slot: "OBSERVATION · la caisse d'un magasin bio, prise au téléphone",
     note: "trop cher ici",
   },
   {
     date: "27 · 02",
     title: "Une devanture fermée à midi",
-    text: "Les horaires ne recoupaient ni le flux de la rue, ni celui du marché voisin. La boutique était ouverte quand personne ne passait, et fermée aux deux heures où tout le monde passait. Des horaires, ça se décide sur le trafic, pas sur l'habitude.",
+    text: "Les horaires ne recoupaient ni le flux de la rue, ni celui du marché voisin. Le commerce était ouvert quand personne ne passait. Des horaires, ça se décide sur le trafic, pas sur l'habitude.",
     slot: "OBSERVATION · une devanture, photo téléphone",
     note: null,
   },
   {
     date: "09 · 02",
     title: "Un stand au bord de l'allée",
-    text: "Le produit à la plus forte marge était rangé derrière le vendeur. L'ordre d'exposition décide de ce qui se vend avant même le prix. Personne n'avait choisi cet ordre : il s'était installé tout seul.",
+    text: "Le produit à la plus forte marge était rangé derrière le vendeur. L'ordre d'exposition décide de ce qui se vend, avant même le prix. Ici, cet ordre s'était installé tout seul.",
     slot: "OBSERVATION · un stand ou un étalage, photo téléphone",
     note: null,
   },

@@ -2,15 +2,15 @@ import DivergingLines from "@/components/DivergingLines";
 import Reveal from "@/components/Reveal";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import TrustLine from "@/components/TrustLine";
-import Constat from "@/components/Constat";
-import Idee from "@/components/Idee";
+import Stats from "@/components/Stats";
+import Fuites from "@/components/Fuites";
+import Manifeste from "@/components/Manifeste";
 import Methode from "@/components/Methode";
 import Gains from "@/components/Gains";
 import Cas from "@/components/Cas";
 import Guide from "@/components/Guide";
 import Offre from "@/components/Offre";
-import Objections from "@/components/Objections";
+import Questions from "@/components/Questions";
 import Journal from "@/components/Journal";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -55,15 +55,15 @@ export default function Home() {
         <Nav />
         <main>
           <Hero />
-          <TrustLine />
-          <Constat />
-          <Idee />
+          <Stats />
+          <Fuites />
           <Methode />
           <Gains />
-          <Cas />
+          <Manifeste />
           <Guide />
+          <Cas />
           <Offre />
-          <Objections />
+          <Questions />
           <Journal />
           <Contact />
         </main>

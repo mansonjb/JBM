@@ -3,11 +3,11 @@ import { cas } from "@/lib/site";
 export default function Cas() {
   return (
     <section
-      id="preuve"
+      id="resultats"
       className="border-b border-line px-[6vw] py-[110px] lg:py-[130px]"
     >
       <div className="mb-14 text-[12px] tracking-[0.1em] text-muted uppercase">
-        04 · {cas.kicker}
+        05 · {cas.kicker}
       </div>
 
       <div className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:gap-10">

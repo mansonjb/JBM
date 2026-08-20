@@ -1,7 +1,8 @@
 # Un Degré
 
 Site vitrine de Jean-Baptiste Manson, consultant indépendant.
-Landing page unique construite à partir de la maquette Claude Design `Un Degré.dc.html`.
+Landing page unique : audit d'entreprise puis optimisation exécutée.
+Design issu de la maquette Claude Design `Un Degré.dc.html`.
 
 ## Stack
 
@@ -24,10 +25,20 @@ npm start        # http://localhost:3083
 
 | Chemin | Rôle |
 | --- | --- |
-| `lib/site.ts` | Tout le contenu éditorial (chiffres, offres, objections, journal) |
-| `app/page.tsx` | Assemblage des 13 sections |
-| `components/` | Une section = un composant |
-| `components/ImageSlot.tsx` | Emplacement photo : affiche le brief de prise de vue tant que `src` est vide |
+| `lib/site.ts` | Tout le contenu éditorial (chiffres, méthode, offre, questions, journal) |
+| `app/page.tsx` | Assemblage des sections, dans l'ordre du récit |
+| `components/Hero.tsx` | Accroche : audit puis optimisation |
+| `components/Stats.tsx` | Bande de chiffres sous le héros |
+| `components/Fuites.tsx` | 01 · Ce que l'audit trouve à chaque fois |
+| `components/Methode.tsx` | 02 · Les cinq étapes, de l'analyse à l'optimisation |
+| `components/Gains.tsx` | Temps, marge, confort |
+| `components/Manifeste.tsx` | 03 · Un degré, pas un virage |
+| `components/Guide.tsx` | 04 · Qui je suis, compétences, marques servies |
+| `components/Cas.tsx` | 05 · CB Sols, l'audit en entier |
+| `components/Offre.tsx` | 06 · Les quatre prestations, sans montant affiché |
+| `components/Questions.tsx` | 07 · Les questions posées avant de signer |
+| `components/Journal.tsx` | 08 · L'angle mort, une observation par semaine |
+| `components/ImageSlot.tsx` | Emplacement photo : affiche le brief tant que `src` est vide |
 | `components/DivergingLines.tsx` | Les deux traits qui divergent d'un degré au fil du scroll |
 | `app/api/contact/route.ts` | Réception du formulaire (Resend si clé, sinon `mailto`) |
 | `app/mentions-legales/` | Mentions légales |
@@ -63,3 +74,4 @@ Manquent encore :
 - Numéro de téléphone réel dans `lib/site.ts` (placeholder `+33 6 00 00 00 00`)
 - Domaine final dans `lib/site.ts` (`domain`) si différent de `undegre.fr`
 - `RESEND_API_KEY` en variable d'environnement pour l'envoi réel du formulaire
+- Un témoignage client réel (CB Sols) : c'est la pièce qui manque le plus au site

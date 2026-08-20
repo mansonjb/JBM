@@ -1,4 +1,4 @@
-import { marches } from "@/lib/site";
+import { marches, methodeIntro } from "@/lib/site";
 
 export default function Methode() {
   return (
@@ -7,15 +7,14 @@ export default function Methode() {
       className="border-b border-line px-[6vw] py-[110px] lg:py-[130px]"
     >
       <div className="mb-14 text-[12px] tracking-[0.1em] text-muted uppercase">
-        03 · La méthode
+        02 · La méthode
       </div>
 
       <h2 className="u-display m-0 mb-6 text-[clamp(44px,9vw,168px)] tracking-[-0.03em]">
-        Les quatre marches.
+        Comment je m&apos;y prends.
       </h2>
       <p className="mt-0 mb-14 max-w-[58ch] text-[clamp(16px,1.3vw,19px)] leading-[1.6] text-muted">
-        La même séquence à chaque fois, quel que soit le métier. À chaque marche,
-        vous recevez quelque chose de concret.
+        {methodeIntro}
       </p>
 
       <div className="border-t border-line">
@@ -23,7 +22,7 @@ export default function Methode() {
           <div
             key={marche.n}
             className={`u-reveal grid grid-cols-[52px_minmax(0,1fr)] items-start gap-x-6 gap-y-3 border-b border-line py-9 md:grid-cols-[90px_minmax(0,220px)_minmax(0,1fr)_minmax(0,280px)] md:gap-8 ${
-              i === 3 ? "u-tilt" : ""
+              i === 4 ? "u-tilt" : ""
             }`}
             style={{ transitionDelay: `${i * 60}ms` }}
           >
@@ -55,9 +54,8 @@ export default function Methode() {
         ))}
       </div>
 
-      <p className="u-serif mt-14 max-w-[28ch] text-[clamp(24px,2.4vw,36px)] leading-[1.35]">
-        On prend le temps sur les trois premières marches. On va très vite sur la
-        quatrième.
+      <p className="u-serif mt-14 max-w-[32ch] text-[clamp(24px,2.4vw,36px)] leading-[1.35]">
+        Vous savez à tout moment où on en est, et ce qui a été décidé.
       </p>
     </section>
   );

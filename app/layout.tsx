@@ -35,11 +35,11 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
   title: {
-    default: `${site.name} · il vous manque des clients, pas des moyens`,
+    default: `${site.name} · audit et optimisation d'entreprise`,
     template: `%s · ${site.name}`,
   },
   description:
-    "Optimisation d'activité et acquisition client pour PME et entreprises de service. Je viens comprendre comment votre entreprise tourne, puis on corrige ce qui vous coûte le plus cher : du temps gagné, de la marge gagnée, du confort au quotidien.",
+    "Audit et optimisation d'entreprise pour PME et entreprises de service. Une semaine sur place à comprendre comment votre machine tourne, puis on corrige ce qui vous fait perdre du temps, de la marge et des clients.",
   keywords: [
     "consultant indépendant",
     "optimisation d'activité",
@@ -56,9 +56,9 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: site.domain,
     siteName: site.name,
-    title: `${site.name} · ${site.baseline}`,
+    title: `${site.name} · j'audite votre entreprise, puis je la règle`,
     description:
-      "Il vous manque des clients, pas des moyens. Le consultant recommande, l'agence exécute, et entre les deux le projet s'arrête. Je reste jusqu'à ce que ça tourne.",
+      "J'audite votre entreprise pendant une semaine, chiffres en main, puis je pilote les corrections avec le bon prestataire pour chaque sujet.",
   },
   robots: { index: true, follow: true },
 };
