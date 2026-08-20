@@ -46,7 +46,7 @@ remplir un : déposer le fichier dans `public/` et ajouter `src="/…"` sur le
 | # | Section | Format | Sujet |
 | --- | --- | --- | --- |
 | 1 | Héros | paysage très large, 2400 px mini | Plan large dans un lieu de travail réel, regard objectif, l'air interrompu |
-| 2 | L'idée | vertical 4:5 | Un coffre d'outils ou un établi rangé au millimètre, vu du dessus, lumière rasante |
+| 2 | L'idée | vertical 4:5 | Une séance de travail : tableau annoté, colonnes réorganisées, lumière naturelle |
 | 3 | Le cas CB Sols | paysage 4:3 | Un chantier terminé, un sol posé, lumière naturelle |
 | 4 | Pourquoi moi (bloc bleu) | vertical 4:5 | Noir et blanc, en action : il annote, il montre du doigt |
 | 5 | Pourquoi moi (suite) | vertical 3:4 | Portrait, cadrage serré, lumière douce, expression calme |

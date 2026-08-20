@@ -20,38 +20,38 @@ export const nav = [
 ];
 
 export const hero = {
-  kicker: "Conseil et exécution · artisans, commerces et PME",
+  kicker: "Optimisation d'activité et acquisition client · PME et entreprises de service",
   title: "Ce qu'il vous manque est déjà chez vous.",
-  lead: "Mal placé, mal montré, mal vendu. Je trouve où, exactement. Puis je le corrige moi-même, sans budget supplémentaire.",
+  lead: "Vos clients, vos marges, votre savoir-faire : la matière est là. Je trouve où elle se perd, puis je remets le système en marche moi-même, sans budget supplémentaire.",
 };
 
 /** Bande de confiance sous le héros : la crédibilité en une ligne, pas en quatre chiffres. */
 export const trustLine = [
   "500+ projets créatifs livrés en agence",
   "Louis Vuitton · Netflix · Ford · Hugo Boss",
-  "aujourd'hui au service des artisans et des PME",
+  "aujourd'hui au service de la performance des PME",
 ];
 
 /* 02 — Le constat : le lecteur se reconnaît avant qu'on lui parle de nous. */
 export const symptomes = [
   {
     n: "01",
-    text: "Vous payez de la publicité, et le téléphone ne sonne pas plus qu'avant.",
+    text: "Votre budget d'acquisition augmente, votre coût par client aussi, et le chiffre d'affaires ne suit pas.",
   },
   {
     n: "02",
-    text: "Vos meilleurs clients arrivent par bouche-à-oreille, et personne ne sait ni pourquoi ni comment le provoquer.",
+    text: "Vos meilleurs clients viennent de la recommandation, et personne dans l'entreprise ne sait la provoquer.",
   },
   {
     n: "03",
-    text: "Vous travaillez beaucoup, et vous ne sauriez pas dire quelle part de ce travail rapporte vraiment.",
+    text: "Vos équipes tournent à plein régime, et personne ne peut dire quelle part de ce travail produit réellement de la marge.",
   },
 ];
 
 export const constat = {
   title: "Rien n'est cassé. C'est exactement ça, le problème.",
   chute:
-    "Dans presque tous les cas, il ne manque ni budget, ni talent, ni clients. Il manque un degré de justesse dans la disposition.",
+    "Dans presque tous les cas, il ne manque ni budget, ni talent, ni marché. La valeur est déjà produite. Elle se perd entre l'endroit où elle se crée et celui où elle se vend.",
 };
 
 /* 03 — L'idée : la grande idée du site, démontrée en trois temps. */
@@ -59,10 +59,10 @@ export const idee = {
   kicker: "L'idée",
   title: "Rien ajouté. Tout déplacé.",
   paragraphes: [
-    "Vous avez déjà vécu ça : une pièce où l'on déplace trois meubles, et elle paraît deux fois plus grande. Personne n'a rien acheté, rien jeté. On a changé la disposition.",
-    "Une camionnette d'artisan, c'est la même chose. Le même matériel rangé autrement, et tout rentre, et on ne perd plus dix minutes par chantier à chercher un outil.",
-    "Une entreprise ne fonctionne pas autrement. Les produits, les prix, les horaires, les pages du site, l'ordre dans lequel les choses sont montrées : tout est déjà là. C'est la disposition qui décide du résultat.",
-    "Chercher le maximum de résultat avec le minimum d'effort, à l'école on appelait ça de la paresse. J'en ai fait un métier : économiser l'effort là où il ne produit rien, pour le dépenser là où il compte.",
+    "Deux entreprises du même métier, avec le même budget, la même équipe et le même marché, ne font pas le même chiffre. L'écart vient rarement des moyens. Il vient de la disposition : ce qui est mis en avant, dans quel ordre, devant qui, à quel moment de la décision.",
+    "Une offre placée au bon endroit du parcours se vend seule. La même offre, trois écrans plus loin, ne se vend pas. Personne n'a touché ni au produit, ni au prix, ni à l'équipe commerciale.",
+    "C'est vrai de votre catalogue, de vos pages, de vos devis, du temps de vos équipes et de chaque euro d'acquisition. Tout est déjà là. La performance tient à l'agencement.",
+    "Chercher le maximum de résultat avec le minimum d'effort, à l'école on appelait ça de la paresse. J'en ai fait une méthode : retirer l'effort là où il ne produit rien, pour le concentrer là où il compose.",
   ],
   citation:
     "Un degré d'écart ne se voit pas au départ. Cent kilomètres plus loin, on n'arrive pas au même endroit.",
@@ -74,21 +74,21 @@ export const marches = [
   {
     n: "01",
     title: "Voir",
-    text: "Je regarde l'activité entière, jamais le symptôme seul. Les produits, l'offre, la façon de vendre, les processus, l'expérience client, la communication, le digital.",
+    text: "Je regarde l'activité entière, jamais le symptôme seul : l'offre, les prix, le parcours d'achat, les canaux d'acquisition, les processus internes, l'expérience client.",
     question: "Où se crée réellement la valeur ici ?",
     livrable: "Une carte de votre activité telle qu'elle fonctionne vraiment.",
   },
   {
     n: "02",
     title: "Trouver",
-    text: "Répartition du chiffre d'affaires, provenance des clients, part de la recommandation, coût en temps de chaque chose.",
+    text: "Répartition du chiffre d'affaires et de la marge, coût d'acquisition par canal, part de la recommandation, temps passé par euro produit.",
     question: "Qu'est-ce qui rapporte vraiment, et qu'est-ce qui en donne l'illusion ?",
     livrable: "Les chiffres que personne n'avait encore mis côte à côte.",
   },
   {
     n: "03",
     title: "Choisir",
-    text: "On descend marche par marche jusqu'au point de friction précis, et on chiffre ce que l'inaction coûte chaque mois.",
+    text: "On descend jusqu'au point de friction précis, celui qui bloque le reste, et on chiffre ce qu'il coûte chaque mois.",
     question: "Par quoi commence-t-on ?",
     livrable: "Un point de départ chiffré, et l'ordre des priorités.",
   },
@@ -109,23 +109,23 @@ export const cas = {
   temps: [
     {
       label: "Avant",
-      text: "Trois ans de publicité payée, zéro demande de devis. Le site existait, le téléphone ne sonnait pas. Le budget partait, le carnet se remplissait au bouche-à-oreille et à rien d'autre.",
+      text: "Trois ans de budget publicitaire dépensé, zéro demande entrante. Le site existait, l'acquisition ne produisait rien. Le carnet de commandes tenait sur la recommandation, et sur rien d'autre.",
     },
     {
       label: "Ce que j'ai vu",
-      text: "Il vendait un métier quand ses clients, eux, cherchaient une pièce : un sol de cuisine, une terrasse, une salle de bains, dans leur ville. Le travail était irréprochable, il n'apparaissait simplement nulle part où on le cherchait.",
+      text: "L'offre était construite autour du métier, quand la demande, elle, se formule par besoin : un sol de cuisine, une terrasse, une salle de bains, dans une ville précise. La qualité d'exécution était irréprochable. Elle n'apparaissait nulle part où la demande se forme.",
     },
     {
       label: "Ce que j'ai fait",
-      text: "Huit jours de travail. Une page par métier, par contexte et par ville. Les chantiers déjà réalisés remis en avant comme preuve. Une demande de devis possible depuis n'importe quelle page, et la mesure installée pour savoir ce qui marche.",
+      text: "Huit jours de travail. L'offre redécoupée par besoin, par contexte et par territoire. Les réalisations remises au travail comme preuve commerciale. Un point de conversion sur chaque page, et la mesure installée pour arbitrer ensuite.",
     },
     {
       label: "Après",
-      text: "Trois mois plus tard : treize demandes de devis, un trafic organique 3,6 fois supérieur au trafic payant, et un budget publicitaire qui n'est plus la seule source de clients.",
+      text: "Trois mois plus tard : treize demandes entrantes qualifiées, un trafic organique 3,6 fois supérieur au trafic payant, et une acquisition qui ne dépend plus du budget publicitaire.",
     },
   ],
   chiffres: [
-    { value: "0 → 13", label: "demandes de devis, en trois mois" },
+    { value: "0 → 13", label: "demandes entrantes, en trois mois" },
     { value: "8", label: "jours de travail" },
     { value: "× 3,6", label: "organique sur payant" },
   ],
@@ -178,7 +178,7 @@ export const offres = [
   },
   {
     title: "Le Système d'acquisition",
-    text: "Arborescence par métiers, contextes et territoires. Contenus de longue traîne. Preuves clients filmées. Conversion sur chaque page. Mesure installée.",
+    text: "Offre redécoupée par besoin, par contexte et par territoire. Contenus de longue traîne. Preuves clients filmées. Un point de conversion sur chaque page. Mesure installée pour arbitrer.",
     cta: "Demander une proposition",
     note: "périmètre défini au diagnostic",
     accent: false,
@@ -186,7 +186,7 @@ export const offres = [
   },
   {
     title: "La Production augmentée",
-    text: "Montrer ce qui n'existe pas encore, ou ce qui ne peut pas être photographié. Les outils d'aujourd'hui au service de votre activité.",
+    text: "Montrer ce qui n'existe pas encore, ou ce qui ne peut pas être photographié. Les outils génératifs mis au service de votre argumentaire commercial.",
     cta: "Parler du projet",
     note: "sur mesure",
     accent: false,
@@ -194,7 +194,7 @@ export const offres = [
   },
   {
     title: "Le Suivi",
-    text: "Mesure mensuelle, itération, arbitrages. Le système ne se dégrade pas, il se règle.",
+    text: "Mesure mensuelle, itération, arbitrages. La performance ne se dégrade pas, elle se règle.",
     cta: "En discuter",
     note: "engagement de six mois",
     accent: false,
@@ -231,27 +231,27 @@ export const objections = [
 
 /* 09 — Le journal : la preuve du regard, une fois par semaine. */
 export const journalIntro =
-  "Une observation par semaine. Une photo prise sur le vif, ce que j'y vois, ce que je ferais. C'est le même regard que celui que j'applique à une activité entière.";
+  "Une observation par semaine. Une situation prise sur le vif, ce que j'y vois, ce que je changerais. C'est le même regard, appliqué à une activité entière pendant une semaine.";
 
 export const journal = [
   {
     date: "14 · 03",
     title: "La caisse d'un magasin bio",
-    text: "Les seuls produits posés à côté de la caisse coûtaient plus de dix euros. Personne n'achète ça par impulsion : un achat cher demande une délibération, donc il ne se prend pas au dernier moment.",
+    text: "Les seuls produits posés en zone de caisse dépassaient dix euros. L'achat d'impulsion suppose une décision sans délibération : au-delà d'un certain montant, il n'arrive pas. L'emplacement le plus vu du magasin ne vendait rien.",
     slot: "OBSERVATION · la caisse d'un magasin bio, prise au téléphone",
     note: "ici, 12 €",
   },
   {
     date: "27 · 02",
     title: "Une devanture fermée à midi",
-    text: "L'horaire affiché ne correspondait ni au passage de la rue, ni à celui du marché voisin. Le commerce était ouvert quand personne ne marchait.",
+    text: "L'amplitude d'ouverture ne recoupait ni le flux de la rue, ni celui du marché voisin. Le point de vente était ouvert quand personne ne passait, et fermé aux deux heures où tout le monde passait.",
     slot: "OBSERVATION · une devanture, photo téléphone",
     note: null,
   },
   {
     date: "09 · 02",
     title: "Un stand au bord de l'allée",
-    text: "Le produit le plus rentable était rangé derrière le vendeur. Ce qu'on montre en premier décide de ce qui se vend, avant même le prix.",
+    text: "Le produit à la plus forte marge était rangé derrière le vendeur. L'ordre d'exposition décide du mix de ventes avant même le prix, et personne ne l'avait arbitré.",
     slot: "OBSERVATION · un stand ou un étalage, photo téléphone",
     note: null,
   },

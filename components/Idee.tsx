@@ -27,7 +27,7 @@ export default function Idee() {
 
         <div className="u-reveal">
           <div className="u-tilt relative aspect-4/5">
-            <ImageSlot brief="PHOTO 2 · un coffre d'outils ou un établi rangé au millimètre, vu du dessus, lumière rasante" />
+            <ImageSlot brief="PHOTO 2 · une séance de travail : tableau annoté, colonnes réorganisées, lumière naturelle" />
           </div>
         </div>
       </div>

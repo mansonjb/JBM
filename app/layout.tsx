@@ -39,14 +39,15 @@ export const metadata: Metadata = {
     template: `%s · ${site.name}`,
   },
   description:
-    "Consultant indépendant pour artisans, commerces et PME. Je trouve où votre activité perd de la valeur, puis je le corrige moi-même. Diagnostic en une semaine, exécution comprise.",
+    "Optimisation d'activité et acquisition client pour PME et entreprises de service. Je trouve où votre activité perd de la valeur, puis je le corrige moi-même. Diagnostic en une semaine, exécution comprise.",
   keywords: [
     "consultant indépendant",
     "optimisation d'activité",
     "acquisition client",
+    "performance commerciale",
     "diagnostic entreprise",
+    "coût d'acquisition",
     "SEO longue traîne",
-    "artisan",
     "PME",
   ],
   alternates: { canonical: "/" },
