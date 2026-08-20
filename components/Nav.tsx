@@ -14,7 +14,7 @@ export default function Nav() {
           <a
             key={item.href}
             href={item.href}
-            className="transition-colors hover:text-blue"
+            className="u-link"
           >
             {item.label}
           </a>

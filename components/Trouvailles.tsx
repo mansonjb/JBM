@@ -29,12 +29,15 @@ export default function Trouvailles() {
         {trouvailles.cartes.map((carte, i) => (
           <div
             key={carte.titre}
-            className={`u-reveal border-b border-line py-9 lg:px-8 lg:first:pl-0 ${
+            className={`u-reveal u-card border-b border-line px-0 py-9 sm:px-6 lg:px-8 lg:first:pl-0 ${
               i % 3 === 2 ? "" : "lg:border-r"
             } ${i === 3 ? "u-tilt" : ""}`}
             style={{ transitionDelay: `${(i % 3) * 60}ms` }}
           >
-            <h3 className="u-display m-0 mb-4 max-w-[16ch] text-[clamp(20px,1.9vw,28px)]">
+            <div className="u-num mb-4 text-[12px] font-bold tracking-[0.1em] text-blue">
+              {String(i + 1).padStart(2, "0")}
+            </div>
+            <h3 className="u-card-title u-display m-0 mb-4 max-w-[16ch] text-[clamp(20px,1.9vw,28px)]">
               {carte.titre}
             </h3>
             <p className="m-0 max-w-[42ch] text-[clamp(15px,1.2vw,17px)] leading-[1.65] text-muted">
@@ -44,8 +47,8 @@ export default function Trouvailles() {
         ))}
       </div>
 
-      <p className="u-serif mt-14 max-w-[36ch] text-[clamp(24px,2.6vw,40px)] leading-[1.28]">
-        {trouvailles.chute}
+      <p className="u-serif mt-14 max-w-[36ch] text-[clamp(24px,2.6vw,40px)] leading-[1.5]">
+        <span className="u-mark">{trouvailles.chute}</span>
       </p>
     </section>
   );

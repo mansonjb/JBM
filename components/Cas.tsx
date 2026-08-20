@@ -33,8 +33,28 @@ export default function Cas() {
           ))}
         </div>
 
-        <div className="u-reveal">
-          <div className="mb-6 text-[12px] tracking-[0.1em] text-muted uppercase">
+        <div className="u-reveal u-frame relative p-7 lg:p-9">
+          <svg
+            viewBox="0 0 80 60"
+            aria-hidden="true"
+            className="pointer-events-none absolute -top-8 -left-6 hidden h-[46px] w-[62px] overflow-visible lg:block"
+          >
+            <path
+              d="M6 4 C26 12 40 24 54 40"
+              fill="none"
+              stroke="#1F3BD8"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            <path
+              d="M54 40 L42 38 M54 40 L52 28"
+              fill="none"
+              stroke="#1F3BD8"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+          </svg>
+          <div className="u-bullet mb-6 text-[12px] tracking-[0.1em] text-muted uppercase">
             {cas.chiffresIntro}
           </div>
           <div className="border-t border-line">
@@ -59,11 +79,15 @@ export default function Cas() {
         {cas.chute.map((paragraphe, i) => (
           <p
             key={i}
-            className={`u-serif max-w-[34ch] text-[clamp(22px,2.4vw,36px)] leading-[1.3] ${
+            className={`u-serif max-w-[34ch] text-[clamp(22px,2.4vw,36px)] leading-[1.45] ${
               i === cas.chute.length - 1 ? "m-0" : "mt-0 mb-5"
             }`}
           >
-            {paragraphe}
+            {i === cas.chute.length - 1 ? (
+              <span className="u-mark">{paragraphe}</span>
+            ) : (
+              paragraphe
+            )}
           </p>
         ))}
       </div>

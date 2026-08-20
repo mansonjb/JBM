@@ -27,15 +27,15 @@ export default function Qui() {
             {qui.liens.map((lien) => (
               <li
                 key={lien}
-                className="border-b border-line py-4 text-[clamp(16px,1.4vw,21px)] leading-[1.4]"
+                className="u-row cursor-default border-b border-line py-4 pr-8 text-[clamp(16px,1.4vw,21px)] leading-[1.4]"
               >
                 {lien}
               </li>
             ))}
           </ul>
 
-          <p className="u-serif m-0 mt-10 max-w-[34ch] text-[clamp(22px,2.3vw,34px)] leading-[1.3]">
-            {qui.chute}
+          <p className="u-serif m-0 mt-10 max-w-[34ch] text-[clamp(22px,2.3vw,34px)] leading-[1.5]">
+            <span className="u-mark">{qui.chute}</span>
           </p>
         </div>
 

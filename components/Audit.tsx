@@ -26,15 +26,15 @@ export default function Audit() {
           ))}
         </div>
 
-        <div className="u-reveal">
-          <div className="mb-5 text-[12px] tracking-[0.1em] text-muted uppercase">
+        <div className="u-reveal u-frame p-7 lg:p-9">
+          <div className="u-bullet mb-5 text-[12px] tracking-[0.1em] text-muted uppercase">
             {audit.livrablesIntro}
           </div>
           <ul className="m-0 list-none border-t border-line p-0">
             {audit.livrables.map((livrable) => (
               <li
                 key={livrable}
-                className="border-b border-line py-4 text-[clamp(16px,1.4vw,21px)] leading-[1.4]"
+                className="u-row cursor-default border-b border-line py-4 pr-8 text-[clamp(16px,1.4vw,21px)] leading-[1.4]"
               >
                 {livrable}
               </li>
@@ -49,8 +49,8 @@ export default function Audit() {
         </div>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-10">
           {audit.suites.map((suite, i) => (
-            <div key={suite} className="u-reveal border-t border-line pt-5">
-              <div className="u-num mb-3 text-sm font-bold text-muted">
+            <div key={suite} className="u-reveal u-card border-t-2 border-blue pt-5">
+              <div className="u-num mb-3 text-sm font-bold text-blue">
                 {String(i + 1).padStart(2, "0")}
               </div>
               <p className="m-0 max-w-[34ch] text-[clamp(16px,1.3vw,19px)] leading-[1.5]">
@@ -62,8 +62,8 @@ export default function Audit() {
       </div>
 
       <div className="mt-14 flex flex-col items-start gap-8 lg:flex-row lg:items-end lg:justify-between">
-        <p className="u-serif m-0 max-w-[34ch] text-[clamp(22px,2.4vw,36px)] leading-[1.3]">
-          {audit.chute}
+        <p className="u-serif m-0 max-w-[34ch] text-[clamp(22px,2.4vw,36px)] leading-[1.5]">
+          <span className="u-mark">{audit.chute}</span>
         </p>
         <a
           href="#contact"

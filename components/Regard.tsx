@@ -29,7 +29,7 @@ export default function Regard() {
             {regard.derives.map((derive) => (
               <li
                 key={derive}
-                className="border-b border-line py-3 text-[clamp(16px,1.4vw,21px)]"
+                className="u-row cursor-default border-b border-line py-3 pr-8 text-[clamp(16px,1.4vw,21px)]"
               >
                 {derive}
               </li>
@@ -46,8 +46,8 @@ export default function Regard() {
           ))}
         </div>
 
-        <div className="u-reveal">
-          <div className="mb-6 text-[11px] tracking-[0.12em] text-muted uppercase">
+        <div className="u-reveal u-frame p-7 lg:p-9">
+          <div className="u-bullet mb-6 text-[11px] tracking-[0.12em] text-muted uppercase">
             Les questions que je pose
           </div>
           <ul className="m-0 list-none border-t border-line p-0">
@@ -64,8 +64,8 @@ export default function Regard() {
         </div>
       </div>
 
-      <p className="u-serif mt-14 max-w-[38ch] text-[clamp(24px,2.6vw,40px)] leading-[1.28]">
-        {regard.chute}
+      <p className="u-serif mt-14 max-w-[38ch] text-[clamp(24px,2.6vw,40px)] leading-[1.5]">
+        <span className="u-mark">{regard.chute}</span>
       </p>
     </section>
   );

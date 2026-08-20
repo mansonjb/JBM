@@ -39,14 +39,21 @@ npm start        # http://localhost:3083
 | `components/Questions.tsx` | 08 · Questions |
 | `components/Contact.tsx` | Clôture et formulaire |
 | `components/ImageSlot.tsx` | Emplacement photo : affiche le brief tant que `src` est vide |
-| `components/DivergingLines.tsx` | Les deux traits qui divergent d'un degré au fil du scroll |
 | `app/api/contact/route.ts` | Réception du formulaire (Resend si clé, sinon `mailto`) |
 | `app/mentions-legales/` | Mentions légales |
 
 ## Le motif
 
-Chaque section contient un élément incliné d'un degré (`.u-tilt`), et deux filets
-divergents d'un degré se révèlent à mesure du scroll. C'est la démonstration du nom.
+Chaque section contient un élément incliné d'un degré (`.u-tilt`). C'est la
+démonstration du nom, sans le dire.
+
+## Le bleu
+
+Le bleu ne sert jamais de décor, il signale toujours quelque chose de vivant :
+`.u-row` (survol d'une ligne de liste, filet et flèche en bleu), `.u-card`
+(survol d'une carte, titre en bleu), `.u-frame` (encadré qui s'allume),
+`.u-link` (soulignement qui se déploie), `.u-mark` (surlignage au feutre,
+ligne par ligne) et `.u-bullet` (puce carrée sur les intertitres).
 
 ## Photos
 

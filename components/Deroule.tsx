@@ -15,8 +15,8 @@ export default function Deroule() {
         <h2 className="u-display m-0 max-w-[16ch] text-[clamp(40px,6.4vw,112px)] tracking-[-0.03em]">
           {deroule.title}
         </h2>
-        <p className="u-serif m-0 max-w-[26ch] text-[clamp(21px,2vw,30px)] leading-[1.35] lg:pb-3">
-          {deroule.intro}
+        <p className="u-serif m-0 max-w-[26ch] text-[clamp(21px,2vw,30px)] leading-[1.5] lg:pb-3">
+          <span className="u-mark">{deroule.intro}</span>
         </p>
       </div>
 
@@ -25,16 +25,16 @@ export default function Deroule() {
           {deroule.etapes.map((etape, i) => (
             <div
               key={etape.n}
-              className={`u-reveal grid grid-cols-1 gap-4 border-b border-line py-9 md:grid-cols-[minmax(0,220px)_minmax(0,1fr)] md:gap-10 ${
+              className={`u-reveal u-card grid grid-cols-1 gap-4 border-b border-line py-9 md:grid-cols-[minmax(0,220px)_minmax(0,1fr)] md:gap-10 ${
                 i === 4 ? "u-tilt" : ""
               }`}
               style={{ transitionDelay: `${i * 60}ms` }}
             >
               <div>
-                <div className="u-num mb-3 text-sm font-bold tracking-[0.06em] text-muted">
+                <div className="u-num mb-3 text-sm font-bold tracking-[0.06em] text-blue">
                   {etape.n}
                 </div>
-                <h3 className="u-display m-0 max-w-[14ch] text-[clamp(22px,2.1vw,32px)]">
+                <h3 className="u-card-title u-display m-0 max-w-[14ch] text-[clamp(22px,2.1vw,32px)]">
                   {etape.titre}
                 </h3>
               </div>

@@ -9,7 +9,7 @@ export default function Ouverture() {
           {ouverture.pistes.map((piste, i) => (
             <li
               key={piste}
-              className={`u-reveal border-b border-line py-4 text-[clamp(17px,1.6vw,23px)] leading-[1.4] ${
+              className={`u-reveal u-row cursor-default border-b border-line py-4 pr-8 text-[clamp(17px,1.6vw,23px)] leading-[1.4] ${
                 i === 3 ? "u-tilt" : ""
               }`}
               style={{ transitionDelay: `${i * 50}ms` }}
@@ -27,7 +27,7 @@ export default function Ouverture() {
                 i === ouverture.paragraphes.length - 1 ? "m-0" : "mt-0 mb-7"
               }`}
             >
-              {paragraphe}
+              {i === 0 ? <span className="u-mark">{paragraphe}</span> : paragraphe}
             </p>
           ))}
         </div>

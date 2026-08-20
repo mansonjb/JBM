@@ -1,4 +1,3 @@
-import DivergingLines from "@/components/DivergingLines";
 import Reveal from "@/components/Reveal";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
@@ -36,7 +35,6 @@ const jsonLd = {
 export default function Home() {
   return (
     <div className="relative overflow-x-clip bg-paper">
-      <DivergingLines />
       <Reveal />
       <script
         type="application/ld+json"

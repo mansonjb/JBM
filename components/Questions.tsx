@@ -27,23 +27,27 @@ export default function Questions() {
             return (
               <div
                 key={item.q}
-                className={`border-b border-line ${i === 2 ? "u-tilt" : ""}`}
+                className={`border-b transition-colors ${
+                  isOpen ? "border-blue" : "border-line"
+                } ${i === 2 ? "u-tilt" : ""}`}
               >
                 <button
                   type="button"
                   onClick={() => setOpen(isOpen ? -1 : i)}
                   aria-expanded={isOpen}
                   aria-controls={`question-${i}`}
-                  className="grid w-full cursor-pointer grid-cols-[44px_1fr_30px] items-baseline gap-4 bg-transparent py-6 text-left md:grid-cols-[60px_1fr_30px]"
+                  className="group grid w-full cursor-pointer grid-cols-[44px_1fr_30px] items-baseline gap-4 bg-transparent py-6 text-left transition-colors md:grid-cols-[60px_1fr_30px]"
                 >
-                  <span className="u-num text-[13px] font-bold text-muted">
+                  <span className="u-num text-[13px] font-bold text-muted transition-colors group-hover:text-blue">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="u-serif text-[clamp(20px,1.8vw,27px)] leading-[1.25] italic">
+                  <span className="u-serif text-[clamp(20px,1.8vw,27px)] leading-[1.25] italic transition-colors group-hover:text-blue">
                     {item.q}
                   </span>
                   <span
-                    className="text-right text-lg text-muted transition-transform duration-200"
+                    className={`text-right text-lg transition-all duration-200 group-hover:text-blue ${
+                      isOpen ? "text-blue" : "text-muted"
+                    }`}
                     style={{ transform: isOpen ? "rotate(45deg)" : "none" }}
                     aria-hidden="true"
                   >

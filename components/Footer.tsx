@@ -8,13 +8,13 @@ export default function Footer() {
         <div>
           <a
             href={`mailto:${site.email}`}
-            className="u-display block text-[clamp(24px,3.4vw,58px)] leading-[1.05] tracking-[-0.01em] text-ink transition-colors hover:text-blue"
+            className="u-display u-link block text-[clamp(24px,3.4vw,58px)] leading-[1.05] tracking-[-0.01em] text-ink"
           >
             {site.email}
           </a>
           <a
             href={`tel:${site.phoneHref}`}
-            className="u-display u-num mt-2 block text-[clamp(24px,3.4vw,58px)] leading-[1.05] tracking-[-0.01em] text-ink transition-colors hover:text-blue"
+            className="u-display u-num u-link mt-2 block text-[clamp(24px,3.4vw,58px)] leading-[1.05] tracking-[-0.01em] text-ink"
           >
             {site.phone}
           </a>
@@ -58,7 +58,7 @@ export default function Footer() {
 
       <div className="mt-10 flex flex-col justify-between gap-3 border-t border-line px-[6vw] pt-5 text-[12px] tracking-[0.06em] text-muted uppercase sm:flex-row sm:gap-8">
         <span>{site.author}</span>
-        <a href="/mentions-legales" className="text-muted hover:text-blue">
+        <a href="/mentions-legales" className="u-link text-muted">
           Mentions légales
         </a>
       </div>
