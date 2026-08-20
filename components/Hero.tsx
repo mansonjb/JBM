@@ -34,7 +34,7 @@ export default function Hero() {
           href="#contact"
           className="pointer-events-auto inline-block bg-blue px-7 py-4 text-[15px] font-semibold tracking-[0.04em] text-paper uppercase transition-colors hover:bg-paper hover:text-blue"
         >
-          Le diagnostic, {site.diagnosticPrice}
+          {site.ctaPrimary}
         </a>
       </div>
     </section>

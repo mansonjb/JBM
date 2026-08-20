@@ -73,8 +73,9 @@ export default function Preuves() {
             ))}
           </div>
           <p className="mt-7 max-w-[40ch] text-sm leading-[1.6] text-muted">
-            Ce ne sont pas mes clients cibles. C&apos;est la preuve que mon
-            exécution tient au plus haut niveau d&apos;exigence.
+            Des projets créatifs livrés en agence pour ces marques. Ce ne sont
+            pas mes clients d&apos;aujourd&apos;hui : c&apos;est le niveau
+            d&apos;exigence auquel j&apos;ai appris à produire.
           </p>
           <div className="relative mt-11 aspect-4/3">
             <ImageSlot brief="PHOTO 5 — les mains sur un carnet, un écran, un plan" />

@@ -6,7 +6,8 @@ export const site = {
   phone: "+33 6 00 00 00 00",
   phoneHref: "+33600000000",
   author: "Jean-Baptiste · consultant indépendant",
-  diagnosticPrice: "900 €",
+  ctaPrimary: "Réservez votre diagnostic",
+  ctaSecondary: "Réserver mon diagnostic",
 };
 
 export const nav = [
@@ -30,12 +31,12 @@ export const proofs = [
   },
   {
     value: "500+",
-    label: "clients servis à l'agence, de Louis Vuitton à Netflix",
+    label: "projets créatifs livrés en agence, pour des marques comme Louis Vuitton, Netflix ou Ford",
     accent: false,
   },
   {
     value: "4",
-    label: "technologies adoptées avant qu'elles deviennent évidentes",
+    label: "vagues technologiques mises au travail chez des clients avant qu'elles deviennent la norme. Aujourd'hui, l'IA",
     accent: false,
   },
 ];
@@ -65,12 +66,12 @@ export const observations = [
 ];
 
 export const origine = [
-  "J'ai passé mon enfance à faire la tour la plus haute avec le même nombre de Kapla.",
-  "Pas à réclamer plus de planches. À changer la disposition.",
-  "À l'école on appelait ça de la paresse : je cherchais le maximum de résultats avec le minimum d'efforts. Je n'ai jamais vu où était le problème. J'économisais l'effort là où il ne produisait rien, pour le dépenser là où il comptait.",
-  "C'est devenu mon métier.",
-  "Entre-temps j'ai eu de la chance quatre fois. Ou alors ce n'en était pas. Le live streaming en 2017, avant que ce soit partout. L'influence avant que ce soit un métier. Quatre ans d'agence de réalité augmentée et plus de 500 clients, avant que le mot soit connu. Et l'intelligence artificielle avant qu'elle devienne un argument de vente.",
-  "Quatre fois de suite, je suis arrivé avant. À un moment, ce n'est plus de la chance. C'est une façon de regarder.",
+  "Enfant, je passais des heures à monter la tour la plus haute possible avec le même nombre de Kapla.",
+  "Jamais à réclamer des planches en plus. Toujours à changer la disposition.",
+  "À l'école, on appelait ça de la paresse. Je cherchais le maximum de résultat avec le minimum d'effort, et je n'ai jamais vu où était le problème : j'économisais l'effort là où il ne produisait rien, pour le dépenser là où il comptait vraiment.",
+  "C'est resté. C'est devenu mon métier.",
+  "Depuis, j'ai eu de la chance quatre fois. Ou alors ce n'était pas de la chance. Le live streaming en 2017, quand personne n'y croyait encore. L'influence, avant que ce soit un métier. Quatre ans en agence de réalité augmentée, sur des projets créatifs pour de grandes marques, avant que le mot devienne courant. Puis l'intelligence artificielle, avant qu'elle serve d'argument de vente.",
+  "Quatre fois d'affilée, je suis arrivé un peu avant. À un moment, ça cesse d'être de la chance. C'est une façon de regarder.",
 ];
 
 export const marches = [
@@ -95,7 +96,7 @@ export const marches = [
   {
     n: "04",
     title: "Faire",
-    text: "Je l'exécute moi-même. C'est la marche que les consultants ne montent pas.",
+    text: "Je l'exécute moi-même, avec les méthodes et les outils d'aujourd'hui, pas ceux d'il y a cinq ans. C'est la marche que les consultants ne montent pas.",
     question: null,
   },
 ];
@@ -118,32 +119,32 @@ export const offres = [
   {
     title: "Le Diagnostic",
     text: "Les trois premières marches. Livrable : où se crée la valeur, où elle se perd, ce que l'inaction coûte en euros, et l'ordre des priorités.",
-    price: "900 €",
-    priceNote: "déduits de la mission",
+    cta: "Réserver le diagnostic",
+    note: "déduit de la mission si elle a lieu",
     accent: true,
     delay: "1 semaine",
   },
   {
     title: "Le Système d'acquisition",
     text: "Arborescence par métiers, contextes et territoires. Contenus de longue traîne. Preuves clients filmées. Conversion sur chaque page. Mesure installée.",
-    price: "à partir de 5 500 €",
-    priceNote: null,
+    cta: "Demander une proposition",
+    note: "périmètre défini au diagnostic",
     accent: false,
     delay: "8 jours sur 4 à 6 semaines",
   },
   {
     title: "La Production augmentée",
-    text: "Montrer ce qui n'existe pas encore, ou ce qui ne peut pas être photographié.",
-    price: "sur devis",
-    priceNote: null,
+    text: "Montrer ce qui n'existe pas encore, ou ce qui ne peut pas être photographié. Les outils d'aujourd'hui au service de votre activité.",
+    cta: "Parler du projet",
+    note: "sur mesure",
     accent: false,
     delay: "selon périmètre",
   },
   {
     title: "Le Suivi",
     text: "Mesure mensuelle, itération, arbitrages.",
-    price: "600 € par mois",
-    priceNote: null,
+    cta: "En discuter",
+    note: "engagement de six mois",
     accent: false,
     delay: "6 mois minimum",
   },
@@ -160,7 +161,7 @@ export const objections = [
   },
   {
     q: "C'est cher.",
-    a: "2 800 € chez CB Sols, et treize demandes de devis en trois mois là où il y en avait zéro depuis trois ans. La vraie question n'est pas ce que ça coûte, c'est ce que trois ans à zéro ont déjà coûté.",
+    a: "Chez CB Sols, la mission a coûté moins qu'un trimestre de publicité sans retour, et trois mois plus tard il y avait treize demandes de devis là où il n'y en avait aucune depuis trois ans. La vraie question n'est pas ce que ça coûte, c'est ce que trois ans à zéro ont déjà coûté.",
   },
   {
     q: "On n'a pas le temps.",

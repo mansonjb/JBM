@@ -22,20 +22,17 @@ export default function Offre() {
             </div>
             <p className="m-0 text-sm leading-[1.6] text-muted">{offre.text}</p>
             <div>
-              <div
-                className={`u-display u-num leading-[1.05] ${
+              <a
+                href="#contact"
+                className={`u-display inline-block leading-[1.05] underline-offset-[6px] transition-colors hover:underline ${
                   offre.accent
-                    ? "text-[clamp(34px,3.4vw,58px)] text-blue"
-                    : "text-[clamp(28px,2.7vw,44px)]"
+                    ? "text-[clamp(24px,2.4vw,34px)] text-blue"
+                    : "text-[clamp(22px,2vw,28px)] text-ink hover:text-blue"
                 }`}
               >
-                {offre.price}
-              </div>
-              {offre.priceNote && (
-                <div className="mt-2 text-[12px] text-muted">
-                  {offre.priceNote}
-                </div>
-              )}
+                {offre.cta}
+              </a>
+              <div className="mt-2 text-[12px] text-muted">{offre.note}</div>
             </div>
             <div className="text-[13px] tracking-[0.06em] text-muted uppercase">
               {offre.delay}

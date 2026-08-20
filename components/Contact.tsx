@@ -58,8 +58,8 @@ export default function Contact() {
             Réserver le diagnostic.
           </h2>
           <p className="m-0 max-w-[40ch] text-base leading-[1.65] text-paper/80">
-            Une semaine. Deux rendez-vous. Le montant est déduit de la mission si
-            elle a lieu.
+            Une semaine. Deux rendez-vous. Le diagnostic est déduit de la mission
+            si elle a lieu.
           </p>
         </div>
 
@@ -80,7 +80,7 @@ export default function Contact() {
           >
             {status === "sending"
               ? "Envoi…"
-              : `Réserver le diagnostic, ${site.diagnosticPrice}`}
+              : site.ctaSecondary}
           </button>
           {message && (
             <p

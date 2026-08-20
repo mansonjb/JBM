@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     template: `%s · ${site.name}`,
   },
   description:
-    "Consultant indépendant : je trouve, dans ce que vous avez déjà, le degré qui change tout. Puis je le corrige moi-même. Diagnostic 900 €, exécution comprise.",
+    "Consultant indépendant : je trouve, dans ce que vous avez déjà, le degré qui change tout. Puis je le corrige moi-même, diagnostic et exécution compris.",
   keywords: [
     "consultant indépendant",
     "optimisation d'activité",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `${site.name} — ${site.baseline}`,
     description:
-      "Le consultant recommande. L'agence exécute. Je fais les deux. Diagnostic 900 €, déduits de la mission.",
+      "Le consultant recommande. L'agence exécute. Je relie les deux. Le diagnostic est déduit de la mission.",
   },
   robots: { index: true, follow: true },
 };

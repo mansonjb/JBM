@@ -30,18 +30,14 @@ const jsonLd = {
     {
       "@type": "Offer",
       name: "Le Diagnostic",
-      price: "900",
-      priceCurrency: "EUR",
       description:
-        "Où se crée la valeur, où elle se perd, ce que l'inaction coûte, et l'ordre des priorités. Une semaine.",
+        "Où se crée la valeur, où elle se perd, ce que l'inaction coûte, et l'ordre des priorités. Une semaine, deux rendez-vous.",
     },
     {
       "@type": "Offer",
       name: "Le Système d'acquisition",
-      price: "5500",
-      priceCurrency: "EUR",
       description:
-        "Arborescence, contenus de longue traîne, preuves clients, conversion et mesure. 8 jours de travail.",
+        "Arborescence, contenus de longue traîne, preuves clients, conversion et mesure. Huit jours de travail.",
     },
   ],
 };
