@@ -9,24 +9,24 @@ export default function Guide() {
           05 · {guide.kicker}
         </div>
 
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)] lg:gap-[clamp(40px,6vw,100px)]">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-[clamp(40px,5vw,90px)]">
           <div className="u-reveal">
             <h2 className="u-display m-0 mb-10 text-[clamp(38px,6vw,104px)]">
               {guide.title}
             </h2>
-            <p className="m-0 mb-6 max-w-[58ch] text-base leading-[1.65] text-paper/85">
+            <p className="m-0 mb-6 max-w-[62ch] text-[clamp(16px,1.35vw,20px)] leading-[1.6] text-paper/85">
               {guide.lead}
             </p>
-            <p className="m-0 max-w-[58ch] text-base leading-[1.65] text-paper/85">
+            <p className="m-0 max-w-[62ch] text-[clamp(16px,1.35vw,20px)] leading-[1.6] text-paper/85">
               {guide.agence}
             </p>
           </div>
-          <div className="u-tilt relative aspect-3/2">
+          <div className="u-tilt relative aspect-3/2 lg:mt-6">
             <ImageSlot
               brief="PHOTO 4 · noir et blanc, en action : il annote, il montre du doigt"
               src="/plan-action.jpg"
               alt="Jean-Baptiste devant un tableau, plan d'action détaillé au marqueur"
-              sizes="(max-width: 1024px) 100vw, 40vw"
+              sizes="(max-width: 1024px) 100vw, 46vw"
             />
           </div>
         </div>
@@ -54,7 +54,7 @@ export default function Guide() {
                 </div>
               ))}
             </div>
-            <p className="mt-8 max-w-[54ch] text-[15px] leading-[1.65] text-muted">
+            <p className="mt-8 max-w-[58ch] text-[clamp(15px,1.25vw,18px)] leading-[1.65] text-muted">
               {guide.vaguesChute}
             </p>
 
@@ -78,7 +78,7 @@ export default function Guide() {
                 </div>
               ))}
             </div>
-            <p className="mt-7 max-w-[40ch] text-sm leading-[1.6] text-muted">
+            <p className="mt-7 max-w-[44ch] text-[clamp(15px,1.2vw,17px)] leading-[1.6] text-muted">
               Des projets créatifs, livrés sous contrainte, pour des marques qui
               ne laissent rien passer.
             </p>

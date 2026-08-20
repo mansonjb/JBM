@@ -50,7 +50,7 @@ export default function Objections() {
                 {isOpen && (
                   <p
                     id={`objection-${i}`}
-                    className="m-0 mb-7 max-w-[60ch] pl-[60px] text-[15px] leading-[1.65] text-muted md:pl-[76px]"
+                    className="m-0 mb-7 max-w-[66ch] pl-[60px] text-[clamp(15px,1.25vw,18px)] leading-[1.7] text-muted md:pl-[76px]"
                   >
                     {objection.a}
                   </p>

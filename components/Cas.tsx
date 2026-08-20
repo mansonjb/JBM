@@ -11,7 +11,7 @@ export default function Cas() {
       </div>
 
       <div className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:gap-10">
-        <h2 className="u-display m-0 text-[clamp(40px,7vw,124px)] leading-[0.88] tracking-[-0.03em]">
+        <h2 className="u-display m-0 text-[clamp(40px,7vw,124px)] tracking-[-0.03em]">
           {cas.client}
         </h2>
         <span className="text-[13px] tracking-[0.06em] text-muted uppercase">
@@ -34,7 +34,7 @@ export default function Cas() {
               >
                 {temps.label}
               </div>
-              <p className="m-0 max-w-[58ch] text-[15px] leading-[1.65] text-muted">
+              <p className="m-0 max-w-[62ch] text-[clamp(15px,1.25vw,18px)] leading-[1.65] text-muted">
                 {temps.text}
               </p>
             </div>

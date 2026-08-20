@@ -9,6 +9,8 @@ type Props = {
   priority?: boolean;
   /** Largeur rendue, pour que l'optimiseur serve la bonne variante. */
   sizes?: string;
+  /** Cadrage, quand le sujet ne doit pas tomber sous le texte. */
+  position?: string;
   className?: string;
 };
 
@@ -22,6 +24,7 @@ export default function ImageSlot({
   alt,
   priority,
   sizes = "(max-width: 768px) 100vw, 50vw",
+  position,
   className = "",
 }: Props) {
   if (src) {
@@ -32,6 +35,7 @@ export default function ImageSlot({
         fill
         priority={priority}
         sizes={sizes}
+        style={position ? { objectPosition: position } : undefined}
         className={`object-cover ${className}`}
       />
     );

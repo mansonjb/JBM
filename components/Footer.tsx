@@ -51,7 +51,7 @@ export default function Footer() {
       </div>
 
       <div className="mt-16 pl-[6vw] whitespace-nowrap lg:mt-20">
-        <div className="u-display text-[clamp(120px,24vw,420px)] leading-[0.82] tracking-[-0.04em] text-ink">
+        <div className="u-display text-[clamp(120px,24vw,420px)] tracking-[-0.04em] text-ink">
           {site.name}
         </div>
       </div>

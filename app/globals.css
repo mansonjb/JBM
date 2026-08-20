@@ -53,8 +53,14 @@ section[id] {
 .u-display {
   font-family: var(--font-display), Impact, sans-serif;
   text-transform: uppercase;
-  line-height: 0.9;
+  /* 1.02 minimum : en dessous, les accents des capitales se font manger par la ligne du dessus. */
+  line-height: 1.1;
   letter-spacing: -0.02em;
+}
+
+/* Mesure de lecture confortable, sans coller à la gouttière gauche. */
+.u-measure {
+  max-width: 68ch;
 }
 
 .u-serif {

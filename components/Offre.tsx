@@ -10,10 +10,10 @@ export default function Offre() {
         06 · L&apos;offre
       </div>
 
-      <h2 className="u-display m-0 mb-6 text-[clamp(44px,8vw,150px)] leading-[0.88] tracking-[-0.03em]">
+      <h2 className="u-display m-0 mb-6 text-[clamp(44px,8vw,150px)] tracking-[-0.03em]">
         Ce qu&apos;on peut faire.
       </h2>
-      <p className="mt-0 mb-14 max-w-[52ch] text-[15px] leading-[1.6] text-muted">
+      <p className="mt-0 mb-14 max-w-[58ch] text-[clamp(16px,1.3vw,19px)] leading-[1.6] text-muted">
         {offreIntro}
       </p>
 
@@ -27,7 +27,9 @@ export default function Offre() {
             <div className="u-display text-[28px] leading-[1.05] tracking-[-0.01em]">
               {offre.title}
             </div>
-            <p className="m-0 text-sm leading-[1.6] text-muted">{offre.text}</p>
+            <p className="m-0 max-w-[46ch] text-[clamp(14px,1.15vw,16px)] leading-[1.65] text-muted">
+              {offre.text}
+            </p>
             <div>
               <a
                 href="#contact"

@@ -10,10 +10,10 @@ export default function Methode() {
         03 · La méthode
       </div>
 
-      <h2 className="u-display m-0 mb-6 text-[clamp(44px,9vw,168px)] leading-[0.86] tracking-[-0.03em]">
+      <h2 className="u-display m-0 mb-6 text-[clamp(44px,9vw,168px)] tracking-[-0.03em]">
         Les quatre marches.
       </h2>
-      <p className="mt-0 mb-14 max-w-[52ch] text-[15px] leading-[1.6] text-muted">
+      <p className="mt-0 mb-14 max-w-[58ch] text-[clamp(16px,1.3vw,19px)] leading-[1.6] text-muted">
         La même séquence à chaque fois, quel que soit le métier. À chaque marche,
         vous recevez quelque chose de concret.
       </p>

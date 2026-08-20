@@ -12,10 +12,10 @@ export default function Journal() {
       </div>
 
       <div className="mb-14 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end md:gap-12">
-        <h2 className="u-display m-0 text-[clamp(40px,7vw,124px)] leading-[0.88] tracking-[-0.03em]">
+        <h2 className="u-display m-0 text-[clamp(40px,7vw,124px)] tracking-[-0.03em]">
           L&apos;angle mort.
         </h2>
-        <p className="m-0 max-w-[42ch] text-sm leading-[1.6] text-muted">
+        <p className="m-0 max-w-[46ch] text-[clamp(15px,1.2vw,18px)] leading-[1.6] text-muted">
           {journalIntro}
         </p>
       </div>
@@ -67,7 +67,7 @@ export default function Journal() {
               <h3 className="u-display mt-3 mb-3 text-[22px] leading-[1.1] tracking-[-0.01em]">
                 {entry.title}
               </h3>
-              <p className="m-0 text-sm leading-[1.6] text-muted">{entry.text}</p>
+              <p className="m-0 text-[15px] leading-[1.65] text-muted">{entry.text}</p>
             </div>
           </article>
         ))}

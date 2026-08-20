@@ -35,11 +35,11 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
   title: {
-    default: `${site.name} · ce qu\u2019il vous manque est déjà chez vous`,
+    default: `${site.name} · il vous manque des clients, pas des moyens`,
     template: `%s · ${site.name}`,
   },
   description:
-    "Optimisation d'activité et acquisition client pour PME et entreprises de service. Je passe d'abord le temps qu'il faut à comprendre votre machine, puis je propose et je pilote les optimisations avec les bons acteurs : du temps, de la marge, du confort.",
+    "Optimisation d'activité et acquisition client pour PME et entreprises de service. Je viens comprendre comment votre entreprise tourne, puis on corrige ce qui vous coûte le plus cher : du temps gagné, de la marge gagnée, du confort au quotidien.",
   keywords: [
     "consultant indépendant",
     "optimisation d'activité",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `${site.name} · ${site.baseline}`,
     description:
-      "Ce qu'il vous manque est déjà chez vous, mal placé. Le consultant recommande, l'agence exécute : je relie les deux et je reste jusqu'à ce que ça tourne.",
+      "Il vous manque des clients, pas des moyens. Le consultant recommande, l'agence exécute, et entre les deux le projet s'arrête. Je reste jusqu'à ce que ça tourne.",
   },
   robots: { index: true, follow: true },
 };
