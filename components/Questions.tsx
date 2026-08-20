@@ -14,10 +14,10 @@ export default function Questions() {
       <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-[clamp(40px,6vw,100px)]">
         <div>
           <div className="mb-8 text-[12px] tracking-[0.1em] text-muted uppercase">
-            07 · Les questions
+            08 · Questions
           </div>
           <h2 className="u-display m-0 text-[clamp(38px,5.4vw,92px)]">
-            Ce que vous vous demandez avant d&apos;appeler.
+            Ce que vous vous demandez.
           </h2>
         </div>
 

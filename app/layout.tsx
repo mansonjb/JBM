@@ -35,19 +35,18 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
   title: {
-    default: `${site.name} · audit et optimisation d'entreprise`,
+    default: `${site.name} · consultant en optimisation`,
     template: `%s · ${site.name}`,
   },
   description:
-    "Audit et optimisation d'entreprise pour PME et entreprises de service. Une semaine sur place à comprendre comment votre machine tourne, puis on corrige ce qui vous fait perdre du temps, de la marge et des clients.",
+    "Consultant en optimisation. Votre entreprise fonctionne : regardons jusqu'où elle peut aller. J'observe votre activité, j'analyse ce qui existe, puis je vous montre ce que je garderais, ce que je changerais et ce que j'explorerais.",
   keywords: [
-    "consultant indépendant",
+    "consultant en optimisation",
+    "audit d'entreprise",
     "optimisation d'activité",
+    "regard extérieur",
+    "feuille de route",
     "acquisition client",
-    "performance commerciale",
-    "diagnostic entreprise",
-    "coût d'acquisition",
-    "SEO longue traîne",
     "PME",
   ],
   alternates: { canonical: "/" },
@@ -56,9 +55,9 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: site.domain,
     siteName: site.name,
-    title: `${site.name} · j'audite votre entreprise, puis je la règle`,
+    title: `${site.name} · votre entreprise fonctionne, regardons jusqu'où elle peut aller`,
     description:
-      "J'audite votre entreprise pendant une semaine, chiffres en main, puis je pilote les corrections avec le bon prestataire pour chaque sujet.",
+      "Une entreprise qui fonctionne n'a pas forcément besoin d'être transformée. Elle a parfois simplement besoin d'être regardée autrement.",
   },
   robots: { index: true, follow: true },
 };

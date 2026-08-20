@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { site } from "@/lib/site";
+import { cloture, site } from "@/lib/site";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -54,18 +54,17 @@ export default function Contact() {
     <section id="contact" className="bg-blue px-[6vw] py-[100px] text-paper lg:py-[120px]">
       <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-[clamp(40px,6vw,110px)]">
         <div>
-          <h2 className="u-display m-0 mb-7 text-[clamp(38px,5.6vw,96px)]">
-            Réserver l&apos;audit.
+          <h2 className="u-display m-0 mb-8 max-w-[20ch] text-[clamp(34px,4.6vw,80px)]">
+            {cloture.title}
           </h2>
-          <p className="m-0 max-w-[46ch] text-[clamp(16px,1.35vw,20px)] leading-[1.6] text-paper/80">
-            Une semaine sur place. Deux rendez-vous de votre côté, pas un de
-            plus. Vous repartez avec la carte de votre entreprise, le point de
-            blocage chiffré et l&apos;ordre des priorités, que la suite se fasse
-            avec moi ou sans moi.
-          </p>
-          <p className="m-0 mt-6 text-[13px] text-paper/70">
-            L&apos;audit est déduit de la mission si elle a lieu.
-          </p>
+          {cloture.paragraphes.map((paragraphe, i) => (
+            <p
+              key={i}
+              className="m-0 mb-5 max-w-[46ch] text-[clamp(16px,1.35vw,20px)] leading-[1.6] text-paper/85"
+            >
+              {paragraphe}
+            </p>
+          ))}
         </div>
 
         <form onSubmit={onSubmit} className="u-tilt grid gap-6">
@@ -85,7 +84,7 @@ export default function Contact() {
           >
             {status === "sending"
               ? "Envoi…"
-              : site.ctaSecondary}
+              : site.ctaFinal}
           </button>
           {message && (
             <p

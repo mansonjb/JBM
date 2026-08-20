@@ -2,16 +2,15 @@ import DivergingLines from "@/components/DivergingLines";
 import Reveal from "@/components/Reveal";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import Stats from "@/components/Stats";
-import Fuites from "@/components/Fuites";
+import Ouverture from "@/components/Ouverture";
+import Regard from "@/components/Regard";
+import Deroule from "@/components/Deroule";
+import Trouvailles from "@/components/Trouvailles";
 import Manifeste from "@/components/Manifeste";
-import Methode from "@/components/Methode";
-import Gains from "@/components/Gains";
 import Cas from "@/components/Cas";
-import Guide from "@/components/Guide";
-import Offre from "@/components/Offre";
+import Qui from "@/components/Qui";
+import Audit from "@/components/Audit";
 import Questions from "@/components/Questions";
-import Journal from "@/components/Journal";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { site } from "@/lib/site";
@@ -23,23 +22,15 @@ const jsonLd = {
   url: site.domain,
   email: site.email,
   description:
-    "Consultant indépendant : diagnostic d'activité et exécution du système d'acquisition. Le degré qui change la trajectoire.",
+    "Consultant en optimisation. J'observe et j'analyse votre entreprise, puis je vous montre ce que je garderais, ce que je changerais et ce que j'explorerais.",
   areaServed: "FR",
   founder: { "@type": "Person", name: "Jean-Baptiste Manson" },
-  offers: [
-    {
-      "@type": "Offer",
-      name: "Le Diagnostic",
-      description:
-        "Où se crée la valeur, où elle se perd, ce que l'inaction coûte, et l'ordre des priorités. Une semaine, deux rendez-vous.",
-    },
-    {
-      "@type": "Offer",
-      name: "Le Système d'acquisition",
-      description:
-        "Arborescence, contenus de longue traîne, preuves clients, conversion et mesure. Huit jours de travail.",
-    },
-  ],
+  makesOffer: {
+    "@type": "Offer",
+    name: "L'audit",
+    description:
+      "Une lecture extérieure de votre activité, les opportunités identifiées, les améliorations possibles, leur niveau de priorité et une feuille de route pour avancer.",
+  },
 };
 
 export default function Home() {
@@ -55,16 +46,15 @@ export default function Home() {
         <Nav />
         <main>
           <Hero />
-          <Stats />
-          <Fuites />
-          <Methode />
-          <Gains />
+          <Ouverture />
+          <Regard />
+          <Deroule />
+          <Trouvailles />
           <Manifeste />
-          <Guide />
           <Cas />
-          <Offre />
+          <Qui />
+          <Audit />
           <Questions />
-          <Journal />
           <Contact />
         </main>
         <Footer />

@@ -1,7 +1,7 @@
 # Un Degré
 
 Site vitrine de Jean-Baptiste Manson, consultant indépendant.
-Landing page unique : audit d'entreprise puis optimisation exécutée.
+Landing page unique : consultant en optimisation, l'audit comme point de départ.
 Design issu de la maquette Claude Design `Un Degré.dc.html`.
 
 ## Stack
@@ -25,19 +25,19 @@ npm start        # http://localhost:3083
 
 | Chemin | Rôle |
 | --- | --- |
-| `lib/site.ts` | Tout le contenu éditorial (chiffres, méthode, offre, questions, journal) |
+| `lib/site.ts` | Tout le contenu éditorial, section par section |
 | `app/page.tsx` | Assemblage des sections, dans l'ordre du récit |
-| `components/Hero.tsx` | Accroche : audit puis optimisation |
-| `components/Stats.tsx` | Bande de chiffres sous le héros |
-| `components/Fuites.tsx` | 01 · Ce que l'audit trouve à chaque fois |
-| `components/Methode.tsx` | 02 · Les cinq étapes, de l'analyse à l'optimisation |
-| `components/Gains.tsx` | Temps, marge, confort |
-| `components/Manifeste.tsx` | 03 · Un degré, pas un virage |
-| `components/Guide.tsx` | 04 · Qui je suis, compétences, marques servies |
-| `components/Cas.tsx` | 05 · CB Sols, l'audit en entier |
-| `components/Offre.tsx` | 06 · Les quatre prestations, sans montant affiché |
-| `components/Questions.tsx` | 07 · Les questions posées avant de signer |
-| `components/Journal.tsx` | 08 · L'angle mort, une observation par semaine |
+| `components/Hero.tsx` | Votre entreprise fonctionne, regardons jusqu'où elle peut aller |
+| `components/Ouverture.tsx` | Les formes que prend une opportunité |
+| `components/Regard.tsx` | 01 · Pourquoi un regard extérieur |
+| `components/Deroule.tsx` | 02 · Comment ça se passe, les cinq temps |
+| `components/Trouvailles.tsx` | 03 · Ce qu'on peut trouver |
+| `components/Manifeste.tsx` | 04 · Un degré |
+| `components/Cas.tsx` | 05 · CB Sols |
+| `components/Qui.tsx` | 06 · Qui suis-je |
+| `components/Audit.tsx` | 07 · L'audit |
+| `components/Questions.tsx` | 08 · Questions |
+| `components/Contact.tsx` | Clôture et formulaire |
 | `components/ImageSlot.tsx` | Emplacement photo : affiche le brief tant que `src` est vide |
 | `components/DivergingLines.tsx` | Les deux traits qui divergent d'un degré au fil du scroll |
 | `app/api/contact/route.ts` | Réception du formulaire (Resend si clé, sinon `mailto`) |
@@ -62,12 +62,8 @@ et ajouter `src="/…"` sur le `<ImageSlot>` concerné.
 | Pourquoi moi (portrait) | `portrait.jpg` | 1344 × 1800 |
 | Pied de page | `portrait-bureau.jpg` | 1120 × 1500 |
 
-Manquent encore :
-
-1. Le cas CB Sols : un chantier terminé, un sol posé (paysage 4:3). L'emplacement
-   a été retiré en attendant, plutôt que d'afficher un cadre vide.
-2. Les trois observations du journal (photos téléphone, paysage 4:3) : une caisse
-   de magasin, une devanture, un stand ou un étalage.
+Les emplacements du journal et du chantier ont disparu avec la refonte du texte :
+les cinq photos couvrent aujourd'hui toutes les sections.
 
 ## À compléter avant mise en ligne
 

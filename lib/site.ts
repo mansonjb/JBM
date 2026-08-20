@@ -1,318 +1,310 @@
 export const site = {
   name: "Un Degré",
   domain: "https://undegre.fr",
-  baseline: "Un degré suffit à changer la trajectoire.",
+  role: "Consultant en optimisation",
   email: "contact@undegre.fr",
   phone: "+33 6 00 00 00 00",
   phoneHref: "+33600000000",
-  author: "Jean-Baptiste Manson · consultant indépendant",
-  ctaPrimary: "Réservez votre audit",
-  ctaSecondary: "Réserver mon audit",
-  ctaMicro: "Une semaine sur place. Deux rendez-vous de votre côté.",
+  author: "Jean-Baptiste Manson · Consultant en optimisation",
+  ctaPrimary: "Prendre un premier rendez-vous",
+  ctaAudit: "Parler de votre entreprise",
+  ctaFinal: "Prendre rendez-vous",
+  ctaMicro: "Un premier échange, sans engagement.",
 };
 
 export const nav = [
-  { href: "#methode", label: "Méthode" },
-  { href: "#resultats", label: "Résultats" },
-  { href: "#offre", label: "Offre" },
-  { href: "#questions", label: "Questions" },
+  { href: "#regard", label: "Le regard" },
+  { href: "#methode", label: "La méthode" },
+  { href: "#exemple", label: "Un exemple" },
+  { href: "#audit", label: "L'audit" },
   { href: "#contact", label: "Contact" },
 ];
 
-/* 01 — Le héros doit dire le métier en une ligne : audit, puis optimisation. */
+/* Héros */
 export const hero = {
-  kicker: "Audit et optimisation d'entreprise · PME et entreprises de service",
-  title: "J'audite votre entreprise. Puis je la règle.",
-  lead: "Une semaine sur place, chiffres en main, à comprendre comment votre machine tourne. J'en ressors avec ce qui vous fait perdre du temps, de la marge et des clients, classé par ordre de priorité. Ensuite on corrige, avec le bon prestataire pour chaque sujet et un seul interlocuteur : moi.",
+  kicker: "Consultant en optimisation",
+  title: "Votre entreprise fonctionne. Regardons jusqu'où elle peut aller.",
+  lead: "Une entreprise qui fonctionne n'a pas forcément besoin d'être transformée. Elle a parfois simplement besoin d'être regardée autrement.",
 };
 
-/* Bande de chiffres, tous vérifiables. */
-export const stats = [
-  {
-    value: "1 semaine",
-    label: "d'audit sur place avant la moindre recommandation",
-    accent: false,
-  },
-  {
-    value: "0 → 13",
-    label: "demandes de devis en trois mois chez un client qui était à zéro depuis trois ans",
-    accent: true,
-  },
-  {
-    value: "8 jours",
-    label: "de travail pour reconstruire toute son acquisition",
-    accent: false,
-  },
-  {
-    value: "500+",
-    label: "projets livrés en quatre ans d'agence, pour Louis Vuitton, Netflix ou Ford",
-    accent: false,
-  },
-];
+/* Ouverture : les formes que prend une opportunité, puis ce que je fais. */
+export const ouverture = {
+  pistes: [
+    "Une offre qui pourrait être mieux valorisée.",
+    "Un parcours client qui pourrait être simplifié.",
+    "Une dépense devenue inutile.",
+    "Un savoir-faire insuffisamment visible.",
+    "Une tâche qui pourrait disparaître.",
+    "Un outil qui pourrait faire gagner plusieurs heures par semaine.",
+    "Une opportunité commerciale jamais vraiment explorée.",
+  ],
+  paragraphes: [
+    "Mon travail consiste à prendre suffisamment de recul pour les voir.",
+    "Je viens comprendre votre activité, j'observe son fonctionnement, j'échange avec ceux qui la font vivre et j'analyse ce qui existe déjà.",
+    "Puis je vous montre ce que je garderais, ce que je changerais et ce que j'explorerais.",
+  ],
+};
 
-/* 02 — Le problème, formulé comme ce que l'audit trouve à tous les coups. */
-export const fuites = {
-  kicker: "Le constat",
-  title: "Ce que je trouve, à chaque fois.",
-  intro:
-    "Trois fuites reviennent dans presque toutes les entreprises que j'ouvre. Aucune ne se voit de l'intérieur : elles ressemblent trop à la façon dont on a toujours fait.",
-  items: [
+/* 01 · Pourquoi un regard extérieur */
+export const regard = {
+  kicker: "Pourquoi un regard extérieur",
+  title:
+    "Quand on travaille dans son entreprise tous les jours, on finit forcément par la regarder du même endroit.",
+  intro: [
+    "Ce n'est pas un défaut. C'est simplement ce qui arrive lorsqu'une organisation grandit.",
+  ],
+  derives: [
+    "Des habitudes s'installent.",
+    "Des outils s'accumulent.",
+    "Une offre évolue.",
+    "Des clients changent.",
+    "Des opportunités apparaissent.",
+  ],
+  suite: [
+    "Et certaines décisions prises il y a trois ou cinq ans continuent d'organiser l'entreprise alors que son environnement, lui, a changé.",
+    "C'est précisément là que j'interviens.",
+    "Je ne viens pas avec une solution déjà écrite. Je commence par comprendre.",
+  ],
+  questions: [
+    "Comment l'entreprise gagne-t-elle de l'argent ?",
+    "Comment trouve-t-elle ses clients ?",
+    "Que vend-elle réellement ?",
+    "Comment travaille-t-on en interne ?",
+    "Où passe le temps ?",
+    "Qu'est-ce qui fonctionne particulièrement bien ?",
+    "Qu'est-ce qui pourrait être mieux exploité ?",
+  ],
+  chute:
+    "L'objectif n'est pas de chercher ce qui va mal. L'objectif est de comprendre ce qui pourrait fonctionner encore mieux.",
+};
+
+/* 02 · Comment ça se passe */
+export const deroule = {
+  kicker: "Comment ça se passe",
+  title: "D'abord comprendre. Ensuite décider.",
+  intro: "Tout commence par une conversation.",
+  etapes: [
     {
       n: "01",
-      titre: "De l'argent qui sort sans preuve qu'il rentre",
-      text: "Une campagne, un abonnement, un prestataire reconduit chaque année. Personne dans l'entreprise ne sait dire ce que cette dépense a rapporté le mois dernier.",
+      titre: "Nous échangeons",
+      paragraphes: [
+        "Nous parlons de votre entreprise, de son histoire, de son fonctionnement et de vos ambitions.",
+        "Vous pouvez avoir un problème très précis à résoudre. Ou simplement cette intuition assez difficile à formuler : « nous pourrions probablement faire mieux. »",
+        "Ce premier échange permet de comprendre où vous en êtes et ce qu'il serait intéressant d'aller regarder.",
+      ],
     },
     {
       n: "02",
-      titre: "Une offre rangée comme vous la pensez",
-      text: "Vous vendez un métier. Vos clients, eux, cherchent la réponse à un problème précis, à un moment précis, dans une ville précise. Entre les deux, la demande passe à côté de vous.",
+      titre: "Je viens voir",
+      paragraphes: [
+        "Je passe du temps dans l'entreprise. Je regarde les produits, les services, les prix, la manière de vendre, les outils, le marketing, le digital, l'expérience client, les processus et l'organisation.",
+        "Je parle aux personnes concernées. Je regarde également les chiffres lorsqu'ils permettent de comprendre ce qui se passe réellement.",
+        "Parce qu'entre la manière dont une entreprise pense fonctionner et la manière dont elle fonctionne réellement, il existe souvent quelques écarts. Et ces écarts sont intéressants.",
+      ],
     },
     {
       n: "03",
-      titre: "Du temps d'équipe avalé par l'habitude",
-      text: "Des tâches que plus personne ne remet en question. Elles étaient utiles il y a cinq ans. Elles occupent aujourd'hui les gens dont vous avez le plus besoin ailleurs.",
+      titre: "Je prends du recul",
+      paragraphes: [
+        "Je rassemble ce que j'ai vu. Je croise les observations, les chiffres, les usages, les retours des équipes et ceux des clients.",
+        "Certaines pistes disparaissent. D'autres deviennent évidentes. Et quelques-unes peuvent changer beaucoup de choses.",
+        "Je les évalue selon leur impact, leur coût, leur difficulté et le temps nécessaire pour les mettre en œuvre.",
+      ],
+    },
+    {
+      n: "04",
+      titre: "Je vous restitue ce que j'ai trouvé",
+      paragraphes: [
+        "Pas un rapport de 80 pages destiné à finir dans un dossier. Une lecture claire de votre entreprise et des possibilités que j'y vois.",
+        "Ce qui fonctionne et mérite d'être développé. Ce qui pourrait être amélioré. Ce qui pourrait être simplifié. Ce qui pourrait être mieux vendu ou mieux valorisé. Ce qu'il serait intéressant d'essayer. Et surtout : dans quel ordre.",
+        "Vous repartez avec une feuille de route concrète et priorisée.",
+      ],
+    },
+    {
+      n: "05",
+      titre: "Nous pouvons ensuite le faire",
+      paragraphes: [
+        "L'audit peut s'arrêter là. Vous avez les recommandations et vous pouvez les mettre en œuvre avec vos équipes ou vos partenaires.",
+        "Mais je peux aussi rester. Lorsque le sujet entre dans mes compétences, je peux le prendre en charge directement. Lorsqu'il nécessite une expertise particulière, je cherche les bonnes personnes, construis le projet avec elles et peux en piloter la réalisation.",
+        "Vous ne repartez donc pas simplement avec une liste de bonnes idées. Vous savez comment les transformer en actions.",
+      ],
+    },
+  ],
+};
+
+/* 03 · Ce qu'on peut trouver */
+export const trouvailles = {
+  kicker: "Ce qu'on peut trouver",
+  title:
+    "Je ne sais pas encore ce que je vais vous recommander. Et c'est plutôt bon signe.",
+  intro: [
+    "Parce que deux entreprises ne présentent jamais les mêmes opportunités.",
+    "Chez l'une, le sujet sera commercial. Chez une autre, ce sera l'offre. Ailleurs, ce sera le site internet, l'expérience client, un processus interne, la communication, l'utilisation de l'intelligence artificielle, une dépense mal orientée ou simplement une excellente idée qui existe déjà mais qui n'a jamais été suffisamment développée.",
+    "Une mission peut par exemple faire émerger :",
+  ],
+  cartes: [
+    {
+      titre: "Une offre à repositionner",
+      text: "Un excellent produit peut être difficile à vendre simplement parce qu'il est présenté selon la logique de l'entreprise plutôt que selon celle du client.",
+    },
+    {
+      titre: "Une expérience à simplifier",
+      text: "Quelques étapes inutiles peuvent suffire à rendre un achat, une prise de contact ou un processus interne beaucoup plus compliqué qu'il ne devrait l'être.",
+    },
+    {
+      titre: "Un savoir-faire à mieux valoriser",
+      text: "Certaines entreprises possèdent déjà leur meilleur argument commercial. Elles ne l'utilisent simplement pas encore comme tel.",
+    },
+    {
+      titre: "Du temps à récupérer",
+      text: "Une automatisation, un nouvel outil ou une organisation différente peut parfois libérer plusieurs heures de travail chaque semaine.",
+    },
+    {
+      titre: "Une dépense à questionner",
+      text: "Pas nécessairement pour économiser. Parfois simplement pour déplacer les moyens vers quelque chose de plus utile.",
+    },
+    {
+      titre: "Une opportunité à développer",
+      text: "Un nouveau service, un segment de clientèle, un canal d'acquisition, une utilisation de l'IA, une manière différente de vendre ou de présenter l'offre.",
     },
   ],
   chute:
-    "Ces trois fuites ont un point commun : rien n'est cassé. Tout fonctionne, un peu à côté. C'est précisément ce qui les rend invisibles, et coûteuses.",
+    "L'optimisation peut prendre beaucoup de formes. Le principe reste toujours le même : partir de ce qui existe pour créer davantage de valeur.",
 };
 
-/* 03 — La méthode, cinq étapes, celles du tableau. */
-export const marches = [
-  {
-    n: "01",
-    title: "Analyse",
-    text: "Je viens sur place et je regarde l'activité entière : l'offre, les prix, le parcours d'achat, les canaux, les processus, ce que vivent vos équipes et ce que vivent vos clients.",
-    question: "Comment cette entreprise gagne-t-elle vraiment sa vie ?",
-    livrable: "La carte de votre entreprise telle qu'elle tourne, pas telle qu'on la raconte.",
-  },
-  {
-    n: "02",
-    title: "Diagnostic",
-    text: "On met les chiffres côte à côte : d'où viennent les clients, ce que coûte chaque canal, ce que rapporte chaque ligne, le temps passé pour chaque euro produit.",
-    question: "Qu'est-ce qui rapporte, et qu'est-ce qui en donne l'illusion ?",
-    livrable: "Les chiffres que personne n'avait encore rapprochés.",
-  },
-  {
-    n: "03",
-    title: "Priorisation",
-    text: "On descend jusqu'au point de blocage, celui qui tient tous les autres. On calcule ce qu'il vous coûte chaque mois, et on décide par quoi commencer.",
-    question: "Que fait-on lundi prochain ?",
-    livrable: "Un point de départ chiffré et l'ordre des priorités.",
-  },
-  {
-    n: "04",
-    title: "Mise en œuvre",
-    text: "Ce que je sais faire, je le fais. Pour le reste, je vais chercher le bon prestataire, je le choisis et je le dirige. Vous n'avez qu'un interlocuteur et personne à qui réexpliquer votre entreprise.",
-    question: null,
-    livrable: "Le système en place, mesurable, entre vos mains.",
-  },
-  {
-    n: "05",
-    title: "Optimisation",
-    text: "On mesure tous les mois, on corrige, on arbitre. Un système qu'on ne règle plus finit toujours par se dérégler.",
-    question: null,
-    livrable: "Des décisions prises sur des chiffres plutôt que sur des impressions.",
-  },
-];
-
-export const methodeIntro =
-  "La même séquence à chaque fois, quel que soit le métier. Les trois premières étapes prennent le temps qu'il faut. Les deux suivantes vont vite, parce que la décision est déjà prise.";
-
-/* 04 — Ce que le dirigeant constate dans sa semaine. */
-export const gains = [
-  {
-    titre: "Du temps",
-    text: "Les tâches qui ne produisaient rien sortent du planning. Vous récupérez des journées, pas des minutes.",
-  },
-  {
-    titre: "De la marge",
-    text: "La même activité, mieux disposée, rapporte davantage. Sans un euro de publicité en plus.",
-  },
-  {
-    titre: "Du confort",
-    text: "Le lundi matin, vous savez d'où viennent vos clients, ce qui marche, et par quoi commencer.",
-  },
-];
-
-/* 05 — Le nom, expliqué là où il devient une méthode de travail. */
+/* 04 · Un degré */
 export const manifeste = {
-  kicker: "Le nom",
-  title: "Un degré, pas un virage.",
+  kicker: "Un degré",
+  title: "Il n'est pas toujours nécessaire de changer de direction.",
   paragraphes: [
-    "Je ne propose jamais de tout refaire. Refondre coûte cher, prend un an, et fait perdre en route ce qui marchait déjà.",
-    "Un audit sérieux aboutit presque toujours à une poignée de corrections précises : une offre redécoupée, une page remise à sa place, une dépense arrêtée, une tâche supprimée. Prises une par une, elles paraissent minces. Mises ensemble, elles changent la direction de l'entreprise.",
-    "C'est de là que vient le nom.",
+    "Les transformations spectaculaires font de belles présentations.",
+    "Dans la réalité, les progrès les plus intéressants viennent souvent d'une succession de décisions beaucoup plus précises.",
+  ],
+  decisions: [
+    "Modifier une offre.",
+    "Déplacer un budget.",
+    "Simplifier une étape.",
+    "Automatiser une tâche.",
+    "Changer la manière de présenter un produit.",
+    "Développer quelque chose qui fonctionnait déjà.",
+  ],
+  suite: [
+    "Pris séparément, chacun de ces changements peut sembler relativement petit.",
   ],
   citation:
-    "Un degré d'écart ne se voit pas au départ. Cent kilomètres plus loin, on n'arrive pas au même endroit.",
-  note: "Chaque section de ce site penche d'un degré. Vous l'avez senti sans le voir.",
+    "Mais un degré d'écart au départ suffit à modifier considérablement l'endroit où l'on arrive.",
+  chute: [
+    "C'est de là que vient Un Degré.",
+    "Pas la transformation pour la transformation. Le bon changement, au bon endroit.",
+  ],
 };
 
-/* 06 — Qui je suis, et à quoi je sers. */
-export const guide = {
-  kicker: "Qui je suis",
-  title: "Je reste jusqu'à ce que ça tourne.",
-  lead: "Jean-Baptiste Manson, consultant indépendant. Je fais les deux métiers que le marché sépare : celui qui regarde et celui qui exécute. Le consultant rend un rapport, l'agence attend des consignes, et entre les deux le projet s'arrête pendant six mois.",
-  agence:
-    "Quatre ans en agence de réalité augmentée, plus de 500 projets livrés pour Louis Vuitton, Yves Saint Laurent, Netflix, Ford, Hugo Boss ou La Banque Postale. Ce ne sont pas mes clients d'aujourd'hui. C'est le niveau d'exigence que j'apporte chez vous.",
-  competences: [
-    "Audit d'activité et lecture de chiffres",
-    "Acquisition et demande de longue traîne",
-    "Conversion et parcours d'achat",
-    "Production augmentée par l'intelligence artificielle",
-    "Mesure et arbitrage mensuel",
-  ],
-  vagues: [
-    { annee: "2017", text: "Le live streaming, quand personne n'y croyait encore." },
-    { annee: "2019", text: "L'influence, avant que ce soit un métier." },
-    { annee: "2021", text: "La réalité augmentée, avant que le mot devienne courant." },
-    { annee: "2024", text: "L'intelligence artificielle, avant qu'elle serve d'argument de vente." },
-  ],
-  vaguesChute:
-    "Quatre fois de suite, je suis arrivé un peu avant. Ce que ça change pour vous : on n'installe pas chez vous les outils d'il y a cinq ans.",
-};
-
-export const clients = [
-  "Louis Vuitton",
-  "Yves Saint Laurent",
-  "Netflix",
-  "Ford",
-  "Hugo Boss",
-  "Castorama",
-  "La Banque Postale",
-  "Puma × Formule 1",
-  "Ducati France",
-  "Fountaine Pajot",
-  "Dufour",
-];
-
-/* 07 — Le cas, raconté comme une histoire. */
+/* 05 · Un exemple */
 export const cas = {
-  kicker: "Un audit, en entier",
+  kicker: "Un exemple",
   client: "CB Sols",
-  sousTitre: "Artisan poseur de sols, La Rochelle",
-  temps: [
-    {
-      label: "Avant",
-      text: "Trois ans de publicité payée. Aucune demande entrante. Le site existait, le téléphone ne sonnait pas, et le carnet de commandes tenait sur le bouche-à-oreille.",
-    },
-    {
-      label: "Ce que l'audit a montré",
-      text: "L'offre était rangée par métier. Or personne ne cherche un poseur de sols : on cherche un sol de cuisine, une terrasse, une salle de bains, dans sa ville. Le travail était irréprochable, il n'apparaissait nulle part où la demande se forme.",
-    },
-    {
-      label: "Ce qu'on a corrigé",
-      text: "Huit jours de travail. L'offre redécoupée par besoin, par contexte et par territoire. Les chantiers déjà réalisés remis au travail comme preuve. Une demande de devis possible depuis chaque page, et la mesure installée pour arbitrer la suite.",
-    },
-    {
-      label: "Après",
-      text: "Trois mois plus tard : treize demandes entrantes, un trafic organique 3,6 fois supérieur au trafic payant. L'acquisition ne dépend plus du budget publicitaire.",
-    },
+  sousTitre: "Entreprise spécialisée dans les revêtements de sols · La Rochelle",
+  paragraphes: [
+    "CB Sols travaillait depuis plusieurs années essentiellement grâce au bouche-à-oreille.",
+    "L'entreprise avait pourtant investi dans un site internet et dans de la publicité. Le travail était bon. Les réalisations étaient nombreuses. Mais presque aucune demande commerciale n'arrivait par le digital.",
+    "Le problème n'était pas la qualité de l'entreprise. Il fallait simplement regarder différemment la manière dont son savoir-faire rencontrait la demande.",
+    "Nous avons repris son offre à partir de ce que recherchaient réellement ses futurs clients : leurs projets, leurs besoins et leur localisation.",
+    "Les réalisations existantes sont devenues des preuves. Le site est devenu un outil d'acquisition. Chaque contenu a commencé à répondre à une intention précise.",
+    "Huit jours de travail plus tard, le système était en place.",
   ],
+  chiffresIntro: "Trois mois après :",
   chiffres: [
-    { value: "0 → 13", label: "demandes en trois mois" },
-    { value: "8", label: "jours de travail" },
-    { value: "× 3,6", label: "organique sur payant" },
+    { value: "13", label: "nouvelles demandes de devis" },
+    { value: "× 3,6", label: "de trafic organique par rapport au trafic payant" },
+  ],
+  chute: [
+    "Le métier de CB Sols n'avait pas changé. La qualité de son travail non plus.",
+    "Nous avions simplement changé la manière dont les clients pouvaient le trouver.",
+  ],
+};
+
+/* 06 · Qui suis-je ? */
+export const qui = {
+  kicker: "Qui suis-je ?",
+  title:
+    "J'aime comprendre comment les choses fonctionnent. Et chercher comment elles pourraient mieux fonctionner.",
+  paragraphes: [
+    "Je m'appelle Jean-Baptiste Manson.",
+    "Avant Un Degré, j'ai cofondé et développé une agence spécialisée dans les expériences digitales et la réalité augmentée.",
+    "Pendant plusieurs années, j'y ai travaillé sur plus de 500 projets pour des entreprises comme Louis Vuitton, Yves Saint Laurent, Netflix, Ford, Hugo Boss, Castorama ou Puma.",
+    "Mais surtout, entreprendre m'a obligé à toucher à beaucoup de choses.",
+    "Vendre. Positionner une offre. Construire une marque. Trouver des clients. Produire. Recruter. Organiser. Tester de nouveaux outils. Gérer des prestataires. Comprendre pourquoi quelque chose fonctionne, ou pourquoi cela ne fonctionne pas.",
+    "C'est probablement de là que vient ma manière de travailler aujourd'hui.",
+    "Je ne regarde jamais un sujet complètement isolé du reste.",
+  ],
+  liens: [
+    "Un problème de communication peut venir de l'offre.",
+    "Un problème commercial peut venir du parcours client.",
+    "Un problème de productivité peut venir d'un outil.",
+    "Une opportunité marketing peut nécessiter de revoir la manière dont un service est vendu.",
   ],
   chute:
-    "Attendre trois ans a coûté plus cher que les huit jours qu'il a fallu pour corriger.",
+    "Je préfère donc commencer par comprendre l'ensemble avant de décider où intervenir.",
 };
 
-/* 08 — L'offre, sans montant affiché. */
-export const offreIntro =
-  "Tout commence par l'audit. La suite dépend de ce qu'il montre. Rien n'est engagé avant.";
+/* 07 · L'audit */
+export const audit = {
+  kicker: "L'audit",
+  title: "Commençons par regarder.",
+  paragraphes: [
+    "L'audit est le point de départ.",
+    "Nous commençons par un premier rendez-vous pour comprendre votre entreprise, vos enjeux et les questions que vous vous posez.",
+    "Je viens ensuite observer et analyser votre activité.",
+    "À l'issue de ce travail, je vous présente mes conclusions et les pistes que je considère comme les plus intéressantes.",
+  ],
+  livrablesIntro: "Vous repartez avec :",
+  livrables: [
+    "une lecture extérieure de votre activité,",
+    "les opportunités identifiées,",
+    "les améliorations possibles,",
+    "leur niveau de priorité,",
+    "et une feuille de route pour avancer.",
+  ],
+  suitesIntro: "Ensuite, trois possibilités.",
+  suites: [
+    "Vous mettez ces recommandations en œuvre en interne.",
+    "Nous les réalisons ensemble.",
+    "Ou je constitue et pilote les bonnes ressources pour le faire.",
+  ],
+  chute:
+    "Dans tous les cas, vous savez pourquoi vous agissez, où vous allez et par quoi commencer.",
+};
 
-export const offres = [
-  {
-    title: "L'Audit",
-    text: "Une semaine sur place, les trois premières étapes. Vous repartez avec la carte de votre entreprise, le point de blocage chiffré et l'ordre des priorités. Que la suite se fasse avec moi ou sans moi.",
-    cta: "Réserver l'audit",
-    note: "déduit de la mission si elle a lieu",
-    accent: true,
-    delay: "1 semaine",
-  },
-  {
-    title: "Le Système d'acquisition",
-    text: "Votre offre redécoupée par besoin, par contexte et par territoire. Des contenus qui captent la demande là où elle se formule. Vos réalisations transformées en preuves. Un point de contact sur chaque page, et la mesure pour arbitrer.",
-    cta: "Demander une proposition",
-    note: "périmètre défini à l'audit",
-    accent: false,
-    delay: "8 jours sur 4 à 6 semaines",
-  },
-  {
-    title: "La Production augmentée",
-    text: "Montrer ce qui n'existe pas encore, ou ce qui ne peut pas être photographié. Les outils génératifs mis au service de votre argumentaire de vente, au niveau d'exigence des grandes marques.",
-    cta: "Parler du projet",
-    note: "sur mesure",
-    accent: false,
-    delay: "selon périmètre",
-  },
-  {
-    title: "L'Optimisation continue",
-    text: "Mesure tous les mois, corrections, arbitrages. On garde ce qui produit, on arrête ce qui dort, on déplace le reste.",
-    cta: "En discuter",
-    note: "engagement de six mois",
-    accent: false,
-    delay: "6 mois minimum",
-  },
-];
-
-export const aidePublique =
-  "Selon votre région, une aide publique peut financer 30 à 70 % de la mission. La demande se dépose avant la signature, jamais après. Je m'en occupe.";
-
-/* 09 — Les questions qu'on me pose avant de signer. */
+/* 08 · Questions */
 export const questions = [
   {
-    q: "Combien de temps prend l'audit ?",
-    a: "Une semaine. Deux rendez-vous de votre côté : un pour ouvrir les chiffres, un pour la restitution. Le reste se passe sans mobiliser vos équipes.",
-  },
-  {
-    q: "Qu'est-ce que je reçois, concrètement ?",
-    a: "La carte de votre activité telle qu'elle tourne, les chiffres rapprochés, le point de blocage principal avec ce qu'il vous coûte chaque mois, et l'ordre dans lequel traiter la suite. C'est à vous, que vous continuiez avec moi ou non.",
-  },
-  {
-    q: "Combien coûte la mission ?",
-    a: "Le montant dépend du périmètre, et il se fixe après l'audit, jamais avant. Il est toujours mis en face de ce que le blocage vous coûte chaque mois. Chez CB Sols, la mission a coûté moins qu'un trimestre de publicité sans retour, et une aide régionale peut en financer une bonne partie.",
-  },
-  {
     q: "Vous ne connaissez pas mon métier.",
-    a: "Exact, et c'est précisément pour ça que je vois ce qui manque. Vous connaissez votre métier mieux que quiconque, donc vous ne voyez plus ce qui est sous vos yeux. Je ne connaissais rien aux sols ni aux bateaux avant d'y travailler.",
+    a: "C'est justement pour cela qu'un premier échange est important. Je n'ai pas vocation à remplacer votre expertise métier : vous connaissez votre activité mieux que moi. Mon rôle est différent, comprendre suffisamment votre fonctionnement pour poser les bonnes questions, rapprocher des éléments qui le sont rarement et apporter un regard extérieur.",
   },
   {
-    q: "Optimiser, ça veut dire couper des coûts ?",
-    a: "Non. Ça veut dire mettre chaque chose au bon endroit. Sur mes dernières missions, rien n'a été supprimé : ce qui existait a été remis à travailler.",
+    q: "Est-ce forcément un audit complet ?",
+    a: "Non. Le premier rendez-vous sert justement à déterminer ce qu'il est pertinent d'explorer. Certaines entreprises nécessitent une analyse assez large. D'autres ont déjà identifié un sujet précis sur lequel travailler.",
   },
   {
-    q: "On peut le faire en interne ?",
-    a: "Vous pouvez. Vous ne le ferez pas, parce que ce n'est ni urgent, ni votre métier, et que c'est sur la liste depuis trois ans. C'est exactement pour ça qu'on m'appelle.",
+    q: "Qu'est-ce que je reçois concrètement ?",
+    a: "Une restitution de mes observations, les opportunités identifiées, mes recommandations et leur ordre de priorité. L'objectif est que vous sachiez exactement quoi faire, pourquoi le faire et dans quel ordre.",
+  },
+  {
+    q: "Êtes-vous ensuite obligé d'intervenir ?",
+    a: "Non. La restitution doit être utile indépendamment de la suite. Vous pouvez avancer seul, avec vos équipes, avec vos prestataires actuels ou avec moi.",
+  },
+  {
+    q: "Optimiser veut-il forcément dire réduire les coûts ?",
+    a: "Non. Économiser 10 000 € inutilement dépensés est une optimisation. Trouver 100 000 € de chiffre d'affaires supplémentaire en est une autre. Simplifier le quotidien de cinq collaborateurs aussi. L'objectif est de créer davantage de valeur avec les ressources dont vous disposez.",
   },
 ];
 
-/* 10 — Le journal : la preuve du regard, chaque semaine. */
-export const journalIntro =
-  "Une observation par semaine. Une situation prise sur le vif dans un commerce, ce que j'y vois, ce que je changerais. C'est le même regard, appliqué pendant une semaine entière à une entreprise.";
-
-export const journal = [
-  {
-    date: "14 · 03",
-    title: "La caisse d'un magasin bio",
-    text: "En zone de caisse, uniquement des produits chers. L'achat d'impulsion suppose une décision prise sans réfléchir : au-delà d'un certain prix, elle n'arrive jamais. L'emplacement le plus vu du magasin ne vendait rien.",
-    slot: "OBSERVATION · la caisse d'un magasin bio, prise au téléphone",
-    note: "trop cher ici",
-  },
-  {
-    date: "27 · 02",
-    title: "Une devanture fermée à midi",
-    text: "Les horaires ne recoupaient ni le flux de la rue, ni celui du marché voisin. Le commerce était ouvert quand personne ne passait. Des horaires, ça se décide sur le trafic, pas sur l'habitude.",
-    slot: "OBSERVATION · une devanture, photo téléphone",
-    note: null,
-  },
-  {
-    date: "09 · 02",
-    title: "Un stand au bord de l'allée",
-    text: "Le produit à la plus forte marge était rangé derrière le vendeur. L'ordre d'exposition décide de ce qui se vend, avant même le prix. Ici, cet ordre s'était installé tout seul.",
-    slot: "OBSERVATION · un stand ou un étalage, photo téléphone",
-    note: null,
-  },
-];
+/* Clôture */
+export const cloture = {
+  title: "Et si on commençait simplement par parler de votre entreprise ?",
+  paragraphes: [
+    "Vous n'avez pas besoin de savoir précisément ce qu'il faut changer avant de me contacter. C'est même une partie du travail.",
+    "Parlez-moi de votre activité, de ce que vous cherchez à développer, de ce qui vous interroge ou simplement de cette impression qu'il existe encore des choses à améliorer.",
+    "On commencera par regarder.",
+  ],
+};
