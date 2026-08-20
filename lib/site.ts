@@ -22,7 +22,7 @@ export const nav = [
 export const hero = {
   kicker: "Optimisation d'activité et acquisition client · PME et entreprises de service",
   title: "Ce qu'il vous manque est déjà chez vous.",
-  lead: "Vos clients, vos marges, votre savoir-faire : la matière est là. Je trouve où elle se perd, puis je remets le système en marche moi-même, sans budget supplémentaire.",
+  lead: "Vos clients, vos marges, votre savoir-faire : la matière est là. Je trouve où elle se perd, puis je pilote la correction avec vous, jusqu'à ce qu'elle tourne. Sans moyens supplémentaires à mobiliser.",
 };
 
 /** Bande de confiance sous le héros : la crédibilité en une ligne, pas en quatre chiffres. */
@@ -95,7 +95,7 @@ export const marches = [
   {
     n: "04",
     title: "Faire",
-    text: "Je l'exécute moi-même, avec les méthodes et les outils d'aujourd'hui. C'est la marche que les consultants ne montent pas.",
+    text: "Je ne rends pas un rapport avant de disparaître. Je pilote la mise en œuvre avec vos équipes et les compétences qu'il faut aller chercher, avec les méthodes et les outils d'aujourd'hui. C'est la marche que les consultants ne montent pas.",
     question: null,
     livrable: "Le système en place, mesurable, entre vos mains.",
   },
@@ -135,8 +135,8 @@ export const cas = {
 /* 06 — Pourquoi moi : autorité et posture, au même endroit. */
 export const guide = {
   kicker: "Pourquoi moi",
-  title: "Celui qui regarde est celui qui exécute.",
-  lead: "Le consultant recommande. L'agence exécute. Je relie les deux. Pas de rapport transmis à quelqu'un qui n'était pas dans la conversation, pas de recommandation que personne n'appliquera, pas de sous-traitance.",
+  title: "Celui qui regarde reste jusqu'à ce que ça tourne.",
+  lead: "Le consultant recommande. L'agence exécute. Je relie les deux. Pas de rapport transmis à quelqu'un qui n'était pas dans la conversation, pas de recommandation que personne n'appliquera. Je reste responsable de la mise en œuvre : ce que je sais faire, je le fais ; ce qu'il faut aller chercher ailleurs, je le choisis et je le dirige.",
   agence:
     "Avant ça, quatre ans en agence de réalité augmentée : plus de 500 projets créatifs livrés pour de grandes marques. Ce ne sont pas mes clients d'aujourd'hui, c'est le niveau d'exigence auquel j'ai appris à produire.",
   vagues: [
@@ -213,7 +213,7 @@ export const objections = [
   },
   {
     q: "On n'a pas le temps.",
-    a: "Huit jours de mon côté. Deux rendez-vous du vôtre. Le reste se passe sans vous, et vous validez.",
+    a: "Huit jours de travail sur la mission. Deux rendez-vous du vôtre, et quelques validations en cours de route. Le reste avance sans mobiliser vos équipes.",
   },
   {
     q: "Vous ne connaissez pas mon métier.",

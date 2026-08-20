@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     template: `%s · ${site.name}`,
   },
   description:
-    "Optimisation d'activité et acquisition client pour PME et entreprises de service. Je trouve où votre activité perd de la valeur, puis je le corrige moi-même. Diagnostic en une semaine, exécution comprise.",
+    "Optimisation d'activité et acquisition client pour PME et entreprises de service. Je trouve où votre activité perd de la valeur, puis je pilote la correction jusqu'à ce qu'elle tourne. Diagnostic en une semaine.",
   keywords: [
     "consultant indépendant",
     "optimisation d'activité",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `${site.name} · ${site.baseline}`,
     description:
-      "Ce qu'il vous manque est déjà chez vous, mal placé. Le consultant recommande, l'agence exécute : je relie les deux.",
+      "Ce qu'il vous manque est déjà chez vous, mal placé. Le consultant recommande, l'agence exécute : je relie les deux et je reste jusqu'à ce que ça tourne.",
   },
   robots: { index: true, follow: true },
 };
