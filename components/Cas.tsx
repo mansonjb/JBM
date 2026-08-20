@@ -1,4 +1,3 @@
-import ImageSlot from "./ImageSlot";
 import { cas } from "@/lib/site";
 
 export default function Cas() {
@@ -71,9 +70,6 @@ export default function Cas() {
             </p>
           </div>
 
-          <div className="relative mt-12 aspect-4/3">
-            <ImageSlot brief="PHOTO 3 · un chantier terminé, un sol posé, lumière naturelle" />
-          </div>
         </div>
       </div>
     </section>

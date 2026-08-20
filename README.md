@@ -37,23 +37,26 @@ npm start        # http://localhost:3083
 Chaque section contient un élément incliné d'un degré (`.u-tilt`), et deux filets
 divergents d'un degré se révèlent à mesure du scroll. C'est la démonstration du nom.
 
-## Photos à fournir
+## Photos
 
-Les emplacements affichent leur brief tant que la photo n'est pas posée. Pour en
-remplir un : déposer le fichier dans `public/` et ajouter `src="/…"` sur le
-`<ImageSlot>` concerné.
+Cinq photos sont en place dans `public/`. Les emplacements encore vides affichent
+leur brief de prise de vue : pour en remplir un, déposer le fichier dans `public/`
+et ajouter `src="/…"` sur le `<ImageSlot>` concerné.
 
-| # | Section | Format | Sujet |
-| --- | --- | --- | --- |
-| 1 | Héros | paysage très large, 2400 px mini | Plan large dans un lieu de travail réel, regard objectif, l'air interrompu |
-| 2 | L'idée | vertical 4:5 | Une séance de travail : tableau annoté, colonnes réorganisées, lumière naturelle |
-| 3 | Le cas CB Sols | paysage 4:3 | Un chantier terminé, un sol posé, lumière naturelle |
-| 4 | Pourquoi moi (bloc bleu) | vertical 4:5 | Noir et blanc, en action : il annote, il montre du doigt |
-| 5 | Pourquoi moi (suite) | vertical 3:4 | Portrait, cadrage serré, lumière douce, expression calme |
-| 6 | Journal | paysage 4:3 | La caisse d'un magasin bio, photo téléphone |
-| 7 | Journal | paysage 4:3 | Une devanture, photo téléphone |
-| 8 | Journal | paysage 4:3 | Un stand ou un étalage, photo téléphone |
-| 9 | Pied de page | vertical, petit | Médaillon, décontracté, instantané |
+| Section | Fichier | Format |
+| --- | --- | --- |
+| Héros | `hero-un-degre.jpg` | 2400 × 1601 |
+| L'idée | `carnet-atelier.jpg` | 1600 × 1600 |
+| Pourquoi moi (bloc bleu) | `plan-action.jpg` | 2000 × 1334, noir et blanc |
+| Pourquoi moi (portrait) | `portrait.jpg` | 1344 × 1800 |
+| Pied de page | `portrait-bureau.jpg` | 1120 × 1500 |
+
+Manquent encore :
+
+1. Le cas CB Sols : un chantier terminé, un sol posé (paysage 4:3). L'emplacement
+   a été retiré en attendant, plutôt que d'afficher un cadre vide.
+2. Les trois observations du journal (photos téléphone, paysage 4:3) : une caisse
+   de magasin, une devanture, un stand ou un étalage.
 
 ## À compléter avant mise en ligne
 

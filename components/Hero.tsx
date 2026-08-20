@@ -11,6 +11,9 @@ export default function Hero() {
       <div className="absolute inset-0">
         <ImageSlot
           brief="PHOTO 1 · plan large, lieu de travail réel, regard objectif, l'air interrompu"
+          src="/hero-un-degre.jpg"
+          alt="Jean-Baptiste à son bureau, sous le mur Un Degré"
+          sizes="100vw"
           priority
         />
       </div>

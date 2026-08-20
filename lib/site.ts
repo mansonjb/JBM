@@ -22,7 +22,7 @@ export const nav = [
 export const hero = {
   kicker: "Optimisation d'activité et acquisition client · PME et entreprises de service",
   title: "Ce qu'il vous manque est déjà chez vous.",
-  lead: "Vos clients, vos marges, votre savoir-faire : la matière est là. Je trouve où elle se perd, puis je pilote la correction avec vous, jusqu'à ce qu'elle tourne. Sans moyens supplémentaires à mobiliser.",
+  lead: "Je commence par venir chez vous et passer le temps qu'il faut à comprendre comment votre machine tourne. Ensuite seulement je propose : du temps gagné, de la marge gagnée, du confort au quotidien. Et on le pilote ensemble, avec les bons acteurs pour chaque sujet.",
 };
 
 /** Bande de confiance sous le héros : la crédibilité en une ligne, pas en quatre chiffres. */
@@ -74,7 +74,7 @@ export const marches = [
   {
     n: "01",
     title: "Voir",
-    text: "Je regarde l'activité entière, jamais le symptôme seul : l'offre, les prix, le parcours d'achat, les canaux d'acquisition, les processus internes, l'expérience client.",
+    text: "Je viens sur place et je passe du temps dans votre machine avant de proposer quoi que ce soit. Je regarde l'activité entière, jamais le symptôme seul : l'offre, les prix, le parcours d'achat, les canaux d'acquisition, les processus internes, ce que vivent vos équipes et vos clients.",
     question: "Où se crée réellement la valeur ici ?",
     livrable: "Une carte de votre activité telle qu'elle fonctionne vraiment.",
   },
@@ -98,6 +98,22 @@ export const marches = [
     text: "Je ne rends pas un rapport avant de disparaître. Je pilote la mise en œuvre avec vos équipes et les compétences qu'il faut aller chercher, avec les méthodes et les outils d'aujourd'hui. C'est la marche que les consultants ne montent pas.",
     question: null,
     livrable: "Le système en place, mesurable, entre vos mains.",
+  },
+];
+
+/* Ce que ça produit, en trois mots. */
+export const gains = [
+  {
+    titre: "Du temps",
+    text: "Les tâches qui ne produisent rien sortent du quotidien de vos équipes. Ce qui reste est ce qui compte.",
+  },
+  {
+    titre: "De l'argent",
+    text: "La même activité, mieux disposée, produit plus de marge sans dépense supplémentaire d'acquisition.",
+  },
+  {
+    titre: "Du confort",
+    text: "Vous savez enfin d'où viennent vos clients, ce qui marche, et par quoi commencer le mois prochain.",
   },
 ];
 
@@ -136,7 +152,7 @@ export const cas = {
 export const guide = {
   kicker: "Pourquoi moi",
   title: "Celui qui regarde reste jusqu'à ce que ça tourne.",
-  lead: "Le consultant recommande. L'agence exécute. Je relie les deux. Pas de rapport transmis à quelqu'un qui n'était pas dans la conversation, pas de recommandation que personne n'appliquera. Je reste responsable de la mise en œuvre : ce que je sais faire, je le fais ; ce qu'il faut aller chercher ailleurs, je le choisis et je le dirige.",
+  lead: "Le consultant recommande. L'agence exécute. Je relie les deux. Pas de rapport transmis à quelqu'un qui n'était pas dans la conversation, pas de recommandation que personne n'appliquera. Je reste responsable de la mise en œuvre du début à la fin : ce que je sais faire, je le fais ; pour le reste, je vais chercher le bon acteur pour chaque sujet, je le choisis, je le dirige, et vous n'avez qu'un interlocuteur.",
   agence:
     "Avant ça, quatre ans en agence de réalité augmentée : plus de 500 projets créatifs livrés pour de grandes marques. Ce ne sont pas mes clients d'aujourd'hui, c'est le niveau d'exigence auquel j'ai appris à produire.",
   vagues: [

@@ -6,6 +6,7 @@ import TrustLine from "@/components/TrustLine";
 import Constat from "@/components/Constat";
 import Idee from "@/components/Idee";
 import Methode from "@/components/Methode";
+import Gains from "@/components/Gains";
 import Cas from "@/components/Cas";
 import Guide from "@/components/Guide";
 import Offre from "@/components/Offre";
@@ -58,6 +59,7 @@ export default function Home() {
           <Constat />
           <Idee />
           <Methode />
+          <Gains />
           <Cas />
           <Guide />
           <Offre />

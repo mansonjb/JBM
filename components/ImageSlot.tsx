@@ -7,6 +7,8 @@ type Props = {
   src?: string;
   alt?: string;
   priority?: boolean;
+  /** Largeur rendue, pour que l'optimiseur serve la bonne variante. */
+  sizes?: string;
   className?: string;
 };
 
@@ -19,6 +21,7 @@ export default function ImageSlot({
   src,
   alt,
   priority,
+  sizes = "(max-width: 768px) 100vw, 50vw",
   className = "",
 }: Props) {
   if (src) {
@@ -28,7 +31,7 @@ export default function ImageSlot({
         alt={alt ?? brief}
         fill
         priority={priority}
-        sizes="(max-width: 768px) 100vw, 50vw"
+        sizes={sizes}
         className={`object-cover ${className}`}
       />
     );

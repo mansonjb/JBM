@@ -21,8 +21,13 @@ export default function Guide() {
               {guide.agence}
             </p>
           </div>
-          <div className="u-tilt relative aspect-4/5">
-            <ImageSlot brief="PHOTO 4 · noir et blanc, en action : il annote, il montre du doigt" />
+          <div className="u-tilt relative aspect-3/2">
+            <ImageSlot
+              brief="PHOTO 4 · noir et blanc, en action : il annote, il montre du doigt"
+              src="/plan-action.jpg"
+              alt="Jean-Baptiste devant un tableau, plan d'action détaillé au marqueur"
+              sizes="(max-width: 1024px) 100vw, 40vw"
+            />
           </div>
         </div>
       </section>
@@ -54,7 +59,11 @@ export default function Guide() {
             </p>
 
             <div className="relative mt-12 aspect-3/4 max-w-[380px]">
-              <ImageSlot brief="PHOTO 5 · portrait vertical, cadrage serré, lumière douce, expression calme" />
+              <ImageSlot
+                brief="PHOTO 5 · portrait vertical, cadrage serré, lumière douce"
+                src="/portrait.jpg"
+                alt="Portrait de Jean-Baptiste Manson"
+              />
             </div>
           </div>
 

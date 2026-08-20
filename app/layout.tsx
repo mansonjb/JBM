@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     template: `%s · ${site.name}`,
   },
   description:
-    "Optimisation d'activité et acquisition client pour PME et entreprises de service. Je trouve où votre activité perd de la valeur, puis je pilote la correction jusqu'à ce qu'elle tourne. Diagnostic en une semaine.",
+    "Optimisation d'activité et acquisition client pour PME et entreprises de service. Je passe d'abord le temps qu'il faut à comprendre votre machine, puis je propose et je pilote les optimisations avec les bons acteurs : du temps, de la marge, du confort.",
   keywords: [
     "consultant indépendant",
     "optimisation d'activité",
