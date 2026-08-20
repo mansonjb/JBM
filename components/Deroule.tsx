@@ -16,7 +16,7 @@ export default function Deroule() {
         <h2 className="u-display m-0 max-w-[16ch] text-[clamp(40px,6.4vw,112px)] tracking-[-0.03em]">
           {deroule.title}
         </h2>
-        <Enonce className="max-w-[460px]">{deroule.intro}</Enonce>
+        <Enonce className="max-w-[520px]">{deroule.intro}</Enonce>
       </div>
 
       <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.7fr)] lg:gap-[clamp(40px,5vw,90px)]">

@@ -48,7 +48,7 @@ export default function Trouvailles() {
         ))}
       </div>
 
-      <Enonce className="mt-14 max-w-[720px]">{trouvailles.chute}</Enonce>
+      <Enonce className="mt-16 max-w-[860px]">{trouvailles.chute}</Enonce>
     </section>
   );
 }

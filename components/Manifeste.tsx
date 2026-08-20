@@ -46,7 +46,7 @@ export default function Manifeste() {
       </div>
 
       <div className="mt-16 border-t border-paper/30 pt-12">
-        <Enonce invert className="mb-10 max-w-[720px]">
+        <Enonce invert className="mb-12 max-w-[860px]">
           {manifeste.citation}
         </Enonce>
         {manifeste.chute.map((paragraphe) => (

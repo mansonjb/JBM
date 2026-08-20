@@ -52,8 +52,8 @@ d'un degré ont été retirés, ils nuisaient à la lecture.
 Le bleu ne sert jamais de décor, il signale toujours quelque chose de vivant :
 `.u-row` (survol d'une ligne de liste, filet et flèche en bleu), `.u-card`
 (survol d'une carte, titre en bleu), `.u-frame` (encadré qui s'allume),
-`.u-link` (soulignement qui se déploie), `.u-quote` (énoncé encadré au bleu plein,
-avec sa flèche) et `.u-bullet` (puce carrée sur les intertitres).
+`.u-link` (soulignement qui se déploie), `.u-quote` (énoncé en bloc bleu plein,
+crème sur bleu, avec sa flèche) et `.u-bullet` (puce carrée sur les intertitres).
 
 ## Photos
 

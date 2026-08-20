@@ -64,7 +64,7 @@ export default function Audit() {
       </div>
 
       <div className="mt-14 flex flex-col items-start gap-8 lg:flex-row lg:items-end lg:justify-between">
-        <Enonce className="max-w-[620px]">{audit.chute}</Enonce>
+        <Enonce className="max-w-[720px]">{audit.chute}</Enonce>
         <a
           href="#contact"
           className="inline-block bg-blue px-7 py-4 text-[15px] font-semibold tracking-[0.04em] text-paper uppercase transition-colors hover:bg-ink"

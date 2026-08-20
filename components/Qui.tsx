@@ -35,7 +35,7 @@ export default function Qui() {
             ))}
           </ul>
 
-          <Enonce className="mt-10 max-w-[620px]">{qui.chute}</Enonce>
+          <Enonce className="mt-12 max-w-[720px]">{qui.chute}</Enonce>
         </div>
 
         <div className="u-reveal grid grid-cols-1 gap-8">

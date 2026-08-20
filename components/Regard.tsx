@@ -65,7 +65,7 @@ export default function Regard() {
         </div>
       </div>
 
-      <Enonce className="mt-14 max-w-[720px]">{regard.chute}</Enonce>
+      <Enonce className="mt-16 max-w-[860px]">{regard.chute}</Enonce>
     </section>
   );
 }
