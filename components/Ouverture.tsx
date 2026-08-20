@@ -1,3 +1,4 @@
+import Enonce from "./Enonce";
 import { ouverture } from "@/lib/site";
 
 /** Les formes que prend une opportunité, puis ce que je fais avec. */
@@ -9,9 +10,7 @@ export default function Ouverture() {
           {ouverture.pistes.map((piste, i) => (
             <li
               key={piste}
-              className={`u-reveal u-row cursor-default border-b border-line py-4 pr-8 text-[clamp(17px,1.6vw,23px)] leading-[1.4] ${
-                i === 3 ? "u-tilt" : ""
-              }`}
+              className="u-reveal u-row cursor-default border-b border-line py-4 pr-8 text-[clamp(17px,1.6vw,23px)] leading-[1.4]"
               style={{ transitionDelay: `${i * 50}ms` }}
             >
               {piste}
@@ -19,15 +18,14 @@ export default function Ouverture() {
           ))}
         </ul>
 
-        <div className="u-serif text-[clamp(21px,1.9vw,29px)] leading-[1.45] lg:pt-6">
-          {ouverture.paragraphes.map((paragraphe, i) => (
+        <div className="lg:pt-6">
+          <Enonce className="mb-8">{ouverture.paragraphes[0]}</Enonce>
+          {ouverture.paragraphes.slice(1).map((paragraphe, i) => (
             <p
               key={i}
-              className={`max-w-[42ch] ${
-                i === ouverture.paragraphes.length - 1 ? "m-0" : "mt-0 mb-7"
-              }`}
+              className="u-serif m-0 mb-6 max-w-[42ch] text-[clamp(19px,1.7vw,26px)] leading-[1.45]"
             >
-              {i === 0 ? <span className="u-mark">{paragraphe}</span> : paragraphe}
+              {paragraphe}
             </p>
           ))}
         </div>

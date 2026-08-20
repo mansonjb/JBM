@@ -29,7 +29,7 @@ export default function Questions() {
                 key={item.q}
                 className={`border-b transition-colors ${
                   isOpen ? "border-blue" : "border-line"
-                } ${i === 2 ? "u-tilt" : ""}`}
+                }`}
               >
                 <button
                   type="button"

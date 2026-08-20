@@ -1,3 +1,4 @@
+import Enonce from "./Enonce";
 import { audit, site } from "@/lib/site";
 
 export default function Audit() {
@@ -43,15 +44,16 @@ export default function Audit() {
         </div>
       </div>
 
-      <div className="u-tilt mt-16 border-t border-line pt-12">
+      <div className="mt-16 border-t border-line pt-12">
         <div className="mb-8 text-[clamp(18px,1.7vw,26px)]">
           {audit.suitesIntro}
         </div>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-10">
           {audit.suites.map((suite, i) => (
             <div key={suite} className="u-reveal u-card border-t-2 border-blue pt-5">
-              <div className="u-num mb-3 text-sm font-bold text-blue">
-                {String(i + 1).padStart(2, "0")}
+              <div className="u-num mb-3 flex items-baseline gap-3 text-sm font-bold text-blue">
+                <span>{String(i + 1).padStart(2, "0")}</span>
+                <span aria-hidden="true">→</span>
               </div>
               <p className="m-0 max-w-[34ch] text-[clamp(16px,1.3vw,19px)] leading-[1.5]">
                 {suite}
@@ -62,14 +64,15 @@ export default function Audit() {
       </div>
 
       <div className="mt-14 flex flex-col items-start gap-8 lg:flex-row lg:items-end lg:justify-between">
-        <p className="u-serif m-0 max-w-[34ch] text-[clamp(22px,2.4vw,36px)] leading-[1.5]">
-          <span className="u-mark">{audit.chute}</span>
-        </p>
+        <Enonce className="max-w-[620px]">{audit.chute}</Enonce>
         <a
           href="#contact"
           className="inline-block bg-blue px-7 py-4 text-[15px] font-semibold tracking-[0.04em] text-paper uppercase transition-colors hover:bg-ink"
         >
           {site.ctaAudit}
+          <span className="u-cta-arrow" aria-hidden="true">
+            →
+          </span>
         </a>
       </div>
     </section>

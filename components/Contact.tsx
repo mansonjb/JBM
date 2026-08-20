@@ -67,7 +67,7 @@ export default function Contact() {
           ))}
         </div>
 
-        <form onSubmit={onSubmit} className="u-tilt grid gap-6">
+        <form onSubmit={onSubmit} className="grid gap-6">
           <input name="nom" type="text" required placeholder="Nom" className={field} />
           <input name="entreprise" type="text" placeholder="Entreprise" className={field} />
           <input name="email" type="email" required placeholder="E-mail" className={field} />
@@ -85,6 +85,9 @@ export default function Contact() {
             {status === "sending"
               ? "Envoi…"
               : site.ctaFinal}
+            <span className="u-cta-arrow" aria-hidden="true">
+              →
+            </span>
           </button>
           {message && (
             <p

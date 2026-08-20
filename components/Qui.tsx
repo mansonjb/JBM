@@ -1,3 +1,4 @@
+import Enonce from "./Enonce";
 import ImageSlot from "./ImageSlot";
 import { qui } from "@/lib/site";
 
@@ -23,7 +24,7 @@ export default function Qui() {
             </p>
           ))}
 
-          <ul className="u-tilt m-0 mt-10 list-none border-t border-line p-0">
+          <ul className="m-0 mt-10 list-none border-t border-line p-0">
             {qui.liens.map((lien) => (
               <li
                 key={lien}
@@ -34,9 +35,7 @@ export default function Qui() {
             ))}
           </ul>
 
-          <p className="u-serif m-0 mt-10 max-w-[34ch] text-[clamp(22px,2.3vw,34px)] leading-[1.5]">
-            <span className="u-mark">{qui.chute}</span>
-          </p>
+          <Enonce className="mt-10 max-w-[620px]">{qui.chute}</Enonce>
         </div>
 
         <div className="u-reveal grid grid-cols-1 gap-8">

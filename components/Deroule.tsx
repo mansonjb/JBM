@@ -1,3 +1,4 @@
+import Enonce from "./Enonce";
 import ImageSlot from "./ImageSlot";
 import { deroule } from "@/lib/site";
 
@@ -15,9 +16,7 @@ export default function Deroule() {
         <h2 className="u-display m-0 max-w-[16ch] text-[clamp(40px,6.4vw,112px)] tracking-[-0.03em]">
           {deroule.title}
         </h2>
-        <p className="u-serif m-0 max-w-[26ch] text-[clamp(21px,2vw,30px)] leading-[1.5] lg:pb-3">
-          <span className="u-mark">{deroule.intro}</span>
-        </p>
+        <Enonce className="max-w-[460px]">{deroule.intro}</Enonce>
       </div>
 
       <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.7fr)] lg:gap-[clamp(40px,5vw,90px)]">
@@ -25,9 +24,7 @@ export default function Deroule() {
           {deroule.etapes.map((etape, i) => (
             <div
               key={etape.n}
-              className={`u-reveal u-card grid grid-cols-1 gap-4 border-b border-line py-9 md:grid-cols-[minmax(0,220px)_minmax(0,1fr)] md:gap-10 ${
-                i === 4 ? "u-tilt" : ""
-              }`}
+              className={`u-reveal u-card grid grid-cols-1 gap-4 border-b border-line py-9 md:grid-cols-[minmax(0,220px)_minmax(0,1fr)] md:gap-10`}
               style={{ transitionDelay: `${i * 60}ms` }}
             >
               <div>

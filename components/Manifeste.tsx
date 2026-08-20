@@ -1,3 +1,4 @@
+import Enonce from "./Enonce";
 import { manifeste } from "@/lib/site";
 
 export default function Manifeste() {
@@ -31,7 +32,7 @@ export default function Manifeste() {
           ))}
         </div>
 
-        <ul className="u-tilt m-0 list-none border-t border-paper/30 p-0">
+        <ul className="m-0 list-none border-t border-paper/30 p-0">
           {manifeste.decisions.map((decision, i) => (
             <li
               key={decision}
@@ -45,9 +46,9 @@ export default function Manifeste() {
       </div>
 
       <div className="mt-16 border-t border-paper/30 pt-12">
-        <p className="u-serif m-0 mb-10 max-w-[26ch] text-[clamp(26px,3vw,48px)] leading-[1.24]">
+        <Enonce invert className="mb-10 max-w-[720px]">
           {manifeste.citation}
-        </p>
+        </Enonce>
         {manifeste.chute.map((paragraphe) => (
           <p
             key={paragraphe}

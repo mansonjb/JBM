@@ -1,3 +1,4 @@
+import Enonce from "./Enonce";
 import { trouvailles } from "@/lib/site";
 
 export default function Trouvailles() {
@@ -31,7 +32,7 @@ export default function Trouvailles() {
             key={carte.titre}
             className={`u-reveal u-card border-b border-line px-0 py-9 sm:px-6 lg:px-8 lg:first:pl-0 ${
               i % 3 === 2 ? "" : "lg:border-r"
-            } ${i === 3 ? "u-tilt" : ""}`}
+            }`}
             style={{ transitionDelay: `${(i % 3) * 60}ms` }}
           >
             <div className="u-num mb-4 text-[12px] font-bold tracking-[0.1em] text-blue">
@@ -47,9 +48,7 @@ export default function Trouvailles() {
         ))}
       </div>
 
-      <p className="u-serif mt-14 max-w-[36ch] text-[clamp(24px,2.6vw,40px)] leading-[1.5]">
-        <span className="u-mark">{trouvailles.chute}</span>
-      </p>
+      <Enonce className="mt-14 max-w-[720px]">{trouvailles.chute}</Enonce>
     </section>
   );
 }

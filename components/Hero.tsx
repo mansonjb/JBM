@@ -55,6 +55,9 @@ export default function Hero() {
             className="inline-block bg-blue px-7 py-4 text-[15px] font-semibold tracking-[0.04em] text-paper uppercase transition-colors hover:bg-ink md:pointer-events-auto md:hover:bg-paper md:hover:text-blue"
           >
             {site.ctaPrimary}
+            <span className="u-cta-arrow" aria-hidden="true">
+              →
+            </span>
           </a>
         </div>
       </div>

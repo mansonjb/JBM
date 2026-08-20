@@ -75,11 +75,6 @@ section[id] {
   font-variant-numeric: tabular-nums;
 }
 
-/* Le motif : un degré d'inclinaison, une fois par section */
-.u-tilt {
-  transform: rotate(1deg);
-}
-
 /* Carrousel d'observations */
 .u-scroller {
   scrollbar-width: thin;
@@ -116,18 +111,41 @@ section[id] {
 
 /* ---------- Rappels de bleu ---------- */
 
-/* Surlignage au feutre : se répète ligne par ligne, comme un vrai coup de marqueur. */
-.u-mark {
-  display: inline;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  background-image: linear-gradient(
-    transparent 58%,
-    color-mix(in srgb, var(--color-blue) 26%, transparent) 58%,
-    color-mix(in srgb, var(--color-blue) 26%, transparent) 94%,
-    transparent 94%
-  );
-  padding: 0 0.08em;
+/* Énoncé encadré : la phrase qui compte est mise dans un cadre bleu, pas surlignée. */
+.u-quote {
+  position: relative;
+  display: block;
+  margin: 0;
+  border: 1px solid var(--color-blue);
+  background: color-mix(in srgb, var(--color-blue) 5%, transparent);
+  padding: clamp(26px, 3vw, 40px) clamp(24px, 3vw, 44px);
+}
+.u-quote-arrow {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--color-blue);
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* Sur fond bleu, le cadre s'inverse. */
+.u-quote-invert {
+  border-color: color-mix(in srgb, var(--color-paper) 55%, transparent);
+  background: color-mix(in srgb, var(--color-paper) 8%, transparent);
+}
+.u-quote-invert .u-quote-arrow {
+  color: var(--color-paper);
+}
+
+/* Flèche des boutons : elle avance au survol. */
+.u-cta-arrow {
+  display: inline-block;
+  margin-left: 10px;
+  transition: translate 0.2s ease;
+}
+a:hover > .u-cta-arrow,
+button:hover > .u-cta-arrow {
+  translate: 5px 0;
 }
 
 /* Rangée de liste : le filet et la flèche passent au bleu au survol. */

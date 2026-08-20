@@ -1,3 +1,4 @@
+import Enonce from "./Enonce";
 import { cas } from "@/lib/site";
 
 export default function Cas() {
@@ -61,7 +62,7 @@ export default function Cas() {
             {cas.chiffres.map((chiffre, i) => (
               <div
                 key={chiffre.value}
-                className={`border-b border-line py-7 ${i === 1 ? "u-tilt" : ""}`}
+                className={`border-b border-line py-7`}
               >
                 <div className="u-display u-num text-[clamp(34px,3.6vw,62px)] text-blue">
                   {chiffre.value}
@@ -75,22 +76,13 @@ export default function Cas() {
         </div>
       </div>
 
-      <div className="mt-14 border-t border-line pt-12">
-        {cas.chute.map((paragraphe, i) => (
-          <p
-            key={i}
-            className={`u-serif max-w-[34ch] text-[clamp(22px,2.4vw,36px)] leading-[1.45] ${
-              i === cas.chute.length - 1 ? "m-0" : "mt-0 mb-5"
-            }`}
-          >
-            {i === cas.chute.length - 1 ? (
-              <span className="u-mark">{paragraphe}</span>
-            ) : (
-              paragraphe
-            )}
-          </p>
-        ))}
+      <div className="mt-14 grid grid-cols-1 items-start gap-8 border-t border-line pt-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-[clamp(40px,6vw,110px)]">
+        <p className="u-serif m-0 max-w-[34ch] text-[clamp(22px,2.4vw,36px)] leading-[1.32]">
+          {cas.chute[0]}
+        </p>
+        <Enonce>{cas.chute[1]}</Enonce>
       </div>
+
     </section>
   );
 }

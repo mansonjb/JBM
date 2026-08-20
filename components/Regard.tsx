@@ -1,3 +1,4 @@
+import Enonce from "./Enonce";
 import { regard } from "@/lib/site";
 
 export default function Regard() {
@@ -25,7 +26,7 @@ export default function Regard() {
             </p>
           ))}
 
-          <ul className="u-tilt m-0 mb-8 list-none border-t border-line p-0">
+          <ul className="m-0 mb-8 list-none border-t border-line p-0">
             {regard.derives.map((derive) => (
               <li
                 key={derive}
@@ -64,9 +65,7 @@ export default function Regard() {
         </div>
       </div>
 
-      <p className="u-serif mt-14 max-w-[38ch] text-[clamp(24px,2.6vw,40px)] leading-[1.5]">
-        <span className="u-mark">{regard.chute}</span>
-      </p>
+      <Enonce className="mt-14 max-w-[720px]">{regard.chute}</Enonce>
     </section>
   );
 }

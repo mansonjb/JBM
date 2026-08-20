@@ -44,16 +44,16 @@ npm start        # http://localhost:3083
 
 ## Le motif
 
-Chaque section contient un élément incliné d'un degré (`.u-tilt`). C'est la
-démonstration du nom, sans le dire.
+Le nom se raconte par le texte, plus par la mise en page : les éléments inclinés
+d'un degré ont été retirés, ils nuisaient à la lecture.
 
 ## Le bleu
 
 Le bleu ne sert jamais de décor, il signale toujours quelque chose de vivant :
 `.u-row` (survol d'une ligne de liste, filet et flèche en bleu), `.u-card`
 (survol d'une carte, titre en bleu), `.u-frame` (encadré qui s'allume),
-`.u-link` (soulignement qui se déploie), `.u-mark` (surlignage au feutre,
-ligne par ligne) et `.u-bullet` (puce carrée sur les intertitres).
+`.u-link` (soulignement qui se déploie), `.u-quote` (énoncé encadré au bleu plein,
+avec sa flèche) et `.u-bullet` (puce carrée sur les intertitres).
 
 ## Photos
 
