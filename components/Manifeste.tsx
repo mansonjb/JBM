@@ -1,66 +1,64 @@
-import Bande from "./Bande";
-import Citation from "./Citation";
+import SectionHead from "./SectionHead";
 import { manifeste } from "@/lib/site";
 
-/** 04 · Un degré. */
+/**
+ * 04 · Un degré. Bloc « diverge » de la maquette : le degré posé en très grand,
+ * le tracé des deux trajectoires, puis la conclusion avec le mot surligné.
+ */
 export default function Manifeste() {
   return (
-    <>
-      <Bande fond="paper" id="manifeste">
-        <div className="u-surtitre">04 · {manifeste.kicker}</div>
-        <h2 className="u-titre">{manifeste.title}</h2>
+    <section id="undegre" className="py-[clamp(64px,9vh,120px)]">
+      <SectionHead n="04">{manifeste.kicker}</SectionHead>
 
-        <div className="mt-[var(--pas-64)] grid gap-[var(--pas-64)] lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-[clamp(48px,5vw,110px)]">
-          <div className="u-texte u-texte-1">
-            {manifeste.paragraphes.map((paragraphe) => (
-              <p key={paragraphe} className="u-corps">
-                {paragraphe}
-              </p>
-            ))}
-          </div>
+      <h2 className="m-0 mb-10 text-[clamp(30px,4.4vw,78px)] leading-[1.02]">
+        {manifeste.title}
+      </h2>
 
-          <div>
-            <div className="u-surtitre">Ce qu&apos;on décide, concrètement</div>
-            <ul className="u-etiquettes u-reveal">
-              {manifeste.decisions.map((decision) => (
-                <li key={decision} className="u-etiquette">
-                  {decision}
-                </li>
-              ))}
-            </ul>
-            <div className="u-texte u-texte-1 mt-[var(--pas-40)]">
-              {manifeste.suite.map((paragraphe) => (
-                <p key={paragraphe} className="u-corps">
-                  {paragraphe}
-                </p>
-              ))}
-            </div>
-          </div>
-        </div>
-      </Bande>
-
-      <Bande fond="bleu">
-        {/* Le degré, tracé une seconde fois, à l'endroit exact où le texte l'énonce. */}
-        <svg
-          viewBox="0 0 1200 220"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-          className="mb-[var(--pas-64)] h-[120px] w-full opacity-70 lg:h-[180px]"
-        >
-          <line x1="0" y1="200" x2="1200" y2="200" stroke="#F4EFE6" strokeWidth="1.5" />
-          <line x1="0" y1="200" x2="1200" y2="24" stroke="#F4EFE6" strokeWidth="3" />
-        </svg>
-
-        <Citation large>{manifeste.citation}</Citation>
-
-        <div className="u-texte u-texte-2 mt-[var(--pas-64)]">
-          {manifeste.chute.map((paragraphe) => (
-            <p key={paragraphe} className="u-corps">
+      <div className="grid grid-cols-1 gap-[clamp(28px,3vw,64px)] lg:grid-cols-2">
+        <div>
+          {manifeste.paragraphes.map((paragraphe) => (
+            <p key={paragraphe} className="body mt-0 mb-5">
               {paragraphe}
             </p>
           ))}
         </div>
-      </Bande>
-    </>
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {manifeste.decisions.map((decision) => (
+            <div key={decision} className="chip">
+              {decision}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="diverge">
+        <div className="diverge-top">
+          <span className="deg">1°</span>
+          <p className="diverge-q">
+            {manifeste.suite[0]}
+          </p>
+        </div>
+
+        <div className="diverge-plot">
+          <svg viewBox="0 0 1000 260" preserveAspectRatio="none" aria-hidden="true">
+            <line className="ln" x1="0" y1="240" x2="1000" y2="240" />
+            <line className="ln ln-b" x1="0" y1="240" x2="1000" y2="30" />
+            <line className="tick" x1="1000" y1="30" x2="1000" y2="240" />
+          </svg>
+          <span className="lbl lbl-a">même endroit</span>
+          <span className="lbl lbl-b">ailleurs</span>
+          <span className="gap">l&apos;écart</span>
+        </div>
+
+        <p className="diverge-end">
+          <span className="mark">{manifeste.citation}</span>
+        </p>
+
+        <div className="mini-deg">
+          <span className="mini-deg-n">→</span>
+          <span>{manifeste.chute.join(" ")}</span>
+        </div>
+      </div>
+    </section>
   );
 }

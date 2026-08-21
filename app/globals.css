@@ -17,368 +17,186 @@
 }
 
 /* ============================================================
-   1. JETONS
-   Une seule définition des tailles et des pas. Aucun composant
-   n'a le droit d'en réécrire une.
+   Système repris tel quel de la maquette Claude Design
+   « un-degre.dc.html ». Les classes ci-dessous sont celles de
+   la maquette : on ne les renomme pas, on ne les réinvente pas.
    ============================================================ */
 
-:root {
-  --nav-h: 64px;
+body { margin: 0; background: #F4EFE6; color: #15171C; font-family: var(--font-sans), system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #1F3BD8; text-decoration: none; }
+  a:hover { color: #15171C; }
+  input, textarea, button { font-family: var(--font-sans), system-ui, sans-serif; }
+  ::selection { background: #1F3BD8; color: #F4EFE6; }
+  html { scroll-behavior: smooth; }
 
-  /* Sept rangs typographiques, pas un de plus. */
-  --fs-display: clamp(42px, 7vw, 132px);
-  --fs-titre: clamp(32px, 5.4vw, 100px);
-  --fs-citation: clamp(28px, 4.6vw, 84px);
-  --fs-item: clamp(21px, 2.6vw, 44px);
-  --fs-corps: clamp(18px, 1.6vw, 27px);
-  --fs-note: clamp(14px, 1vw, 17px);
-  --fs-chiffre: clamp(56px, 8vw, 150px);
+  section, footer { padding-left: 5vw; padding-right: 5vw; }
+  @media (max-width: 900px) { section, footer { padding-left: 6vw; } }
+  h2 { font-family: var(--font-display), Impact, sans-serif; text-transform: uppercase; letter-spacing: -0.02em; text-wrap: pretty; }
+  .serif { font-family: var(--font-serif), Georgia, serif; }
+  .eyebrow { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #1F3BD8; }
+  .lede { font-size: clamp(17px, 1.5vw, 24px); line-height: 1.55; color: #15171C; text-wrap: pretty; }
+  
+  .body { font-size: clamp(15px, 1.15vw, 18px); line-height: 1.7; color: #5A5D66; text-wrap: pretty; }
+  .quote { font-family: var(--font-serif), Georgia, serif; margin: 0; font-size: clamp(28px, 4.6vw, 78px); line-height: 1.24; padding-top: 0.1em; text-wrap: pretty; }
+  .attrib { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #1F3BD8; }
 
-  /* Quatre pas verticaux, plus le pas de bande. */
-  --pas-12: 12px;
-  --pas-24: 24px;
-  --pas-40: 40px;
-  --pas-64: 64px;
-  --pas-bande: clamp(72px, 8vw, 120px);
-}
+  .navlink { color: #5A5D66; padding: 6px 0; border-bottom: 2px solid transparent; transition: color 140ms, border-color 140ms; }
+  .navlink:hover { color: #1F3BD8; border-bottom-color: #1F3BD8; }
 
-* {
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-}
+  .progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: #1F3BD8; transform: scaleX(0); transform-origin: 0 50%; z-index: 60; animation: prog linear both; animation-timeline: scroll(root block); }
+  @keyframes prog { to { transform: scaleX(1); } }
 
-html {
-  scroll-behavior: smooth;
-}
+  .btn { display: inline-flex; align-items: center; gap: 14px; background: #1F3BD8; color: #F4EFE6; padding: 20px 30px; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; transition: background 160ms, color 160ms, gap 160ms; }
+  .btn:hover { background: #15171C; color: #F4EFE6; gap: 22px; }
+  .btn-cream { background: #F4EFE6; color: #1F3BD8; }
+  .btn-cream:hover { background: #15171C; color: #F4EFE6; }
+  .btn-ghost { background: transparent; color: #1F3BD8; border: 2px solid #1F3BD8; }
+  .btn-ghost:hover { background: #1F3BD8; color: #F4EFE6; }
 
-body {
-  margin: 0;
-  background: var(--color-paper);
-  color: var(--color-ink);
-  font-family: var(--font-sans), system-ui, sans-serif;
-  overflow-x: clip;
-}
+  .row { display: grid; grid-template-columns: 76px minmax(0, 1fr); align-items: baseline; padding: 22px 20px 22px 0; border-bottom: 2px solid #D8CFC0; transition: background 150ms, color 150ms, padding-left 150ms; }
+  .row:hover { background: #1F3BD8; color: #F4EFE6; padding-left: 20px; }
+  .row .n { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; font-variant-numeric: tabular-nums; opacity: 0.55; }
+  .row .t { font-size: clamp(18px, 1.8vw, 28px); line-height: 1.4; }
+  .row-inv { border-bottom-color: rgba(244,239,230,0.35); }
+  .row-inv:hover { background: #F4EFE6; color: #1F3BD8; }
 
-::selection {
-  background: var(--color-blue);
-  color: var(--color-paper);
-}
+  .card { background: #EDE6DA; padding: 34px 32px 38px; transition: background 170ms, color 170ms; }
+  .card:hover { background: #1F3BD8; color: #F4EFE6; }
+  .stat { background: #F4EFE6; padding: 30px 28px; transition: background 170ms, color 170ms; }
+  .stat:hover { background: #1F3BD8; color: #F4EFE6; }
+  .stat:hover .fig { color: #F4EFE6; }
+  .stats4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  @media (max-width: 1040px) { .stats4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { .stats4 { grid-template-columns: 1fr; } }
+  .steps { display: grid; gap: 0; background: #F4EFE6; border: 2px solid #D8CFC0; }
+  .step + .step { border-top: 2px solid #D8CFC0; }
+  .step { background: #F4EFE6; display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 0 24px; padding: 34px 28px; opacity: 0; transform: translateY(28px); animation: stepIn linear both; animation-timeline: view(); animation-range: entry 5% cover 26%; transition: background 170ms, color 170ms; }
+  .step:hover { background: #1F3BD8; color: #F4EFE6; }
+  .step:hover .step-n, .step:hover .step-b { color: #F4EFE6; }
+  .step-n { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; font-variant-numeric: tabular-nums; color: #1F3BD8; padding-top: 8px; }
+  .step-t { grid-column: 2; margin: 0 0 14px; font-family: var(--font-display), Impact, sans-serif; text-transform: uppercase; font-size: clamp(24px, 2.8vw, 46px); line-height: 1.06; }
+  .step-b { grid-column: 2; margin: 0; font-size: clamp(15px, 1.15vw, 18px); line-height: 1.7; color: #5A5D66; }
+  @keyframes stepIn { to { opacity: 1; transform: translateY(0); } }
+  @supports not (animation-timeline: view()) { .step { opacity: 1; transform: none; } }
+  .fig { font-family: var(--font-display), Impact, sans-serif; line-height: 1; font-variant-numeric: tabular-nums; color: #1F3BD8; transition: color 170ms; }
 
-section[id] {
-  scroll-margin-top: calc(var(--nav-h) + var(--pas-24));
-}
+  details { border-bottom: 2px solid #D8CFC0; transition: background 170ms; }
+  details:last-of-type { border-bottom: 0; }
+  #questions .qsum .plus { font-size: 18px; }
+  details[open] { background: #EDE6DA; }
+  details summary { list-style: none; cursor: pointer; transition: color 150ms; }
+  details summary::-webkit-details-marker { display: none; }
+  details summary:hover { color: #1F3BD8; }
+  details .plus::after { content: "+"; }
+  details[open] .plus::after { content: "−"; }
 
-/* ============================================================
-   2. LA BANDE
-   Toute la page est un empilement de bandes pleine largeur.
-   Une bande porte un fond, une idée, et rien d'autre.
-   ============================================================ */
+  figure { margin: 0; }
+  .shot { width: 100%; height: 100%; display: block; border: 2px solid #1F3BD8; object-fit: cover; object-position: 50% 30%; }
+  .q { border-bottom: 2px solid #D8CFC0; padding: 16px 0; font-size: clamp(16px, 1.4vw, 21px); line-height: 1.4; transition: color 150ms, border-color 150ms; }
+  .q:hover { color: #1F3BD8; border-bottom-color: #1F3BD8; }
+  #undegre .chip { background: #1F3BD8; border-color: #1F3BD8; color: #F4EFE6; }
+  #undegre .chip:hover { background: #F4EFE6; border-color: #1F3BD8; color: #1F3BD8; }
+  .chip { border: 2px solid #D8CFC0; padding: 26px 22px; min-height: 130px; display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 700; font-size: clamp(17px, 1.45vw, 22px); line-height: 1.3; transition: background 150ms, color 150ms, border-color 150ms; }
+  .chip:hover { background: #1F3BD8; border-color: #1F3BD8; color: #F4EFE6; }
+  .qsum { display: grid; grid-template-columns: minmax(0, 1fr) 40px; gap: 20px; align-items: baseline; padding: 15px 18px; }
+  .qtxt { font-size: clamp(15px, 1.15vw, 19px); line-height: 1.35; }
+  .qans { margin: 0; padding: 0 18px 22px; max-width: none; font-size: clamp(15px, 1.15vw, 18px); line-height: 1.7; color: #1F3BD8; }
+  .qsum .plus { font-size: 22px; text-align: right; opacity: 0.7; }
+  .cap { margin-top: 14px; font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.04em; color: #1F3BD8; }
 
-.u-bande {
-  width: 100%;
-  padding-block: var(--pas-bande);
-}
+  .field { background: transparent; border: 0; border-bottom: 2px solid #D8CFC0; padding: 16px 4px; font-size: 17px; outline: none; color: #15171C; transition: border-color 150ms; }
+  .field:focus { border-bottom-color: #1F3BD8; }
+  .field-inv { color: #F4EFE6; border-bottom-color: rgba(244,239,230,0.5); }
+  .field-inv::placeholder { color: rgba(244,239,230,0.6); }
+  .field-inv:focus { border-bottom-color: #F4EFE6; }
+  .blue { color: #1F3BD8; }
+  .diverge { margin-top: clamp(56px, 9vh, 110px); border-top: 2px solid #15171C; padding-top: 34px; }
+  .diverge-top { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(20px, 3vw, 54px); align-items: start; }
+  .deg { font-family: var(--font-display), Impact, sans-serif; font-size: clamp(56px, 11vw, 190px); line-height: 0.8; color: #1F3BD8; font-variant-numeric: tabular-nums; }
+  .diverge-q { margin: 0; font-family: var(--font-display), Impact, sans-serif; text-transform: uppercase; font-size: clamp(24px, 3.6vw, 66px); line-height: 0.98; letter-spacing: -0.02em; }
+  .diverge-q em { font-style: normal; color: #1F3BD8; }
+  .diverge-plot { position: relative; margin-top: clamp(26px, 4vh, 54px); height: clamp(180px, 26vh, 300px); }
+  .diverge-plot svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .ln { stroke: #15171C; stroke-width: 2; vector-effect: non-scaling-stroke; stroke-dasharray: 1600; stroke-dashoffset: 1600; animation: draw linear both; animation-timeline: view(); animation-range: entry 10% cover 45%; }
+  .ln-b { stroke: #1F3BD8; stroke-width: 3; }
+  .tick { stroke: #1F3BD8; stroke-width: 2; stroke-dasharray: 6 6; vector-effect: non-scaling-stroke; opacity: 0; animation: fade linear both; animation-timeline: view(); animation-range: cover 40% cover 60%; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes fade { to { opacity: 1; } }
+  .lbl { position: absolute; right: 0; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap; }
+  .lbl-a { bottom: 4px; color: #15171C; }
+  .lbl-b { top: -22px; color: #1F3BD8; }
+  .gap { position: absolute; right: 8px; top: 40%; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #1F3BD8; writing-mode: vertical-rl; }
+  .diverge-end { margin: clamp(30px, 5vh, 60px) 0 0; font-size: clamp(18px, 1.8vw, 30px); line-height: 1.4; max-width: none; }
+  .diverge-end strong { font-weight: 700; }
+  .diverge-end .mark { background: #1F3BD8; color: #F4EFE6; padding: 2px 8px; box-decoration-break: clone; }
+  @supports not (animation-timeline: view()) { .ln { stroke-dashoffset: 0; } .tick { opacity: 1; } }
+  .tcard { position: relative; overflow: hidden; background: #1F3BD8; color: #F4EFE6; padding: 30px 28px 54px; min-height: 200px; display: flex; flex-direction: column; opacity: 0; transform: translateY(26px); animation: cardIn linear both; animation-timeline: view(); animation-range: entry 4% cover 24%; transition: color 220ms, transform 220ms; }
+  .tcard::before { content: ""; position: absolute; inset: 0; background: #F4EFE6; transform: translateY(101%); transition: transform 320ms cubic-bezier(.2,.7,.2,1); z-index: 0; }
+  .tcard > * { position: relative; z-index: 1; }
+  .tcard:hover { color: #1F3BD8; transform: translateY(-4px); outline: 2px solid #1F3BD8; outline-offset: -2px; }
+  .tcard:hover::before { transform: translateY(0); }
+  .tcard .tkick { transition: letter-spacing 260ms; }
+  .tcard:hover .tkick { letter-spacing: 0.01em; }
+  @keyframes cardIn { to { opacity: 1; transform: translateY(0); } }
+  @supports not (animation-timeline: view()) { .tcard { opacity: 1; transform: none; } }
+  .mq { margin: 0 -5vw; overflow: hidden; padding: 6px 0; user-select: none; }
+  .mq-track { display: flex; align-items: center; gap: 0.32em; width: max-content; font-family: var(--font-display), Impact, sans-serif; text-transform: uppercase; font-size: clamp(46px, 9vw, 150px); line-height: 1.1; animation: mqrun 46s linear infinite; }
+  .mq:hover .mq-track { animation-play-state: paused; }
+  @keyframes mqrun { to { transform: translateX(-50%); } }
+  .mq-i { color: transparent; -webkit-text-stroke: 2px #15171C; letter-spacing: -0.01em; cursor: default; transition: color 180ms, -webkit-text-stroke-color 180ms; }
+  .mq-i:hover { color: #1F3BD8; -webkit-text-stroke-color: #1F3BD8; }
+  .mq-s { color: #1F3BD8; font-size: 0.42em; align-self: flex-start; margin-top: 0.16em; }
+  .mq-say { margin: 34px 0 0; max-width: none; font-size: clamp(20px, 2.4vw, 40px); line-height: 1.34; text-wrap: pretty; }
+  .mq-say-a { font-family: var(--font-display), Impact, sans-serif; text-transform: uppercase; color: #1F3BD8; }
+  .mini-deg { margin: 30px 0 0; padding-top: 22px; border-top: 2px solid #D8CFC0; display: flex; align-items: baseline; gap: 14px; font-family: var(--font-display), Impact, sans-serif; text-transform: uppercase; font-size: clamp(16px, 1.4vw, 22px); line-height: 1.24; letter-spacing: 0.01em; }
+  .mini-deg-n { color: #1F3BD8; font-variant-numeric: tabular-nums; }
+  .tnum { align-self: flex-start; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; font-variant-numeric: tabular-nums; opacity: 0.7; }
+  .tkick { margin-top: 26px; font-family: var(--font-display), Impact, sans-serif; text-transform: uppercase; font-size: clamp(26px, 2.6vw, 40px); line-height: 0.98; letter-spacing: -0.01em; }
+  .ttxt { margin-top: 12px; font-size: clamp(15px, 1.15vw, 18px); line-height: 1.5; opacity: 0.88; }
+  .tcard::after { content: ""; position: absolute; left: 28px; right: 28px; bottom: 44px; height: 2px; background: currentColor; opacity: 0.28; }
+  .tel-nav { display: inline-flex; align-items: center; gap: 9px; border: 2px solid #1F3BD8; color: #1F3BD8; padding: 11px 16px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; font-variant-numeric: tabular-nums; transition: background 150ms, color 150ms; }
+  .tel-nav:hover { background: #1F3BD8; color: #F4EFE6; }
+  .tel-nav .dot { width: 8px; height: 8px; background: #1F3BD8; border-radius: 50%; animation: pulse 1.8s ease-in-out infinite; }
+  .tel-nav:hover .dot { background: #F4EFE6; }
+  @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.35; transform: scale(0.8); } }
+  .tel-float { position: fixed; right: 22px; bottom: 22px; z-index: 45; display: inline-flex; align-items: center; gap: 12px; background: #1F3BD8; color: #F4EFE6; padding: 16px 22px; font-size: 15px; font-weight: 700; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; box-shadow: 0 14px 34px rgba(21,23,28,0.22); transition: background 160ms, gap 160ms; }
+  .tel-float:hover { background: #15171C; color: #F4EFE6; gap: 18px; }
+  .tel-float .dot { width: 9px; height: 9px; background: #F4EFE6; border-radius: 50%; animation: pulse 1.8s ease-in-out infinite; }
+  .tel-big { display: inline-flex; align-items: baseline; gap: 14px; font-family: var(--font-display), Impact, sans-serif; text-transform: uppercase; font-size: clamp(26px, 3.2vw, 54px); line-height: 1; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+  @media (max-width: 720px) { .tel-nav { display: none; } }
+  #contact .lede, #contact .body, #contact .blue { color: #F4EFE6; }
 
-/* Bande serrée : une respiration entre deux bandes pleines. */
-.u-bande-serree {
-  padding-block: calc(var(--pas-bande) * 0.55);
-}
+  /* ——— motif du degré : l'anneau ——— */
+  .sechead { display: flex; align-items: center; gap: 16px; margin-bottom: 26px; }
+  .sechead-n { position: relative; font-family: var(--font-display), Impact, sans-serif; font-size: 30px; line-height: 1; color: #1F3BD8; font-variant-numeric: tabular-nums; padding-right: 0.42em; }
+  .sechead-n i { position: absolute; top: 1px; right: 0; width: 11px; height: 11px; box-sizing: border-box; border: 2px solid #1F3BD8; border-radius: 50%; transform: scale(0.2); animation: ringPop linear both; animation-timeline: view(); animation-range: entry 0% entry 85%; }
+  .sechead-t { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #5A5D66; }
+  .sechead-rule { flex: 1; height: 2px; background: #D8CFC0; }
+  @keyframes ringPop { to { transform: scale(1); } }
+  @supports not (animation-timeline: view()) { .sechead-n i { transform: scale(1); } }
 
-.u-fond-paper {
-  background: var(--color-paper);
-  color: var(--color-ink);
-}
-.u-fond-sand {
-  background: var(--color-sand);
-  color: var(--color-ink);
-}
-.u-fond-bleu {
-  background: var(--color-blue);
-  color: var(--color-paper);
-}
-.u-fond-encre {
-  background: var(--color-ink);
-  color: var(--color-paper);
-}
+  .ringmark { position: relative; padding-right: 0.62em; }
+  .ringmark::after { content: ""; position: absolute; top: 0.04em; right: 0; width: 0.30em; height: 0.30em; box-sizing: border-box; border: 0.075em solid currentColor; border-radius: 50%; }
 
-/* Le contenu d'une bande : pleine largeur utile, jamais une colonne perdue. */
-.u-dedans {
-  width: 100%;
-  max-width: 1920px;
-  margin-inline: auto;
-  padding-inline: clamp(24px, 4.5vw, 96px);
-}
+  .orbit { position: absolute; top: -10vw; right: -14vw; width: 46vw; aspect-ratio: 1; z-index: 0; pointer-events: none; }
+  .orbit svg { width: 100%; height: 100%; overflow: visible; }
+  .orbit .o1 { fill: none; stroke: #D8CFC0; stroke-width: 2; }
+  .orbit .o2 { fill: none; stroke: #1F3BD8; stroke-width: 2; stroke-dasharray: 5 11; transform-origin: 50% 50%; animation: spin 90s linear infinite; }
+  .orbit .o3 { fill: none; stroke: #1F3BD8; stroke-width: 2; }
+  .orbit .spoke { stroke: #1F3BD8; stroke-width: 2; }
+  @keyframes spin { to { transform: rotate(360deg); } }
 
-/* ============================================================
-   3. RANGS TYPOGRAPHIQUES
-   Un rang dit une chose et une seule.
-   ============================================================ */
+  .footring { position: absolute; right: -13vw; bottom: -12vw; width: 40vw; aspect-ratio: 1; border: 2px solid #1F3BD8; border-radius: 50%; opacity: 0.5; pointer-events: none; }
+  .footring::after { content: ""; position: absolute; inset: 9%; border: 2px dashed #D8CFC0; border-radius: 50%; }
+  .arc { fill: none; stroke: #1F3BD8; stroke-width: 2; }
+  .arclbl { fill: #1F3BD8; font-family: var(--font-display), Impact, sans-serif; font-size: 20px; }
+  .rail a::before { content: ""; width: 7px; height: 7px; box-sizing: border-box; border: 2px solid currentColor; border-radius: 50%; transition: background 140ms; }
+  .rail a:hover::before { background: #1F3BD8; }
 
-/* Sur-titre : où on est dans le plan. */
-.u-surtitre {
-  margin: 0 0 var(--pas-40);
-  font-size: var(--fs-note);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-}
-.u-fond-bleu .u-surtitre,
-.u-fond-encre .u-surtitre {
-  color: color-mix(in srgb, var(--color-paper) 70%, transparent);
-}
+/* ---- Ajouts nécessaires hors maquette ---- */
 
-/* Titre d'ouverture, réservé au héros. */
-.u-display {
-  margin: 0;
-  font-family: var(--font-display), Impact, sans-serif;
-  font-weight: 400;
-  text-transform: uppercase;
-  font-size: var(--fs-display);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-}
-
-/* Titre de bande. */
-.u-titre {
-  margin: 0;
-  font-family: var(--font-display), Impact, sans-serif;
-  font-weight: 400;
-  text-transform: uppercase;
-  font-size: var(--fs-titre);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-}
-
-/* Corps : la seule taille de lecture courante. */
-.u-corps {
-  margin: 0;
-  font-size: var(--fs-corps);
-  line-height: 1.65;
-}
-
-/*
- * Un bloc de plusieurs paragraphes tient toute la bande en deux colonnes :
- * la ligne reste lisible et la page n'a plus de moitié droite vide.
- * Un paragraphe seul garde une mesure de lecture.
- */
-.u-texte {
-  column-gap: clamp(48px, 5vw, 104px);
-}
-@media (min-width: 1100px) {
-  .u-texte-2 {
-    column-count: 2;
-  }
-}
-.u-texte .u-corps {
-  break-inside: avoid;
-}
-.u-texte-1 .u-corps {
-  max-width: 46ch;
-}
-.u-corps + .u-corps {
-  margin-top: var(--pas-24);
-}
-.u-fond-paper .u-corps,
-.u-fond-sand .u-corps {
-  color: var(--color-muted);
-}
-.u-fond-bleu .u-corps,
-.u-fond-encre .u-corps {
-  color: color-mix(in srgb, var(--color-paper) 88%, transparent);
-}
-
-/* Note : ce qui se lit après, jamais avant. */
-.u-note {
-  margin: 0;
-  font-size: var(--fs-note);
-  line-height: 1.6;
-  color: var(--color-muted);
-}
-.u-fond-bleu .u-note,
-.u-fond-encre .u-note {
-  color: color-mix(in srgb, var(--color-paper) 72%, transparent);
-}
-
-/* ============================================================
-   4. LA CITATION
-   Guillemets français, serif, attribution. C'est le seul
-   traitement autorisé pour une phrase de posture.
-   ============================================================ */
-
-.u-citation {
-  margin: 0;
-  font-family: var(--font-serif), Georgia, serif;
-  font-size: var(--fs-citation);
-  line-height: 1.16;
-}
-
-/* Variante retenue pour les citations qui tiennent la bande entière. */
-.u-citation-large {
-  letter-spacing: -0.015em;
-}
-
-.u-attribution {
-  margin: var(--pas-24) 0 0;
-  font-size: var(--fs-note);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-}
-.u-fond-bleu .u-attribution,
-.u-fond-encre .u-attribution {
-  color: color-mix(in srgb, var(--color-paper) 70%, transparent);
-}
-
-/* ============================================================
-   5. LES ITEMS
-   Une liste est une suite de rangées pleine largeur, numérotées.
-   Jamais deux colonnes inégales.
-   ============================================================ */
-
-.u-items {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  border-top: 1px solid currentColor;
-  border-color: var(--color-line);
-}
-.u-fond-bleu .u-items,
-.u-fond-encre .u-items {
-  border-color: color-mix(in srgb, var(--color-paper) 30%, transparent);
-}
-
-.u-item {
-  display: grid;
-  grid-template-columns: 3.5rem minmax(0, 1fr);
-  gap: var(--pas-24);
-  align-items: baseline;
-  padding-block: var(--pas-24);
-  border-bottom: 1px solid var(--color-line);
-  font-size: var(--fs-item);
-  line-height: 1.3;
-}
-.u-fond-bleu .u-item,
-.u-fond-encre .u-item {
-  border-color: color-mix(in srgb, var(--color-paper) 30%, transparent);
-}
-
-@media (min-width: 768px) {
-  /* Rangée appariée : intitulé à gauche, développement à droite. */
-  .u-item {
-    grid-template-columns: 5rem minmax(0, 1fr) minmax(0, 1.1fr);
-    gap: clamp(32px, 4vw, 72px);
-  }
-  /* Rangée simple : rien à droite, l'intitulé prend toute la largeur. */
-  .u-item-simple {
-    grid-template-columns: 5rem minmax(0, 1fr);
-  }
-}
-
-.u-item-num {
-  font-size: var(--fs-note);
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  font-variant-numeric: tabular-nums;
-  color: var(--color-blue);
-}
-.u-fond-bleu .u-item-num,
-.u-fond-encre .u-item-num {
-  color: var(--color-paper);
-}
-
-.u-item-texte {
-  font-size: var(--fs-corps);
-  line-height: 1.7;
-  color: var(--color-muted);
-  max-width: 58ch;
-}
-.u-fond-bleu .u-item-texte,
-.u-fond-encre .u-item-texte {
-  color: color-mix(in srgb, var(--color-paper) 85%, transparent);
-}
-
-/* ============================================================
-   6. LES CHIFFRES
-   ============================================================ */
-
-.u-chiffre {
-  font-family: var(--font-display), Impact, sans-serif;
-  font-weight: 400;
-  font-size: var(--fs-chiffre);
-  line-height: 1;
-  font-variant-numeric: tabular-nums;
-  color: var(--color-blue);
-}
-.u-fond-bleu .u-chiffre,
-.u-fond-encre .u-chiffre {
-  color: var(--color-paper);
-}
-
-/* ============================================================
-   7. L'ACTION
-   Le seul objet qui déclenche quelque chose, et le seul
-   autorisé à porter une flèche.
-   ============================================================ */
-
-.u-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  background: var(--color-blue);
-  color: var(--color-paper);
-  padding: 20px 32px;
-  font-size: var(--fs-note);
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  border: 0;
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-.u-cta:hover {
-  background: var(--color-ink);
-  color: var(--color-paper);
-}
-.u-fond-bleu .u-cta,
-.u-fond-encre .u-cta {
-  background: var(--color-paper);
-  color: var(--color-blue);
-}
-.u-fond-bleu .u-cta:hover,
-.u-fond-encre .u-cta:hover {
-  background: var(--color-ink);
-  color: var(--color-paper);
-}
-.u-cta-fleche {
-  transition: translate 0.2s ease;
-}
-.u-cta:hover .u-cta-fleche {
-  translate: 5px 0;
-}
-
-/* Lien de texte : soulignement bleu qui se déploie. */
-.u-lien {
-  color: inherit;
-  text-decoration: none;
-  background-image: linear-gradient(var(--color-blue), var(--color-blue));
-  background-repeat: no-repeat;
-  background-position: 0 100%;
-  background-size: 0 1px;
-  transition: background-size 0.25s ease, color 0.2s ease;
-}
-.u-lien:hover {
-  color: var(--color-blue);
-  background-size: 100% 1px;
-}
-.u-fond-bleu .u-lien:hover,
-.u-fond-encre .u-lien:hover {
-  color: var(--color-paper);
-}
-
-/* ============================================================
-   8. APPARITION
-   ============================================================ */
-
+/* Apparition douce, conservée pour les blocs qui n'ont pas d'animation propre. */
 .u-reveal {
   opacity: 0;
   transform: translateY(16px);
@@ -398,235 +216,13 @@ section[id] {
     transform: none;
     transition: none;
   }
-}
-
-/* ============================================================
-   9. VOCABULAIRE DE MISE EN AVANT
-   Chaque dispositif a un rôle distinct, et deux dispositifs
-   de même nature ne se suivent jamais.
-   ============================================================ */
-
-/* La carte : un élément d'un catalogue, encadré, autonome. */
-.u-carte {
-  display: flex;
-  flex-direction: column;
-  gap: var(--pas-12);
-  border: 1px solid var(--color-line);
-  background: var(--color-paper);
-  padding: clamp(24px, 2.2vw, 40px);
-  transition: border-color 0.2s ease, background-color 0.2s ease;
-}
-.u-carte:hover {
-  border-color: var(--color-blue);
-  background: color-mix(in srgb, var(--color-blue) 4%, var(--color-paper));
-}
-.u-carte-titre {
-  font-family: var(--font-display), Impact, sans-serif;
-  font-weight: 400;
-  text-transform: uppercase;
-  font-size: clamp(19px, 1.6vw, 28px);
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-}
-.u-carte-texte {
-  font-size: clamp(15px, 1.05vw, 18px);
-  line-height: 1.6;
-  color: var(--color-muted);
-}
-.u-carte-num {
-  font-size: var(--fs-note);
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  font-variant-numeric: tabular-nums;
-  color: var(--color-blue);
-}
-
-/* Grille de cartes, asymétrique : la première tient deux colonnes. */
-.u-grille {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(16px, 1.4vw, 24px);
-}
-@media (min-width: 768px) {
-  .u-grille {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-@media (min-width: 1100px) {
-  .u-grille {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .u-grille-large {
-    grid-column: span 2;
+  .mq-track,
+  .orbit .o2,
+  .dot {
+    animation: none !important;
   }
 }
 
-/* L'étiquette : un mot posé, court, sans développement. */
-.u-etiquettes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: clamp(10px, 0.9vw, 16px);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.u-etiquette {
-  border: 1px solid var(--color-line);
-  padding: 14px 22px;
-  font-size: clamp(16px, 1.35vw, 23px);
-  line-height: 1.2;
-  transition: border-color 0.2s ease, color 0.2s ease;
-}
-.u-etiquette:hover {
-  border-color: var(--color-blue);
-  color: var(--color-blue);
-}
-.u-fond-bleu .u-etiquette,
-.u-fond-encre .u-etiquette {
-  border-color: color-mix(in srgb, var(--color-paper) 40%, transparent);
-}
-.u-fond-bleu .u-etiquette:hover,
-.u-fond-encre .u-etiquette:hover {
-  border-color: var(--color-paper);
-  color: var(--color-paper);
-}
-
-/* La frise : une suite d'étapes reliées par un trait. */
-.u-frise {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.u-frise::before {
-  content: "";
-  position: absolute;
-  top: 12px;
-  bottom: 12px;
-  left: 9px;
-  width: 1px;
-  background: var(--color-line);
-}
-.u-etape {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--pas-12);
-  padding: 0 0 var(--pas-64) 48px;
-}
-.u-etape:last-child {
-  padding-bottom: 0;
-}
-.u-etape::before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 3px;
-  width: 13px;
-  height: 13px;
-  background: var(--color-blue);
-}
-@media (min-width: 900px) {
-  .u-etape {
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
-    gap: clamp(32px, 4vw, 80px);
-    padding-left: 72px;
-  }
-}
-.u-etape-num {
-  font-size: var(--fs-note);
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--color-blue);
-  margin-bottom: var(--pas-12);
-}
-.u-etape-titre {
-  font-family: var(--font-display), Impact, sans-serif;
-  font-weight: 400;
-  text-transform: uppercase;
-  font-size: clamp(22px, 2.2vw, 40px);
-  line-height: 1.08;
-  letter-spacing: -0.01em;
-}
-
-/* L'encadré : ce que le lecteur emporte. Un seul rôle sur la page. */
-.u-encadre {
-  border: 2px solid var(--color-blue);
-  padding: clamp(28px, 3vw, 56px);
-  background: color-mix(in srgb, var(--color-blue) 4%, transparent);
-}
-.u-encadre-label {
-  display: inline-block;
-  background: var(--color-blue);
-  color: var(--color-paper);
-  padding: 8px 16px;
-  font-size: var(--fs-note);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: var(--pas-40);
-}
-.u-encadre-liste {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: var(--pas-24);
-}
-@media (min-width: 900px) {
-  .u-encadre-liste {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: clamp(40px, 4vw, 80px);
-  }
-}
-.u-encadre-item {
-  display: grid;
-  grid-template-columns: 28px minmax(0, 1fr);
-  gap: 16px;
-  align-items: baseline;
-  font-size: clamp(17px, 1.4vw, 24px);
-  line-height: 1.35;
-  border-bottom: 1px solid color-mix(in srgb, var(--color-blue) 25%, transparent);
-  padding-bottom: var(--pas-12);
-}
-.u-encadre-item::before {
-  content: "→";
-  color: var(--color-blue);
-}
-
-/* L'annotation manuscrite : jamais posée sur une photo, toujours à côté. */
-.u-main {
-  font-family: var(--font-hand), cursive;
-  font-size: clamp(24px, 2vw, 34px);
-  line-height: 1;
-  color: var(--color-blue);
-}
-
-/* Le chiffre isolé : une preuve, posée seule. */
-.u-preuve {
-  display: grid;
-  gap: var(--pas-24);
-}
-@media (min-width: 900px) {
-  .u-preuve {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(48px, 5vw, 120px);
-  }
-}
-
-/* Question ouverte : intitulé serif, réponse en dessous, dans une carte. */
-.u-qa {
-  display: grid;
-  gap: clamp(16px, 1.4vw, 28px);
-}
-@media (min-width: 900px) {
-  .u-qa {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-.u-qa-question {
-  font-family: var(--font-serif), Georgia, serif;
-  font-style: italic;
-  font-size: clamp(22px, 1.9vw, 32px);
-  line-height: 1.2;
-  margin-bottom: var(--pas-12);
+section[id] {
+  scroll-margin-top: 96px;
 }

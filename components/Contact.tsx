@@ -51,34 +51,42 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="u-bande u-fond-bleu">
-      <div className="u-dedans">
-        <h2 className="u-titre">{cloture.title}</h2>
-        <div className="mt-[var(--pas-40)]">
-          {cloture.paragraphes.map((paragraphe) => (
-            <p key={paragraphe} className="u-corps">
+    <section
+      id="contact"
+      className="relative overflow-hidden py-[clamp(64px,9vh,120px)]"
+      style={{ background: "#1F3BD8", color: "#F4EFE6" }}
+    >
+      <h2 className="m-0 mb-8 text-[clamp(32px,5vw,88px)] leading-[1.02]">
+        {cloture.title}
+      </h2>
+
+      <div className="grid grid-cols-1 gap-[clamp(32px,4vw,80px)] lg:grid-cols-2">
+        <div>
+          {cloture.paragraphes.map((paragraphe, i) => (
+            <p key={paragraphe} className={i === 0 ? "lede m-0 mb-5" : "body mt-0 mb-5"}>
               {paragraphe}
             </p>
           ))}
+          <a
+            className="tel-big mt-6"
+            href={`tel:${site.phoneHref}`}
+            style={{ color: "#F4EFE6" }}
+          >
+            {site.phone}
+          </a>
         </div>
 
-        <form
-          onSubmit={onSubmit}
-          className="mt-[var(--pas-64)] grid grid-cols-1 gap-[var(--pas-40)] md:grid-cols-2"
-        >
-          <input name="nom" type="text" required placeholder="Nom" className={champ} />
-          <input name="entreprise" type="text" placeholder="Entreprise" className={champ} />
-          <input name="email" type="email" required placeholder="E-mail" className={champ} />
-          <textarea name="message" rows={1} placeholder="Message" className={`${champ} resize-none`} />
-          <div className="md:col-span-2">
-            <button type="submit" disabled={status === "sending"} className="u-cta">
-              {status === "sending" ? "Envoi…" : site.ctaFinal}
-              <span className="u-cta-fleche" aria-hidden="true">
-                →
-              </span>
+        <form onSubmit={onSubmit} className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <input name="nom" type="text" required placeholder="Nom" className="field field-inv" />
+          <input name="entreprise" type="text" placeholder="Entreprise" className="field field-inv" />
+          <input name="email" type="email" required placeholder="E-mail" className="field field-inv sm:col-span-2" />
+          <textarea name="message" rows={2} placeholder="Message" className="field field-inv resize-none sm:col-span-2" />
+          <div className="sm:col-span-2">
+            <button type="submit" disabled={status === "sending"} className="btn btn-cream">
+              {status === "sending" ? "Envoi…" : site.ctaFinal} <span>→</span>
             </button>
             {message && (
-              <p role="status" className="u-note mt-[var(--pas-24)]">
+              <p className="body mt-5" role="status" style={{ color: "#F4EFE6" }}>
                 {message}
               </p>
             )}

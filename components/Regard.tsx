@@ -1,67 +1,63 @@
-import Bande from "./Bande";
-import Citation from "./Citation";
+import Quote from "./Quote";
+import SectionHead from "./SectionHead";
 import { regard } from "@/lib/site";
 
 /** 01 · Pourquoi un regard extérieur. */
 export default function Regard() {
   return (
     <>
-      <Bande fond="paper" id="regard">
-        <div className="u-surtitre">01 · {regard.kicker}</div>
-        <h2 className="u-titre">{regard.title}</h2>
+      <section id="regard" className="py-[clamp(64px,9vh,120px)]">
+        <SectionHead n="01">{regard.kicker}</SectionHead>
 
-        <div className="mt-[var(--pas-64)] grid gap-[var(--pas-64)] lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-[clamp(48px,5vw,120px)]">
-          <div className="u-texte u-texte-1">
+        <h2 className="m-0 mb-10 text-[clamp(30px,4.4vw,78px)] leading-[1.02]">
+          {regard.title}
+        </h2>
+
+        <div className="grid grid-cols-1 gap-[clamp(32px,4vw,80px)] lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
+          <div>
             {regard.intro.map((paragraphe) => (
-              <p key={paragraphe} className="u-corps">
+              <p key={paragraphe} className="lede m-0">
                 {paragraphe}
               </p>
             ))}
           </div>
 
-          {/* Cinq constats courts : des étiquettes, pas une liste numérotée de plus. */}
-          <div>
-            <div className="u-surtitre">Ce qui arrive quand une entreprise grandit</div>
-            <ul className="u-etiquettes u-reveal">
-              {regard.derives.map((derive) => (
-                <li key={derive} className="u-etiquette">
-                  {derive}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </Bande>
-
-      <Bande fond="sand">
-        <div className="u-texte u-texte-2">
-          {regard.suite.map((paragraphe) => (
-            <p key={paragraphe} className="u-corps">
-              {paragraphe}
-            </p>
-          ))}
-        </div>
-
-        <div className="mt-[var(--pas-64)]">
-          <div className="u-surtitre">Les questions que je pose</div>
-          <div className="u-grille">
-            {regard.questions.map((question, i) => (
-              <div
-                key={question}
-                className={`u-carte u-reveal ${i === 0 ? "u-grille-large" : ""}`}
-                style={{ transitionDelay: `${i * 40}ms` }}
-              >
-                <span className="u-carte-num">{String(i + 1).padStart(2, "0")}</span>
-                <span className="u-qa-question">{question}</span>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {regard.derives.map((derive) => (
+              <div key={derive} className="chip">
+                {derive}
               </div>
             ))}
           </div>
         </div>
-      </Bande>
+      </section>
 
-      <Bande fond="bleu">
-        <Citation large>{regard.chute}</Citation>
-      </Bande>
+      <section className="py-[clamp(64px,9vh,120px)]" style={{ background: "#EDE6DA" }}>
+        <div className="grid grid-cols-1 gap-[clamp(32px,4vw,80px)] lg:grid-cols-2">
+          <div>
+            {regard.suite.map((paragraphe) => (
+              <p key={paragraphe} className="body mt-0 mb-5">
+                {paragraphe}
+              </p>
+            ))}
+          </div>
+          <div>
+            <div className="sechead-t mb-4">Les questions que je pose</div>
+            {regard.questions.map((question) => (
+              <p key={question} className="q m-0">
+                {question}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="py-[clamp(64px,9vh,120px)]"
+        style={{ background: "#1F3BD8", color: "#F4EFE6" }}
+      >
+        <Quote invert>{regard.chute}</Quote>
+      </section>
     </>
   );
 }

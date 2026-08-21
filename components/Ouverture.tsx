@@ -1,43 +1,40 @@
-import Action from "./Action";
-import Bande from "./Bande";
-import Citation from "./Citation";
+import Quote from "./Quote";
 import { ouverture, site } from "@/lib/site";
 
-/** Ce qu'on peut trouver dans une entreprise qui fonctionne, puis ce que j'en fais. */
+/** Ce que je cherche, en rangées, puis la phrase de bascule. */
 export default function Ouverture() {
   return (
     <>
-      <Bande fond="paper">
-        <div className="u-surtitre">Ce que je cherche</div>
-        <ul className="u-items">
+      <section className="py-[clamp(64px,9vh,120px)]">
+        <div className="sechead-t mb-8">Ce que je cherche</div>
+        <div>
           {ouverture.pistes.map((piste, i) => (
-            <li
-              key={piste}
-              className="u-item u-item-simple u-reveal"
-              style={{ transitionDelay: `${i * 40}ms` }}
-            >
-              <span className="u-item-num">{String(i + 1).padStart(2, "0")}</span>
-              <span>{piste}</span>
-            </li>
+            <div key={piste} className="row">
+              <span className="n">{String(i + 1).padStart(2, "0")}</span>
+              <span className="t">{piste}</span>
+            </div>
           ))}
-        </ul>
-      </Bande>
+        </div>
+      </section>
 
-      <Bande fond="sand">
-        <div className="grid gap-[var(--pas-64)] lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center lg:gap-[clamp(48px,5vw,120px)]">
-          <Citation>{ouverture.paragraphes[0]}</Citation>
-          <div className="u-texte u-texte-1">
+      <section
+        className="py-[clamp(64px,9vh,120px)]"
+        style={{ background: "#EDE6DA" }}
+      >
+        <div className="grid grid-cols-1 items-center gap-[clamp(32px,4vw,80px)] lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
+          <Quote>{ouverture.paragraphes[0]}</Quote>
+          <div>
             {ouverture.paragraphes.slice(1).map((paragraphe) => (
-              <p key={paragraphe} className="u-corps">
+              <p key={paragraphe} className="body mt-0 mb-5">
                 {paragraphe}
               </p>
             ))}
-            <div className="mt-[var(--pas-40)]">
-              <Action>{site.ctaPrimary}</Action>
-            </div>
+            <a className="btn mt-4" href="#contact">
+              {site.ctaPrimary} <span>→</span>
+            </a>
           </div>
         </div>
-      </Bande>
+      </section>
     </>
   );
 }

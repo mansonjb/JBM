@@ -47,30 +47,29 @@ npm start        # http://localhost:3083
 
 ## Le système
 
-La page est un **empilement de bandes pleine largeur**. Une bande porte un fond,
-une idée, et rien d'autre. Les fonds alternent crème, sable, bleu et encre.
+Le CSS de `app/globals.css` est **repris tel quel de la maquette Claude Design
+`un-degre.dc.html`** : mêmes classes, mêmes valeurs, mêmes transitions. On ne les
+renomme pas et on ne les réinvente pas. Seules les polices sont adaptées, parce
+qu'elles sont chargées par `next/font` et non par un lien Google Fonts.
 
-**Aucune mesure n'est plafonnée en `ch`** sur les rangs qui doivent tenir la
-largeur : titres et citations grandissent avec la page. Les blocs de plusieurs
-paragraphes passent en deux colonnes au-delà de 1100 px.
+Dispositifs de la maquette et emploi retenu :
 
-**Vocabulaire de mise en avant.** Chaque dispositif a un rôle distinct, et deux
-dispositifs de même nature ne se suivent jamais :
-
-| Dispositif | Rôle | Où |
+| Classe | Rôle | Où |
 | --- | --- | --- |
-| Citation | Une phrase de posture, guillemets et attribution | 6 fois, toujours en clôture |
-| Liste numérotée | Une suite de faits de même rang, développés | Ouverture |
-| Étiquettes | Des constats courts, sans développement | 01 et 04 |
-| Cartes | Un catalogue d'éléments autonomes, grille asymétrique | 01, 03, 06, 07, 08 |
-| Frise | Une suite d'étapes reliées dans le temps | 02 |
-| Encadré | Ce que le lecteur emporte, une seule fois sur la page | 07 |
-| Chiffres | La preuve chiffrée, sur fond encre | 05 |
-| Annotation manuscrite | Désigner une image, toujours à côté, jamais dessus | 02, 06, pied de page |
-| Action | Le seul objet cliquable à porter une flèche | 7 fois |
-
-Le héros est **typographique, sans photo** : le mur du bureau portait déjà du
-texte, deux discours se superposaient.
+| `.sechead` | En-tête de section : numéro annelé, intitulé, filet | 01 à 08 |
+| `.row` | Rangée numérotée, bascule en bleu au survol | ouverture, livrables |
+| `.chip` | Constat court, pavé centré | 01, 04 |
+| `.q` | Question posée, rangée simple | 01 |
+| `.steps` / `.step` | Le tableau des cinq étapes | 02 |
+| `.tcard` | Carte bleue à remplissage, pour un catalogue | 03 |
+| `.diverge` | Le degré : chiffre géant, tracé animé, conclusion surlignée | 04 |
+| `.stat` / `.stats4` | Les chiffres du cas | 05 |
+| `.card` | Carte sable | 06, 07 |
+| `details` / `.qsum` | Les questions en dépliants | 08 |
+| `.btn`, `.btn-ghost`, `.btn-cream` | Les trois états d'appel à l'action | toute la page |
+| `.tel-nav`, `.tel-float`, `.tel-big` | Le téléphone, en barre, en flottant, en pied | toute la page |
+| `.progress` | Jauge de lecture en haut de page | toute la page |
+| `.ringmark`, `.footring` | Le motif de l'anneau | marque et pied de page |
 
 ## Photos
 

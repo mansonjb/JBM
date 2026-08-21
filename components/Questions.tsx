@@ -1,26 +1,40 @@
-import Bande from "./Bande";
+import SectionHead from "./SectionHead";
 import { questions } from "@/lib/site";
 
-/** 08 · Les questions, en paires question puis réponse. */
+/** 08 · Questions, en dépliants natifs comme dans la maquette. */
 export default function Questions() {
   return (
-    <Bande fond="paper" id="questions">
-      <div className="u-surtitre">08 · Questions</div>
-      <h2 className="u-titre">Ce que vous vous demandez.</h2>
+    <section id="questions" className="py-[clamp(64px,9vh,120px)]">
+      <SectionHead n="08">Questions</SectionHead>
 
-      <div className="u-qa mt-[var(--pas-64)]">
-        {questions.map((question, i) => (
-          <div
-            key={question.q}
-            className="u-carte u-reveal"
-            style={{ transitionDelay: `${i * 50}ms` }}
-          >
-            <span className="u-carte-num">{String(i + 1).padStart(2, "0")}</span>
-            <p className="u-qa-question">{question.q}</p>
-            <p className="u-carte-texte">{question.a}</p>
-          </div>
-        ))}
+      <h2 className="m-0 mb-10 text-[clamp(30px,4.4vw,78px)] leading-[1.02]">
+        Ce que vous vous demandez.
+      </h2>
+
+      <div className="grid grid-cols-1 gap-[clamp(20px,2vw,48px)] lg:grid-cols-2">
+        <div>
+          {questions.slice(0, 3).map((question) => (
+            <details key={question.q}>
+              <summary className="qsum">
+                <span className="qtxt">{question.q}</span>
+                <span className="plus" />
+              </summary>
+              <p className="qans">{question.a}</p>
+            </details>
+          ))}
+        </div>
+        <div>
+          {questions.slice(3).map((question) => (
+            <details key={question.q}>
+              <summary className="qsum">
+                <span className="qtxt">{question.q}</span>
+                <span className="plus" />
+              </summary>
+              <p className="qans">{question.a}</p>
+            </details>
+          ))}
+        </div>
       </div>
-    </Bande>
+    </section>
   );
 }

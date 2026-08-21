@@ -3,6 +3,8 @@ export const site = {
   domain: "https://undegre.fr",
   role: "Consultant en optimisation",
   email: "contact@undegre.fr",
+  phone: "06 62 93 89 14",
+  phoneHref: "+33662938914",
   author: "Jean-Baptiste Manson · Consultant en optimisation",
   ctaPrimary: "Prendre un premier rendez-vous",
   ctaAudit: "Parler de votre entreprise",

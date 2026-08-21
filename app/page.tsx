@@ -1,5 +1,5 @@
 import Reveal from "@/components/Reveal";
-import ScrollRail from "@/components/ScrollRail";
+import Progress from "@/components/Progress";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Ouverture from "@/components/Ouverture";
@@ -37,7 +37,7 @@ export default function Home() {
   return (
     <div className="relative overflow-x-clip bg-paper">
       <Reveal />
-      <ScrollRail />
+      <Progress />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

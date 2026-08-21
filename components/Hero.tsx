@@ -1,40 +1,54 @@
-import Action from "./Action";
+import ImageSlot from "./ImageSlot";
 import { hero, site } from "@/lib/site";
 
 /**
- * Héros typographique, sans photo : le mur du bureau portait déjà du texte,
- * deux discours se superposaient. Ici, l'accroche est seule, sur le bleu de la
- * marque, avec le degré tracé en fond.
+ * Héros de la maquette : deux colonnes, l'accroche dont la seconde phrase passe
+ * au bleu, trois appels côte à côte, et la photo encadrée d'un filet bleu.
  */
 export default function Hero() {
+  const [premiere, ...reste] = hero.title.split(". ");
+
   return (
     <section
       id="top"
-      className="u-fond-bleu relative flex min-h-[86vh] items-end overflow-hidden pt-[calc(var(--nav-h)+var(--pas-64))] pb-[var(--pas-bande)]"
+      className="relative grid grid-cols-1 items-start gap-8 px-[5vw] pt-[clamp(50px,8vh,100px)] pb-20 lg:grid-cols-[minmax(0,1.28fr)_minmax(0,0.72fr)] lg:gap-[clamp(32px,4vw,72px)]"
     >
-      {/* Le degré, tracé à même la bande : deux trajectoires qui divergent. */}
-      <svg
-        viewBox="0 0 1200 600"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.22]"
-      >
-        <line x1="0" y1="520" x2="1200" y2="520" stroke="#F4EFE6" strokeWidth="1.5" />
-        <line x1="0" y1="520" x2="1200" y2="140" stroke="#F4EFE6" strokeWidth="3" />
-      </svg>
+      <div className="relative z-1">
+        <div className="eyebrow mb-[34px] inline-flex items-center gap-[10px]">
+          <span className="block h-[2px] w-[30px] bg-blue" />
+          {hero.kicker}
+        </div>
 
-      <div className="u-dedans relative">
-        <div className="u-surtitre">{hero.kicker}</div>
-        <h1 className="u-display">{hero.title}</h1>
+        <h1 className="m-0 mb-9 font-[family-name:var(--font-display)] text-[clamp(40px,6.6vw,122px)] leading-[0.94] tracking-[-0.02em] uppercase">
+          {premiere}. <span className="blue">{reste.join(". ")}</span>
+        </h1>
 
-        <div className="mt-[var(--pas-64)] grid gap-[var(--pas-40)] lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-end lg:gap-[clamp(48px,5vw,120px)]">
-          <p className="u-corps max-w-[46ch]">{hero.lead}</p>
-          <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
-            <Action>{site.ctaPrimary}</Action>
-            <span className="u-note">{site.ctaMicro}</span>
-          </div>
+        <p className="lede m-0 mb-[42px]">{hero.lead}</p>
+
+        <div className="flex flex-wrap items-center gap-6">
+          <a className="btn" href="#contact">
+            {site.ctaPrimary} <span>→</span>
+          </a>
+          <a className="btn btn-ghost" href={`tel:${site.phoneHref}`}>
+            {site.phone}
+          </a>
+          <span className="text-[14px] text-muted">{site.ctaMicro}</span>
         </div>
       </div>
+
+      <figure className="relative z-1 m-0 flex h-[clamp(360px,64vh,660px)] flex-col">
+        <div className="relative h-full w-full">
+          <ImageSlot
+            brief="PHOTO 1 · portrait au bureau"
+            src="/hero-un-degre.jpg"
+            alt="Jean-Baptiste Manson à son bureau"
+            sizes="(max-width: 1024px) 100vw, 40vw"
+            className="shot"
+            priority
+          />
+        </div>
+        <figcaption className="cap">Jean-Baptiste Manson · La Rochelle</figcaption>
+      </figure>
     </section>
   );
 }
