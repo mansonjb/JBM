@@ -1,23 +1,22 @@
+import Action from "./Action";
 import ImageSlot from "./ImageSlot";
 import { hero, site } from "@/lib/site";
 
 /**
- * Sur grand écran, le texte se pose sur la photo, tenu à gauche par un voile latéral.
- * Sur mobile, la photo passe au-dessus du texte : superposer les deux couvrait le visage.
+ * Première bande. Au-delà de 768px la photo occupe toute la bande et le texte
+ * se pose dessus. En dessous, la photo passe au-dessus du texte : la superposition
+ * couvrait le visage.
  */
 export default function Hero() {
   return (
-    <section
-      id="top"
-      className="relative flex flex-col md:min-h-[92vh] md:justify-end"
-    >
-      <div className="relative h-[44vh] min-h-[280px] w-full md:absolute md:inset-0 md:h-auto md:min-h-0">
+    <section id="top" className="relative flex flex-col">
+      <div className="relative h-[46vh] min-h-[300px] w-full md:absolute md:inset-0 md:h-auto md:min-h-0">
         <ImageSlot
           brief="PHOTO 1 · plan large, lieu de travail réel, regard objectif"
           src="/hero-un-degre.jpg"
           alt="Jean-Baptiste Manson à son bureau, sous le mur Un Degré"
           sizes="100vw"
-          className="object-[62%_22%] md:object-[62%_center]"
+          className="object-[62%_22%] md:object-[58%_center]"
           priority
         />
       </div>
@@ -27,39 +26,20 @@ export default function Hero() {
         className="pointer-events-none absolute inset-0 hidden md:block"
         style={{
           background:
-            "linear-gradient(96deg, rgba(21,23,28,0.80) 0%, rgba(21,23,28,0.64) 36%, rgba(21,23,28,0.26) 62%, rgba(21,23,28,0.06) 100%)",
-        }}
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 hidden md:block"
-        style={{
-          background:
-            "linear-gradient(180deg, rgba(21,23,28,0.34) 0%, rgba(21,23,28,0.05) 40%, rgba(21,23,28,0.62) 100%)",
+            "linear-gradient(180deg, rgba(21,23,28,0.74) 0%, rgba(21,23,28,0.40) 42%, rgba(21,23,28,0.80) 100%)",
         }}
       />
 
-      <div className="u-hero-inner relative w-full border-b border-line md:border-0">
-        <div className="u-container">
-          <div className="u-grid">
-            <div className="col-span-7 lg:col-span-8">
-              <div className="u-surtitre u-mb-16 md:text-paper/80!">
-                {hero.kicker}
-              </div>
-              <h1 className="u-display u-mb-32 text-balance text-ink md:text-paper">
-                {hero.title}
-              </h1>
-              <p className="u-courant u-mb-32 md:text-paper/90">{hero.lead}</p>
-              <a href="#contact" className="u-cta">
-                {site.ctaPrimary}
-                <span className="u-cta-arrow" aria-hidden="true">
-                  →
-                </span>
-              </a>
-              <p className="u-note u-cta-micro md:text-paper/75!">
-                {site.ctaMicro}
-              </p>
-            </div>
+      <div className="relative w-full bg-paper py-16 text-ink md:flex md:min-h-[88vh] md:items-end md:bg-transparent md:py-0 md:pt-[calc(var(--nav-h)+var(--pas-64))] md:pb-[var(--pas-bande)] md:text-paper">
+        <div className="u-dedans">
+          <div className="u-surtitre md:text-paper/75!">{hero.kicker}</div>
+          <h1 className="u-display">{hero.title}</h1>
+          <p className="u-corps mt-[var(--pas-40)] max-w-[62ch] md:text-paper/90!">
+            {hero.lead}
+          </p>
+          <div className="mt-[var(--pas-40)] flex flex-wrap items-center gap-x-8 gap-y-4">
+            <Action>{site.ctaPrimary}</Action>
+            <span className="u-note md:text-paper/75!">{site.ctaMicro}</span>
           </div>
         </div>
       </div>

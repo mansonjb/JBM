@@ -1,61 +1,49 @@
-import Enonce from "./Enonce";
-import Eyebrow from "./Eyebrow";
-import Section from "./Section";
+import Action from "./Action";
+import Bande from "./Bande";
+import Citation from "./Citation";
 import { cas, site } from "@/lib/site";
 
-/**
- * 06 · Un exemple — la preuve. En-tête apparié (« CB Sols » en 1 à 8, le sous-titre
- * en 9 à 12), bandeau chiffres 12/12 au premier niveau de lecture, récit 7/12,
- * bloc bleu de clôture, puis le seul bouton de la section.
- */
+/** 05 · Un exemple. */
 export default function Cas() {
   return (
-    <Section
-      id="exemple"
-      kicker={cas.kicker}
-      title={cas.client}
-      aside={<Eyebrow>{cas.sousTitre}</Eyebrow>}
-    >
-      {/* La seule preuve chiffrée du site : 12/12, sans cadre, filets haut et bas. */}
-      <div className="u-chiffres u-reveal">
-        <Eyebrow className="u-bullet">{cas.chiffresIntro}</Eyebrow>
-        <div className="u-grid u-mt-32">
-          {cas.chiffres.map((chiffre) => (
-            <div key={chiffre.value} className="md:col-span-6">
-              <div className="u-chiffre">{chiffre.value}</div>
-              <p className="u-note u-note-legende u-mt-24">{chiffre.label}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Le récit : rang courant, 7/12. La durée monte d'un cran, au rang référence. */}
-      <div className="u-grid">
-        <div className="u-reveal md:col-span-7">
-          {cas.paragraphes.slice(0, 5).map((paragraphe) => (
-            <p key={paragraphe} className="u-courant">
+    <>
+      <Bande fond="paper" id="exemple">
+        <div className="u-surtitre">05 · {cas.kicker}</div>
+        <h2 className="u-titre">{cas.client}</h2>
+        <p className="u-note mt-[var(--pas-12)]">{cas.sousTitre}</p>
+        <div className="mt-[var(--pas-40)]">
+          {cas.paragraphes.map((paragraphe) => (
+            <p key={paragraphe} className="u-corps">
               {paragraphe}
             </p>
           ))}
-          <p className="u-reference u-mt-32">{cas.paragraphes[5]}</p>
         </div>
-      </div>
+      </Bande>
 
-      <div className="u-grid u-mt-64">
-        <p className="u-courant u-reveal md:col-span-7">{cas.chute[0]}</p>
-      </div>
+      <Bande fond="encre" serree>
+        <div className="u-surtitre">{cas.chiffresIntro}</div>
+        <div className="grid grid-cols-1 gap-[var(--pas-64)] md:grid-cols-2">
+          {cas.chiffres.map((chiffre) => (
+            <div key={chiffre.value} className="u-reveal">
+              <div className="u-chiffre">{chiffre.value}</div>
+              <p className="u-note mt-[var(--pas-24)] max-w-[34ch]">
+                {chiffre.label}
+              </p>
+            </div>
+          ))}
+        </div>
+      </Bande>
 
-      <Enonce>{cas.chute[1]}</Enonce>
+      <Bande fond="paper">
+        <p className="u-corps">{cas.chute[0]}</p>
+      </Bande>
 
-      <div className="u-mt-64">
-        <a href="#contact" className="u-cta">
-          {site.ctaPrimary}
-          <span className="u-cta-arrow" aria-hidden="true">
-            →
-          </span>
-        </a>
-        <p className="u-note u-cta-micro">{site.ctaMicro}</p>
-      </div>
-    </Section>
+      <Bande fond="bleu">
+        <Citation large>{cas.chute[1]}</Citation>
+        <div className="mt-[var(--pas-64)]">
+          <Action href="#audit">{site.ctaAudit}</Action>
+        </div>
+      </Bande>
+    </>
   );
 }

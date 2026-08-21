@@ -25,41 +25,41 @@ npm start        # http://localhost:3083
 
 | Chemin | Rôle |
 | --- | --- |
-| `lib/site.ts` | Tout le contenu éditorial, section par section |
-| `app/page.tsx` | Assemblage des sections, dans l'ordre du récit |
-| `components/Hero.tsx` | Votre entreprise fonctionne, regardons jusqu'où elle peut aller |
-| `components/Ouverture.tsx` | Les formes que prend une opportunité |
+| `lib/site.ts` | Tout le contenu éditorial, plus le plan des huit temps |
+| `app/globals.css` | Le système : jetons, bande, rangs, citation, items, action |
+| `components/Bande.tsx` | La brique unique : une bande pleine largeur, un fond, une idée |
+| `components/Citation.tsx` | Le seul traitement d'une phrase de posture : guillemets et attribution |
+| `components/Items.tsx` | Une liste est une suite de rangées numérotées pleine largeur |
+| `components/Action.tsx` | Le seul objet qui déclenche quelque chose, et le seul à porter une flèche |
+| `components/Photo.tsx` | Bande photo pleine largeur |
+| `components/Hero.tsx` | Première bande : photo, accroche, action |
+| `components/Ouverture.tsx` | Ce que je cherche, la citation d'ouverture, l'action |
 | `components/Regard.tsx` | 01 · Pourquoi un regard extérieur |
-| `components/Deroule.tsx` | 02 · Comment ça se passe, les cinq temps |
+| `components/Deroule.tsx` | 02 · Comment ça se passe |
 | `components/Trouvailles.tsx` | 03 · Ce qu'on peut trouver |
 | `components/Manifeste.tsx` | 04 · Un degré |
-| `components/Cas.tsx` | 05 · CB Sols |
+| `components/Cas.tsx` | 05 · Un exemple |
 | `components/Qui.tsx` | 06 · Qui suis-je |
 | `components/Audit.tsx` | 07 · L'audit |
 | `components/Questions.tsx` | 08 · Questions |
 | `components/Contact.tsx` | Clôture et formulaire |
-| `components/Enonce.tsx` | La phrase qui porte une section, en bloc bleu plein |
-| `components/AngleMark.tsx` | Le degré dessiné : deux trajectoires qui divergent |
-| `components/Graduation.tsx` | Règle graduée, une seule graduation en bleu |
-| `components/ScrollRail.tsx` | Rail de progression et accès aux jalons |
-| `components/ImageSlot.tsx` | Emplacement photo : affiche le brief tant que `src` est vide |
 | `app/api/contact/route.ts` | Réception du formulaire (Resend si clé, sinon `mailto`) |
-| `app/mentions-legales/` | Mentions légales |
 
-## Le motif
+## Le système
 
-Le nom se raconte par le texte, plus par la mise en page : les éléments inclinés
-d'un degré ont été retirés, ils nuisaient à la lecture.
+La page est un **empilement de bandes pleine largeur**. Une bande porte un fond,
+une idée, et rien d'autre. Les fonds alternent crème, sable, bleu et encre, et
+c'est cette alternance qui structure la lecture, pas des colonnes.
 
-## Le bleu
+Sept rangs typographiques, pas un de plus. Quatre pas verticaux. Trois
+dispositifs seulement : la **citation** (guillemets français, serif, attribution)
+pour une phrase de posture, les **items** (rangées numérotées pleine largeur)
+pour une suite de faits de même rang, et l'**action** (seul objet cliquable
+autorisé à porter une flèche).
 
-Le bleu ne sert jamais de décor, il signale toujours quelque chose de vivant :
-`.u-row` (survol d'une ligne de liste, filet et flèche en bleu), `.u-card`
-(survol d'une carte, titre en bleu), `.u-frame` (encadré qui s'allume),
-`.u-link` (soulignement qui se déploie), `.u-quote` (énoncé en bloc bleu plein,
-crème sur bleu, avec sa flèche) `.u-bullet` (puce carrée sur les intertitres), `.u-corners` (repères de cadrage
-aux angles des photos) et `.u-underline` (filet qui se déploie sous un titre à
-l'entrée dans le champ).
+Six appels à l'action jalonnent la page : barre de navigation, héros, après
+l'ouverture, après la méthode, après l'exemple, après l'audit, plus le
+formulaire.
 
 ## Photos
 

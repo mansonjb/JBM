@@ -5,8 +5,8 @@ import { cloture, site } from "@/lib/site";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
-const field =
-  "w-full border-0 border-b border-paper/45 bg-transparent px-0 py-3 text-base text-paper outline-none placeholder:text-paper/60 focus:border-paper";
+const champ =
+  "w-full border-0 border-b border-paper/45 bg-transparent px-0 py-4 text-[length:var(--fs-corps)] text-paper outline-none placeholder:text-paper/60 focus:border-paper";
 
 export default function Contact() {
   const [status, setStatus] = useState<Status>("idle");
@@ -51,53 +51,39 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="u-section u-section-blue">
-      <div className="u-container">
-        <div className="u-grid items-start">
-          <div className="md:col-span-6">
-            <h2 className="u-h2">{cloture.title}</h2>
-            <div className="u-pile-32 u-mt-32">
-              {cloture.paragraphes.map((paragraphe, i) => (
-                <p key={i} className="u-courant">
-                  {paragraphe}
-                </p>
-              ))}
-            </div>
-          </div>
+    <section id="contact" className="u-bande u-fond-bleu">
+      <div className="u-dedans">
+        <h2 className="u-titre">{cloture.title}</h2>
+        <div className="mt-[var(--pas-40)]">
+          {cloture.paragraphes.map((paragraphe) => (
+            <p key={paragraphe} className="u-corps">
+              {paragraphe}
+            </p>
+          ))}
+        </div>
 
-          <form
-            onSubmit={onSubmit}
-            className="grid gap-6 md:col-span-6 md:col-start-7"
-          >
-            <input name="nom" type="text" required placeholder="Nom" className={field} />
-            <input name="entreprise" type="text" placeholder="Entreprise" className={field} />
-            <input name="email" type="email" required placeholder="E-mail" className={field} />
-            <textarea
-              name="message"
-              rows={3}
-              placeholder="Message"
-              className={`${field} resize-none`}
-            />
-            <div className="justify-self-start">
-              <button
-                type="submit"
-                disabled={status === "sending"}
-                className="u-cta u-cta-invert transition-opacity disabled:opacity-60"
-              >
-                {status === "sending" ? "Envoi…" : site.ctaFinal}
-                <span className="u-cta-arrow" aria-hidden="true">
-                  →
-                </span>
-              </button>
-              <p className="u-note u-cta-micro text-paper/75">{site.ctaMicro}</p>
-            </div>
+        <form
+          onSubmit={onSubmit}
+          className="mt-[var(--pas-64)] grid grid-cols-1 gap-[var(--pas-40)] md:grid-cols-2"
+        >
+          <input name="nom" type="text" required placeholder="Nom" className={champ} />
+          <input name="entreprise" type="text" placeholder="Entreprise" className={champ} />
+          <input name="email" type="email" required placeholder="E-mail" className={champ} />
+          <textarea name="message" rows={1} placeholder="Message" className={`${champ} resize-none`} />
+          <div className="md:col-span-2">
+            <button type="submit" disabled={status === "sending"} className="u-cta">
+              {status === "sending" ? "Envoi…" : site.ctaFinal}
+              <span className="u-cta-fleche" aria-hidden="true">
+                →
+              </span>
+            </button>
             {message && (
-              <p role="status" className="u-note text-paper/75">
+              <p role="status" className="u-note mt-[var(--pas-24)]">
                 {message}
               </p>
             )}
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </section>
   );

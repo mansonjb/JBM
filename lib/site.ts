@@ -24,8 +24,7 @@ export const plan = [
   { n: "06", id: "qui", label: "Qui suis-je", nav: false },
   { n: "07", id: "audit", label: "L'audit", nav: true },
   { n: "08", id: "questions", label: "Questions", nav: false },
-];
-/* Héros */
+];/* Héros */
 export const hero = {
   kicker: "Consultant en optimisation",
   title: "Votre entreprise fonctionne. Regardons jusqu'où elle peut aller.",

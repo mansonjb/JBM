@@ -9,7 +9,7 @@
   --color-muted: #5a5d66;
   --color-blue: #1f3bd8;
 
-  /* Typo */
+  /* Typographies */
   --font-display: var(--font-anton);
   --font-sans: var(--font-archivo);
   --font-serif: var(--font-instrument);
@@ -17,50 +17,29 @@
 }
 
 /* ============================================================
-   1. JETONS — la seule définition des tailles et des pas.
-   Aucun composant ne réécrit une de ces valeurs.
+   1. JETONS
+   Une seule définition des tailles et des pas. Aucun composant
+   n'a le droit d'en réécrire une.
    ============================================================ */
 
 :root {
-  /* Hauteur réelle de la barre de navigation (h-16). */
   --nav-h: 64px;
 
-  /* Échelle typographique fermée : neuf rangs, aucune autre taille. */
-  --fs-display: clamp(44px, 6.6vw, 104px);
-  --lh-display: 1.04;
-  --fs-h2: clamp(34px, 4.6vw, 72px);
-  --lh-h2: 1.06;
-  --fs-h3: clamp(22px, 2vw, 30px);
-  --lh-h3: 1.15;
-  --fs-enonce: clamp(24px, 2.6vw, 40px);
-  --lh-enonce: 1.22;
-  --fs-reference: clamp(20px, 1.7vw, 26px);
-  --lh-reference: 1.45;
-  --fs-courant: clamp(17px, 1.25vw, 19px);
-  --lh-courant: 1.65;
-  --fs-note: clamp(15px, 1vw, 16px);
-  --lh-note: 1.6;
-  --fs-surtitre: 12px;
-  --lh-surtitre: 1.2;
-  --fs-chiffre: clamp(40px, 4.2vw, 64px);
-  --lh-chiffre: 1;
+  /* Sept rangs typographiques, pas un de plus. */
+  --fs-display: clamp(42px, 6vw, 96px);
+  --fs-titre: clamp(32px, 4.2vw, 66px);
+  --fs-citation: clamp(26px, 3vw, 46px);
+  --fs-item: clamp(20px, 2.1vw, 32px);
+  --fs-corps: clamp(17px, 1.35vw, 21px);
+  --fs-note: clamp(14px, 1vw, 16px);
+  --fs-chiffre: clamp(48px, 6vw, 92px);
 
-  /* Rythme vertical fermé : cinq pas, plus le pas de section. */
-  --pas-16: 16px;
+  /* Quatre pas verticaux, plus le pas de bande. */
+  --pas-12: 12px;
   --pas-24: 24px;
-  --pas-32: 32px;
+  --pas-40: 40px;
   --pas-64: 64px;
-  --pas-96: 96px;
-  --pas-section: clamp(96px, 9vw, 128px);
-
-  /* Gouttières de la grille de 12 colonnes. */
-  --gouttiere: 24px;
-}
-
-@media (min-width: 1024px) {
-  :root {
-    --gouttiere: 32px;
-  }
+  --pas-bande: clamp(72px, 8vw, 120px);
 }
 
 * {
@@ -77,7 +56,6 @@ body {
   background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-sans), system-ui, sans-serif;
-  /* clip (et non hidden) : hidden créerait un conteneur de scroll et casserait le sticky */
   overflow-x: clip;
 }
 
@@ -86,477 +64,307 @@ body {
   color: var(--color-paper);
 }
 
-/* Une ancre s'arrête sous la barre, avec un pas de 24px de dégagement. */
 section[id] {
   scroll-margin-top: calc(var(--nav-h) + var(--pas-24));
 }
 
 /* ============================================================
-   2. GRILLE — un conteneur, une grille de 12, quatre répartitions.
+   2. LA BANDE
+   Toute la page est un empilement de bandes pleine largeur.
+   Une bande porte un fond, une idée, et rien d'autre.
    ============================================================ */
 
-/* Conteneur unique : zone vive de 1144px, posé À L'INTÉRIEUR de chaque section. */
-.u-container {
-  max-width: 1320px;
-  margin-inline: auto;
-  padding-inline: clamp(24px, 5vw, 88px);
+.u-bande {
+  width: 100%;
+  padding-block: var(--pas-bande);
 }
 
-/* Grille de 12 colonnes : gouttière 32px au-delà de 1024px, 24px entre 768 et 1024px, une colonne en dessous. */
-.u-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  column-gap: 0;
-  row-gap: var(--pas-64);
+/* Bande serrée : une respiration entre deux bandes pleines. */
+.u-bande-serree {
+  padding-block: calc(var(--pas-bande) * 0.55);
 }
 
-/*
- * Sous 768px la grille n'a qu'une colonne : toute répartition retombe sur la pleine
- * largeur. Sans cette règle, un `col-span-7` non préfixé créerait six colonnes
- * implicites et remettrait les blocs côte à côte sur mobile.
- */
-@media (max-width: 767.98px) {
-  .u-grid > * {
-    grid-column: 1 / -1;
-  }
+.u-fond-paper {
+  background: var(--color-paper);
+  color: var(--color-ink);
 }
-
-@media (min-width: 768px) {
-  .u-grid {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    column-gap: var(--gouttiere);
-    row-gap: var(--pas-64);
-  }
+.u-fond-sand {
+  background: var(--color-sand);
+  color: var(--color-ink);
 }
-
-/* Padding haut et bas identique pour les onze sections, et le filet qui les sépare. */
-.u-section {
-  padding-block: var(--pas-section);
-  border-bottom: 1px solid var(--color-line);
-}
-
-/* Section 02 : le seul fond pleine surface du corps, hors bandeau d'ouverture et Contact. */
-.u-section-blue {
+.u-fond-bleu {
   background: var(--color-blue);
   color: var(--color-paper);
 }
+.u-fond-encre {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
 
-/* Le seul top collant autorisé, aligné sur la barre plus un pas de 32px. */
-.u-sticky {
-  position: sticky;
-  top: calc(var(--nav-h) + var(--pas-32));
+/* Le contenu d'une bande : pleine largeur utile, jamais une colonne perdue. */
+.u-dedans {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: clamp(24px, 5vw, 80px);
 }
 
 /* ============================================================
-   3. RANGS TYPOGRAPHIQUES — neuf classes, une par rang.
+   3. RANGS TYPOGRAPHIQUES
+   Un rang dit une chose et une seule.
    ============================================================ */
 
-/* Rang display : le h1 du héros et la signature du pied de page, nulle part ailleurs. */
+/* Sur-titre : où on est dans le plan. */
+.u-surtitre {
+  margin: 0 0 var(--pas-40);
+  font-size: var(--fs-note);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+.u-fond-bleu .u-surtitre,
+.u-fond-encre .u-surtitre {
+  color: color-mix(in srgb, var(--color-paper) 70%, transparent);
+}
+
+/* Titre d'ouverture, réservé au héros. */
 .u-display {
+  margin: 0;
   font-family: var(--font-display), Impact, sans-serif;
+  font-weight: 400;
   text-transform: uppercase;
   font-size: var(--fs-display);
-  line-height: var(--lh-display);
+  line-height: 1.08;
   letter-spacing: -0.02em;
-  font-weight: 400;
+  max-width: 18ch;
 }
 
-/* Rang titre : les huit h2 de section, le h2 de Contact et l'e-mail du pied de page. */
-.u-h2 {
+/* Titre de bande. */
+.u-titre {
+  margin: 0;
   font-family: var(--font-display), Impact, sans-serif;
-  text-transform: uppercase;
-  font-size: var(--fs-h2);
-  line-height: var(--lh-h2);
-  letter-spacing: -0.02em;
   font-weight: 400;
+  text-transform: uppercase;
+  font-size: var(--fs-titre);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  max-width: 26ch;
+}
+
+/* Corps : la seule taille de lecture courante. */
+.u-corps {
   margin: 0;
+  font-size: var(--fs-corps);
+  line-height: 1.7;
+  max-width: 78ch;
 }
-
-/* Rang sous-titre : titre d'étape, titre de carte, question de la section 08. Mesure 20ch. */
-.u-h3 {
-  font-size: var(--fs-h3);
-  line-height: var(--lh-h3);
-  max-width: 20ch;
-  margin: 0;
+.u-corps + .u-corps {
+  margin-top: var(--pas-24);
 }
-
-/* Rang énoncé : la phrase de thèse d'une section, en Instrument Serif. Mesure 34ch. */
-.u-enonce {
-  font-family: var(--font-serif), Georgia, serif;
-  font-size: var(--fs-enonce);
-  line-height: var(--lh-enonce);
-  max-width: 34ch;
-  margin: 0;
-}
-
-/* Rang référence : la phrase qui porte un chiffre, une durée ou un nom d'entreprise. Mesure 46ch. */
-.u-reference {
-  font-size: var(--fs-reference);
-  line-height: var(--lh-reference);
-  font-weight: 500;
-  color: var(--color-ink);
-  max-width: 46ch;
-  margin: 0;
-}
-
-/* Rang courant : tout le texte de développement. La mesure de 66ch est portée par la classe. */
-.u-courant {
-  font-size: var(--fs-courant);
-  line-height: var(--lh-courant);
-  max-width: 66ch;
-  margin: 0;
-}
-
-/* Deux paragraphes courants qui se suivent sont séparés d'un pas de 32px, sans classe à écrire. */
-.u-courant + .u-courant {
-  margin-top: var(--pas-32);
-}
-
-/* Rang note : texte de carte, réponse, rappel, micro-copie. Mesure 52ch. */
-.u-note {
-  font-size: var(--fs-note);
-  line-height: var(--lh-note);
+.u-fond-paper .u-corps,
+.u-fond-sand .u-corps {
   color: var(--color-muted);
-  max-width: 52ch;
-  margin: 0;
+}
+.u-fond-bleu .u-corps,
+.u-fond-encre .u-corps {
+  color: color-mix(in srgb, var(--color-paper) 88%, transparent);
 }
 
-/* Variante de note réservée à la légende d'un chiffre : mesure 30ch. */
-.u-note-legende {
+/* Note : ce qui se lit après, jamais avant. */
+.u-note {
+  margin: 0;
+  font-size: var(--fs-note);
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+.u-fond-bleu .u-note,
+.u-fond-encre .u-note {
+  color: color-mix(in srgb, var(--color-paper) 72%, transparent);
+}
+
+/* ============================================================
+   4. LA CITATION
+   Guillemets français, serif, attribution. C'est le seul
+   traitement autorisé pour une phrase de posture.
+   ============================================================ */
+
+.u-citation {
+  margin: 0;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: var(--fs-citation);
+  line-height: 1.28;
   max-width: 30ch;
 }
 
-/* Rang sur-titre : numéro et intitulé de section, étiquette, libellés du nav et du schéma. */
-.u-surtitre {
-  font-size: var(--fs-surtitre);
-  line-height: var(--lh-surtitre);
-  letter-spacing: 0.1em;
+.u-citation-large {
+  max-width: 22ch;
+}
+
+.u-attribution {
+  margin: var(--pas-24) 0 0;
+  font-size: var(--fs-note);
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-muted);
-  margin: 0;
 }
-
-/* Rang chiffre : les deux chiffres du bandeau de la section 06, et eux seuls. */
-.u-chiffre {
-  font-family: var(--font-display), Impact, sans-serif;
-  font-size: var(--fs-chiffre);
-  line-height: var(--lh-chiffre);
-  color: var(--color-blue);
-  font-variant-numeric: tabular-nums;
-  font-weight: 400;
-  margin: 0;
-}
-
-/* Familles nommées, sans taille : la taille vient toujours d'un rang. */
-.u-serif {
-  font-family: var(--font-serif), Georgia, serif;
-}
-
-.u-hand {
-  font-family: var(--font-hand), cursive;
-}
-
-.u-num {
-  font-variant-numeric: tabular-nums;
-}
-
-/* Étiquettes du schéma AngleMark : le rang sur-titre, appliqué à du texte SVG. */
-.u-svg-label {
-  font-family: var(--font-sans), system-ui, sans-serif;
-  font-size: var(--fs-surtitre);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.u-fond-bleu .u-attribution,
+.u-fond-encre .u-attribution {
+  color: color-mix(in srgb, var(--color-paper) 70%, transparent);
 }
 
 /* ============================================================
-   4. RYTHME — les cinq pas, nommés par leur valeur.
+   5. LES ITEMS
+   Une liste est une suite de rangées pleine largeur, numérotées.
+   Jamais deux colonnes inégales.
    ============================================================ */
 
-/* Pas de 16px : du sur-titre au titre, du titre au filet, du bouton à sa micro-copie. */
-.u-mt-16 {
-  margin-top: var(--pas-16);
-}
-.u-mb-16 {
-  margin-bottom: var(--pas-16);
-}
-
-/* Pas de 24px : du chiffre à sa légende. */
-.u-mt-24 {
-  margin-top: var(--pas-24);
-}
-
-/* Pas de 32px : entre deux paragraphes d'un bloc, d'un titre d'étape à son texte. */
-.u-mt-32 {
-  margin-top: var(--pas-32);
-}
-.u-mb-32 {
-  margin-bottom: var(--pas-32);
-}
-
-/* Pas de 64px : entre deux blocs distincts d'une section, entre deux étapes. */
-.u-mt-64 {
-  margin-top: var(--pas-64);
-}
-
-/* Pas de 96px : avant et après un dispositif de plein format. */
-.u-mt-96 {
-  margin-top: var(--pas-96);
-}
-
-/* Empile des blocs distincts d'une même section au pas de 64px. */
-.u-pile-64 > * + * {
-  margin-top: var(--pas-64);
-}
-
-/* Empile les enfants d'un même bloc au pas de 32px. */
-.u-pile-32 > * + * {
-  margin-top: var(--pas-32);
-}
-
-/* ============================================================
-   5. DISPOSITIFS — un rôle chacun, et rien d'autre.
-   ============================================================ */
-
-/* En-tête de section : sur-titre, titre, filet. Jamais enfant direct d'une grille ni d'un flex. */
-.u-header {
-  display: block;
-}
-.u-header > .u-surtitre {
-  margin-bottom: var(--pas-16);
-}
-.u-header > .u-h2 {
-  margin-bottom: var(--pas-16);
-}
-.u-header > .u-underline {
-  margin-bottom: var(--pas-32);
-}
-
-/* Filet bleu qui se déploie sous un titre lorsqu'il entre dans le champ. */
-.u-underline {
-  display: block;
-  height: 2px;
-  width: 0;
-  background: var(--color-blue);
-  transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.u-reveal.is-in .u-underline,
-.u-underline.is-in {
-  width: clamp(80px, 12vw, 180px);
-}
-
-/* Énoncé bleu : la phrase de bascule, en clôture de section. Quota 3 sur la page. */
-.u-quote {
-  display: block;
-  margin: var(--pas-96) 0;
-  background: var(--color-blue);
-  color: var(--color-paper);
-  padding: clamp(34px, 4vw, 60px) clamp(28px, 3.4vw, 56px);
-}
-
-/* Sur fond bleu, le bloc s'inverse en crème. */
-.u-quote-invert {
-  background: var(--color-paper);
-  color: var(--color-ink);
-}
-
-/* Cadre livrables : ce que le lecteur emporte. Sans survol, puisque non cliquable. Quota 1. */
-.u-frame {
-  border: 1px solid var(--color-line);
-  padding: 28px;
-}
-@media (min-width: 1024px) {
-  .u-frame {
-    padding: 36px;
-  }
-}
-
-/* Liste à filets : des faits parallèles de rang égal. Aucun survol, aucune flèche. */
-.u-liste {
-  list-style: none;
+.u-items {
   margin: 0;
   padding: 0;
-  border-top: 1px solid var(--color-line);
+  list-style: none;
+  border-top: 1px solid currentColor;
+  border-color: var(--color-line);
 }
-.u-liste > li {
-  border-bottom: 1px solid var(--color-line);
-  padding-block: var(--pas-24);
-}
-
-/* Variante simple : des observations, au rang courant. */
-.u-liste-simple > li {
-  font-size: var(--fs-courant);
-  line-height: var(--lh-courant);
-  max-width: 66ch;
+.u-fond-bleu .u-items,
+.u-fond-encre .u-items {
+  border-color: color-mix(in srgb, var(--color-paper) 30%, transparent);
 }
 
-/* Variante appariée : des questions, en Instrument Serif italique, au rang sous-titre. */
-.u-liste-appariee > li {
-  font-family: var(--font-serif), Georgia, serif;
-  font-style: italic;
-  font-size: var(--fs-h3);
-  line-height: var(--lh-h3);
-  max-width: 20ch;
-}
-
-/* Grille de cartes : un catalogue d'exemples de même rang, en 4+4+4. Quota 1. */
-.u-cartes {
+.u-item {
   display: grid;
-  grid-template-columns: 1fr;
-  column-gap: 0;
-  row-gap: var(--pas-64);
-  margin-block: var(--pas-96);
-}
-@media (min-width: 768px) {
-  .u-cartes {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    column-gap: var(--gouttiere);
-    row-gap: 0;
-  }
-}
-/* Une carte : filet supérieur, pas de padding horizontal, la gouttière suffit. */
-.u-cartes > * {
-  border-top: 1px solid var(--color-line);
-  padding-top: var(--pas-24);
-  padding-bottom: var(--pas-32);
-}
-@media (min-width: 768px) {
-  .u-cartes > * {
-    grid-column: span 4;
-  }
-}
-
-/* Bandeau chiffres : la seule preuve chiffrée du site, au premier niveau de lecture. Quota 1. */
-.u-chiffres {
-  border-block: 1px solid var(--color-line);
-  padding-block: 48px;
-  margin-block: var(--pas-96);
-}
-
-/* Schéma AngleMark : le degré d'écart, à l'endroit où le texte l'énonce. Quota 1. */
-.u-schema {
-  display: block;
-  width: 100%;
-  max-width: 420px;
-  margin-block: var(--pas-96);
-  overflow: visible;
-}
-
-/* Puce carrée bleue de 7px : ouvre une étiquette de bloc secondaire. */
-.u-bullet {
-  display: inline-flex;
+  grid-template-columns: 3.5rem minmax(0, 1fr);
+  gap: var(--pas-24);
   align-items: baseline;
-  gap: 12px;
+  padding-block: var(--pas-24);
+  border-bottom: 1px solid var(--color-line);
+  font-size: var(--fs-item);
+  line-height: 1.3;
 }
-.u-bullet::before {
-  content: "";
-  width: 7px;
-  height: 7px;
-  flex: none;
-  translate: 0 -2px;
-  background: var(--color-blue);
+.u-fond-bleu .u-item,
+.u-fond-encre .u-item {
+  border-color: color-mix(in srgb, var(--color-paper) 30%, transparent);
 }
 
-/* Bouton d'action : le seul objet qui déclenche une action, le seul à porter une flèche. */
+@media (min-width: 768px) {
+  /* Rangée appariée : intitulé à gauche, développement à droite. */
+  .u-item {
+    grid-template-columns: 5rem minmax(0, 26ch) minmax(0, 1fr);
+    gap: var(--pas-40);
+  }
+  /* Rangée simple : rien à droite, l'intitulé prend toute la largeur. */
+  .u-item-simple {
+    grid-template-columns: 5rem minmax(0, 1fr);
+  }
+}
+
+.u-item-num {
+  font-size: var(--fs-note);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-blue);
+}
+.u-fond-bleu .u-item-num,
+.u-fond-encre .u-item-num {
+  color: var(--color-paper);
+}
+
+.u-item-texte {
+  font-size: var(--fs-corps);
+  line-height: 1.7;
+  color: var(--color-muted);
+  max-width: 62ch;
+}
+.u-fond-bleu .u-item-texte,
+.u-fond-encre .u-item-texte {
+  color: color-mix(in srgb, var(--color-paper) 85%, transparent);
+}
+
+/* ============================================================
+   6. LES CHIFFRES
+   ============================================================ */
+
+.u-chiffre {
+  font-family: var(--font-display), Impact, sans-serif;
+  font-weight: 400;
+  font-size: var(--fs-chiffre);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-blue);
+}
+.u-fond-bleu .u-chiffre,
+.u-fond-encre .u-chiffre {
+  color: var(--color-paper);
+}
+
+/* ============================================================
+   7. L'ACTION
+   Le seul objet qui déclenche quelque chose, et le seul
+   autorisé à porter une flèche.
+   ============================================================ */
+
 .u-cta {
   display: inline-flex;
   align-items: center;
+  gap: 12px;
   background: var(--color-blue);
   color: var(--color-paper);
-  padding: 16px 28px;
-  font-size: 15px;
+  padding: 20px 32px;
+  font-size: var(--fs-note);
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  line-height: 1.2;
   border: 0;
   cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
-
-/* Sur fond bleu, le bouton s'inverse en crème. */
-.u-cta-invert {
+.u-cta:hover {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+.u-fond-bleu .u-cta,
+.u-fond-encre .u-cta {
   background: var(--color-paper);
   color: var(--color-blue);
 }
-
-/* Version compacte du nav : même objet, sans micro-copie. */
-.u-cta-nav {
-  padding: 10px 20px;
-  font-size: 12px;
+.u-fond-bleu .u-cta:hover,
+.u-fond-encre .u-cta:hover {
+  background: var(--color-ink);
+  color: var(--color-paper);
 }
-
-/* La flèche du bouton avance de 5px au survol. */
-.u-cta-arrow {
-  display: inline-block;
-  margin-left: 10px;
+.u-cta-fleche {
   transition: translate 0.2s ease;
 }
-a:hover > .u-cta-arrow,
-button:hover > .u-cta-arrow {
+.u-cta:hover .u-cta-fleche {
   translate: 5px 0;
 }
 
-/* Micro-copie posée 16px sous un bouton : à écrire avec .u-note. */
-.u-cta-micro {
-  margin-top: var(--pas-16);
-}
-
-/* Lien : le seul soulignement bleu de la page. Interdit sur un élément sans href. */
-.u-link {
+/* Lien de texte : soulignement bleu qui se déploie. */
+.u-lien {
+  color: inherit;
+  text-decoration: none;
   background-image: linear-gradient(var(--color-blue), var(--color-blue));
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-size: 0 1px;
   transition: background-size 0.25s ease, color 0.2s ease;
 }
-.u-link:hover {
+.u-lien:hover {
   color: var(--color-blue);
   background-size: 100% 1px;
 }
-
-/* Gabarit d'emplacement photo : la mesure du brief de prise de vue. */
-.u-slot-brief {
-  max-width: 30ch;
-}
-
-/* ============================================================
-   6. INVERSIONS SUR FOND BLEU — section 02 et Contact.
-   ============================================================ */
-
-.u-section-blue .u-surtitre,
-.u-section-blue .u-note {
-  color: color-mix(in srgb, var(--color-paper) 72%, transparent);
-}
-.u-section-blue .u-reference {
-  color: var(--color-paper);
-}
-.u-section-blue .u-underline {
-  background: var(--color-paper);
-}
-.u-section-blue .u-chiffre {
-  color: var(--color-paper);
-}
-.u-section-blue .u-bullet::before {
-  background: var(--color-paper);
-}
-.u-section-blue .u-liste,
-.u-section-blue .u-liste > li,
-.u-section-blue .u-frame {
-  border-color: color-mix(in srgb, var(--color-paper) 34%, transparent);
-}
-.u-section-blue .u-link {
-  background-image: linear-gradient(var(--color-paper), var(--color-paper));
-}
-.u-section-blue .u-link:hover {
+.u-fond-bleu .u-lien:hover,
+.u-fond-encre .u-lien:hover {
   color: var(--color-paper);
 }
 
 /* ============================================================
-   7. APPARITION AU SCROLL
+   8. APPARITION
    ============================================================ */
 
 .u-reveal {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(16px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 .u-reveal.is-in {
@@ -572,20 +380,5 @@ button:hover > .u-cta-arrow {
     opacity: 1;
     transform: none;
     transition: none;
-  }
-  .u-underline {
-    width: clamp(80px, 12vw, 180px);
-    transition: none;
-  }
-}
-
-/* Bloc de texte du héros : il démarre sous la barre fixe et ne passe jamais dessous. */
-.u-hero-inner {
-  padding-block: var(--pas-64);
-}
-@media (min-width: 768px) {
-  .u-hero-inner {
-    padding-top: calc(var(--nav-h) + var(--pas-96));
-    padding-bottom: var(--pas-96);
   }
 }
