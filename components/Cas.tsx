@@ -15,6 +15,7 @@ export default function Cas() {
         <h2 className="u-display m-0 text-[clamp(40px,7vw,124px)] tracking-[-0.03em]">
           {cas.client}
         </h2>
+      <span className="u-reveal u-underline mt-8" />
         <span className="text-[13px] tracking-[0.06em] text-muted uppercase">
           {cas.sousTitre}
         </span>

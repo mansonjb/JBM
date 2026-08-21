@@ -1,3 +1,4 @@
+import Graduation from "./Graduation";
 import Enonce from "./Enonce";
 import ImageSlot from "./ImageSlot";
 import { deroule } from "@/lib/site";
@@ -13,9 +14,13 @@ export default function Deroule() {
       </div>
 
       <div className="mb-14 grid grid-cols-1 items-end gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-[clamp(40px,6vw,110px)]">
-        <h2 className="u-display m-0 max-w-[16ch] text-[clamp(40px,6.4vw,112px)] tracking-[-0.03em]">
-          {deroule.title}
-        </h2>
+        <div>
+          <Graduation marque={4} className="u-reveal mb-10 h-7 w-full max-w-[520px]" />
+          <h2 className="u-display m-0 max-w-[16ch] text-[clamp(40px,6.4vw,112px)] tracking-[-0.03em]">
+            {deroule.title}
+          </h2>
+          <span className="u-reveal u-underline mt-8" />
+        </div>
         <Enonce className="max-w-[520px]">{deroule.intro}</Enonce>
       </div>
 
@@ -52,7 +57,7 @@ export default function Deroule() {
         </div>
 
         <div className="u-reveal lg:sticky lg:top-28">
-          <div className="relative aspect-4/5">
+          <div className="u-corners relative aspect-4/5">
             <ImageSlot
               brief="PHOTO 2 · une séance de travail : carnet, notes, schéma"
               src="/carnet-atelier.jpg"

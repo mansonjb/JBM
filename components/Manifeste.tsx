@@ -1,3 +1,4 @@
+import AngleMark from "./AngleMark";
 import Enonce from "./Enonce";
 import { manifeste } from "@/lib/site";
 
@@ -46,6 +47,8 @@ export default function Manifeste() {
       </div>
 
       <div className="mt-16 border-t border-paper/30 pt-12">
+        <AngleMark invert className="u-reveal mb-12" />
+
         <Enonce invert className="mb-12 max-w-[860px]">
           {manifeste.citation}
         </Enonce>

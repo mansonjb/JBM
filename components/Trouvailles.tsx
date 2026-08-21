@@ -12,6 +12,7 @@ export default function Trouvailles() {
         <h2 className="u-display m-0 max-w-[24ch] text-[clamp(32px,4.4vw,76px)]">
           {trouvailles.title}
         </h2>
+      <span className="u-reveal u-underline mt-8" />
         <div className="lg:pb-2">
           {trouvailles.intro.map((paragraphe, i) => (
             <p

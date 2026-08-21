@@ -12,6 +12,7 @@ export default function Qui() {
       <h2 className="u-display m-0 mb-14 max-w-[24ch] text-[clamp(32px,4.4vw,76px)]">
         {qui.title}
       </h2>
+      <span className="u-reveal u-underline mt-8" />
 
       <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.75fr)] lg:gap-[clamp(40px,6vw,110px)]">
         <div>
@@ -39,7 +40,7 @@ export default function Qui() {
         </div>
 
         <div className="u-reveal grid grid-cols-1 gap-8">
-          <div className="relative aspect-3/4">
+          <div className="u-corners relative aspect-3/4">
             <ImageSlot
               brief="PHOTO 5 · portrait vertical, cadrage serré, lumière douce"
               src="/portrait.jpg"

@@ -1,3 +1,4 @@
+import Graduation from "./Graduation";
 import Enonce from "./Enonce";
 import { regard } from "@/lib/site";
 
@@ -11,9 +12,12 @@ export default function Regard() {
         01 · {regard.kicker}
       </div>
 
-      <h2 className="u-display m-0 mb-14 max-w-[26ch] text-[clamp(32px,4.4vw,76px)]">
+      <Graduation marque={1} className="u-reveal mb-12 h-7 w-full max-w-[520px]" />
+
+      <h2 className="u-display m-0 max-w-[26ch] text-[clamp(32px,4.4vw,76px)]">
         {regard.title}
       </h2>
+      <span className="u-reveal u-underline mt-8 mb-14" />
 
       <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-[clamp(40px,6vw,110px)]">
         <div>

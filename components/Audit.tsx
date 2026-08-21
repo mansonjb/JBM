@@ -14,6 +14,7 @@ export default function Audit() {
       <h2 className="u-display m-0 mb-14 text-[clamp(44px,8vw,150px)] tracking-[-0.03em]">
         {audit.title}
       </h2>
+      <span className="u-reveal u-underline mt-8" />
 
       <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-[clamp(40px,6vw,110px)]">
         <div>

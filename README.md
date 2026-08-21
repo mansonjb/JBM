@@ -38,6 +38,10 @@ npm start        # http://localhost:3083
 | `components/Audit.tsx` | 07 · L'audit |
 | `components/Questions.tsx` | 08 · Questions |
 | `components/Contact.tsx` | Clôture et formulaire |
+| `components/Enonce.tsx` | La phrase qui porte une section, en bloc bleu plein |
+| `components/AngleMark.tsx` | Le degré dessiné : deux trajectoires qui divergent |
+| `components/Graduation.tsx` | Règle graduée, une seule graduation en bleu |
+| `components/ScrollRail.tsx` | Rail de progression et accès aux jalons |
 | `components/ImageSlot.tsx` | Emplacement photo : affiche le brief tant que `src` est vide |
 | `app/api/contact/route.ts` | Réception du formulaire (Resend si clé, sinon `mailto`) |
 | `app/mentions-legales/` | Mentions légales |
@@ -53,7 +57,9 @@ Le bleu ne sert jamais de décor, il signale toujours quelque chose de vivant :
 `.u-row` (survol d'une ligne de liste, filet et flèche en bleu), `.u-card`
 (survol d'une carte, titre en bleu), `.u-frame` (encadré qui s'allume),
 `.u-link` (soulignement qui se déploie), `.u-quote` (énoncé en bloc bleu plein,
-crème sur bleu, avec sa flèche) et `.u-bullet` (puce carrée sur les intertitres).
+crème sur bleu, avec sa flèche) `.u-bullet` (puce carrée sur les intertitres), `.u-corners` (repères de cadrage
+aux angles des photos) et `.u-underline` (filet qui se déploie sous un titre à
+l'entrée dans le champ).
 
 ## Photos
 

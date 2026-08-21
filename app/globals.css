@@ -224,3 +224,49 @@ button:hover > .u-cta-arrow {
   color: var(--color-blue);
   background-size: 100% 1px;
 }
+
+/* Repères de cadrage bleus aux angles d'une image, comme des traits de coupe. */
+.u-corners {
+  position: relative;
+}
+.u-corners::before,
+.u-corners::after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 2px solid var(--color-blue);
+  pointer-events: none;
+}
+.u-corners::before {
+  top: -8px;
+  left: -8px;
+  border-right: 0;
+  border-bottom: 0;
+}
+.u-corners::after {
+  right: -8px;
+  bottom: -8px;
+  border-top: 0;
+  border-left: 0;
+}
+
+/* Filet bleu qui se déploie sous un titre lorsqu'il entre dans le champ. */
+.u-underline {
+  display: block;
+  height: 2px;
+  width: 0;
+  background: var(--color-blue);
+  transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.u-reveal.is-in .u-underline,
+.u-underline.is-in {
+  width: clamp(80px, 12vw, 180px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .u-underline {
+    width: clamp(80px, 12vw, 180px);
+    transition: none;
+  }
+}
