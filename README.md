@@ -47,46 +47,30 @@ npm start        # http://localhost:3083
 
 ## Le système
 
-Le CSS de `app/globals.css` est **repris tel quel de la maquette Claude Design
-`un-degre.dc.html`** : mêmes classes, mêmes valeurs, mêmes transitions. On ne les
-renomme pas et on ne les réinvente pas. Seules les polices sont adaptées, parce
-qu'elles sont chargées par `next/font` et non par un lien Google Fonts.
+Le site est le portage fidèle de la maquette Claude Design `un-degre.dc.html`
+(archive « Brief design_ UN degré ? »). Le CSS de `app/globals.css` reprend le
+sien classe par classe, le balisage de chaque section reprend le sien, et le
+texte de `lib/site.ts` est le sien, mot pour mot.
 
-Dispositifs de la maquette et emploi retenu :
+Seules adaptations, rendues nécessaires par Next :
 
-| Classe | Rôle | Où |
-| --- | --- | --- |
-| `.sechead` | En-tête de section : numéro annelé, intitulé, filet | 01 à 08 |
-| `.row` | Rangée numérotée, bascule en bleu au survol | ouverture, livrables |
-| `.chip` | Constat court, pavé centré | 01, 04 |
-| `.q` | Question posée, rangée simple | 01 |
-| `.steps` / `.step` | Le tableau des cinq étapes | 02 |
-| `.tcard` | Carte bleue à remplissage, pour un catalogue | 03 |
-| `.diverge` | Le degré : chiffre géant, tracé animé, conclusion surlignée | 04 |
-| `.stat` / `.stats4` | Les chiffres du cas | 05 |
-| `.card` | Carte sable | 06, 07 |
-| `details` / `.qsum` | Les questions en dépliants | 08 |
-| `.btn`, `.btn-ghost`, `.btn-cream` | Les trois états d'appel à l'action | toute la page |
-| `.tel-nav`, `.tel-float`, `.tel-big` | Le téléphone, en barre, en flottant, en pied | toute la page |
-| `.progress` | Jauge de lecture en haut de page | toute la page |
-| `.ringmark`, `.footring` | Le motif de l'anneau | marque et pied de page |
+- les polices sont chargées par `next/font` : les familles littérales du CSS
+  sont remplacées par les variables correspondantes,
+- les images encodées en base64 dans la maquette sont extraites en fichiers
+  dans `public/`, servies par `next/image`,
+- la logique `DCLogic` de la bande défilante est réécrite en composant client
+  (`components/Terrains.tsx`), avec la même rotation de 4,2 secondes et le même
+  arrêt au survol,
+- les formulaires sont branchés sur la route `app/api/contact/route.ts`.
+
+Sections, dans l'ordre de la maquette : héros, 01 la méthode, 02 ce qu'on peut
+trouver, bande d'appel e-mail, 03 les terrains, 04 un exemple, 05 qui suis-je,
+contact, puis le pied de page qui contient 06 les questions.
 
 ## Photos
 
-Cinq photos sont en place dans `public/`. Les emplacements encore vides affichent
-leur brief de prise de vue : pour en remplir un, déposer le fichier dans `public/`
-et ajouter `src="/…"` sur le `<ImageSlot>` concerné.
-
-| Section | Fichier | Format |
-| --- | --- | --- |
-| Héros | `hero-un-degre.jpg` | 2400 × 1601 |
-| L'idée | `carnet-atelier.jpg` | 1600 × 1600 |
-| Pourquoi moi (bloc bleu) | `plan-action.jpg` | 2000 × 1334, noir et blanc |
-| Pourquoi moi (portrait) | `portrait.jpg` | 1344 × 1800 |
-| Pied de page | `portrait-bureau.jpg` | 1120 × 1500 |
-
-Les emplacements du journal et du chantier ont disparu avec la refonte du texte :
-les cinq photos couvrent aujourd'hui toutes les sections.
+Trois photos, extraites de la maquette : `hero-bureau.jpg`,
+`tableau-plan-action.jpg`, `portrait-jbm.jpg`.
 
 ## À compléter avant mise en ligne
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { cloture, site } from "@/lib/site";
+import { contact, site } from "@/lib/site";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -53,46 +53,51 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden py-[clamp(64px,9vh,120px)]"
+      className="pt-[clamp(70px,11vh,130px)] pb-[clamp(70px,11vh,130px)]"
       style={{ background: "#1F3BD8", color: "#F4EFE6" }}
     >
-      <h2 className="m-0 mb-8 text-[clamp(32px,5vw,88px)] leading-[1.02]">
-        {cloture.title}
+      <h2 className="m-0 mb-10 text-[clamp(36px,5.8vw,108px)] leading-[0.92] tracking-[-0.03em]">
+        {contact.titre}
       </h2>
+      <p className="lede m-0 mb-[30px] max-w-none">{contact.lede}</p>
 
-      <div className="grid grid-cols-1 gap-[clamp(32px,4vw,80px)] lg:grid-cols-2">
-        <div>
-          {cloture.paragraphes.map((paragraphe, i) => (
-            <p key={paragraphe} className={i === 0 ? "lede m-0 mb-5" : "body mt-0 mb-5"}>
-              {paragraphe}
-            </p>
-          ))}
-          <a
-            className="tel-big mt-6"
-            href={`tel:${site.phoneHref}`}
-            style={{ color: "#F4EFE6" }}
+      <form
+        onSubmit={onSubmit}
+        className="grid gap-[22px]"
+        style={{ gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}
+      >
+        <input className="field field-inv" name="nom" type="text" required placeholder="Nom" />
+        <input className="field field-inv" name="entreprise" type="text" placeholder="Entreprise" />
+        <input
+          className="field field-inv"
+          name="email"
+          type="email"
+          required
+          placeholder="E-mail"
+          style={{ gridColumn: "1 / -1" }}
+        />
+        <textarea
+          className="field field-inv resize-none"
+          name="message"
+          rows={3}
+          placeholder={contact.champMessage}
+          style={{ gridColumn: "1 / -1" }}
+        />
+        <div style={{ gridColumn: "1 / -1" }}>
+          <button
+            className="btn btn-cream mt-[14px] cursor-pointer border-0"
+            type="submit"
+            disabled={status === "sending"}
           >
-            {site.phone}
-          </a>
+            {status === "sending" ? "Envoi…" : contact.bouton} <span>→</span>
+          </button>
+          {message && (
+            <p className="body mt-5" role="status" style={{ color: "#F4EFE6" }}>
+              {message}
+            </p>
+          )}
         </div>
-
-        <form onSubmit={onSubmit} className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          <input name="nom" type="text" required placeholder="Nom" className="field field-inv" />
-          <input name="entreprise" type="text" placeholder="Entreprise" className="field field-inv" />
-          <input name="email" type="email" required placeholder="E-mail" className="field field-inv sm:col-span-2" />
-          <textarea name="message" rows={2} placeholder="Message" className="field field-inv resize-none sm:col-span-2" />
-          <div className="sm:col-span-2">
-            <button type="submit" disabled={status === "sending"} className="btn btn-cream">
-              {status === "sending" ? "Envoi…" : site.ctaFinal} <span>→</span>
-            </button>
-            {message && (
-              <p className="body mt-5" role="status" style={{ color: "#F4EFE6" }}>
-                {message}
-              </p>
-            )}
-          </div>
-        </form>
-      </div>
+      </form>
     </section>
   );
 }

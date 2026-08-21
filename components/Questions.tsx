@@ -1,39 +1,37 @@
-import SectionHead from "./SectionHead";
+import SecHead from "./SecHead";
 import { questions } from "@/lib/site";
 
-/** 08 · Questions, en dépliants natifs comme dans la maquette. */
+/** 06 · Questions, en dépliants natifs. */
 export default function Questions() {
   return (
-    <section id="questions" className="py-[clamp(64px,9vh,120px)]">
-      <SectionHead n="08">Questions</SectionHead>
+    <section
+      id="questions"
+      className="border-b-2 border-line pt-0 pr-0 pb-[clamp(50px,8vh,90px)] pl-0"
+    >
+      <SecHead n="06">Questions</SecHead>
 
-      <h2 className="m-0 mb-10 text-[clamp(30px,4.4vw,78px)] leading-[1.02]">
+      <h2 className="m-0 mb-[50px] text-[clamp(40px,6.4vw,118px)] leading-[0.92]">
         Ce que vous vous demandez.
       </h2>
 
-      <div className="grid grid-cols-1 gap-[clamp(20px,2vw,48px)] lg:grid-cols-2">
-        <div>
-          {questions.slice(0, 3).map((question) => (
-            <details key={question.q}>
-              <summary className="qsum">
-                <span className="qtxt">{question.q}</span>
-                <span className="plus" />
-              </summary>
-              <p className="qans">{question.a}</p>
-            </details>
-          ))}
-        </div>
-        <div>
-          {questions.slice(3).map((question) => (
-            <details key={question.q}>
-              <summary className="qsum">
-                <span className="qtxt">{question.q}</span>
-                <span className="plus" />
-              </summary>
-              <p className="qans">{question.a}</p>
-            </details>
-          ))}
-        </div>
+      <div className="border-t-2 border-line">
+        {questions.map((question, i) => (
+          <details key={question.q}>
+            <summary
+              className="grid items-baseline gap-5 px-5 py-[26px]"
+              style={{ gridTemplateColumns: "76px minmax(0, 1fr) 40px" }}
+            >
+              <span className="text-[13px] font-bold tracking-[0.1em] opacity-60 [font-variant-numeric:tabular-nums]">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="text-[clamp(19px,2vw,32px)] leading-[1.35]">
+                {question.q}
+              </span>
+              <span className="plus text-right text-[22px] opacity-70" />
+            </summary>
+            <p className="body m-0 pt-0 pr-5 pb-8 pl-[96px]">{question.a}</p>
+          </details>
+        ))}
       </div>
     </section>
   );

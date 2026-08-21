@@ -1,3 +1,8 @@
+/**
+ * Contenu éditorial du site, repris mot pour mot de la maquette Claude Design
+ * « un-degre.dc.html ». On ne réécrit pas ce texte.
+ */
+
 export const site = {
   name: "Un Degré",
   domain: "https://undegre.fr",
@@ -5,283 +10,172 @@ export const site = {
   email: "contact@undegre.fr",
   phone: "06 62 93 89 14",
   phoneHref: "+33662938914",
-  author: "Jean-Baptiste Manson · Consultant en optimisation",
-  ctaPrimary: "Prendre un premier rendez-vous",
-  ctaAudit: "Parler de votre entreprise",
-  ctaFinal: "Prendre rendez-vous",
-  ctaMicro: "Un premier échange, sans engagement.",
+  author: "Jean-Baptiste Manson · consultant en optimisation",
 };
 
-/**
- * Le plan : seule source des huit numéros de section, de leurs ancres et des
- * libellés de repérage (barre de navigation et rail). `nav` marque les quatre
- * étapes reprises dans la barre.
- */
-export const plan = [
-  { n: "01", id: "regard", label: "Le regard", nav: true },
-  { n: "02", id: "methode", label: "La méthode", nav: true },
-  { n: "03", id: "trouvailles", label: "Les trouvailles", nav: false },
-  { n: "04", id: "manifeste", label: "Un degré", nav: false },
-  { n: "05", id: "exemple", label: "Un exemple", nav: true },
-  { n: "06", id: "qui", label: "Qui suis-je", nav: false },
-  { n: "07", id: "audit", label: "L'audit", nav: true },
-  { n: "08", id: "questions", label: "Questions", nav: false },
-];/* Héros */
+export const nav = [
+  { href: "#methode", label: "La méthode" },
+  { href: "#exemple", label: "Un exemple" },
+  { href: "#questions", label: "Questions" },
+];
+
+/* Héros */
 export const hero = {
   kicker: "Consultant en optimisation",
-  title: "Votre entreprise fonctionne. Regardons jusqu'où elle peut aller.",
-  lead: "Une entreprise qui fonctionne n'a pas forcément besoin d'être transformée. Elle a parfois simplement besoin d'être regardée autrement.",
+  titre1: "Votre entreprise fonctionne.",
+  titre2: "Regardons jusqu'où elle peut aller.",
+  lede: "Une entreprise qui fonctionne n'a pas forcément besoin d'être transformée. Elle a parfois simplement besoin d'être regardée autrement.",
+  cta: "Prendre un premier rendez-vous",
+  micro: "Un premier échange, sans engagement.",
 };
 
-/* Ouverture : les formes que prend une opportunité, puis ce que je fais. */
-export const ouverture = {
-  pistes: [
-    "Une offre qui pourrait être mieux valorisée.",
-    "Un parcours client qui pourrait être simplifié.",
-    "Une dépense devenue inutile.",
-    "Un savoir-faire insuffisamment visible.",
-    "Une tâche qui pourrait disparaître.",
-    "Un outil qui pourrait faire gagner plusieurs heures par semaine.",
-    "Une opportunité commerciale jamais vraiment explorée.",
-  ],
-  paragraphes: [
-    "Mon travail consiste à prendre suffisamment de recul pour les voir.",
-    "Je viens comprendre votre activité, j'observe son fonctionnement, j'échange avec ceux qui la font vivre et j'analyse ce qui existe déjà.",
-    "Puis je vous montre ce que je garderais, ce que je changerais et ce que j'explorerais.",
-  ],
-};
-
-/* 01 · Pourquoi un regard extérieur */
-export const regard = {
-  kicker: "Pourquoi un regard extérieur",
-  title:
-    "Quand on travaille dans son entreprise tous les jours, on finit forcément par la regarder du même endroit.",
-  intro: [
-    "Ce n'est pas un défaut. C'est simplement ce qui arrive lorsqu'une organisation grandit.",
-  ],
-  derives: [
-    "Des habitudes s'installent.",
-    "Des outils s'accumulent.",
-    "Une offre évolue.",
-    "Des clients changent.",
-    "Des opportunités apparaissent.",
-  ],
-  suite: [
-    "Et certaines décisions prises il y a trois ou cinq ans continuent d'organiser l'entreprise alors que son environnement, lui, a changé.",
-    "C'est précisément là que j'interviens.",
-    "Je ne viens pas avec une solution déjà écrite. Je commence par comprendre.",
-  ],
-  questions: [
-    "Comment l'entreprise gagne-t-elle de l'argent ?",
-    "Comment trouve-t-elle ses clients ?",
-    "Que vend-elle réellement ?",
-    "Comment travaille-t-on en interne ?",
-    "Où passe le temps ?",
-    "Qu'est-ce qui fonctionne particulièrement bien ?",
-    "Qu'est-ce qui pourrait être mieux exploité ?",
-  ],
-  chute:
-    "L'objectif n'est pas de chercher ce qui va mal. L'objectif est de comprendre ce qui pourrait fonctionner encore mieux.",
-};
-
-/* 02 · Comment ça se passe */
-export const deroule = {
+/* 01 · La méthode */
+export const methode = {
+  n: "01",
   kicker: "Comment ça se passe",
-  title: "D'abord comprendre. Ensuite décider.",
-  intro: "Tout commence par une conversation.",
+  titre: "D'abord comprendre. Ensuite décider.",
+  citation: "« Tout commence par une conversation. »",
+  cta: "Parlez-moi de votre entreprise",
   etapes: [
     {
       n: "01",
       titre: "Nous échangeons",
-      paragraphes: [
-        "Nous parlons de votre entreprise, de son histoire, de son fonctionnement et de vos ambitions.",
-        "Vous pouvez avoir un problème très précis à résoudre. Ou simplement cette intuition assez difficile à formuler : « nous pourrions probablement faire mieux. »",
-        "Ce premier échange permet de comprendre où vous en êtes et ce qu'il serait intéressant d'aller regarder.",
-      ],
+      texte: "Nous parlons de votre entreprise, de son histoire, de son fonctionnement et de vos ambitions. Vous pouvez avoir un problème très précis à résoudre. Ou simplement cette intuition assez difficile à formuler : « nous pourrions probablement faire mieux. » Ce premier échange permet de comprendre où vous en êtes et ce qu'il serait intéressant d'aller regarder.",
     },
     {
       n: "02",
       titre: "Je viens voir",
-      paragraphes: [
-        "Je passe du temps dans l'entreprise. Je regarde les produits, les services, les prix, la manière de vendre, les outils, le marketing, le digital, l'expérience client, les processus et l'organisation.",
-        "Je parle aux personnes concernées. Je regarde également les chiffres lorsqu'ils permettent de comprendre ce qui se passe réellement.",
-        "Parce qu'entre la manière dont une entreprise pense fonctionner et la manière dont elle fonctionne réellement, il existe souvent quelques écarts. Et ces écarts sont intéressants.",
-      ],
+      texte: "Je passe du temps dans l'entreprise. Je regarde les produits, les services, les prix, la manière de vendre, les outils, le marketing, le digital, l'expérience client, les processus et l'organisation. Je parle aux personnes concernées. Je regarde également les chiffres lorsqu'ils permettent de comprendre ce qui se passe réellement. Parce qu'entre la manière dont une entreprise pense fonctionner et la manière dont elle fonctionne réellement, il existe souvent quelques écarts. Et ces écarts sont intéressants.",
     },
     {
       n: "03",
       titre: "Je prends du recul",
-      paragraphes: [
-        "Je rassemble ce que j'ai vu. Je croise les observations, les chiffres, les usages, les retours des équipes et ceux des clients.",
-        "Certaines pistes disparaissent. D'autres deviennent évidentes. Et quelques-unes peuvent changer beaucoup de choses.",
-        "Je les évalue selon leur impact, leur coût, leur difficulté et le temps nécessaire pour les mettre en œuvre.",
-      ],
+      texte: "Je rassemble ce que j'ai vu. Je croise les observations, les chiffres, les usages, les retours des équipes et ceux des clients. Certaines pistes disparaissent. D'autres deviennent évidentes. Et quelques-unes peuvent changer beaucoup de choses. Je les évalue selon leur impact, leur coût, leur difficulté et le temps nécessaire pour les mettre en œuvre.",
     },
     {
       n: "04",
       titre: "Je vous restitue ce que j'ai trouvé",
-      paragraphes: [
-        "Pas un rapport de 80 pages destiné à finir dans un dossier. Une lecture claire de votre entreprise et des possibilités que j'y vois.",
-        "Ce qui fonctionne et mérite d'être développé. Ce qui pourrait être amélioré. Ce qui pourrait être simplifié. Ce qui pourrait être mieux vendu ou mieux valorisé. Ce qu'il serait intéressant d'essayer. Et surtout : dans quel ordre.",
-        "Vous repartez avec une feuille de route concrète et priorisée.",
-      ],
+      texte: "Pas un rapport de 80 pages destiné à finir dans un dossier. Une lecture claire de votre entreprise et des possibilités que j'y vois. Ce qui fonctionne et mérite d'être développé. Ce qui pourrait être amélioré. Ce qui pourrait être simplifié. Ce qui pourrait être mieux vendu ou mieux valorisé. Ce qu'il serait intéressant d'essayer. Et surtout : dans quel ordre. Vous repartez avec une feuille de route concrète et priorisée.",
     },
     {
       n: "05",
       titre: "Nous pouvons ensuite le faire",
-      paragraphes: [
-        "L'audit peut s'arrêter là. Vous avez les recommandations et vous pouvez les mettre en œuvre avec vos équipes ou vos partenaires.",
-        "Mais je peux aussi rester. Lorsque le sujet entre dans mes compétences, je peux le prendre en charge directement. Lorsqu'il nécessite une expertise particulière, je cherche les bonnes personnes, construis le projet avec elles et peux en piloter la réalisation.",
-        "Vous ne repartez donc pas simplement avec une liste de bonnes idées. Vous savez comment les transformer en actions.",
-      ],
+      texte: "L'audit peut s'arrêter là. Vous avez les recommandations et vous pouvez les mettre en œuvre avec vos équipes ou vos partenaires. Mais je peux aussi rester. Lorsque le sujet entre dans mes compétences, je peux le prendre en charge directement. Lorsqu'il nécessite une expertise particulière, je cherche les bonnes personnes, construis le projet avec elles et peux en piloter la réalisation. Vous ne repartez donc pas simplement avec une liste de bonnes idées. Vous savez comment les transformer en actions.",
     },
   ],
 };
 
-/* 03 · Ce qu'on peut trouver */
-export const trouvailles = {
+/* 02 · Ce qu'on peut trouver */
+export const trouver = {
+  n: "02",
   kicker: "Ce qu'on peut trouver",
-  title:
-    "Je ne sais pas encore ce que je vais vous recommander. Et c'est plutôt bon signe.",
-  intro: [
-    "Parce que deux entreprises ne présentent jamais les mêmes opportunités.",
-    "Chez l'une, le sujet sera commercial. Chez une autre, ce sera l'offre. Ailleurs, ce sera le site internet, l'expérience client, un processus interne, la communication, l'utilisation de l'intelligence artificielle, une dépense mal orientée ou simplement une excellente idée qui existe déjà mais qui n'a jamais été suffisamment développée.",
-    "Une mission peut par exemple faire émerger :",
-  ],
+  titre1: "Je ne sais pas encore ce que je vais vous recommander.",
+  titre2: "Et c'est plutôt bon signe.",
+  lede: "Parce que deux entreprises ne présentent jamais les mêmes opportunités. Chez l'une, le potentiel sera commercial. Chez une autre, il faudra repenser une offre, simplifier une organisation ou mieux exploiter un savoir-faire déjà là. Parfois, la meilleure opportunité existe déjà dans l'entreprise : personne ne l'a simplement poussée assez loin.",
+  amorce: "Une mission peut par exemple faire émerger :",
   cartes: [
     {
       titre: "Une offre à repositionner",
-      text: "Un excellent produit peut être difficile à vendre simplement parce qu'il est présenté selon la logique de l'entreprise plutôt que selon celle du client.",
+      texte: "Un excellent produit peut être difficile à vendre simplement parce qu'il est présenté selon la logique de l'entreprise plutôt que selon celle du client.",
     },
     {
       titre: "Une expérience à simplifier",
-      text: "Quelques étapes inutiles peuvent suffire à rendre un achat, une prise de contact ou un processus interne beaucoup plus compliqué qu'il ne devrait l'être.",
+      texte: "Quelques étapes inutiles peuvent suffire à rendre un achat, une prise de contact ou un processus interne beaucoup plus compliqué qu'il ne devrait l'être.",
     },
     {
       titre: "Un savoir-faire à mieux valoriser",
-      text: "Certaines entreprises possèdent déjà leur meilleur argument commercial. Elles ne l'utilisent simplement pas encore comme tel.",
+      texte: "Certaines entreprises possèdent déjà leur meilleur argument commercial. Elles ne l'utilisent simplement pas encore comme tel.",
     },
     {
       titre: "Du temps à récupérer",
-      text: "Une automatisation, un nouvel outil ou une organisation différente peut parfois libérer plusieurs heures de travail chaque semaine.",
+      texte: "Une automatisation, un nouvel outil ou une organisation différente peut parfois libérer plusieurs heures de travail chaque semaine.",
     },
     {
       titre: "Une dépense à questionner",
-      text: "Pas nécessairement pour économiser. Parfois simplement pour déplacer les moyens vers quelque chose de plus utile.",
+      texte: "Pas nécessairement pour économiser. Parfois simplement pour déplacer les moyens vers quelque chose de plus utile.",
     },
     {
       titre: "Une opportunité à développer",
-      text: "Un nouveau service, un segment de clientèle, un canal d'acquisition, une utilisation de l'IA, une manière différente de vendre ou de présenter l'offre.",
+      texte: "Un nouveau service, un segment de clientèle, un canal d'acquisition, une utilisation de l'IA, une manière différente de vendre ou de présenter l'offre.",
     },
   ],
-  chute:
-    "L'optimisation peut prendre beaucoup de formes. Le principe reste toujours le même : partir de ce qui existe pour créer davantage de valeur.",
+  citation1: "« L'optimisation peut prendre beaucoup de formes. Le principe reste toujours le même : ",
+  citation2: "partir de ce qui existe pour créer davantage de valeur",
+  citation3: ". »",
 };
 
-/* 04 · Un degré */
-export const manifeste = {
-  kicker: "Un degré",
-  title: "Il n'est pas toujours nécessaire de changer de direction.",
-  paragraphes: [
-    "Les transformations spectaculaires font de belles présentations.",
-    "Dans la réalité, les progrès les plus intéressants viennent souvent d'une succession de décisions beaucoup plus précises.",
-  ],
-  decisions: [
-    "Modifier une offre.",
-    "Déplacer un budget.",
-    "Simplifier une étape.",
-    "Automatiser une tâche.",
-    "Changer la manière de présenter un produit.",
-    "Développer quelque chose qui fonctionnait déjà.",
-  ],
-  suite: [
-    "Pris séparément, chacun de ces changements peut sembler relativement petit.",
-  ],
-  citation:
-    "Mais un degré d'écart au départ suffit à modifier considérablement l'endroit où l'on arrive.",
-  chute: [
-    "C'est de là que vient Un Degré.",
-    "Pas la transformation pour la transformation. Le bon changement, au bon endroit.",
-  ],
+/* Bande d'appel à l'action */
+export const ctaMail = {
+  titre: "Une demi-heure suffit pour savoir s'il y a quelque chose à aller chercher.",
+  texte: "Laissez votre e-mail : je vous réponds avec deux créneaux.",
+  bouton: "Demander un créneau",
+  rappel: "Ou appelez directement :",
 };
 
-/* 05 · Un exemple */
-export const cas = {
+/* 03 · Les terrains */
+export const terrains = {
+  n: "03",
+  kicker: "Où j'interviens",
+  titre: "De l'artisan seul au groupe de plusieurs centaines de personnes.",
+  lede: "Je ne travaille pas sur un secteur, je travaille sur une manière de fonctionner. Que l'entreprise soit un artisan seul ou un groupe de plusieurs centaines de personnes, les questions ne changent pas vraiment : je cherche comment l'argent rentre, où le temps se perd, et ce qui existe déjà sans être exploité.",
+  amorce: "Ce que ça donne, concrètement",
+  cas: [
+    ["L'artisan", "qui vit du bouche-à-oreille et veut des demandes entrantes."],
+    ["La PME", "dont l'offre a grossi sans jamais être remise à plat."],
+    ["Le commerce", "dont le parcours d'achat perd des clients en route."],
+    ["Le cabinet", "qui passe ses semaines sur des tâches automatisables."],
+    ["La marque", "qui vend bien un produit et n'a jamais développé le reste."],
+    ["Le grand compte", "qui veut tester vite, sans mobiliser six services."],
+  ] as [string, string][],
+};
+
+/* 04 · Un exemple */
+export const exemple = {
+  n: "04",
   kicker: "Un exemple",
   client: "CB Sols",
-  sousTitre: "Entreprise spécialisée dans les revêtements de sols · La Rochelle",
-  paragraphes: [
-    "CB Sols travaillait depuis plusieurs années essentiellement grâce au bouche-à-oreille.",
-    "L'entreprise avait pourtant investi dans un site internet et dans de la publicité. Le travail était bon. Les réalisations étaient nombreuses. Mais presque aucune demande commerciale n'arrivait par le digital.",
-    "Le problème n'était pas la qualité de l'entreprise. Il fallait simplement regarder différemment la manière dont son savoir-faire rencontrait la demande.",
-    "Nous avons repris son offre à partir de ce que recherchaient réellement ses futurs clients : leurs projets, leurs besoins et leur localisation.",
-    "Les réalisations existantes sont devenues des preuves. Le site est devenu un outil d'acquisition. Chaque contenu a commencé à répondre à une intention précise.",
-    "Huit jours de travail plus tard, le système était en place.",
-  ],
-  chiffresIntro: "Trois mois après :",
+  sousTitre: "Revêtements de sols · La Rochelle",
   chiffres: [
-    { value: "13", label: "nouvelles demandes de devis" },
-    { value: "× 3,6", label: "de trafic organique par rapport au trafic payant" },
+    { valeur: "0", texte: "demande entrante les trois années précédentes" },
+    { valeur: "13", texte: "demandes de devis entrantes en trois mois" },
+    { valeur: "× 3,6", texte: "de trafic organique face au trafic payant, à trois mois" },
+    { valeur: "8", texte: "jours de travail pour installer le système" },
   ],
-  chute: [
-    "Le métier de CB Sols n'avait pas changé. La qualité de son travail non plus.",
-    "Nous avions simplement changé la manière dont les clients pouvaient le trouver.",
+  paragraphes: [
+    "L'entreprise vendait bien, mais uniquement par bouche-à-oreille : le site et la publicité ne produisaient aucune demande commerciale. Nous avons donc repris le site comme un canal d'acquisition et non comme une vitrine, avec une page par métier, par type de projet et par ville, pour vraiment correspondre aux intentions de recherche des clients.",
+    "Les chantiers déjà réalisés sont devenus des preuves, avec photos avant / après et budget indicatif, et chaque page a reçu un formulaire court de demande de devis, un numéro de téléphone cliquable en tête, un rappel de disponibilité, puis le suivi des appels et des formulaires pour savoir exactement d'où viennent les demandes.",
+    "Huit jours de travail. Le métier n'a pas changé, la qualité du travail non plus : ce qui a changé, c'est le chemin entre la demande et l'entreprise.",
   ],
+  temoignage: "« On a commencé par parler de nos objectifs, de nos chantiers, de la façon dont on travaille au quotidien et de ce qu'on voulait développer. Il en est ressorti avec un plan clair, dans l'ordre, et on l'a fait. En quelques semaines le système tournait : aujourd'hui notre travail est montré comme il le mérite et il nous ramène des chantiers chaque mois. »",
+  attribution: "Valentin Prévoteau · dirigeant de CB Sols",
+  cta: "Voir ce que ça donnerait chez vous",
 };
 
-/* 06 · Qui suis-je ? */
+/* 05 · Qui suis-je */
 export const qui = {
+  n: "05",
   kicker: "Qui suis-je ?",
-  title:
-    "J'aime comprendre comment les choses fonctionnent. Et chercher comment elles pourraient mieux fonctionner.",
+  titre1: "J'aime comprendre comment les choses fonctionnent.",
+  titre2: "Et chercher comment elles pourraient mieux fonctionner.",
+  nom: "Jean-Baptiste Manson",
+  fonction: "Fondateur d'Un Degré",
   paragraphes: [
-    "Je m'appelle Jean-Baptiste Manson.",
-    "Avant Un Degré, j'ai cofondé et développé une agence spécialisée dans les expériences digitales et la réalité augmentée.",
-    "Pendant plusieurs années, j'y ai travaillé sur plus de 500 projets pour des entreprises comme Louis Vuitton, Yves Saint Laurent, Netflix, Ford, Hugo Boss, Castorama ou Puma.",
-    "Mais surtout, entreprendre m'a obligé à toucher à beaucoup de choses.",
-    "Vendre. Positionner une offre. Construire une marque. Trouver des clients. Produire. Recruter. Organiser. Tester de nouveaux outils. Gérer des prestataires. Comprendre pourquoi quelque chose fonctionne, ou pourquoi cela ne fonctionne pas.",
-    "C'est probablement de là que vient ma manière de travailler aujourd'hui.",
-    "Je ne regarde jamais un sujet complètement isolé du reste.",
+    "Avant Un Degré, j'ai cofondé et développé une agence spécialisée dans les expériences digitales et la réalité augmentée. J'y ai travaillé plusieurs années sur plus de 500 projets, pour des entreprises comme Louis Vuitton, Yves Saint Laurent, Netflix, Ford, Hugo Boss, Castorama ou Puma.",
+    "Cette expérience m'a appris à regarder une entreprise dans son ensemble, à repérer le potentiel encore inexploité et à identifier les leviers capables de le transformer en résultats concrets.",
+    "C'est de là que vient ma manière de travailler : écouter attentivement, questionner précisément et déceler, derrière les évidences du quotidien, les potentiels qui n'ont pas encore été formulés. Je les confronte ensuite à la réalité de l'entreprise, à leur impact et aux moyens qu'ils exigent, pour ne retenir que ceux qui méritent réellement d'être activés.",
   ],
-  liens: [
-    "Un problème de communication peut venir de l'offre.",
-    "Un problème commercial peut venir du parcours client.",
-    "Un problème de productivité peut venir d'un outil.",
-    "Une opportunité marketing peut nécessiter de revoir la manière dont un service est vendu.",
-  ],
-  chute:
-    "Je préfère donc commencer par comprendre l'ensemble avant de décider où intervenir.",
+  degre: "Un degré d'écart au départ suffit à modifier considérablement l'endroit où l'on arrive.",
 };
 
-/* 07 · L'audit */
-export const audit = {
-  kicker: "L'audit",
-  title: "Commençons par regarder.",
-  paragraphes: [
-    "L'audit est le point de départ.",
-    "Nous commençons par un premier rendez-vous pour comprendre votre entreprise, vos enjeux et les questions que vous vous posez.",
-    "Je viens ensuite observer et analyser votre activité.",
-    "À l'issue de ce travail, je vous présente mes conclusions et les pistes que je considère comme les plus intéressantes.",
-  ],
-  livrablesIntro: "Vous repartez avec :",
-  livrables: [
-    "une lecture extérieure de votre activité,",
-    "les opportunités identifiées,",
-    "les améliorations possibles,",
-    "leur niveau de priorité,",
-    "et une feuille de route pour avancer.",
-  ],
-  suitesIntro: "Ensuite, trois possibilités.",
-  suites: [
-    "Vous mettez ces recommandations en œuvre en interne.",
-    "Nous les réalisons ensemble.",
-    "Ou je constitue et pilote les bonnes ressources pour le faire.",
-  ],
-  chute:
-    "Dans tous les cas, vous savez pourquoi vous agissez, où vous allez et par quoi commencer.",
+/* Contact */
+export const contact = {
+  titre: "Et si on commençait simplement par parler de votre entreprise ?",
+  lede: "Vous n'avez pas besoin de savoir précisément ce qu'il faut changer avant de me contacter. C'est même une partie du travail. Parlez-moi de votre activité, de ce que vous cherchez à développer, de ce qui vous interroge ou simplement de cette impression qu'il existe encore des choses à améliorer.",
+  bouton: "Envoyer ma demande",
+  champMessage: "Votre entreprise, en quelques lignes",
 };
 
-/* 08 · Questions */
+/* 06 · Questions */
 export const questions = [
   {
     q: "Vous ne connaissez pas mon métier.",
@@ -304,13 +198,3 @@ export const questions = [
     a: "Non. Économiser 10 000 € inutilement dépensés est une optimisation. Trouver 100 000 € de chiffre d'affaires supplémentaire en est une autre. Simplifier le quotidien de cinq collaborateurs aussi. L'objectif est de créer davantage de valeur avec les ressources dont vous disposez.",
   },
 ];
-
-/* Clôture */
-export const cloture = {
-  title: "Et si on commençait simplement par parler de votre entreprise ?",
-  paragraphes: [
-    "Vous n'avez pas besoin de savoir précisément ce qu'il faut changer avant de me contacter. C'est même une partie du travail.",
-    "Parlez-moi de votre activité, de ce que vous cherchez à développer, de ce qui vous interroge ou simplement de cette impression qu'il existe encore des choses à améliorer.",
-    "On commencera par regarder.",
-  ],
-};
