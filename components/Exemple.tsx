@@ -10,7 +10,7 @@ export default function Exemple() {
     >
       <SecHead n={exemple.n}>{exemple.kicker}</SecHead>
 
-      <h2 className="m-0 mb-[14px] text-[clamp(52px,9vw,170px)] leading-[0.86] tracking-[-0.03em]">
+      <h2 className="m-0 mb-[14px] text-[clamp(52px,9vw,170px)] leading-[0.86]" style={{ letterSpacing: "-0.03em" }}>
         {exemple.client}
       </h2>
       <p className="m-0 mb-[50px] text-[14px] tracking-[0.08em] text-muted uppercase">
@@ -42,7 +42,14 @@ export default function Exemple() {
         ))}
       </div>
 
-      <blockquote className="quote max-w-none text-[clamp(22px,2.6vw,42px)] leading-[1.32]">
+      <blockquote
+        className="quote"
+        style={{
+          maxWidth: "none",
+          fontSize: "clamp(22px, 2.6vw, 42px)",
+          lineHeight: 1.32,
+        }}
+      >
         {exemple.temoignage}
       </blockquote>
       <div className="attrib mt-[26px]">{exemple.attribution}</div>

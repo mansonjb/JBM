@@ -56,7 +56,8 @@ export default function Contact() {
       className="pt-[clamp(70px,11vh,130px)] pb-[clamp(70px,11vh,130px)]"
       style={{ background: "#1F3BD8", color: "#F4EFE6" }}
     >
-      <h2 className="m-0 mb-10 text-[clamp(36px,5.8vw,108px)] leading-[0.92] tracking-[-0.03em]">
+      <h2 className="m-0 mb-10 text-[clamp(36px,5.8vw,108px)] leading-[0.92]"
+        style={{ letterSpacing: "-0.03em" }}>
         {contact.titre}
       </h2>
       <p className="lede m-0 mb-[30px] max-w-none">{contact.lede}</p>

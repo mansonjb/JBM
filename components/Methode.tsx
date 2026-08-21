@@ -11,7 +11,7 @@ export default function Methode() {
     >
       <SecHead n={methode.n}>{methode.kicker}</SecHead>
 
-      <h2 className="m-0 mb-[26px] text-[clamp(42px,7.2vw,132px)] leading-[1.06] tracking-[-0.03em]">
+      <h2 className="m-0 mb-[26px] text-[clamp(42px,7.2vw,132px)] leading-[1.06]" style={{ letterSpacing: "-0.03em" }}>
         {methode.titre}
       </h2>
 

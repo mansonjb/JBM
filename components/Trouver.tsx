@@ -43,7 +43,10 @@ export default function Trouver() {
         ))}
       </div>
 
-      <blockquote className="quote mt-[clamp(56px,9vh,100px)] max-w-none">
+      <blockquote
+        className="quote"
+        style={{ marginTop: "clamp(56px, 9vh, 100px)", maxWidth: "none" }}
+      >
         {trouver.citation1}
         <span className="blue">{trouver.citation2}</span>
         {trouver.citation3}

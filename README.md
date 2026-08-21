@@ -61,7 +61,11 @@ Seules adaptations, rendues nécessaires par Next :
 - la logique `DCLogic` de la bande défilante est réécrite en composant client
   (`components/Terrains.tsx`), avec la même rotation de 4,2 secondes et le même
   arrêt au survol,
-- les formulaires sont branchés sur la route `app/api/contact/route.ts`.
+- les formulaires sont branchés sur la route `app/api/contact/route.ts`,
+- le CSS de la maquette n'est pas dans un calque Tailwind, donc il l'emporte sur
+  les classes utilitaires : partout où la maquette réglait une propriété en
+  ligne (taille des citations, marges, approche des titres), on garde un style
+  en ligne, sinon la règle de classe reprend la main.
 
 Sections, dans l'ordre de la maquette : héros, 01 la méthode, 02 ce qu'on peut
 trouver, bande d'appel e-mail, 03 les terrains, 04 un exemple, 05 qui suis-je,
