@@ -1,72 +1,30 @@
-"use client";
+import Section from "./Section";
+import { plan, questions } from "@/lib/site";
 
-import { useState } from "react";
-import { questions } from "@/lib/site";
+/* L'intitulé vient du plan : Questions est la seule section sans kicker écrit par le client. */
+const etape = plan.find((repere) => repere.id === "questions");
 
+/**
+ * 08 · Qu'est-ce qui me retient encore ?
+ * Composant serveur : plus d'accordéon, plus de « + », plus de numérotation
+ * concurrente. Les cinq réponses sont visibles d'emblée, et l'unité scannable
+ * est le couple question (5/12) plus réponse (6/12, en colonne 7).
+ */
 export default function Questions() {
-  const [open, setOpen] = useState(0);
-
   return (
-    <section
+    <Section
       id="questions"
-      className="border-b border-line px-[6vw] py-[110px] lg:py-[130px]"
+      kicker={etape?.label ?? "Questions"}
+      title="Ce que vous vous demandez."
     >
-      <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-[clamp(40px,6vw,100px)]">
-        <div>
-          <div className="mb-8 text-[12px] tracking-[0.1em] text-muted uppercase">
-            08 · Questions
+      <div>
+        {questions.map((item) => (
+          <div key={item.q} className="u-grid border-b border-line py-8">
+            <p className="u-h3 u-serif italic md:col-span-5">{item.q}</p>
+            <p className="u-note md:col-span-6 md:col-start-7">{item.a}</p>
           </div>
-          <h2 className="u-display m-0 text-[clamp(38px,5.4vw,92px)]">
-            Ce que vous vous demandez.
-          </h2>
-        </div>
-
-        <div className="border-t border-line">
-          {questions.map((item, i) => {
-            const isOpen = open === i;
-            return (
-              <div
-                key={item.q}
-                className={`border-b transition-colors ${
-                  isOpen ? "border-blue" : "border-line"
-                }`}
-              >
-                <button
-                  type="button"
-                  onClick={() => setOpen(isOpen ? -1 : i)}
-                  aria-expanded={isOpen}
-                  aria-controls={`question-${i}`}
-                  className="group grid w-full cursor-pointer grid-cols-[44px_1fr_30px] items-baseline gap-4 bg-transparent py-6 text-left transition-colors md:grid-cols-[60px_1fr_30px]"
-                >
-                  <span className="u-num text-[13px] font-bold text-muted transition-colors group-hover:text-blue">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="u-serif text-[clamp(20px,1.8vw,27px)] leading-[1.25] italic transition-colors group-hover:text-blue">
-                    {item.q}
-                  </span>
-                  <span
-                    className={`text-right text-lg transition-all duration-200 group-hover:text-blue ${
-                      isOpen ? "text-blue" : "text-muted"
-                    }`}
-                    style={{ transform: isOpen ? "rotate(45deg)" : "none" }}
-                    aria-hidden="true"
-                  >
-                    +
-                  </span>
-                </button>
-                {isOpen && (
-                  <p
-                    id={`question-${i}`}
-                    className="m-0 mb-7 max-w-[66ch] pl-[60px] text-[clamp(15px,1.25vw,18px)] leading-[1.7] text-muted md:pl-[76px]"
-                  >
-                    {item.a}
-                  </p>
-                )}
-              </div>
-            );
-          })}
-        </div>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }

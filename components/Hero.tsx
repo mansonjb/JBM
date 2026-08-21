@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative flex flex-col md:h-[92vh] md:min-h-[640px] md:justify-end"
+      className="relative flex flex-col md:min-h-[92vh] md:justify-end"
     >
       <div className="relative h-[44vh] min-h-[280px] w-full md:absolute md:inset-0 md:h-auto md:min-h-0">
         <ImageSlot
@@ -39,26 +39,28 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative w-full border-b border-line px-[6vw] py-14 md:border-0 md:pb-[9vh] md:pt-0">
-        <div className="md:pointer-events-none md:max-w-[56%]">
-          <div className="mb-7 text-[12px] tracking-[0.14em] text-muted uppercase md:text-paper/80">
-            {hero.kicker}
+      <div className="u-hero-inner relative w-full border-b border-line md:border-0">
+        <div className="u-container">
+          <div className="u-grid">
+            <div className="col-span-7 lg:col-span-8">
+              <div className="u-surtitre u-mb-16 md:text-paper/80!">
+                {hero.kicker}
+              </div>
+              <h1 className="u-display u-mb-32 text-balance text-ink md:text-paper">
+                {hero.title}
+              </h1>
+              <p className="u-courant u-mb-32 md:text-paper/90">{hero.lead}</p>
+              <a href="#contact" className="u-cta">
+                {site.ctaPrimary}
+                <span className="u-cta-arrow" aria-hidden="true">
+                  →
+                </span>
+              </a>
+              <p className="u-note u-cta-micro md:text-paper/75!">
+                {site.ctaMicro}
+              </p>
+            </div>
           </div>
-          <h1 className="u-display m-0 mb-8 max-w-[17ch] text-balance text-ink [font-size:clamp(38px,5.4vw,86px)] md:max-w-none md:text-paper">
-            {hero.title}
-          </h1>
-          <p className="m-0 mb-9 max-w-[54ch] text-[clamp(16px,1.35vw,20px)] leading-[1.6] text-muted md:text-paper/90">
-            {hero.lead}
-          </p>
-          <a
-            href="#contact"
-            className="inline-block bg-blue px-7 py-4 text-[15px] font-semibold tracking-[0.04em] text-paper uppercase transition-colors hover:bg-ink md:pointer-events-auto md:hover:bg-paper md:hover:text-blue"
-          >
-            {site.ctaPrimary}
-            <span className="u-cta-arrow" aria-hidden="true">
-              →
-            </span>
-          </a>
         </div>
       </div>
     </section>

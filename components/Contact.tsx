@@ -51,55 +51,53 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-blue px-[6vw] py-[100px] text-paper lg:py-[120px]">
-      <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-[clamp(40px,6vw,110px)]">
-        <div>
-          <h2 className="u-display m-0 mb-8 max-w-[20ch] text-[clamp(34px,4.6vw,80px)]">
-            {cloture.title}
-          </h2>
-          {cloture.paragraphes.map((paragraphe, i) => (
-            <p
-              key={i}
-              className="m-0 mb-5 max-w-[46ch] text-[clamp(16px,1.35vw,20px)] leading-[1.6] text-paper/85"
-            >
-              {paragraphe}
-            </p>
-          ))}
-        </div>
+    <section id="contact" className="u-section u-section-blue">
+      <div className="u-container">
+        <div className="u-grid items-start">
+          <div className="md:col-span-6">
+            <h2 className="u-h2">{cloture.title}</h2>
+            <div className="u-pile-32 u-mt-32">
+              {cloture.paragraphes.map((paragraphe, i) => (
+                <p key={i} className="u-courant">
+                  {paragraphe}
+                </p>
+              ))}
+            </div>
+          </div>
 
-        <form onSubmit={onSubmit} className="grid gap-6">
-          <input name="nom" type="text" required placeholder="Nom" className={field} />
-          <input name="entreprise" type="text" placeholder="Entreprise" className={field} />
-          <input name="email" type="email" required placeholder="E-mail" className={field} />
-          <textarea
-            name="message"
-            rows={3}
-            placeholder="Message"
-            className={`${field} resize-none`}
-          />
-          <button
-            type="submit"
-            disabled={status === "sending"}
-            className="mt-3 cursor-pointer justify-self-start border-0 bg-paper px-7 py-4 text-[15px] font-semibold tracking-[0.04em] text-blue uppercase transition-opacity disabled:opacity-60"
+          <form
+            onSubmit={onSubmit}
+            className="grid gap-6 md:col-span-6 md:col-start-7"
           >
-            {status === "sending"
-              ? "Envoi…"
-              : site.ctaFinal}
-            <span className="u-cta-arrow" aria-hidden="true">
-              →
-            </span>
-          </button>
-          {message && (
-            <p
-              role="status"
-              className={`m-0 text-sm ${
-                status === "error" ? "text-paper" : "text-paper/85"
-              }`}
-            >
-              {message}
-            </p>
-          )}
-        </form>
+            <input name="nom" type="text" required placeholder="Nom" className={field} />
+            <input name="entreprise" type="text" placeholder="Entreprise" className={field} />
+            <input name="email" type="email" required placeholder="E-mail" className={field} />
+            <textarea
+              name="message"
+              rows={3}
+              placeholder="Message"
+              className={`${field} resize-none`}
+            />
+            <div className="justify-self-start">
+              <button
+                type="submit"
+                disabled={status === "sending"}
+                className="u-cta u-cta-invert transition-opacity disabled:opacity-60"
+              >
+                {status === "sending" ? "Envoi…" : site.ctaFinal}
+                <span className="u-cta-arrow" aria-hidden="true">
+                  →
+                </span>
+              </button>
+              <p className="u-note u-cta-micro text-paper/75">{site.ctaMicro}</p>
+            </div>
+            {message && (
+              <p role="status" className="u-note text-paper/75">
+                {message}
+              </p>
+            )}
+          </form>
+        </div>
       </div>
     </section>
   );

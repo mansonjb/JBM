@@ -1,81 +1,75 @@
 import Enonce from "./Enonce";
+import Section from "./Section";
 import { audit, site } from "@/lib/site";
 
+/**
+ * 07 · Qu'est-ce que j'achète exactement, et qu'est-ce que je reçois ?
+ * En-tête apparié (titre à gauche, phrase de cadre au rang référence en 9 à 12),
+ * puis 7+5 : rappel de méthode au rang note à gauche, cadre livrables à droite.
+ */
 export default function Audit() {
   return (
-    <section
+    <Section
       id="audit"
-      className="border-b border-line px-[6vw] py-[110px] lg:py-[130px]"
+      kicker={audit.kicker}
+      title={audit.title}
+      aside={<p className="u-reference">{audit.paragraphes[0]}</p>}
     >
-      <div className="mb-12 text-[12px] tracking-[0.1em] text-muted uppercase">
-        07 · {audit.kicker}
-      </div>
-
-      <h2 className="u-display m-0 mb-14 text-[clamp(44px,8vw,150px)] tracking-[-0.03em]">
-        {audit.title}
-      </h2>
-      <span className="u-reveal u-underline mt-8" />
-
-      <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-[clamp(40px,6vw,110px)]">
-        <div>
-          {audit.paragraphes.map((paragraphe, i) => (
-            <p
-              key={i}
-              className="m-0 mb-5 max-w-[56ch] text-[clamp(16px,1.3vw,19px)] leading-[1.7]"
-            >
-              {paragraphe}
+      <div className="u-grid">
+        {/* La méthode est exposée en 03 : on la rappelle au rang note, sans la redire au même poids. */}
+        <div className="u-pile-32 md:col-span-7">
+          {[1, 2, 3].map((i) => (
+            <p key={i} className="u-note">
+              {i === 2 ? (
+                <a href="#methode" className="u-link">
+                  {audit.paragraphes[i]}
+                </a>
+              ) : (
+                audit.paragraphes[i]
+              )}
             </p>
           ))}
         </div>
 
-        <div className="u-reveal u-frame p-7 lg:p-9">
-          <div className="u-bullet mb-5 text-[12px] tracking-[0.1em] text-muted uppercase">
-            {audit.livrablesIntro}
-          </div>
-          <ul className="m-0 list-none border-t border-line p-0">
+        {/* Le seul cadre livrables de la page : ce que le lecteur emporte. */}
+        <div className="u-reveal u-frame md:col-span-5 md:col-start-8">
+          <div className="u-bullet u-surtitre u-mb-32">{audit.livrablesIntro}</div>
+          <ul className="u-liste u-liste-simple">
             {audit.livrables.map((livrable) => (
-              <li
-                key={livrable}
-                className="u-row cursor-default border-b border-line py-4 pr-8 text-[clamp(16px,1.4vw,21px)] leading-[1.4]"
-              >
-                {livrable}
-              </li>
+              <li key={livrable}>{livrable}</li>
             ))}
           </ul>
         </div>
       </div>
 
-      <div className="mt-16 border-t border-line pt-12">
-        <div className="mb-8 text-[clamp(18px,1.7vw,26px)]">
-          {audit.suitesIntro}
-        </div>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-10">
-          {audit.suites.map((suite, i) => (
-            <div key={suite} className="u-reveal u-card border-t-2 border-blue pt-5">
-              <div className="u-num mb-3 flex items-baseline gap-3 text-sm font-bold text-blue">
-                <span>{String(i + 1).padStart(2, "0")}</span>
-                <span aria-hidden="true">→</span>
-              </div>
-              <p className="m-0 max-w-[34ch] text-[clamp(16px,1.3vw,19px)] leading-[1.5]">
-                {suite}
-              </p>
-            </div>
-          ))}
-        </div>
+      <div className="u-grid u-mt-96">
+        <p className="u-courant md:col-span-7">{audit.suitesIntro}</p>
       </div>
 
-      <div className="mt-14 flex flex-col items-start gap-8 lg:flex-row lg:items-end lg:justify-between">
-        <Enonce className="max-w-[720px]">{audit.chute}</Enonce>
-        <a
-          href="#contact"
-          className="inline-block bg-blue px-7 py-4 text-[15px] font-semibold tracking-[0.04em] text-paper uppercase transition-colors hover:bg-ink"
-        >
+      {/* Trois alternatives, pas une séquence : strictement identiques, sans numéro ni flèche. */}
+      <div className="u-grid u-mt-32">
+        {audit.suites.map((suite) => (
+          <div
+            key={suite}
+            className="u-reveal border-t-2 border-blue pt-6 md:col-span-4"
+          >
+            <p className="u-note">{suite}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Troisième et dernier bloc bleu de la page. */}
+      <Enonce>{audit.chute}</Enonce>
+
+      <div className="u-mt-64">
+        <a href="#contact" className="u-cta">
           {site.ctaAudit}
           <span className="u-cta-arrow" aria-hidden="true">
             →
           </span>
         </a>
+        <p className="u-note u-cta-micro">{site.ctaMicro}</p>
       </div>
-    </section>
+    </Section>
   );
 }

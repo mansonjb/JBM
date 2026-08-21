@@ -1,16 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { plan } from "@/lib/site";
 
-const reperes = [
-  { id: "regard", label: "01" },
-  { id: "methode", label: "02" },
-  { id: "exemple", label: "05" },
-  { id: "audit", label: "07" },
-  { id: "contact", label: "→" },
+/** Les huit numéros du plan, dans l'ordre, puis le repère Contact. */
+const reperes: { id: string; label: string | null }[] = [
+  ...plan.map((etape) => ({ id: etape.id, label: etape.n })),
+  { id: "contact", label: null },
 ];
 
-/** Rail de progression : où on en est dans la lecture, et un accès direct aux jalons. */
+/** Rail de progression : où on en est dans la lecture, et un accès direct aux huit temps. */
 export default function ScrollRail() {
   const [progress, setProgress] = useState(0);
   const [actif, setActif] = useState("");
@@ -32,8 +31,8 @@ export default function ScrollRail() {
               ? { id: repere.id, top: cible.getBoundingClientRect().top }
               : null;
           })
-          .filter(Boolean)
-          .filter((r) => r!.top <= window.innerHeight * 0.4)
+          .filter((r): r is { id: string; top: number } => r !== null)
+          .filter((r) => r.top <= window.innerHeight * 0.4)
           .pop();
         setActif(courant?.id ?? "");
       });
@@ -62,11 +61,18 @@ export default function ScrollRail() {
           <a
             key={repere.id}
             href={`#${repere.id}`}
-            className={`u-num pointer-events-auto text-[11px] tracking-[0.1em] transition-colors ${
-              actif === repere.id ? "text-blue" : "text-muted hover:text-blue"
+            aria-label={repere.label ?? "Contact"}
+            className={`u-surtitre u-num pointer-events-auto flex items-center transition-colors ${
+              actif === repere.id ? "text-blue" : "hover:text-blue"
             }`}
           >
-            {repere.label}
+            {repere.label ?? (
+              /* Contact : un carré bleu de 7px, même forme que la puce .u-bullet. */
+              <span
+                className="block h-[7px] w-[7px] bg-blue"
+                aria-hidden="true"
+              />
+            )}
           </a>
         ))}
       </div>

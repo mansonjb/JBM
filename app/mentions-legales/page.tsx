@@ -49,29 +49,31 @@ const blocs = [
 
 export default function MentionsLegales() {
   return (
-    <main className="mx-auto min-h-screen max-w-[68ch] px-[6vw] py-20 lg:py-28">
-      <Link
-        href="/"
-        className="text-[12px] tracking-[0.1em] text-muted uppercase hover:text-blue"
-      >
-        ← {site.name}
-      </Link>
+    <main className="u-section">
+      <div className="u-container">
+        {/* Lien de retour : rang sur-titre, soulignement bleu. Aucune flèche : elle est réservée au bouton d'action. */}
+        <Link href="/" className="u-surtitre u-link">
+          {site.name}
+        </Link>
 
-      <h1 className="u-display mt-8 mb-12 text-[clamp(38px,6vw,84px)]">
-        Mentions légales.
-      </h1>
+        {/* Rang titre, pas rang display : le display ne sert qu'au h1 du héros et à la signature. */}
+        <h1 className="u-h2 u-mt-32">Mentions légales.</h1>
+        <span className="u-underline is-in" aria-hidden="true" />
 
-      <div className="border-t border-line">
-        {blocs.map((bloc) => (
-          <section key={bloc.titre} className="border-b border-line py-8">
-            <h2 className="u-display mb-4 text-[22px]">{bloc.titre}</h2>
-            {bloc.lignes.map((ligne) => (
-              <p key={ligne} className="m-0 mb-2 text-[15px] leading-[1.65] text-muted">
-                {ligne}
-              </p>
-            ))}
-          </section>
-        ))}
+        <div className="u-mt-32 border-t border-line">
+          {blocs.map((bloc) => (
+            <section key={bloc.titre} className="border-b border-line py-6">
+              <h2 className="u-surtitre">{bloc.titre}</h2>
+              <div className="u-mt-16">
+                {bloc.lignes.map((ligne) => (
+                  <p key={ligne} className="u-note">
+                    {ligne}
+                  </p>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
       </div>
     </main>
   );

@@ -1,53 +1,31 @@
-import Graduation from "./Graduation";
-import Enonce from "./Enonce";
 import ImageSlot from "./ImageSlot";
+import Section from "./Section";
 import { deroule } from "@/lib/site";
 
+/**
+ * 02 · Comment ça se passe.
+ * Chapô 7/12, puis une rangée 8+4 : les cinq étapes en rangées titre puis texte,
+ * la photo d'atelier collante à droite. Aucun bloc bleu, aucune numérotation d'étape :
+ * la seule numérotation de la page est celle des sections.
+ */
 export default function Deroule() {
   return (
-    <section
-      id="methode"
-      className="border-b border-line bg-sand px-[6vw] py-[110px] lg:py-[130px]"
-    >
-      <div className="mb-12 text-[12px] tracking-[0.1em] text-muted uppercase">
-        02 · {deroule.kicker}
-      </div>
+    <Section id="methode" kicker={deroule.kicker} title={deroule.title}>
+      {/* La phrase d'amorce garde le rang énoncé, sans fond bleu : le quota de 3 est tenu ailleurs. */}
+      <p className="u-enonce u-reveal">{deroule.intro}</p>
 
-      <div className="mb-14 grid grid-cols-1 items-end gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-[clamp(40px,6vw,110px)]">
-        <div>
-          <Graduation marque={4} className="u-reveal mb-10 h-7 w-full max-w-[520px]" />
-          <h2 className="u-display m-0 max-w-[16ch] text-[clamp(40px,6.4vw,112px)] tracking-[-0.03em]">
-            {deroule.title}
-          </h2>
-          <span className="u-reveal u-underline mt-8" />
-        </div>
-        <Enonce className="max-w-[520px]">{deroule.intro}</Enonce>
-      </div>
-
-      <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.7fr)] lg:gap-[clamp(40px,5vw,90px)]">
-        <div className="border-t border-line">
-          {deroule.etapes.map((etape, i) => (
+      <div className="u-grid u-mt-64">
+        {/* Les cinq étapes, 8/12, empilées au pas de 64px. */}
+        <div className="u-pile-64 md:col-span-8">
+          {deroule.etapes.map((etape) => (
             <div
               key={etape.n}
-              className={`u-reveal u-card grid grid-cols-1 gap-4 border-b border-line py-9 md:grid-cols-[minmax(0,220px)_minmax(0,1fr)] md:gap-10`}
-              style={{ transitionDelay: `${i * 60}ms` }}
+              className="u-reveal grid grid-cols-1 gap-x-10 gap-y-4 border-t border-line py-8 md:grid-cols-[minmax(0,220px)_minmax(0,1fr)]"
             >
+              <h3 className="u-h3">{etape.titre}</h3>
               <div>
-                <div className="u-num mb-3 text-sm font-bold tracking-[0.06em] text-blue">
-                  {etape.n}
-                </div>
-                <h3 className="u-card-title u-display m-0 max-w-[14ch] text-[clamp(22px,2.1vw,32px)]">
-                  {etape.titre}
-                </h3>
-              </div>
-              <div>
-                {etape.paragraphes.map((paragraphe, j) => (
-                  <p
-                    key={j}
-                    className={`max-w-[62ch] text-[clamp(15px,1.25vw,18px)] leading-[1.7] text-muted ${
-                      j === etape.paragraphes.length - 1 ? "m-0" : "mt-0 mb-4"
-                    }`}
-                  >
+                {etape.paragraphes.map((paragraphe) => (
+                  <p key={paragraphe} className="u-courant">
                     {paragraphe}
                   </p>
                 ))}
@@ -56,17 +34,18 @@ export default function Deroule() {
           ))}
         </div>
 
-        <div className="u-reveal lg:sticky lg:top-28">
-          <div className="u-corners relative aspect-4/5">
+        {/* Photo d'appui, 4/12 en colonne 9, collante sous la barre, sans repères d'angle. */}
+        <div className="u-sticky self-start md:col-span-4 md:col-start-9">
+          <div className="u-reveal relative aspect-4/5">
             <ImageSlot
               brief="PHOTO 2 · une séance de travail : carnet, notes, schéma"
               src="/carnet-atelier.jpg"
               alt="Séance de travail : carnet, notes et schéma vision, clients, valeur, actions"
-              sizes="(max-width: 1024px) 100vw, 36vw"
+              sizes="(max-width: 768px) 100vw, 30vw"
             />
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

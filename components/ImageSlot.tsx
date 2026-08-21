@@ -47,7 +47,7 @@ export default function ImageSlot({
       aria-hidden="true"
     >
       <div className="absolute inset-3 border border-dashed border-blue/40" />
-      <span className="relative max-w-[26ch] px-6 text-center text-[11px] leading-relaxed tracking-[0.12em] text-blue uppercase">
+      <span className="u-surtitre u-slot-brief relative px-6 text-center text-blue">
         {brief}
       </span>
     </div>

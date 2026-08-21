@@ -1,51 +1,32 @@
-import Enonce from "./Enonce";
 import ImageSlot from "./ImageSlot";
+import Section from "./Section";
 import { qui } from "@/lib/site";
 
+/**
+ * 05 · Qui va regarder mon entreprise, et qu'a-t-il déjà fait ?
+ * Récit en 7/12, photos en 4/12, liens en 6+6, énoncé de clôture en 12/12.
+ * La phrase de références (paragraphes[2]) est promue au rang référence :
+ * elle se lit sans avoir lu le reste, et reste une seule phrase intacte.
+ */
 export default function Qui() {
   return (
-    <section className="border-b border-line bg-sand px-[6vw] py-[110px] lg:py-[130px]">
-      <div className="mb-12 text-[12px] tracking-[0.1em] text-muted uppercase">
-        06 · {qui.kicker}
-      </div>
-
-      <h2 className="u-display m-0 mb-14 max-w-[24ch] text-[clamp(32px,4.4vw,76px)]">
-        {qui.title}
-      </h2>
-      <span className="u-reveal u-underline mt-8" />
-
-      <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.75fr)] lg:gap-[clamp(40px,6vw,110px)]">
-        <div>
+    <Section id="qui" kicker={qui.kicker} title={qui.title}>
+      <div className="u-grid">
+        <div className="u-pile-32 md:col-span-7">
           {qui.paragraphes.map((paragraphe, i) => (
-            <p
-              key={i}
-              className="m-0 mb-5 max-w-[58ch] text-[clamp(16px,1.3vw,19px)] leading-[1.7] text-muted"
-            >
+            <p key={i} className={i === 2 ? "u-reference" : "u-courant"}>
               {paragraphe}
             </p>
           ))}
-
-          <ul className="m-0 mt-10 list-none border-t border-line p-0">
-            {qui.liens.map((lien) => (
-              <li
-                key={lien}
-                className="u-row cursor-default border-b border-line py-4 pr-8 text-[clamp(16px,1.4vw,21px)] leading-[1.4]"
-              >
-                {lien}
-              </li>
-            ))}
-          </ul>
-
-          <Enonce className="mt-12 max-w-[720px]">{qui.chute}</Enonce>
         </div>
 
-        <div className="u-reveal grid grid-cols-1 gap-8">
-          <div className="u-corners relative aspect-3/4">
+        <div className="u-reveal u-pile-32 md:col-span-4 md:col-start-9">
+          <div className="relative aspect-3/4">
             <ImageSlot
               brief="PHOTO 5 · portrait vertical, cadrage serré, lumière douce"
               src="/portrait.jpg"
               alt="Portrait de Jean-Baptiste Manson"
-              sizes="(max-width: 1024px) 100vw, 34vw"
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
           </div>
           <div className="relative aspect-3/2">
@@ -53,11 +34,28 @@ export default function Qui() {
               brief="PHOTO 4 · noir et blanc, en action devant un tableau"
               src="/plan-action.jpg"
               alt="Jean-Baptiste Manson devant un tableau, plan d'action au marqueur"
-              sizes="(max-width: 1024px) 100vw, 34vw"
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
           </div>
         </div>
       </div>
-    </section>
+
+      {/* Quatre faits parallèles de rang égal : liste à filets, variante simple, en 6+6. */}
+      <div className="u-grid u-mt-64">
+        <ul className="u-liste u-liste-simple md:col-span-6">
+          {qui.liens.slice(0, 2).map((lien) => (
+            <li key={lien}>{lien}</li>
+          ))}
+        </ul>
+        <ul className="u-liste u-liste-simple md:col-span-6">
+          {qui.liens.slice(2).map((lien) => (
+            <li key={lien}>{lien}</li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Énoncé de clôture : rang énoncé, sans fond bleu (quota de 3 tenu ailleurs). */}
+      <p className="u-enonce u-mt-96">{qui.chute}</p>
+    </Section>
   );
 }

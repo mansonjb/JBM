@@ -3,8 +3,6 @@ export const site = {
   domain: "https://undegre.fr",
   role: "Consultant en optimisation",
   email: "contact@undegre.fr",
-  phone: "+33 6 00 00 00 00",
-  phoneHref: "+33600000000",
   author: "Jean-Baptiste Manson · Consultant en optimisation",
   ctaPrimary: "Prendre un premier rendez-vous",
   ctaAudit: "Parler de votre entreprise",
@@ -12,14 +10,21 @@ export const site = {
   ctaMicro: "Un premier échange, sans engagement.",
 };
 
-export const nav = [
-  { href: "#regard", label: "Le regard" },
-  { href: "#methode", label: "La méthode" },
-  { href: "#exemple", label: "Un exemple" },
-  { href: "#audit", label: "L'audit" },
-  { href: "#contact", label: "Contact" },
+/**
+ * Le plan : seule source des huit numéros de section, de leurs ancres et des
+ * libellés de repérage (barre de navigation et rail). `nav` marque les quatre
+ * étapes reprises dans la barre.
+ */
+export const plan = [
+  { n: "01", id: "regard", label: "Le regard", nav: true },
+  { n: "02", id: "methode", label: "La méthode", nav: true },
+  { n: "03", id: "trouvailles", label: "Les trouvailles", nav: false },
+  { n: "04", id: "manifeste", label: "Un degré", nav: false },
+  { n: "05", id: "exemple", label: "Un exemple", nav: true },
+  { n: "06", id: "qui", label: "Qui suis-je", nav: false },
+  { n: "07", id: "audit", label: "L'audit", nav: true },
+  { n: "08", id: "questions", label: "Questions", nav: false },
 ];
-
 /* Héros */
 export const hero = {
   kicker: "Consultant en optimisation",

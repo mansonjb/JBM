@@ -1,6 +1,7 @@
 /**
  * Le degré, dessiné : deux rayons qui partent du même point et divergent d'un degré,
  * l'écart devenant lisible seulement à l'autre bout du trait.
+ * Quota de 1 sur la page, dans la section 02, 96px au-dessus de la citation qu'il illustre.
  */
 export default function AngleMark({
   className = "",
@@ -17,7 +18,7 @@ export default function AngleMark({
       viewBox="0 0 420 120"
       role="img"
       aria-label="Deux trajectoires qui divergent d'un degré"
-      className={`w-full max-w-[420px] overflow-visible ${className}`}
+      className={`u-schema ${className}`}
     >
       <line x1="8" y1="60" x2="404" y2="60" stroke={faible} strokeWidth="1.2" />
       <line
@@ -36,35 +37,19 @@ export default function AngleMark({
         strokeWidth="1.2"
       />
       <circle cx="8" cy="60" r="3.5" fill={trait} />
-      <text
-        x="108"
-        y="52"
-        fill={trait}
-        fontSize="13"
-        fontFamily="Archivo, sans-serif"
-        letterSpacing="0.12em"
-      >
+      {/* Les trois légendes sont au rang sur-titre : 12px, tracking 0.1em, capitales. */}
+      <text x="108" y="52" fill={trait} className="u-svg-label">
         1°
       </text>
-      <text
-        x="404"
-        y="16"
-        fill={trait}
-        fontSize="11"
-        textAnchor="end"
-        fontFamily="Archivo, sans-serif"
-        letterSpacing="0.12em"
-      >
+      <text x="404" y="16" fill={trait} textAnchor="end" className="u-svg-label">
         AILLEURS
       </text>
       <text
         x="404"
         y="76"
         fill={faible}
-        fontSize="11"
         textAnchor="end"
-        fontFamily="Archivo, sans-serif"
-        letterSpacing="0.12em"
+        className="u-svg-label"
       >
         MÊME ENDROIT
       </text>

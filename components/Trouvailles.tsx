@@ -1,55 +1,45 @@
-import Enonce from "./Enonce";
+import Section from "./Section";
 import { trouvailles } from "@/lib/site";
 
+/**
+ * 04 · Ce qu'on peut trouver — le catalogue d'exemples de même rang.
+ * En-tête 12/12 (filet rattaché au titre), chapô 7/12, six cartes en 4+4+4,
+ * énoncé de clôture 12/12 sans fond : le bloc bleu est réservé aux sections 02, 06 et 07.
+ */
 export default function Trouvailles() {
   return (
-    <section className="border-b border-line px-[6vw] py-[110px] lg:py-[130px]">
-      <div className="mb-12 text-[12px] tracking-[0.1em] text-muted uppercase">
-        03 · {trouvailles.kicker}
-      </div>
-
-      <div className="mb-14 grid grid-cols-1 items-end gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-[clamp(40px,6vw,110px)]">
-        <h2 className="u-display m-0 max-w-[24ch] text-[clamp(32px,4.4vw,76px)]">
-          {trouvailles.title}
-        </h2>
-      <span className="u-reveal u-underline mt-8" />
-        <div className="lg:pb-2">
-          {trouvailles.intro.map((paragraphe, i) => (
-            <p
-              key={i}
-              className={`max-w-[52ch] text-[clamp(15px,1.25vw,18px)] leading-[1.65] text-muted ${
-                i === trouvailles.intro.length - 1 ? "m-0" : "mt-0 mb-4"
-              }`}
-            >
+    <Section
+      id="trouvailles"
+      kicker={trouvailles.kicker}
+      title={trouvailles.title}
+    >
+      {/* Chapô : trois paragraphes au rang courant, 7/12, 32px entre eux. */}
+      <div className="u-grid">
+        <div className="u-reveal md:col-span-7">
+          {trouvailles.intro.map((paragraphe) => (
+            <p key={paragraphe} className="u-courant">
               {paragraphe}
             </p>
           ))}
         </div>
       </div>
 
-      <div className="grid grid-cols-1 border-t border-line sm:grid-cols-2 lg:grid-cols-3">
+      {/* Six cartes de même rang : filet supérieur, aucun numéro, aucun survol. */}
+      <div className="u-cartes">
         {trouvailles.cartes.map((carte, i) => (
           <div
             key={carte.titre}
-            className={`u-reveal u-card border-b border-line px-0 py-9 sm:px-6 lg:px-8 lg:first:pl-0 ${
-              i % 3 === 2 ? "" : "lg:border-r"
-            }`}
+            className="u-reveal"
             style={{ transitionDelay: `${(i % 3) * 60}ms` }}
           >
-            <div className="u-num mb-4 text-[12px] font-bold tracking-[0.1em] text-blue">
-              {String(i + 1).padStart(2, "0")}
-            </div>
-            <h3 className="u-card-title u-display m-0 mb-4 max-w-[16ch] text-[clamp(20px,1.9vw,28px)]">
-              {carte.titre}
-            </h3>
-            <p className="m-0 max-w-[42ch] text-[clamp(15px,1.2vw,17px)] leading-[1.65] text-muted">
-              {carte.text}
-            </p>
+            <h3 className="u-h3">{carte.titre}</h3>
+            <p className="u-note u-mt-16">{carte.text}</p>
           </div>
         ))}
       </div>
 
-      <Enonce className="mt-16 max-w-[860px]">{trouvailles.chute}</Enonce>
-    </section>
+      {/* La phrase de conclusion : rang énoncé, sans fond bleu. */}
+      <p className="u-enonce u-reveal">{trouvailles.chute}</p>
+    </Section>
   );
 }

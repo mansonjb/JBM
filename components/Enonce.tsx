@@ -1,20 +1,19 @@
 type Props = {
   children: React.ReactNode;
-  /** Sur fond bleu, le cadre passe en crème. */
+  /** Sur fond bleu, le bloc s'inverse en crème. */
   invert?: boolean;
   className?: string;
 };
 
-/** La phrase qui porte une section : encadrée, jamais surlignée. */
+/**
+ * Énoncé bleu : la phrase de bascule d'une section, toujours en clôture.
+ * Quota de 3 sur la page. Les autres énoncés se posent en `<p className="u-enonce">`,
+ * sans fond. Aucune flèche à l'intérieur.
+ */
 export default function Enonce({ children, invert, className = "" }: Props) {
   return (
     <div className={`u-quote ${invert ? "u-quote-invert" : ""} ${className}`}>
-      <span className="u-quote-arrow" aria-hidden="true">
-        →
-      </span>
-      <p className="u-serif m-0 text-[clamp(24px,2.8vw,44px)] leading-[1.24]">
-        {children}
-      </p>
+      <p className="u-enonce">{children}</p>
     </div>
   );
 }

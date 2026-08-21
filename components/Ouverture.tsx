@@ -1,33 +1,39 @@
-import Enonce from "./Enonce";
 import { ouverture } from "@/lib/site";
 
-/** Les formes que prend une opportunité, puis ce que je fais avec. */
+/**
+ * Bandeau hors plan : ni numéro, ni titre, ni ancre. Il se lit comme la suite du héros.
+ * Le sand ne signifie qu'une chose sur la page : ce bloc n'appartient pas aux huit temps.
+ */
 export default function Ouverture() {
-  return (
-    <section className="border-b border-line bg-sand px-[6vw] py-[100px] lg:py-[120px]">
-      <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-[clamp(40px,6vw,110px)]">
-        <ul className="m-0 list-none border-t border-line p-0">
-          {ouverture.pistes.map((piste, i) => (
-            <li
-              key={piste}
-              className="u-reveal u-row cursor-default border-b border-line py-4 pr-8 text-[clamp(17px,1.6vw,23px)] leading-[1.4]"
-              style={{ transitionDelay: `${i * 50}ms` }}
-            >
-              {piste}
-            </li>
-          ))}
-        </ul>
+  const gauche = ouverture.pistes.slice(0, 4);
+  const droite = ouverture.pistes.slice(4);
 
-        <div className="lg:pt-6">
-          <Enonce className="mb-8">{ouverture.paragraphes[0]}</Enonce>
-          {ouverture.paragraphes.slice(1).map((paragraphe, i) => (
-            <p
-              key={i}
-              className="u-serif m-0 mb-6 max-w-[42ch] text-[clamp(19px,1.7vw,26px)] leading-[1.45]"
-            >
-              {paragraphe}
-            </p>
-          ))}
+  return (
+    <section className="u-section bg-sand">
+      <div className="u-container">
+        {/* Sept faits parallèles de rang égal, en 6+6. Aucun survol : rien n'est cliquable. */}
+        <div className="u-grid">
+          <ul className="u-liste u-liste-simple u-reveal col-span-6">
+            {gauche.map((piste) => (
+              <li key={piste}>{piste}</li>
+            ))}
+          </ul>
+          <ul className="u-liste u-liste-simple u-reveal col-span-6">
+            {droite.map((piste) => (
+              <li key={piste}>{piste}</li>
+            ))}
+          </ul>
+        </div>
+
+        {/* « les » désigne les sept pistes : l'énoncé vient donc après la liste, jamais avant. */}
+        <p className="u-enonce u-reveal u-mt-96">{ouverture.paragraphes[0]}</p>
+
+        {/* Le seul résumé de la méthode ; la section 03 la développe. */}
+        <div className="u-grid u-mt-64">
+          <div className="u-reveal col-span-7">
+            <p className="u-courant">{ouverture.paragraphes[1]}</p>
+            <p className="u-courant">{ouverture.paragraphes[2]}</p>
+          </div>
         </div>
       </div>
     </section>

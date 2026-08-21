@@ -1,89 +1,61 @@
 import Enonce from "./Enonce";
-import { cas } from "@/lib/site";
+import Eyebrow from "./Eyebrow";
+import Section from "./Section";
+import { cas, site } from "@/lib/site";
 
+/**
+ * 06 · Un exemple — la preuve. En-tête apparié (« CB Sols » en 1 à 8, le sous-titre
+ * en 9 à 12), bandeau chiffres 12/12 au premier niveau de lecture, récit 7/12,
+ * bloc bleu de clôture, puis le seul bouton de la section.
+ */
 export default function Cas() {
   return (
-    <section
+    <Section
       id="exemple"
-      className="border-b border-line px-[6vw] py-[110px] lg:py-[130px]"
+      kicker={cas.kicker}
+      title={cas.client}
+      aside={<Eyebrow>{cas.sousTitre}</Eyebrow>}
     >
-      <div className="mb-12 text-[12px] tracking-[0.1em] text-muted uppercase">
-        05 · {cas.kicker}
+      {/* La seule preuve chiffrée du site : 12/12, sans cadre, filets haut et bas. */}
+      <div className="u-chiffres u-reveal">
+        <Eyebrow className="u-bullet">{cas.chiffresIntro}</Eyebrow>
+        <div className="u-grid u-mt-32">
+          {cas.chiffres.map((chiffre) => (
+            <div key={chiffre.value} className="md:col-span-6">
+              <div className="u-chiffre">{chiffre.value}</div>
+              <p className="u-note u-note-legende u-mt-24">{chiffre.label}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <div className="mb-14 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:gap-10">
-        <h2 className="u-display m-0 text-[clamp(40px,7vw,124px)] tracking-[-0.03em]">
-          {cas.client}
-        </h2>
-      <span className="u-reveal u-underline mt-8" />
-        <span className="text-[13px] tracking-[0.06em] text-muted uppercase">
-          {cas.sousTitre}
-        </span>
-      </div>
-
-      <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.75fr)] lg:gap-[clamp(40px,6vw,110px)]">
-        <div>
-          {cas.paragraphes.map((paragraphe, i) => (
-            <p
-              key={i}
-              className={`max-w-[60ch] text-[clamp(16px,1.3vw,19px)] leading-[1.7] ${
-                i === 0 ? "mt-0 mb-5 text-ink" : "mt-0 mb-5 text-muted"
-              }`}
-            >
+      {/* Le récit : rang courant, 7/12. La durée monte d'un cran, au rang référence. */}
+      <div className="u-grid">
+        <div className="u-reveal md:col-span-7">
+          {cas.paragraphes.slice(0, 5).map((paragraphe) => (
+            <p key={paragraphe} className="u-courant">
               {paragraphe}
             </p>
           ))}
-        </div>
-
-        <div className="u-reveal u-frame relative p-7 lg:p-9">
-          <svg
-            viewBox="0 0 80 60"
-            aria-hidden="true"
-            className="pointer-events-none absolute -top-8 -left-6 hidden h-[46px] w-[62px] overflow-visible lg:block"
-          >
-            <path
-              d="M6 4 C26 12 40 24 54 40"
-              fill="none"
-              stroke="#1F3BD8"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-            <path
-              d="M54 40 L42 38 M54 40 L52 28"
-              fill="none"
-              stroke="#1F3BD8"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-          </svg>
-          <div className="u-bullet mb-6 text-[12px] tracking-[0.1em] text-muted uppercase">
-            {cas.chiffresIntro}
-          </div>
-          <div className="border-t border-line">
-            {cas.chiffres.map((chiffre, i) => (
-              <div
-                key={chiffre.value}
-                className={`border-b border-line py-7`}
-              >
-                <div className="u-display u-num text-[clamp(34px,3.6vw,62px)] text-blue">
-                  {chiffre.value}
-                </div>
-                <p className="mt-3 max-w-[30ch] text-[14px] leading-[1.5] text-muted">
-                  {chiffre.label}
-                </p>
-              </div>
-            ))}
-          </div>
+          <p className="u-reference u-mt-32">{cas.paragraphes[5]}</p>
         </div>
       </div>
 
-      <div className="mt-14 grid grid-cols-1 items-start gap-8 border-t border-line pt-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-[clamp(40px,6vw,110px)]">
-        <p className="u-serif m-0 max-w-[34ch] text-[clamp(22px,2.4vw,36px)] leading-[1.32]">
-          {cas.chute[0]}
-        </p>
-        <Enonce>{cas.chute[1]}</Enonce>
+      <div className="u-grid u-mt-64">
+        <p className="u-courant u-reveal md:col-span-7">{cas.chute[0]}</p>
       </div>
 
-    </section>
+      <Enonce>{cas.chute[1]}</Enonce>
+
+      <div className="u-mt-64">
+        <a href="#contact" className="u-cta">
+          {site.ctaPrimary}
+          <span className="u-cta-arrow" aria-hidden="true">
+            →
+          </span>
+        </a>
+        <p className="u-note u-cta-micro">{site.ctaMicro}</p>
+      </div>
+    </Section>
   );
 }
