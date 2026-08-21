@@ -11,11 +11,13 @@ export default function Trouvailles() {
         <div className="u-surtitre">03 · {trouvailles.kicker}</div>
         <h2 className="u-titre">{trouvailles.title}</h2>
         <div className="mt-[var(--pas-40)]">
-          {trouvailles.intro.map((paragraphe) => (
+          <div className="u-texte u-texte-2">
+            {trouvailles.intro.map((paragraphe) => (
             <p key={paragraphe} className="u-corps">
               {paragraphe}
             </p>
           ))}
+          </div>
         </div>
       </Bande>
 

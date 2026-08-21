@@ -18,11 +18,13 @@ export default function Qui() {
         <div className="u-surtitre">06 · {qui.kicker}</div>
         <h2 className="u-titre">{qui.title}</h2>
         <div className="mt-[var(--pas-40)]">
-          {qui.paragraphes.map((paragraphe) => (
+          <div className="u-texte u-texte-2">
+            {qui.paragraphes.map((paragraphe) => (
             <p key={paragraphe} className="u-corps">
               {paragraphe}
             </p>
           ))}
+          </div>
         </div>
       </Bande>
 

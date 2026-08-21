@@ -11,11 +11,13 @@ export default function Regard() {
         <div className="u-surtitre">01 · {regard.kicker}</div>
         <h2 className="u-titre">{regard.title}</h2>
         <div className="mt-[var(--pas-40)]">
-          {regard.intro.map((paragraphe) => (
+          <div className="u-texte u-texte-1">
+            {regard.intro.map((paragraphe) => (
             <p key={paragraphe} className="u-corps">
               {paragraphe}
             </p>
           ))}
+          </div>
         </div>
       </Bande>
 
@@ -25,11 +27,13 @@ export default function Regard() {
       </Bande>
 
       <Bande fond="paper">
-        {regard.suite.map((paragraphe) => (
+        <div className="u-texte u-texte-2">
+            {regard.suite.map((paragraphe) => (
           <p key={paragraphe} className="u-corps">
             {paragraphe}
           </p>
         ))}
+          </div>
       </Bande>
 
       <Bande fond="encre" serree>

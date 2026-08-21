@@ -12,11 +12,13 @@ export default function Audit() {
         <div className="u-surtitre">07 · {audit.kicker}</div>
         <h2 className="u-titre">{audit.title}</h2>
         <div className="mt-[var(--pas-40)]">
-          {audit.paragraphes.map((paragraphe) => (
+          <div className="u-texte u-texte-2">
+            {audit.paragraphes.map((paragraphe) => (
             <p key={paragraphe} className="u-corps">
               {paragraphe}
             </p>
           ))}
+          </div>
         </div>
       </Bande>
 

@@ -18,11 +18,13 @@ export default function Ouverture() {
       </Bande>
 
       <Bande fond="paper">
+        <div className="u-texte u-texte-2">
         {ouverture.paragraphes.slice(1).map((paragraphe) => (
           <p key={paragraphe} className="u-corps">
             {paragraphe}
           </p>
         ))}
+        </div>
         <div className="mt-[var(--pas-64)]">
           <Action>{site.ctaPrimary}</Action>
         </div>

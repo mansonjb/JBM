@@ -12,11 +12,13 @@ export default function Cas() {
         <h2 className="u-titre">{cas.client}</h2>
         <p className="u-note mt-[var(--pas-12)]">{cas.sousTitre}</p>
         <div className="mt-[var(--pas-40)]">
-          {cas.paragraphes.map((paragraphe) => (
+          <div className="u-texte u-texte-2">
+            {cas.paragraphes.map((paragraphe) => (
             <p key={paragraphe} className="u-corps">
               {paragraphe}
             </p>
           ))}
+          </div>
         </div>
       </Bande>
 

@@ -51,7 +51,11 @@ La page est un **empilement de bandes pleine largeur**. Une bande porte un fond,
 une idée, et rien d'autre. Les fonds alternent crème, sable, bleu et encre, et
 c'est cette alternance qui structure la lecture, pas des colonnes.
 
-Sept rangs typographiques, pas un de plus. Quatre pas verticaux. Trois
+**Aucune mesure n'est plafonnée en `ch` sur les rangs qui doivent tenir la
+largeur** : titres et citations n'ont pas de largeur maximale, leur corps grandit
+avec la page. Les blocs de plusieurs paragraphes passent en deux colonnes
+au-delà de 1100 px, ce qui garde une ligne lisible tout en occupant la bande
+entière. Sept rangs typographiques, pas un de plus. Quatre pas verticaux. Trois
 dispositifs seulement : la **citation** (guillemets français, serif, attribution)
 pour une phrase de posture, les **items** (rangées numérotées pleine largeur)
 pour une suite de faits de même rang, et l'**action** (seul objet cliquable

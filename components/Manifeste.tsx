@@ -11,11 +11,13 @@ export default function Manifeste() {
         <div className="u-surtitre">04 · {manifeste.kicker}</div>
         <h2 className="u-titre">{manifeste.title}</h2>
         <div className="mt-[var(--pas-40)]">
-          {manifeste.paragraphes.map((paragraphe) => (
+          <div className="u-texte u-texte-2">
+            {manifeste.paragraphes.map((paragraphe) => (
             <p key={paragraphe} className="u-corps">
               {paragraphe}
             </p>
           ))}
+          </div>
         </div>
       </Bande>
 
@@ -23,11 +25,13 @@ export default function Manifeste() {
         <div className="u-surtitre">Ce qu'on décide, concrètement</div>
         <Items items={manifeste.decisions.map((decision) => ({ titre: decision }))} />
         <div className="mt-[var(--pas-40)]">
-          {manifeste.suite.map((paragraphe) => (
+          <div className="u-texte u-texte-1">
+            {manifeste.suite.map((paragraphe) => (
             <p key={paragraphe} className="u-corps">
               {paragraphe}
             </p>
           ))}
+          </div>
         </div>
       </Bande>
 
