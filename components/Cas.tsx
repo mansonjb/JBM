@@ -9,35 +9,33 @@ export default function Cas() {
     <>
       <Bande fond="paper" id="exemple">
         <div className="u-surtitre">05 · {cas.kicker}</div>
-        <h2 className="u-titre">{cas.client}</h2>
-        <p className="u-note mt-[var(--pas-12)]">{cas.sousTitre}</p>
-        <div className="mt-[var(--pas-40)]">
-          <div className="u-texte u-texte-2">
-            {cas.paragraphes.map((paragraphe) => (
+        <div className="flex flex-col items-start justify-between gap-[var(--pas-24)] lg:flex-row lg:items-end">
+          <h2 className="u-titre">{cas.client}</h2>
+          <p className="u-note">{cas.sousTitre}</p>
+        </div>
+
+        <div className="u-texte u-texte-2 mt-[var(--pas-64)]">
+          {cas.paragraphes.map((paragraphe) => (
             <p key={paragraphe} className="u-corps">
               {paragraphe}
             </p>
           ))}
-          </div>
         </div>
       </Bande>
 
-      <Bande fond="encre" serree>
+      <Bande fond="encre">
         <div className="u-surtitre">{cas.chiffresIntro}</div>
-        <div className="grid grid-cols-1 gap-[var(--pas-64)] md:grid-cols-2">
+        <div className="u-preuve">
           {cas.chiffres.map((chiffre) => (
             <div key={chiffre.value} className="u-reveal">
               <div className="u-chiffre">{chiffre.value}</div>
-              <p className="u-note mt-[var(--pas-24)] max-w-[34ch]">
+              <p className="u-corps mt-[var(--pas-24)] max-w-[30ch]">
                 {chiffre.label}
               </p>
             </div>
           ))}
         </div>
-      </Bande>
-
-      <Bande fond="paper">
-        <p className="u-corps">{cas.chute[0]}</p>
+        <p className="u-corps mt-[var(--pas-64)] max-w-[46ch]">{cas.chute[0]}</p>
       </Bande>
 
       <Bande fond="bleu">

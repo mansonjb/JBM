@@ -399,3 +399,234 @@ section[id] {
     transition: none;
   }
 }
+
+/* ============================================================
+   9. VOCABULAIRE DE MISE EN AVANT
+   Chaque dispositif a un rôle distinct, et deux dispositifs
+   de même nature ne se suivent jamais.
+   ============================================================ */
+
+/* La carte : un élément d'un catalogue, encadré, autonome. */
+.u-carte {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pas-12);
+  border: 1px solid var(--color-line);
+  background: var(--color-paper);
+  padding: clamp(24px, 2.2vw, 40px);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.u-carte:hover {
+  border-color: var(--color-blue);
+  background: color-mix(in srgb, var(--color-blue) 4%, var(--color-paper));
+}
+.u-carte-titre {
+  font-family: var(--font-display), Impact, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: clamp(19px, 1.6vw, 28px);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+.u-carte-texte {
+  font-size: clamp(15px, 1.05vw, 18px);
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+.u-carte-num {
+  font-size: var(--fs-note);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-blue);
+}
+
+/* Grille de cartes, asymétrique : la première tient deux colonnes. */
+.u-grille {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(16px, 1.4vw, 24px);
+}
+@media (min-width: 768px) {
+  .u-grille {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1100px) {
+  .u-grille {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .u-grille-large {
+    grid-column: span 2;
+  }
+}
+
+/* L'étiquette : un mot posé, court, sans développement. */
+.u-etiquettes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(10px, 0.9vw, 16px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.u-etiquette {
+  border: 1px solid var(--color-line);
+  padding: 14px 22px;
+  font-size: clamp(16px, 1.35vw, 23px);
+  line-height: 1.2;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.u-etiquette:hover {
+  border-color: var(--color-blue);
+  color: var(--color-blue);
+}
+.u-fond-bleu .u-etiquette,
+.u-fond-encre .u-etiquette {
+  border-color: color-mix(in srgb, var(--color-paper) 40%, transparent);
+}
+.u-fond-bleu .u-etiquette:hover,
+.u-fond-encre .u-etiquette:hover {
+  border-color: var(--color-paper);
+  color: var(--color-paper);
+}
+
+/* La frise : une suite d'étapes reliées par un trait. */
+.u-frise {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.u-frise::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 9px;
+  width: 1px;
+  background: var(--color-line);
+}
+.u-etape {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--pas-12);
+  padding: 0 0 var(--pas-64) 48px;
+}
+.u-etape:last-child {
+  padding-bottom: 0;
+}
+.u-etape::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 3px;
+  width: 13px;
+  height: 13px;
+  background: var(--color-blue);
+}
+@media (min-width: 900px) {
+  .u-etape {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+    gap: clamp(32px, 4vw, 80px);
+    padding-left: 72px;
+  }
+}
+.u-etape-num {
+  font-size: var(--fs-note);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-blue);
+  margin-bottom: var(--pas-12);
+}
+.u-etape-titre {
+  font-family: var(--font-display), Impact, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: clamp(22px, 2.2vw, 40px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+/* L'encadré : ce que le lecteur emporte. Un seul rôle sur la page. */
+.u-encadre {
+  border: 2px solid var(--color-blue);
+  padding: clamp(28px, 3vw, 56px);
+  background: color-mix(in srgb, var(--color-blue) 4%, transparent);
+}
+.u-encadre-label {
+  display: inline-block;
+  background: var(--color-blue);
+  color: var(--color-paper);
+  padding: 8px 16px;
+  font-size: var(--fs-note);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: var(--pas-40);
+}
+.u-encadre-liste {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--pas-24);
+}
+@media (min-width: 900px) {
+  .u-encadre-liste {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(40px, 4vw, 80px);
+  }
+}
+.u-encadre-item {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 16px;
+  align-items: baseline;
+  font-size: clamp(17px, 1.4vw, 24px);
+  line-height: 1.35;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-blue) 25%, transparent);
+  padding-bottom: var(--pas-12);
+}
+.u-encadre-item::before {
+  content: "→";
+  color: var(--color-blue);
+}
+
+/* L'annotation manuscrite : jamais posée sur une photo, toujours à côté. */
+.u-main {
+  font-family: var(--font-hand), cursive;
+  font-size: clamp(24px, 2vw, 34px);
+  line-height: 1;
+  color: var(--color-blue);
+}
+
+/* Le chiffre isolé : une preuve, posée seule. */
+.u-preuve {
+  display: grid;
+  gap: var(--pas-24);
+}
+@media (min-width: 900px) {
+  .u-preuve {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(48px, 5vw, 120px);
+  }
+}
+
+/* Question ouverte : intitulé serif, réponse en dessous, dans une carte. */
+.u-qa {
+  display: grid;
+  gap: clamp(16px, 1.4vw, 28px);
+}
+@media (min-width: 900px) {
+  .u-qa {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.u-qa-question {
+  font-family: var(--font-serif), Georgia, serif;
+  font-style: italic;
+  font-size: clamp(22px, 1.9vw, 32px);
+  line-height: 1.2;
+  margin-bottom: var(--pas-12);
+}

@@ -48,22 +48,29 @@ npm start        # http://localhost:3083
 ## Le système
 
 La page est un **empilement de bandes pleine largeur**. Une bande porte un fond,
-une idée, et rien d'autre. Les fonds alternent crème, sable, bleu et encre, et
-c'est cette alternance qui structure la lecture, pas des colonnes.
+une idée, et rien d'autre. Les fonds alternent crème, sable, bleu et encre.
 
-**Aucune mesure n'est plafonnée en `ch` sur les rangs qui doivent tenir la
-largeur** : titres et citations n'ont pas de largeur maximale, leur corps grandit
-avec la page. Les blocs de plusieurs paragraphes passent en deux colonnes
-au-delà de 1100 px, ce qui garde une ligne lisible tout en occupant la bande
-entière. Sept rangs typographiques, pas un de plus. Quatre pas verticaux. Trois
-dispositifs seulement : la **citation** (guillemets français, serif, attribution)
-pour une phrase de posture, les **items** (rangées numérotées pleine largeur)
-pour une suite de faits de même rang, et l'**action** (seul objet cliquable
-autorisé à porter une flèche).
+**Aucune mesure n'est plafonnée en `ch`** sur les rangs qui doivent tenir la
+largeur : titres et citations grandissent avec la page. Les blocs de plusieurs
+paragraphes passent en deux colonnes au-delà de 1100 px.
 
-Six appels à l'action jalonnent la page : barre de navigation, héros, après
-l'ouverture, après la méthode, après l'exemple, après l'audit, plus le
-formulaire.
+**Vocabulaire de mise en avant.** Chaque dispositif a un rôle distinct, et deux
+dispositifs de même nature ne se suivent jamais :
+
+| Dispositif | Rôle | Où |
+| --- | --- | --- |
+| Citation | Une phrase de posture, guillemets et attribution | 6 fois, toujours en clôture |
+| Liste numérotée | Une suite de faits de même rang, développés | Ouverture |
+| Étiquettes | Des constats courts, sans développement | 01 et 04 |
+| Cartes | Un catalogue d'éléments autonomes, grille asymétrique | 01, 03, 06, 07, 08 |
+| Frise | Une suite d'étapes reliées dans le temps | 02 |
+| Encadré | Ce que le lecteur emporte, une seule fois sur la page | 07 |
+| Chiffres | La preuve chiffrée, sur fond encre | 05 |
+| Annotation manuscrite | Désigner une image, toujours à côté, jamais dessus | 02, 06, pied de page |
+| Action | Le seul objet cliquable à porter une flèche | 7 fois |
+
+Le héros est **typographique, sans photo** : le mur du bureau portait déjà du
+texte, deux discours se superposaient.
 
 ## Photos
 
