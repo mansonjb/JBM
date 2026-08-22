@@ -45,12 +45,12 @@ export const methode = {
     {
       n: "02",
       titre: "Je viens voir",
-      texte: "Je passe du temps dans l'entreprise. Je regarde les produits, les services, les prix, la manière de vendre, les outils, le marketing, le digital, l'expérience client, les processus et l'organisation. Je parle aux personnes concernées. Je regarde également les chiffres lorsqu'ils permettent de comprendre ce qui se passe réellement. Parce qu'entre la manière dont une entreprise pense fonctionner et la manière dont elle fonctionne réellement, il existe souvent quelques écarts. Et ces écarts sont intéressants.",
+      texte: "Je passe du temps dans l'entreprise. Je regarde les produits, les services, les prix, la manière de vendre, les outils, le marketing, le digital, l'expérience client, les processus et l'organisation. Je discute aux personnes concernées. Je me penche également sur les chiffres lorsqu'ils permettent de comprendre ce qu'il se passe réellement. Parce qu'entre la manière dont une entreprise pense fonctionner et la manière dont elle fonctionne réellement, il existe souvent quelques écarts. Et ces écarts sont intéressants & significatifs.",
     },
     {
       n: "03",
       titre: "Je prends du recul",
-      texte: "Je rassemble ce que j'ai vu. Je croise les observations, les chiffres, les usages, les retours des équipes et ceux des clients. Certaines pistes disparaissent. D'autres deviennent évidentes. Et quelques-unes peuvent changer beaucoup de choses. Je les évalue selon leur impact, leur coût, leur difficulté et le temps nécessaire pour les mettre en œuvre.",
+      texte: "Je rassemble ce que j'ai vu au sein de votre structure. Je croise les observations, les chiffres, les usages, les retours des équipes et ceux des clients. Certaines pistes disparaissent et d'autres deviennent évidentes pour optimiser la stratégie. Je les évalue selon leur impact, leur coût, leur difficulté et le temps nécessaire pour les mettre en œuvre.",
     },
     {
       n: "04",
@@ -60,7 +60,7 @@ export const methode = {
     {
       n: "05",
       titre: "Nous pouvons ensuite le faire",
-      texte: "L'audit peut s'arrêter là. Vous avez les recommandations et vous pouvez les mettre en œuvre avec vos équipes ou vos partenaires. Mais je peux aussi rester. Lorsque le sujet entre dans mes compétences, je peux le prendre en charge directement. Lorsqu'il nécessite une expertise particulière, je cherche les bonnes personnes, construis le projet avec elles et peux en piloter la réalisation. Vous ne repartez donc pas simplement avec une liste de bonnes idées. Vous savez comment les transformer en actions.",
+      texte: "L'audit peut s'arrêter là. Vous avez les recommandations et vous pouvez les mettre en œuvre avec vos équipes ou vos partenaires. Mais je peux aussi rester. Lorsque le sujet entre dans mes compétences, je peux le prendre en charge directement. Lorsqu'il nécessite une expertise particulière, je cherche les bonnes personnes, construis le projet avec elles et peux en piloter la réalisation. Vous ne repartez donc pas simplement avec une liste de bonnes idées. Vous savez comment les transformer en un plan d'actions.",
     },
   ],
 };
