@@ -207,6 +207,35 @@ body { margin: 0; background: #F4EFE6; color: #15171C; font-family: var(--font-s
 /* ---- Ajouts nécessaires hors maquette ---- */
 
 /*
+ * Témoignage : le texte court jusqu'au bord droit, mais en deux colonnes
+ * au-delà de 1280px, sinon la ligne dépasserait 140 signes.
+ */
+.temoignage {
+  margin: 0;
+  font-size: clamp(17px, calc(1.55 * var(--u)), 21px);
+  line-height: 1.75;
+  letter-spacing: 0.005em;
+  color: #15171C;
+}
+@media (min-width: 1280px) {
+  .temoignage {
+    column-count: 2;
+    column-gap: clamp(40px, 3.5vw, 72px);
+  }
+}
+
+/* Le guillemet ouvrant, posé en signal. */
+.guillemet {
+  display: block;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(64px, calc(7 * var(--u)), 120px);
+  line-height: 0.6;
+  color: #1F3BD8;
+  margin-bottom: 18px;
+  user-select: none;
+}
+
+/*
  * Les six cartes : la maquette employait repeat(auto-fit, minmax(300px, 1fr)),
  * qui donne quatre colonnes au-delà de 1400px et laisse deux cases vides.
  * On fixe trois colonnes pour obtenir deux rangées pleines.

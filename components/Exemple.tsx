@@ -42,7 +42,7 @@ export default function Exemple() {
         ))}
       </div>
 
-      <figure className="m-0 grid grid-cols-1 gap-[clamp(24px,3vw,64px)] border-t-2 border-line pt-[clamp(28px,3vw,56px)] lg:grid-cols-[minmax(0,0.3fr)_minmax(0,0.7fr)]">
+      <figure className="m-0 grid grid-cols-1 gap-[clamp(24px,3vw,64px)] border-t-2 border-line pt-[clamp(28px,3vw,56px)] lg:grid-cols-[minmax(0,0.26fr)_minmax(0,0.74fr)]">
         {/* Qui parle, à gauche et en évidence. Ce qu'il dit, à côté. */}
         <figcaption>
           <span
@@ -55,19 +55,14 @@ export default function Exemple() {
           <span className="eyebrow mt-[10px] block">{exemple.role}</span>
         </figcaption>
 
-        <blockquote
-          className="m-0"
-          style={{
-            maxWidth: "min(100%, 660px)",
-            fontFamily: "var(--font-sans), system-ui, sans-serif",
-            fontSize: "clamp(17px, calc(1.6 * var(--u)), 22px)",
-            lineHeight: 1.75,
-            letterSpacing: "0.005em",
-            color: "#15171C",
-          }}
-        >
-          {exemple.temoignage}
-        </blockquote>
+        <div>
+          <span className="guillemet" aria-hidden="true">
+            «
+          </span>
+          <blockquote className="temoignage">
+            {exemple.temoignage.replace(/^«\s*/, "").replace(/\s*»$/, "")}
+          </blockquote>
+        </div>
 
       </figure>
 
