@@ -214,6 +214,7 @@ body { margin: 0; background: #F4EFE6; color: #15171C; font-family: var(--font-s
   background: #1F3BD8;
   color: #F4EFE6;
   padding: 2px 8px;
+  font-weight: 700;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
