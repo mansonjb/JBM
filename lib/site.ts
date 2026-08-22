@@ -168,10 +168,10 @@ export const qui = {
   nom: "Jean-Baptiste Manson",
   fonction: "Fondateur d'Un Degré",
   paragraphes: [
-    "Avant Un Degré, mon parcours s'est construit autour d'une constante : m'intéresser tôt à ce qui allait changer les usages. Le live streaming avant sa généralisation, l'influence avant qu'elle ne devienne un marché structuré, la réalité augmentée avant son adoption massive par les marques, puis l'intelligence artificielle avant qu'elle ne s'impose dans les entreprises.",
+    "Mon parcours s'est construit autour d'une constante : m'intéresser tôt à ce qui allait changer les usages. Le live streaming avant sa généralisation, l'influence avant qu'elle ne devienne un marché structuré, la réalité augmentée avant son adoption massive par les marques, puis l'intelligence artificielle avant qu'elle ne s'impose dans les entreprises.",
     "À chaque fois, j'ai choisi de ne pas attendre que ces transformations deviennent évidentes. Je les ai explorées, expérimentées et transformées en opportunités concrètes. Cette capacité à prendre position tôt m'a notamment conduit à cofonder et développer une agence spécialisée dans les expériences digitales et la réalité augmentée. Plus de 500 projets ont suivi, pour des entreprises comme Louis Vuitton, Yves Saint Laurent, Netflix, Ford, Hugo Boss, Castorama ou Puma.",
     "Ces expériences ont façonné ma manière de regarder une entreprise : comprendre ce qui fonctionne aujourd'hui, mais surtout percevoir ce qui pourrait mieux fonctionner demain. Observer ce qui évolue, anticiper ce que cela peut changer et identifier les possibilités qui en découlent.",
-    "C'est de là que vient Un Degré. Écouter, questionner et observer pour faire émerger ces potentiels, puis les confronter à la réalité de l'entreprise, à leur impact et aux moyens qu'ils exigent. Pour ne retenir, finalement, que ceux qui méritent réellement d'être activés.",
+    "C'est de cette manière de voir qu'est né Un Degré. Écouter, questionner et observer pour faire émerger les potentiels, puis les confronter à la réalité de l'entreprise, à leur impact et aux moyens nécessaires pour les activer. Et ne retenir, finalement, que ceux qui peuvent réellement faire la différence.",
   ],
   degre: "Un degré d'écart au départ suffit à modifier considérablement l'endroit où l'on arrive.",
 };

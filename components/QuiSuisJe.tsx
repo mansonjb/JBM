@@ -1,6 +1,20 @@
 import SecHead from "./SecHead";
 import Shot from "./Shot";
-import { qui } from "@/lib/site";
+import { qui, site } from "@/lib/site";
+
+/** Le nom de la marque est surligné au bleu, en blanc, à même le texte. */
+function surligner(texte: string) {
+  return texte.split(site.name).flatMap((morceau, i) =>
+    i === 0
+      ? [morceau]
+      : [
+          <span key={i} className="mark">
+            {site.name}
+          </span>,
+          morceau,
+        ]
+  );
+}
 
 /** 05 · Qui suis-je. */
 export default function QuiSuisJe() {
@@ -47,7 +61,7 @@ export default function QuiSuisJe() {
                 i === qui.paragraphes.length - 1 ? "m-0" : "mt-0 mb-5"
               }`}
             >
-              {paragraphe}
+              {surligner(paragraphe)}
             </p>
           ))}
           <p className="mini-deg">
