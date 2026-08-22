@@ -207,6 +207,18 @@ body { margin: 0; background: #F4EFE6; color: #15171C; font-family: var(--font-s
 /* ---- Ajouts nécessaires hors maquette ---- */
 
 /*
+ * Surlignage du nom de la marque, repris du bloc du degré de la maquette mais
+ * rendu autonome pour servir dans n'importe quel paragraphe.
+ */
+.mark {
+  background: #1F3BD8;
+  color: #F4EFE6;
+  padding: 2px 8px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/*
  * Témoignage : un seul bloc, d'un guillemet à l'autre, qui court jusqu'au bord
  * droit de la bande. Le corps grandit avec la largeur pour que la ligne reste
  * tenable sans couper la citation en colonnes.
