@@ -12,10 +12,10 @@ export default function CtaMail() {
       className="pt-[clamp(60px,9vh,110px)] pb-[clamp(60px,9vh,110px)]"
       style={{ background: "#1F3BD8", color: "#F4EFE6" }}
     >
-      <h2 className="m-0 mb-5 text-[clamp(30px,4.4vw,78px)] leading-[1.06]">
+      <h2 className="m-0 mb-5 text-[clamp(30px,calc(4.4*var(--u)),78px)] leading-[1.06]">
         {ctaMail.titre}
       </h2>
-      <p className="m-0 mb-9 text-[clamp(16px,1.4vw,22px)] leading-[1.55]">
+      <p className="m-0 mb-9 text-[clamp(16px,calc(1.4*var(--u)),22px)] leading-[1.55]">
         {ctaMail.texte}
       </p>
 

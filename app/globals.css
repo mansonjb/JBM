@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+:root {
+  /*
+   * Unité de largeur plafonnée. La maquette est calibrée pour 1440px : au-delà,
+   * 1vw continuait de grossir et tout sortait 30 % trop gros. --u vaut 1vw
+   * jusqu'à 1440px, puis se fige.
+   */
+  --u: min(1vw, 14.4px);
+}
+
 @theme {
   /* Palette Un Degré */
   --color-paper: #f4efe6;
@@ -35,10 +44,10 @@ body { margin: 0; background: #F4EFE6; color: #15171C; font-family: var(--font-s
   h2 { font-family: var(--font-display), Impact, sans-serif; text-transform: uppercase; letter-spacing: -0.02em; text-wrap: pretty; }
   .serif { font-family: var(--font-serif), Georgia, serif; }
   .eyebrow { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #1F3BD8; }
-  .lede { font-size: clamp(17px, 1.5vw, 24px); line-height: 1.55; color: #15171C; text-wrap: pretty; }
+  .lede { font-size: clamp(17px, calc(1.5 * var(--u)), 24px); line-height: 1.55; color: #15171C; text-wrap: pretty; }
   
-  .body { font-size: clamp(15px, 1.15vw, 18px); line-height: 1.7; color: #5A5D66; text-wrap: pretty; }
-  .quote { font-family: var(--font-serif), Georgia, serif; margin: 0; font-size: clamp(28px, 4.6vw, 78px); line-height: 1.24; padding-top: 0.1em; text-wrap: pretty; }
+  .body { font-size: clamp(15px, calc(1.15 * var(--u)), 18px); line-height: 1.7; color: #5A5D66; text-wrap: pretty; }
+  .quote { font-family: var(--font-serif), Georgia, serif; margin: 0; font-size: clamp(28px, calc(4.6 * var(--u)), 78px); line-height: 1.24; padding-top: 0.1em; text-wrap: pretty; }
   .attrib { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #1F3BD8; }
 
   .navlink { color: #5A5D66; padding: 6px 0; border-bottom: 2px solid transparent; transition: color 140ms, border-color 140ms; }
@@ -57,7 +66,7 @@ body { margin: 0; background: #F4EFE6; color: #15171C; font-family: var(--font-s
   .row { display: grid; grid-template-columns: 76px minmax(0, 1fr); align-items: baseline; padding: 22px 20px 22px 0; border-bottom: 2px solid #D8CFC0; transition: background 150ms, color 150ms, padding-left 150ms; }
   .row:hover { background: #1F3BD8; color: #F4EFE6; padding-left: 20px; }
   .row .n { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; font-variant-numeric: tabular-nums; opacity: 0.55; }
-  .row .t { font-size: clamp(18px, 1.8vw, 28px); line-height: 1.4; }
+  .row .t { font-size: clamp(18px, calc(1.8 * var(--u)), 28px); line-height: 1.4; }
   .row-inv { border-bottom-color: rgba(244,239,230,0.35); }
   .row-inv:hover { background: #F4EFE6; color: #1F3BD8; }
 
@@ -75,8 +84,8 @@ body { margin: 0; background: #F4EFE6; color: #15171C; font-family: var(--font-s
   .step:hover { background: #1F3BD8; color: #F4EFE6; }
   .step:hover .step-n, .step:hover .step-b { color: #F4EFE6; }
   .step-n { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; font-variant-numeric: tabular-nums; color: #1F3BD8; padding-top: 8px; }
-  .step-t { grid-column: 2; margin: 0 0 14px; font-family: var(--font-display), Impact, sans-serif; text-transform: uppercase; font-size: clamp(24px, 2.8vw, 46px); line-height: 1.06; }
-  .step-b { grid-column: 2; margin: 0; font-size: clamp(15px, 1.15vw, 18px); line-height: 1.7; color: #5A5D66; }
+  .step-t { grid-column: 2; margin: 0 0 14px; font-family: var(--font-display), Impact, sans-serif; text-transform: uppercase; font-size: clamp(24px, calc(2.8 * var(--u)), 46px); line-height: 1.06; }
+  .step-b { grid-column: 2; margin: 0; font-size: clamp(15px, calc(1.15 * var(--u)), 18px); line-height: 1.7; color: #5A5D66; }
   @keyframes stepIn { to { opacity: 1; transform: translateY(0); } }
   @supports not (animation-timeline: view()) { .step { opacity: 1; transform: none; } }
   .fig { font-family: var(--font-display), Impact, sans-serif; line-height: 1; font-variant-numeric: tabular-nums; color: #1F3BD8; transition: color 170ms; }
@@ -93,15 +102,15 @@ body { margin: 0; background: #F4EFE6; color: #15171C; font-family: var(--font-s
 
   figure { margin: 0; }
   .shot { width: 100%; height: 100%; display: block; border: 2px solid #1F3BD8; object-fit: cover; object-position: 50% 30%; }
-  .q { border-bottom: 2px solid #D8CFC0; padding: 16px 0; font-size: clamp(16px, 1.4vw, 21px); line-height: 1.4; transition: color 150ms, border-color 150ms; }
+  .q { border-bottom: 2px solid #D8CFC0; padding: 16px 0; font-size: clamp(16px, calc(1.4 * var(--u)), 21px); line-height: 1.4; transition: color 150ms, border-color 150ms; }
   .q:hover { color: #1F3BD8; border-bottom-color: #1F3BD8; }
   #undegre .chip { background: #1F3BD8; border-color: #1F3BD8; color: #F4EFE6; }
   #undegre .chip:hover { background: #F4EFE6; border-color: #1F3BD8; color: #1F3BD8; }
-  .chip { border: 2px solid #D8CFC0; padding: 26px 22px; min-height: 130px; display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 700; font-size: clamp(17px, 1.45vw, 22px); line-height: 1.3; transition: background 150ms, color 150ms, border-color 150ms; }
+  .chip { border: 2px solid #D8CFC0; padding: 26px 22px; min-height: 130px; display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 700; font-size: clamp(17px, calc(1.45 * var(--u)), 22px); line-height: 1.3; transition: background 150ms, color 150ms, border-color 150ms; }
   .chip:hover { background: #1F3BD8; border-color: #1F3BD8; color: #F4EFE6; }
   .qsum { display: grid; grid-template-columns: minmax(0, 1fr) 40px; gap: 20px; align-items: baseline; padding: 15px 18px; }
-  .qtxt { font-size: clamp(15px, 1.15vw, 19px); line-height: 1.35; }
-  .qans { margin: 0; padding: 0 18px 22px; max-width: none; font-size: clamp(15px, 1.15vw, 18px); line-height: 1.7; color: #1F3BD8; }
+  .qtxt { font-size: clamp(15px, calc(1.15 * var(--u)), 19px); line-height: 1.35; }
+  .qans { margin: 0; padding: 0 18px 22px; max-width: none; font-size: clamp(15px, calc(1.15 * var(--u)), 18px); line-height: 1.7; color: #1F3BD8; }
   .qsum .plus { font-size: 22px; text-align: right; opacity: 0.7; }
   .cap { margin-top: 14px; font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.04em; color: #1F3BD8; }
 
@@ -113,8 +122,8 @@ body { margin: 0; background: #F4EFE6; color: #15171C; font-family: var(--font-s
   .blue { color: #1F3BD8; }
   .diverge { margin-top: clamp(56px, 9vh, 110px); border-top: 2px solid #15171C; padding-top: 34px; }
   .diverge-top { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(20px, 3vw, 54px); align-items: start; }
-  .deg { font-family: var(--font-display), Impact, sans-serif; font-size: clamp(56px, 11vw, 190px); line-height: 0.8; color: #1F3BD8; font-variant-numeric: tabular-nums; }
-  .diverge-q { margin: 0; font-family: var(--font-display), Impact, sans-serif; text-transform: uppercase; font-size: clamp(24px, 3.6vw, 66px); line-height: 0.98; letter-spacing: -0.02em; }
+  .deg { font-family: var(--font-display), Impact, sans-serif; font-size: clamp(56px, calc(11 * var(--u)), 190px); line-height: 0.8; color: #1F3BD8; font-variant-numeric: tabular-nums; }
+  .diverge-q { margin: 0; font-family: var(--font-display), Impact, sans-serif; text-transform: uppercase; font-size: clamp(24px, calc(3.6 * var(--u)), 66px); line-height: 0.98; letter-spacing: -0.02em; }
   .diverge-q em { font-style: normal; color: #1F3BD8; }
   .diverge-plot { position: relative; margin-top: clamp(26px, 4vh, 54px); height: clamp(180px, 26vh, 300px); }
   .diverge-plot svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
@@ -127,7 +136,7 @@ body { margin: 0; background: #F4EFE6; color: #15171C; font-family: var(--font-s
   .lbl-a { bottom: 4px; color: #15171C; }
   .lbl-b { top: -22px; color: #1F3BD8; }
   .gap { position: absolute; right: 8px; top: 40%; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #1F3BD8; writing-mode: vertical-rl; }
-  .diverge-end { margin: clamp(30px, 5vh, 60px) 0 0; font-size: clamp(18px, 1.8vw, 30px); line-height: 1.4; max-width: none; }
+  .diverge-end { margin: clamp(30px, 5vh, 60px) 0 0; font-size: clamp(18px, calc(1.8 * var(--u)), 30px); line-height: 1.4; max-width: none; }
   .diverge-end strong { font-weight: 700; }
   .diverge-end .mark { background: #1F3BD8; color: #F4EFE6; padding: 2px 8px; box-decoration-break: clone; }
   @supports not (animation-timeline: view()) { .ln { stroke-dashoffset: 0; } .tick { opacity: 1; } }
@@ -141,19 +150,19 @@ body { margin: 0; background: #F4EFE6; color: #15171C; font-family: var(--font-s
   @keyframes cardIn { to { opacity: 1; transform: translateY(0); } }
   @supports not (animation-timeline: view()) { .tcard { opacity: 1; transform: none; } }
   .mq { margin: 0 -5vw; overflow: hidden; padding: 6px 0; user-select: none; }
-  .mq-track { display: flex; align-items: center; gap: 0.32em; width: max-content; font-family: var(--font-display), Impact, sans-serif; text-transform: uppercase; font-size: clamp(46px, 9vw, 150px); line-height: 1.1; animation: mqrun 46s linear infinite; }
+  .mq-track { display: flex; align-items: center; gap: 0.32em; width: max-content; font-family: var(--font-display), Impact, sans-serif; text-transform: uppercase; font-size: clamp(46px, calc(9 * var(--u)), 150px); line-height: 1.1; animation: mqrun 46s linear infinite; }
   .mq:hover .mq-track { animation-play-state: paused; }
   @keyframes mqrun { to { transform: translateX(-50%); } }
   .mq-i { color: transparent; -webkit-text-stroke: 2px #15171C; letter-spacing: -0.01em; cursor: default; transition: color 180ms, -webkit-text-stroke-color 180ms; }
   .mq-i:hover { color: #1F3BD8; -webkit-text-stroke-color: #1F3BD8; }
   .mq-s { color: #1F3BD8; font-size: 0.42em; align-self: flex-start; margin-top: 0.16em; }
-  .mq-say { margin: 34px 0 0; max-width: none; font-size: clamp(20px, 2.4vw, 40px); line-height: 1.34; text-wrap: pretty; }
+  .mq-say { margin: 34px 0 0; max-width: none; font-size: clamp(20px, calc(2.4 * var(--u)), 40px); line-height: 1.34; text-wrap: pretty; }
   .mq-say-a { font-family: var(--font-display), Impact, sans-serif; text-transform: uppercase; color: #1F3BD8; }
-  .mini-deg { margin: 30px 0 0; padding-top: 22px; border-top: 2px solid #D8CFC0; display: flex; align-items: baseline; gap: 14px; font-family: var(--font-display), Impact, sans-serif; text-transform: uppercase; font-size: clamp(16px, 1.4vw, 22px); line-height: 1.24; letter-spacing: 0.01em; }
+  .mini-deg { margin: 30px 0 0; padding-top: 22px; border-top: 2px solid #D8CFC0; display: flex; align-items: baseline; gap: 14px; font-family: var(--font-display), Impact, sans-serif; text-transform: uppercase; font-size: clamp(16px, calc(1.4 * var(--u)), 22px); line-height: 1.24; letter-spacing: 0.01em; }
   .mini-deg-n { color: #1F3BD8; font-variant-numeric: tabular-nums; }
   .tnum { align-self: flex-start; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; font-variant-numeric: tabular-nums; opacity: 0.7; }
-  .tkick { margin-top: 26px; font-family: var(--font-display), Impact, sans-serif; text-transform: uppercase; font-size: clamp(26px, 2.6vw, 40px); line-height: 0.98; letter-spacing: -0.01em; }
-  .ttxt { margin-top: 12px; font-size: clamp(15px, 1.15vw, 18px); line-height: 1.5; opacity: 0.88; }
+  .tkick { margin-top: 26px; font-family: var(--font-display), Impact, sans-serif; text-transform: uppercase; font-size: clamp(26px, calc(2.6 * var(--u)), 40px); line-height: 0.98; letter-spacing: -0.01em; }
+  .ttxt { margin-top: 12px; font-size: clamp(15px, calc(1.15 * var(--u)), 18px); line-height: 1.5; opacity: 0.88; }
   .tcard::after { content: ""; position: absolute; left: 28px; right: 28px; bottom: 44px; height: 2px; background: currentColor; opacity: 0.28; }
   .tel-nav { display: inline-flex; align-items: center; gap: 9px; border: 2px solid #1F3BD8; color: #1F3BD8; padding: 11px 16px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; font-variant-numeric: tabular-nums; transition: background 150ms, color 150ms; }
   .tel-nav:hover { background: #1F3BD8; color: #F4EFE6; }
@@ -163,7 +172,7 @@ body { margin: 0; background: #F4EFE6; color: #15171C; font-family: var(--font-s
   .tel-float { position: fixed; right: 22px; bottom: 22px; z-index: 45; display: inline-flex; align-items: center; gap: 12px; background: #1F3BD8; color: #F4EFE6; padding: 16px 22px; font-size: 15px; font-weight: 700; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; box-shadow: 0 14px 34px rgba(21,23,28,0.22); transition: background 160ms, gap 160ms; }
   .tel-float:hover { background: #15171C; color: #F4EFE6; gap: 18px; }
   .tel-float .dot { width: 9px; height: 9px; background: #F4EFE6; border-radius: 50%; animation: pulse 1.8s ease-in-out infinite; }
-  .tel-big { display: inline-flex; align-items: baseline; gap: 14px; font-family: var(--font-display), Impact, sans-serif; text-transform: uppercase; font-size: clamp(26px, 3.2vw, 54px); line-height: 1; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+  .tel-big { display: inline-flex; align-items: baseline; gap: 14px; font-family: var(--font-display), Impact, sans-serif; text-transform: uppercase; font-size: clamp(26px, calc(3.2 * var(--u)), 54px); line-height: 1; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
   @media (max-width: 720px) { .tel-nav { display: none; } }
   #contact .lede, #contact .body, #contact .blue { color: #F4EFE6; }
 
@@ -195,6 +204,23 @@ body { margin: 0; background: #F4EFE6; color: #15171C; font-family: var(--font-s
   .rail a:hover::before { background: #1F3BD8; }
 
 /* ---- Ajouts nécessaires hors maquette ---- */
+
+/*
+ * Les six cartes : la maquette employait repeat(auto-fit, minmax(300px, 1fr)),
+ * qui donne quatre colonnes au-delà de 1400px et laisse deux cases vides.
+ * On fixe trois colonnes pour obtenir deux rangées pleines.
+ */
+.cartes6 {
+  display: grid;
+  gap: 2px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 700px) {
+  .cartes6 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1080px) {
+  .cartes6 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
 
 /* Apparition douce, conservée pour les blocs qui n'ont pas d'animation propre. */
 .u-reveal {

@@ -10,7 +10,7 @@ export default function Exemple() {
     >
       <SecHead n={exemple.n}>{exemple.kicker}</SecHead>
 
-      <h2 className="m-0 mb-[14px] text-[clamp(52px,9vw,170px)] leading-[0.86]" style={{ letterSpacing: "-0.03em" }}>
+      <h2 className="m-0 mb-[14px] text-[clamp(52px,calc(9*var(--u)),170px)] leading-[0.86]" style={{ letterSpacing: "-0.03em" }}>
         {exemple.client}
       </h2>
       <p className="m-0 mb-[50px] text-[14px] tracking-[0.08em] text-muted uppercase">
@@ -23,7 +23,7 @@ export default function Exemple() {
       >
         {exemple.chiffres.map((chiffre) => (
           <div key={chiffre.texte} className="stat">
-            <div className="fig text-[clamp(44px,5vw,86px)]">{chiffre.valeur}</div>
+            <div className="fig text-[clamp(44px,calc(5*var(--u)),86px)]">{chiffre.valeur}</div>
             <p className="mt-[14px] mb-0 text-[13px] leading-[1.5]">{chiffre.texte}</p>
           </div>
         ))}
@@ -46,7 +46,7 @@ export default function Exemple() {
         className="quote"
         style={{
           maxWidth: "none",
-          fontSize: "clamp(22px, 2.6vw, 42px)",
+          fontSize: "clamp(22px, calc(2.6 * var(--u)), 42px)",
           lineHeight: 1.32,
         }}
       >

@@ -10,7 +10,7 @@ export default function Questions() {
     >
       <SecHead n="06">Questions</SecHead>
 
-      <h2 className="m-0 mb-[50px] text-[clamp(40px,6.4vw,118px)] leading-[0.92]">
+      <h2 className="m-0 mb-[50px] text-[clamp(40px,calc(6.4*var(--u)),118px)] leading-[0.92]">
         Ce que vous vous demandez.
       </h2>
 
@@ -24,7 +24,7 @@ export default function Questions() {
               <span className="text-[13px] font-bold tracking-[0.1em] opacity-60 [font-variant-numeric:tabular-nums]">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <span className="text-[clamp(19px,2vw,32px)] leading-[1.35]">
+              <span className="text-[clamp(19px,calc(2*var(--u)),32px)] leading-[1.35]">
                 {question.q}
               </span>
               <span className="plus text-right text-[22px] opacity-70" />

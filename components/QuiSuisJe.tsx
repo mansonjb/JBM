@@ -11,7 +11,7 @@ export default function QuiSuisJe() {
     >
       <SecHead n={qui.n}>{qui.kicker}</SecHead>
 
-      <h2 className="m-0 mb-[50px] text-[clamp(34px,5.2vw,94px)] leading-[0.94]">
+      <h2 className="m-0 mb-[50px] text-[clamp(34px,calc(5.2*var(--u)),94px)] leading-[0.94]">
         {qui.titre1} <span className="blue">{qui.titre2}</span>
       </h2>
 
@@ -33,7 +33,7 @@ export default function QuiSuisJe() {
               }}
             />
           </figure>
-          <p className="mt-5 mb-0 font-[family-name:var(--font-display)] text-[clamp(26px,2.6vw,44px)] leading-[1.02] tracking-[-0.01em] uppercase">
+          <p className="mt-5 mb-0 font-[family-name:var(--font-display)] text-[clamp(26px,calc(2.6*var(--u)),44px)] leading-[1.02] tracking-[-0.01em] uppercase">
             {qui.nom}
           </p>
           <p className="eyebrow mt-[10px] mb-0">{qui.fonction}</p>

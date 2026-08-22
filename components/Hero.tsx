@@ -13,7 +13,7 @@ export default function Hero() {
           {hero.kicker}
         </div>
 
-        <h1 className="m-0 mb-9 font-[family-name:var(--font-display)] text-[clamp(40px,6.6vw,122px)] leading-[0.94] tracking-[-0.02em] uppercase">
+        <h1 className="m-0 mb-9 font-[family-name:var(--font-display)] text-[clamp(40px,calc(6.6*var(--u)),122px)] leading-[0.94] tracking-[-0.02em] uppercase">
           {hero.titre1} <span className="blue">{hero.titre2}</span>
         </h1>
 

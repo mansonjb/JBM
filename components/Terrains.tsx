@@ -30,7 +30,7 @@ export default function Terrains() {
     >
       <SecHead n={terrains.n}>{terrains.kicker}</SecHead>
 
-      <h2 className="m-0 mb-10 text-[clamp(36px,6vw,112px)] leading-[0.92]" style={{ letterSpacing: "-0.03em" }}>
+      <h2 className="m-0 mb-10 text-[clamp(36px,calc(6*var(--u)),112px)] leading-[0.92]" style={{ letterSpacing: "-0.03em" }}>
         {terrains.titre}
       </h2>
 

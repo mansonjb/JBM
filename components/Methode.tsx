@@ -11,11 +11,11 @@ export default function Methode() {
     >
       <SecHead n={methode.n}>{methode.kicker}</SecHead>
 
-      <h2 className="m-0 mb-[26px] text-[clamp(42px,7.2vw,132px)] leading-[1.06]" style={{ letterSpacing: "-0.03em" }}>
+      <h2 className="m-0 mb-[26px] text-[clamp(42px,calc(7.2*var(--u)),132px)] leading-[1.06]" style={{ letterSpacing: "-0.03em" }}>
         {methode.titre}
       </h2>
 
-      <p className="serif blue m-0 mb-14 text-[clamp(22px,2.4vw,40px)] leading-[1.3]">
+      <p className="serif blue m-0 mb-14 text-[clamp(22px,calc(2.4*var(--u)),40px)] leading-[1.3]">
         {methode.citation}
       </p>
 
