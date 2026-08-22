@@ -56,15 +56,19 @@ export default function Exemple() {
         </figcaption>
 
         <blockquote
-          className="quote"
+          className="m-0"
           style={{
-            maxWidth: "min(100%, 700px)",
-            fontSize: "clamp(19px, calc(1.9 * var(--u)), 31px)",
-            lineHeight: 1.45,
+            maxWidth: "min(100%, 660px)",
+            fontFamily: "var(--font-sans), system-ui, sans-serif",
+            fontSize: "clamp(17px, calc(1.6 * var(--u)), 22px)",
+            lineHeight: 1.75,
+            letterSpacing: "0.005em",
+            color: "#15171C",
           }}
         >
           {exemple.temoignage}
         </blockquote>
+
       </figure>
 
       <a className="btn mt-[50px]" href="#contact">
