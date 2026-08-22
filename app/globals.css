@@ -2,11 +2,12 @@
 
 :root {
   /*
-   * Unité de largeur plafonnée. La maquette est calibrée pour 1440px : au-delà,
-   * 1vw continuait de grossir et tout sortait 30 % trop gros. --u vaut 1vw
-   * jusqu'à 1440px, puis se fige.
+   * Unité de largeur plafonnée, à 80 % de sa valeur d'origine : la maquette
+   * est calibrée pour 1440px, au-delà les vw continuaient de grossir, et
+   * l'échelle a ensuite été réduite d'un cinquième sur demande. --u croît
+   * jusqu'à 1440px puis se fige.
    */
-  --u: min(1vw, 14.4px);
+  --u: min(0.8vw, 11.52px);
 }
 
 @theme {
@@ -178,7 +179,7 @@ body { margin: 0; background: #F4EFE6; color: #15171C; font-family: var(--font-s
 
   /* ——— motif du degré : l'anneau ——— */
   .sechead { display: flex; align-items: center; gap: 16px; margin-bottom: 26px; }
-  .sechead-n { position: relative; font-family: var(--font-display), Impact, sans-serif; font-size: 30px; line-height: 1; color: #1F3BD8; font-variant-numeric: tabular-nums; padding-right: 0.42em; }
+  .sechead-n { position: relative; font-family: var(--font-display), Impact, sans-serif; font-size: 24px; line-height: 1; color: #1F3BD8; font-variant-numeric: tabular-nums; padding-right: 0.42em; }
   .sechead-n i { position: absolute; top: 1px; right: 0; width: 11px; height: 11px; box-sizing: border-box; border: 2px solid #1F3BD8; border-radius: 50%; transform: scale(0.2); animation: ringPop linear both; animation-timeline: view(); animation-range: entry 0% entry 85%; }
   .sechead-t { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #5A5D66; }
   .sechead-rule { flex: 1; height: 2px; background: #D8CFC0; }

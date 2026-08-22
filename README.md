@@ -64,8 +64,10 @@ Seules adaptations, rendues nécessaires par Next :
 - les formulaires sont branchés sur la route `app/api/contact/route.ts`,
 - la typographie est plafonnée par `--u` : la maquette est calibrée pour 1440 px,
   au-delà les `vw` continuaient de grossir et tout sortait environ 30 % trop
-  gros. `--u` vaut `1vw` jusqu'à 1440 px puis se fige, et toutes les tailles de
-  texte sont exprimées avec cette unité,
+  gros. `--u` croît jusqu'à 1440 px puis se fige, et vaut 80 % de la valeur d'origine,
+  l'échelle ayant été réduite d'un cinquième. Toutes les tailles de texte sont
+  exprimées avec cette unité : c'est le seul endroit à toucher pour régler
+  l'échelle générale du site,
 - les six cartes de la section 02 sont en trois colonnes fixes : le `auto-fit`
   de la maquette donnait quatre colonnes au-delà de 1400 px et laissait deux
   cases vides,
