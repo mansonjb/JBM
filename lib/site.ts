@@ -142,11 +142,11 @@ export const exemple = {
     { valeur: "8", texte: "jours de travail pour installer le système" },
   ],
   paragraphes: [
-    "L'entreprise vendait bien, mais uniquement par bouche-à-oreille : le site et la publicité ne produisaient aucune demande commerciale. Nous avons donc repris le site comme un canal d'acquisition et non comme une vitrine, avec une page par métier, par type de projet et par ville, pour vraiment correspondre aux intentions de recherche des clients.",
-    "Les chantiers déjà réalisés sont devenus des preuves, avec photos avant / après et budget indicatif, et chaque page a reçu un formulaire court de demande de devis, un numéro de téléphone cliquable en tête, un rappel de disponibilité, puis le suivi des appels et des formulaires pour savoir exactement d'où viennent les demandes.",
-    "Huit jours de travail. Le métier n'a pas changé, la qualité du travail non plus : ce qui a changé, c'est le chemin entre la demande et l'entreprise.",
+    "L'entreprise vendait bien, mais uniquement via bouche-à-oreille : le site web et la publicité ne produisaient aucune demande commerciale. Nous avons donc repris le site comme un canal d'acquisition et non comme une vitrine, avec une page par métier, par type de projet et par ville, pour vraiment correspondre aux intentions de recherche des clients.",
+    "Les chantiers déjà réalisés sont devenus de véritables preuves, documentées par des photos avant/après et des budgets indicatifs. Chaque page du site a ensuite été pensée pour faciliter la prise de contact : formulaire de devis simplifié, numéro de téléphone accessible et disponibilité clairement affichée. Enfin, le suivi des appels et des formulaires renseignés permet désormais d'identifier précisément l'origine de chaque demande.",
+    "Huit jours de travail. Le métier n'a pas changé, la qualité non plus. Ce qui a changé, c'est la façon dont le client les découvre, les comprend et contacte l'entreprise.",
   ],
-  temoignage: "« On a commencé par parler de nos objectifs, de nos chantiers, de la façon dont on travaille au quotidien et de ce qu'on voulait développer. Il en est ressorti avec un plan clair, dans l'ordre, et on l'a fait. En quelques semaines le système tournait : aujourd'hui notre travail est montré comme il le mérite et il nous ramène des chantiers chaque mois. »",
+  temoignage: "« On a beaucoup échangé sur notre activité, les chantiers qu'on voulait développer et les clients qu'on cherchait à toucher. Jean-Baptiste a identifié les profils les plus intéressants pour nous et les recherches qu'ils faisaient pour trouver une entreprise comme la nôtre. À partir de là, il a recentré notre contenu et créé un nouveau site pour renforcer notre présence en ligne et faire de CB SOLS l'une des premières entreprises que l'on trouve sur Google quand on cherche nos services. Aujourd'hui, le site est devenu un véritable canal d'acquisition : il nous apporte régulièrement de nouveaux prospects et de nouveaux chantiers. »",
   attribution: "Valentin Prévoteau · dirigeant de CB Sols",
   cta: "Voir ce que ça donnerait chez vous",
 };
