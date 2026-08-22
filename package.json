@@ -6,7 +6,8 @@
     "dev": "next dev -p 3082",
     "build": "next build",
     "start": "next start -p 3083",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build:pages": "EXPORT=1 NEXT_PUBLIC_STATIC=1 NEXT_PUBLIC_BASE_PATH=/JBM next build"
   },
   "dependencies": {
     "next": "16.2.7",

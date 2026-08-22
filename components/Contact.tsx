@@ -20,6 +20,21 @@ export default function Contact() {
     setStatus("sending");
     setMessage("");
 
+    const versMessagerie = () => {
+      const corps = `Nom : ${data.nom}\nEntreprise : ${data.entreprise}\nE-mail : ${data.email}\n\n${data.message}`;
+      window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(
+        "Demande via undegre.fr — " + (data.entreprise || data.nom)
+      )}&body=${encodeURIComponent(corps)}`;
+      setStatus("sent");
+      setMessage("Votre logiciel de messagerie s'ouvre avec le message prêt.");
+    };
+
+    // Site exporté en statique : il n'y a pas de route d'envoi côté serveur.
+    if (process.env.NEXT_PUBLIC_STATIC === "1") {
+      versMessagerie();
+      return;
+    }
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -29,13 +44,7 @@ export default function Contact() {
       const result = await response.json();
 
       if (result.fallback) {
-        // Pas d'envoi configuré côté serveur : on bascule sur le client mail.
-        const body = `Nom : ${data.nom}\nEntreprise : ${data.entreprise}\nE-mail : ${data.email}\n\n${data.message}`;
-        window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(
-          "Diagnostic — " + (data.entreprise || data.nom)
-        )}&body=${encodeURIComponent(body)}`;
-        setStatus("sent");
-        setMessage("Votre logiciel de messagerie s'ouvre avec le message prêt.");
+        versMessagerie();
         return;
       }
 

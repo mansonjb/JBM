@@ -12,6 +12,24 @@ Design issu de la maquette Claude Design `Un Degré.dc.html`.
 - TypeScript
 - Polices Google via `next/font` : Anton, Archivo, Instrument Serif, Caveat
 
+## Mise en ligne
+
+Deux cibles, la même base de code.
+
+**Serveur Next (recommandé).** `npm run build` puis `npm start`, ou un import du
+dépôt sur Vercel. Le formulaire passe par `app/api/contact/route.ts` et les
+images sont optimisées.
+
+**GitHub Pages.** `npm run build:pages` produit un export statique dans `out/`.
+Le workflow `.github/workflows/pages.yml` le construit et le publie à chaque
+poussée sur `main`. Deux limites tenables : aucune route serveur ne tourne,
+donc le formulaire ouvre le client mail du visiteur, et les images ne sont plus
+optimisées par Next.
+
+Le site est publié sous `/JBM` (page de projet). Pour un domaine dédié, mettre
+`BASE_PATH=` et `NEXT_PUBLIC_BASE_PATH=` à vide dans le script `build:pages`, et
+déposer le domaine dans les réglages Pages du dépôt.
+
 ## Démarrer
 
 ```bash

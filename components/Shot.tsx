@@ -1,5 +1,8 @@
 import Image from "next/image";
 
+/** Préfixe du sous-dossier de publication, vide hors GitHub Pages. */
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 /** Photo au filet bleu de la maquette. */
 export default function Shot({
   src,
@@ -18,7 +21,7 @@ export default function Shot({
 }) {
   return (
     <Image
-      src={src}
+      src={`${base}${src}`}
       alt={alt}
       width={1600}
       height={1200}
