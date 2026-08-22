@@ -147,7 +147,8 @@ export const exemple = {
     "Huit jours de travail. Le métier n'a pas changé, la qualité non plus. Ce qui a changé, c'est la façon dont le client les découvre, les comprend et contacte l'entreprise.",
   ],
   temoignage: "« On a beaucoup échangé sur notre activité, les chantiers qu'on voulait développer et les clients qu'on cherchait à toucher. Jean-Baptiste a identifié les profils les plus intéressants pour nous et les recherches qu'ils faisaient pour trouver une entreprise comme la nôtre. À partir de là, il a recentré notre contenu et créé un nouveau site pour renforcer notre présence en ligne et faire de CB SOLS l'une des premières entreprises que l'on trouve sur Google quand on cherche nos services. Aujourd'hui, le site est devenu un véritable canal d'acquisition : il nous apporte régulièrement de nouveaux prospects et de nouveaux chantiers. »",
-  attribution: "Valentin Prévoteau · dirigeant de CB Sols",
+  nom: "Valentin Prévoteau",
+  role: "Dirigeant de CB Sols",
   cta: "Voir ce que ça donnerait chez vous",
 };
 

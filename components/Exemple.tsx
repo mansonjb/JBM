@@ -42,17 +42,30 @@ export default function Exemple() {
         ))}
       </div>
 
-      <blockquote
-        className="quote"
-        style={{
-          maxWidth: "none",
-          fontSize: "clamp(22px, calc(2.6 * var(--u)), 42px)",
-          lineHeight: 1.32,
-        }}
-      >
-        {exemple.temoignage}
-      </blockquote>
-      <div className="attrib mt-[26px]">{exemple.attribution}</div>
+      <figure className="m-0 grid grid-cols-1 gap-[clamp(24px,3vw,64px)] border-t-2 border-line pt-[clamp(28px,3vw,56px)] lg:grid-cols-[minmax(0,0.3fr)_minmax(0,0.7fr)]">
+        {/* Qui parle, à gauche et en évidence. Ce qu'il dit, à côté. */}
+        <figcaption>
+          <span
+            className="mb-[18px] block h-[3px] w-[44px]"
+            style={{ background: "#1F3BD8" }}
+          />
+          <span className="block font-[family-name:var(--font-display)] text-[clamp(22px,calc(2.2*var(--u)),38px)] leading-[1.02] tracking-[-0.01em] uppercase">
+            {exemple.nom}
+          </span>
+          <span className="eyebrow mt-[10px] block">{exemple.role}</span>
+        </figcaption>
+
+        <blockquote
+          className="quote"
+          style={{
+            maxWidth: "min(100%, 700px)",
+            fontSize: "clamp(19px, calc(1.9 * var(--u)), 31px)",
+            lineHeight: 1.45,
+          }}
+        >
+          {exemple.temoignage}
+        </blockquote>
+      </figure>
 
       <a className="btn mt-[50px]" href="#contact">
         {exemple.cta} <span>→</span>
