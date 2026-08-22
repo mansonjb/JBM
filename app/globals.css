@@ -207,80 +207,33 @@ body { margin: 0; background: #F4EFE6; color: #15171C; font-family: var(--font-s
 /* ---- Ajouts nécessaires hors maquette ---- */
 
 /*
- * Témoignage : le texte court jusqu'au bord droit, mais en deux colonnes
- * au-delà de 1280px, sinon la ligne dépasserait 140 signes.
+ * Témoignage : un seul bloc, d'un guillemet à l'autre, qui court jusqu'au bord
+ * droit de la bande. Le corps grandit avec la largeur pour que la ligne reste
+ * tenable sans couper la citation en colonnes.
  */
 .temoignage {
   margin: 0;
-  font-size: clamp(17px, calc(1.55 * var(--u)), 21px);
-  line-height: 1.75;
-  letter-spacing: 0.005em;
+  font-size: clamp(17px, calc(1.95 * var(--u)), 27px);
+  line-height: 1.62;
+  letter-spacing: 0.004em;
   color: #15171C;
 }
-@media (min-width: 1280px) {
-  .temoignage {
-    column-count: 2;
-    column-gap: clamp(40px, 3.5vw, 72px);
-  }
-}
 
-/* Le guillemet ouvrant, posé en signal. */
+/* Les guillemets, ouvrant en tête et fermant en pied, alignés sur les bords. */
 .guillemet {
   display: block;
   font-family: var(--font-serif), Georgia, serif;
-  font-size: clamp(64px, calc(7 * var(--u)), 120px);
+  font-size: clamp(56px, calc(6 * var(--u)), 104px);
   line-height: 0.6;
   color: #1F3BD8;
-  margin-bottom: 18px;
   user-select: none;
 }
-
-/*
- * Les six cartes : la maquette employait repeat(auto-fit, minmax(300px, 1fr)),
- * qui donne quatre colonnes au-delà de 1400px et laisse deux cases vides.
- * On fixe trois colonnes pour obtenir deux rangées pleines.
- */
-.cartes6 {
-  display: grid;
-  gap: 2px;
-  grid-template-columns: 1fr;
+.guillemet-ouvrant {
+  margin-bottom: 20px;
 }
-@media (min-width: 700px) {
-  .cartes6 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (min-width: 1080px) {
-  .cartes6 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-
-/* Apparition douce, conservée pour les blocs qui n'ont pas d'animation propre. */
-.u-reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.u-reveal.is-in {
-  opacity: 1;
-  transform: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  .u-reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-  .mq-track,
-  .orbit .o2,
-  .dot {
-    animation: none !important;
-  }
-}
-
-section[id] {
-  scroll-margin-top: 96px;
+.guillemet-fermant {
+  margin-top: 24px;
+  text-align: right;
 }
 
 /* ============================================================

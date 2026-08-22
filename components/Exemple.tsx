@@ -56,12 +56,15 @@ export default function Exemple() {
         </figcaption>
 
         <div>
-          <span className="guillemet" aria-hidden="true">
+          <span className="guillemet guillemet-ouvrant" aria-hidden="true">
             «
           </span>
           <blockquote className="temoignage">
             {exemple.temoignage.replace(/^«\s*/, "").replace(/\s*»$/, "")}
           </blockquote>
+          <span className="guillemet guillemet-fermant" aria-hidden="true">
+            »
+          </span>
         </div>
 
       </figure>
