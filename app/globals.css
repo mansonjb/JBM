@@ -282,3 +282,42 @@ body { margin: 0; background: #F4EFE6; color: #15171C; font-family: var(--font-s
 section[id] {
   scroll-margin-top: 96px;
 }
+
+/* ============================================================
+   Appel à l'action à mots tournants, en fin de section 04.
+   ============================================================ */
+
+@keyframes ctaRotate {
+  0%, 18%   { transform: translateY(0); }
+  25%, 43%  { transform: translateY(-1.05em); }
+  50%, 68%  { transform: translateY(-2.1em); }
+  75%, 93%  { transform: translateY(-3.15em); }
+  100%      { transform: translateY(-4.2em); }
+}
+@keyframes ctaArrow {
+  0%   { transform: translateX(0);     opacity: 1; }
+  45%  { transform: translateX(16px);  opacity: 0; }
+  55%  { transform: translateX(-16px); opacity: 0; }
+  100% { transform: translateX(0);     opacity: 1; }
+}
+
+.cta-rotate-wrap { display: flex; flex-direction: column; gap: 24px; max-width: 980px; }
+.cta-rotate-head {
+  font-family: var(--font-display), Impact, sans-serif; text-transform: uppercase;
+  font-size: clamp(26px, calc(3.4 * var(--u)), 56px); line-height: 1.05; letter-spacing: -0.02em;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 18px; margin: 0;
+}
+.cta-rotate-mask { display: inline-block; height: 1.05em; overflow: hidden; vertical-align: bottom; }
+.cta-rotate-list { display: block; color: #1F3BD8; animation: ctaRotate 9s cubic-bezier(.76,0,.24,1) infinite; }
+.cta-rotate-list > span { display: block; height: 1.05em; }
+.cta-rotate-link {
+  display: inline-flex; align-items: center; gap: 16px; align-self: flex-start;
+  font-size: 15px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  color: #1F3BD8; text-decoration: none;
+  border-bottom: 3px solid #1F3BD8; padding-bottom: 10px;
+}
+.cta-rotate-link:hover { color: #15171C; border-color: #15171C; }
+.cta-rotate-link span { display: inline-block; animation: ctaArrow 2.2s cubic-bezier(.65,0,.35,1) infinite; font-size: 19px; }
+@media (prefers-reduced-motion: reduce) {
+  .cta-rotate-list, .cta-rotate-link span { animation: none; }
+}

@@ -149,7 +149,14 @@ export const exemple = {
   temoignage: "« On a beaucoup échangé sur notre activité, les chantiers qu'on voulait développer et les clients qu'on cherchait à toucher. Jean-Baptiste a identifié les profils les plus intéressants pour nous et les recherches qu'ils faisaient pour trouver une entreprise comme la nôtre. À partir de là, il a recentré notre contenu et créé un nouveau site pour renforcer notre présence en ligne et faire de CB SOLS l'une des premières entreprises que l'on trouve sur Google quand on cherche nos services. Aujourd'hui, le site est devenu un véritable canal d'acquisition : il nous apporte régulièrement de nouveaux prospects et de nouveaux chantiers. »",
   nom: "Valentin Prévoteau",
   role: "Dirigeant de CB Sols",
-  cta: "Voir ce que ça donnerait chez vous",
+  ctaAmorce: "Ça donnerait quoi dans",
+  ctaMots: [
+    "votre atelier ?",
+    "votre cabinet ?",
+    "votre agence ?",
+    "votre boutique ?",
+  ],
+  ctaLien: "Demandez-moi",
 };
 
 /* 05 · Qui suis-je */

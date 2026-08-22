@@ -66,9 +66,23 @@ export default function Exemple() {
 
       </figure>
 
-      <a className="btn mt-[50px]" href="#contact">
-        {exemple.cta} <span>→</span>
-      </a>
+      <div className="cta-rotate-wrap mt-[clamp(40px,4vw,72px)]">
+        <p className="cta-rotate-head">
+          <span>{exemple.ctaAmorce}</span>
+          <span className="cta-rotate-mask">
+            {/* Le dernier mot répète le premier : la boucle se referme sans saut. */}
+            <span className="cta-rotate-list">
+              {[...exemple.ctaMots, exemple.ctaMots[0]].map((mot, i) => (
+                <span key={`${mot}-${i}`}>{mot.replace(" ?", "\u00a0?")}</span>
+              ))}
+            </span>
+          </span>
+        </p>
+        <a className="cta-rotate-link" href="#contact">
+          {exemple.ctaLien} <span>→</span>
+        </a>
+      </div>
+
     </section>
   );
 }
