@@ -206,6 +206,83 @@ body { margin: 0; background: #F4EFE6; color: #15171C; font-family: var(--font-s
 
 /* ---- Ajouts nécessaires hors maquette ---- */
 
+/* ===================== Mobile ===================== */
+
+/*
+ * Les étapes : la colonne de numéro de 110px ne laissait que 153px au texte sur
+ * un écran de 390px, soit une vingtaine de signes par ligne. Sous 760px, le
+ * numéro passe au-dessus et le texte prend toute la largeur.
+ */
+@media (max-width: 760px) {
+  .step {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding: 26px 20px;
+  }
+  .step-n { padding-top: 0; margin-bottom: 10px; }
+  .step-t { grid-column: 1; }
+  .step-b { grid-column: 1; }
+}
+
+/*
+ * La barre : le bouton d'action pleine longueur faisait passer la barre sur
+ * deux lignes. Sous 760px, il se réduit à son étiquette courte.
+ */
+@media (max-width: 760px) {
+  .btn-nav-long { display: none; }
+}
+@media (min-width: 761px) {
+  .btn-nav-court { display: none; }
+}
+
+/*
+ * Les questions : la grille 76px + texte + 40px ne laissait que 108px à
+ * l'intitulé sur un écran de 390px. Le numéro passe au-dessus, la question
+ * prend toute la largeur, et la réponse perd son retrait de 96px.
+ */
+@media (max-width: 760px) {
+  #questions summary {
+    grid-template-columns: minmax(0, 1fr) 32px !important;
+    gap: 6px 12px !important;
+    padding: 20px 16px !important;
+  }
+  #questions summary > span:nth-child(1) { grid-column: 1; grid-row: 1; }
+  #questions summary > span:nth-child(2) { grid-column: 1; grid-row: 2; }
+  #questions summary > span:nth-child(3) {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+  }
+  #questions .body {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Les appels à l'action tiennent sur une ligne. */
+  .btn {
+    padding: 16px 18px;
+    font-size: 13px;
+    gap: 10px;
+  }
+}
+
+/*
+ * Les photos suivent le format de la source sur mobile, au lieu d'une hauteur
+ * en vh qui recadrait durement un cliché paysage dans un cadre portrait.
+ */
+@media (max-width: 900px) {
+  /* Le cadre du héros cesse d'imposer sa hauteur, sinon l'image s'y étire. */
+  .figure-hero {
+    height: auto !important;
+  }
+  .shot-hero,
+  .shot-large {
+    height: auto !important;
+    flex: none !important;
+    aspect-ratio: 3 / 2;
+  }
+}
+
 /*
  * Surlignage du nom de la marque, repris du bloc du degré de la maquette mais
  * rendu autonome pour servir dans n'importe quel paragraphe.

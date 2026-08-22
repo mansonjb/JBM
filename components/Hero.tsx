@@ -30,12 +30,13 @@ export default function Hero() {
         </div>
       </div>
 
-      <figure className="relative z-1 m-0 flex h-[clamp(360px,64vh,660px)] flex-col">
+      <figure className="figure-hero relative z-1 m-0 flex h-[clamp(360px,64vh,660px)] flex-col">
         <Shot
           src="/hero-bureau.jpg"
           alt="Jean-Baptiste Manson"
           sizes="(max-width: 1024px) 100vw, 40vw"
           priority
+          className="shot-hero"
           style={{ flex: 1, minHeight: 0, objectPosition: "50% 20%" }}
         />
       </figure>

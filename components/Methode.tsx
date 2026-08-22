@@ -34,6 +34,7 @@ export default function Methode() {
           src="/tableau-plan-action.jpg"
           alt="Plan d'action au tableau"
           sizes="100vw"
+          className="shot-large"
           style={{ height: "clamp(300px, 46vh, 520px)" }}
         />
       </figure>

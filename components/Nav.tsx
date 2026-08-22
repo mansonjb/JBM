@@ -30,8 +30,11 @@ export default function Nav() {
           <span className="dot" />
           {site.phone}
         </a>
-        <a className="btn" href="#contact" style={{ padding: "13px 20px" }}>
+        <a className="btn btn-nav-long" href="#contact" style={{ padding: "13px 20px" }}>
           Prendre rendez-vous <span>→</span>
+        </a>
+        <a className="btn btn-nav-court" href="#contact" style={{ padding: "12px 16px" }}>
+          Rendez-vous <span>→</span>
         </a>
       </div>
     </nav>

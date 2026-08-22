@@ -98,6 +98,19 @@ Sections, dans l'ordre de la maquette : héros, 01 la méthode, 02 ce qu'on peut
 trouver, bande d'appel e-mail, 03 les terrains, 04 un exemple, 05 qui suis-je,
 contact, puis le pied de page qui contient 06 les questions.
 
+## Mobile
+
+Quatre réglages hors maquette, tous sous 760 ou 900 px :
+
+- les photos suivent le format de leur source au lieu d'une hauteur en `vh`,
+  qui recadrait durement un cliché paysage dans un cadre portrait,
+- les étapes de la méthode passent en une colonne : la colonne de numéro de
+  110 px ne laissait que 153 px au texte,
+- les questions perdent leur colonne de numéro et le retrait de 96 px de la
+  réponse : l'intitulé n'avait que 108 px de large,
+- la barre affiche une étiquette courte et les boutons se resserrent, sinon la
+  barre passait sur deux lignes et l'appel du héros aussi.
+
 ## Photos
 
 Trois photos, extraites de la maquette : `hero-bureau.jpg`,
